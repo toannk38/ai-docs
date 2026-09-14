@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Copilot có thể hỗ trợ làm sạch, công thức, insight và biểu đồ; mọi thay đổi phải có bản sao/version, control total, sample test và người duyệt nghiệp vụ.">
+  <title>09. Microsoft Excel | Hướng dẫn NAB</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/site.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="Về trang chủ hướng dẫn NAB">
+        <img src="../logo/NAB-logo.png" alt="Ngân hàng Nam Á - NAB" width="297" height="58">
+        <span class="brand-text">
+          <span class="brand-kicker">Cẩm nang nội bộ</span>
+          <span class="brand-title">Ứng dụng công nghệ và AI</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="home-link" href="../index.html">Trang chủ</a>
+        <button class="menu-button" type="button" data-menu-button aria-controls="chapter-sidebar" aria-expanded="false" aria-label="Mở danh mục chương">Danh mục</button>
+      </div>
+    </div>
+  </header>
+  <div class="site-layout">
+    <aside class="sidebar" id="chapter-sidebar" data-sidebar aria-label="Danh mục hướng dẫn">
+      <div class="sidebar-inner">
+        <p class="sidebar-title">23 chương hướng dẫn</p>
+        
+    <nav class="nav-group" aria-label="Nền tảng chung">
+      <p class="nav-group-title">Nền tảng chung</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-01-tong-quan.html">
+              <span class="nav-num">01</span>
+              <span>Tổng quan sáng kiến</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-02-quan-tri-rui-ro.html">
+              <span class="nav-num">02</span>
+              <span>Quản trị rủi ro dữ liệu</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-03-quy-trinh-va-prompt.html">
+              <span class="nav-num">03</span>
+              <span>Quy trình và kỹ thuật prompt</span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Microsoft 365 — trọng tâm">
+      <p class="nav-group-title">Microsoft 365 — trọng tâm</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-04-ms365-tong-quan.html">
+              <span class="nav-num">04</span>
+              <span>Microsoft 365 tổng quan<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-05-ms365-copilot.html">
+              <span class="nav-num">05</span>
+              <span>Microsoft Copilot<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-06-ms365-teams.html">
+              <span class="nav-num">06</span>
+              <span>Microsoft Teams<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-07-ms365-outlook.html">
+              <span class="nav-num">07</span>
+              <span>Microsoft Outlook<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-08-ms365-word.html">
+              <span class="nav-num">08</span>
+              <span>Microsoft Word<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-09-ms365-excel.html" aria-current="page">
+              <span class="nav-num">09</span>
+              <span>Microsoft Excel<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-10-ms365-powerpoint.html">
+              <span class="nav-num">10</span>
+              <span>Microsoft PowerPoint<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Amazon Quick — trọng tâm">
+      <p class="nav-group-title">Amazon Quick — trọng tâm</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-11-amazon-quick-tong-quan.html">
+              <span class="nav-num">11</span>
+              <span>Amazon Quick tổng quan<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-12-amazon-quick-sight.html">
+              <span class="nav-num">12</span>
+              <span>Amazon Quick Sight<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-13-amazon-quick-research-index.html">
+              <span class="nav-num">13</span>
+              <span>Quick Research &amp; Index<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-14-amazon-quick-flows-automate.html">
+              <span class="nav-num">14</span>
+              <span>Quick Flows &amp; Automate<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-15-amazon-quick-apps.html">
+              <span class="nav-num">15</span>
+              <span>Apps in Amazon Quick<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Công cụ tham khảo">
+      <p class="nav-group-title">Công cụ tham khảo</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-16-chatgpt.html">
+              <span class="nav-num">16</span>
+              <span>ChatGPT</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-17-notebooklm.html">
+              <span class="nav-num">17</span>
+              <span>NotebookLM</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-18-claude.html">
+              <span class="nav-num">18</span>
+              <span>Claude</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-19-gemini.html">
+              <span class="nav-num">19</span>
+              <span>Gemini</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-20-perplexity.html">
+              <span class="nav-num">20</span>
+              <span>Perplexity</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-21-canva-ai.html">
+              <span class="nav-num">21</span>
+              <span>Canva AI</span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Ứng dụng và hỗ trợ">
+      <p class="nav-group-title">Ứng dụng và hỗ trợ</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-22-tinh-huong-nghiep-vu.html">
+              <span class="nav-num">22</span>
+              <span>Tình huống nghiệp vụ</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-23-ho-tro-va-faq.html">
+              <span class="nav-num">23</span>
+              <span>Hỗ trợ CNTT và FAQ</span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+      </div>
+    </aside>
+    <main class="main" id="main-content" tabindex="-1">
+      <article class="content-wrap">
+        <nav class="breadcrumb" aria-label="Đường dẫn">
+          <ol><li><a href="../index.html">Trang chủ</a></li><li>Microsoft 365 — trọng tâm</li><li aria-current="page">09. Microsoft Excel</li></ol>
+        </nav>
+        <header class="chapter-header">
+          <p class="eyebrow">Đang sử dụng tại NAB</p>
+          <h1>Microsoft Excel và Copilot: phân tích có thể đối soát</h1>
+          <p class="lead">Copilot có thể hỗ trợ làm sạch, công thức, insight và biểu đồ; mọi thay đổi phải có bản sao/version, control total, sample test và người duyệt nghiệp vụ.</p>
+          <div class="meta-row" aria-label="Thông tin tài liệu">
+            <span class="tag tag-live">Đang sử dụng tại NAB</span>
+            <span class="tag">Dự thảo 0.9</span>
+            <span class="tag">Kiểm chứng nguồn: 19/08/2026</span>
+            <span class="tag">Đối tượng: ĐVKD và analyst lập báo cáo, theo dõi KPI hoặc phân tích dữ liệu</span>
+            <span class="tag">Owner: Khối CNTT NAB / SME Microsoft 365</span>
+          </div>
+        </header>
+        <div class="status-notice">
+          <strong>Đang sử dụng tại NAB</strong>
+          <p>Khả năng hiển thị phụ thuộc license, phiên bản ứng dụng và chính sách tenant NAB. Nếu giao diện khác hướng dẫn, dừng thao tác và liên hệ CNTT; không dùng tài khoản cá nhân để thay thế.</p>
+        </div>
+        <nav class="page-toc" aria-label="Mục lục trong chương">
+          <strong>Trong chương này</strong>
+          <ol><li><a href="#muc-tieu">Mục tiêu</a></li><li><a href="#dieu-kien">Điều kiện</a></li><li><a href="#use-case">Use case</a></li><li><a href="#huong-dan">Hướng dẫn</a></li><li><a href="#kiem-soat">Kiểm soát</a></li><li><a href="#faq">FAQ</a></li><li><a href="#nguon">Nguồn</a></li></ol>
+        </nav>
+
+        <section id="muc-tieu">
+          <h2>Mục tiêu</h2>
+          <ul class="check-list"><li>Chuẩn hóa dữ liệu trước phân tích.</li><li>Tạo/giải thích công thức có kiểm chứng.</li><li>Tạo insight/PivotTable/chart có thể truy vết.</li></ul>
+        </section>
+
+        <section id="dieu-kien">
+          <h2>Đối tượng và điều kiện trước khi dùng</h2>
+          <p><strong>Đối tượng:</strong> ĐVKD và analyst lập báo cáo, theo dõi KPI hoặc phân tích dữ liệu</p>
+          <ul class="check-list"><li>Workbook trong kho được phép, đúng nhãn/quyền và có bản sao hoặc version history.</li><li>Dữ liệu có header duy nhất, kiểu dữ liệu nhất quán, không merged cell hoặc blank row chia cắt.</li><li>SME xác nhận UI Edit/Plan/Chat, web import, skills/model và direct-edit đang được bật.</li></ul>
+        </section>
+
+        <section id="use-case">
+          <h2>Use case và cách chọn phạm vi</h2>
+          <div class="grid grid-3">
+    <article class="card">
+      <span class="card-number" aria-hidden="true">1</span>
+      <h3>Chuẩn hóa</h3>
+      <p>Kiểm tra header, loại dữ liệu, missing value và control total.</p>
+    </article>
+    <article class="card">
+      <span class="card-number" aria-hidden="true">2</span>
+      <h3>Công thức</h3>
+      <p>Đề xuất và giải thích tham chiếu; test case biên trước fill toàn cột.</p>
+    </article>
+    <article class="card">
+      <span class="card-number" aria-hidden="true">3</span>
+      <h3>Pivot/chart</h3>
+      <p>Chốt metric, aggregation, dimension, time grain, filter và trục.</p>
+    </article></div>
+        </section>
+
+        
+
+        <section id="huong-dan">
+          <h2>Hướng dẫn từng bước</h2>
+          
+    <article class="walkthrough">
+      <header class="walkthrough-head">
+        <h3>Walkthrough 1: Chuẩn hóa và tìm insight</h3>
+        <p>Làm việc trên bản sao và ghi control total trước khi thay đổi.</p>
+      </header>
+      <div class="walkthrough-body">
+        <ol class="steps">
+          <li>Mở bản sao, ghi row count và control total.</li><li>Định dạng Table khi phù hợp; sửa header, kiểu ngày/số và đánh dấu missing values.</li><li>Chọn Chat/Plan thay direct Edit nếu chỉ muốn phân tích và UI cho phép.</li><li>Prompt nêu sheet, column/range và câu hỏi; yêu cầu trend/outlier cùng bảng nguồn.</li><li>Đối chiếu row/filter và ít nhất ba mẫu.</li>
+        </ol>
+        <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> Row count, control total và mẫu nguồn không thay đổi ngoài chủ đích đã ghi.</div>
+      </div>
+    </article>
+    <article class="walkthrough">
+      <header class="walkthrough-head">
+        <h3>Walkthrough 2: Tạo công thức có kiểm soát</h3>
+        <p>Yêu cầu giải thích trước khi ghi vào workbook.</p>
+      </header>
+      <div class="walkthrough-body">
+        <ol class="steps">
+          <li>Chọn vùng/cột mục tiêu.</li><li>Yêu cầu đề xuất công thức, giải thích từng tham chiếu và chưa ghi khi chưa xác nhận.</li><li>Kiểm tra relative/absolute reference, blank, error, zero, divide-by-zero và locale.</li><li>Áp trên bản sao; tính thủ công 3–5 dòng cùng control total.</li><li>Với lookup, kiểm tra key trùng/thiếu và kiểu join trước fill toàn cột.</li>
+        </ol>
+        <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> Đầu, giữa, cuối và các case ngoại lệ đều khớp tính thủ công/nguồn chuẩn.</div>
+      </div>
+    </article>
+    <article class="walkthrough">
+      <header class="walkthrough-head">
+        <h3>Walkthrough 3: Tạo PivotTable hoặc biểu đồ</h3>
+        <p>Nêu phép tổng hợp và trục để tránh biểu diễn sai.</p>
+      </header>
+      <div class="walkthrough-body">
+        <ol class="steps">
+          <li>Prompt nêu metric, aggregation, dimension, time grain và filter.</li><li>Tạo/đề xuất PivotTable hoặc chart theo tính năng được cấp.</li><li>Kiểm tra source range, Sum/Average/Count, filter, date grouping, axis, unit/currency và refresh.</li><li>Đối chiếu tổng với nguồn.</li><li>Ghi kỳ dữ liệu, nguồn và giới hạn trên chart trước khi sử dụng.</li>
+        </ol>
+        <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> Biểu đồ không che filter, cắt trục gây hiểu sai hoặc dùng sai mẫu số/đơn vị.</div>
+      </div>
+    </article>
+        </section>
+
+        <section id="kiem-soat">
+          <h2>Rủi ro và biện pháp kiểm soát</h2>
+          <div class="callout warning"><strong>Nguyên tắc dừng</strong><p>Nếu không xác định được quyền dữ liệu, tính năng được phép, nguồn kiểm chứng hoặc người chịu trách nhiệm cuối, hãy dừng thao tác và liên hệ Khối CNTT/đơn vị kiểm soát.</p></div>
+          <ul class="risk-list"><li>Direct Edit có thể sửa workbook; dùng bản sao/version/Undo và review change history.</li><li>Công thức cần sample test và control total; không tin giải thích mà không tính lại.</li><li>Garbage-in, garbage-out: data quality gate trước AI.</li><li>Trend phụ thuộc filter/time grain; ghi kỳ và phạm vi.</li><li>Cấm dùng insight AI làm quyết định tín dụng, phê duyệt hoặc kết luận cuối.</li></ul>
+        </section>
+
+        <section id="faq">
+          <h2>Câu hỏi thường gặp</h2>
+          <button class="home-link" type="button" data-expand-faq aria-pressed="false">Mở tất cả FAQ</button>
+          <div class="faq-list">
+    <details class="faq-item">
+      <summary>Dữ liệu bắt buộc là Table?</summary>
+      <div class="faq-answer"><p>Không phải mọi trải nghiệm đều bắt buộc, nhưng Table là chuẩn khuyến nghị để phạm vi rõ và dễ kiểm chứng.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Có cần AutoSave?</summary>
+      <div class="faq-answer"><p>Khả năng phụ thuộc client; NAB vẫn yêu cầu bản sao/version history trước direct edit.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Công thức Copilot tạo có đáng tin tuyệt đối?</summary>
+      <div class="faq-answer"><p>Không; kiểm tra tham chiếu, case biên và control total.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Có thể tạo PivotTable/chart?</summary>
+      <div class="faq-answer"><p>Nếu feature được cấp; phải kiểm tra aggregation, filter và axis.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Copilot có sửa trực tiếp workbook?</summary>
+      <div class="faq-answer"><p>Một số chế độ có thể sửa trực tiếp; dùng Plan/Chat hoặc bản sao để giảm rủi ro.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Có đưa dữ liệu khách hàng vào?</summary>
+      <div class="faq-answer"><p>Chỉ khi chính sách, nhãn, quyền và môi trường cho phép; tối thiểu hóa dữ liệu.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Có dùng insight để phê duyệt tín dụng?</summary>
+      <div class="faq-answer"><p>Không; chỉ hỗ trợ phân tích, quyết định thuộc người có thẩm quyền.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Kết quả không đúng thì làm gì?</summary>
+      <div class="faq-answer"><p>Kiểm tra header, kiểu dữ liệu, ô trống, filter, range và prompt; nếu vẫn sai, dừng và xử lý thủ công/Service Desk.</p></div>
+    </details></div>
+        </section>
+
+        <section id="nguon">
+          <h2>Nguồn chính thức và kiểm chứng</h2>
+          <div class="sources">
+    <p><strong>Source ID kiểm soát:</strong> <code>NAB-MS-001</code>, <code>NAB-MS-002</code>, <code>VEN-MS-001</code></p>
+    <ol><li><a href="https://support.microsoft.com/en-us/excel/copilot/get-started-with-copilot-in-excel" target="_blank" rel="noopener noreferrer">Get started with Copilot in Excel</a></li><li><a href="https://support.microsoft.com/en-us/excel/copilot/data-insights-with-copilot-in-excel" target="_blank" rel="noopener noreferrer">Data insights with Copilot in Excel</a></li><li><a href="https://support.microsoft.com/en-us/excel/copilot/visualize-your-data-with-copilot-in-excel" target="_blank" rel="noopener noreferrer">Visualize data with Copilot in Excel</a></li><li><a href="https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-tips" target="_blank" rel="noopener noreferrer">Copilot in Excel tips</a></li></ol>
+    <p class="source-note">Nguồn vendor/chuyên môn được truy cập ngày 19/08/2026. Liên kết ngoài chỉ được mở khi người dùng chủ động chọn và có kết nối Internet phù hợp.</p>
+  </div>
+        </section>
+
+        <nav class="pager" aria-label="Chuyển chương">
+    <a href="./chapter-08-ms365-word.html"><small>← Chương trước</small><strong>08. Microsoft Word</strong></a>
+    <a href="./chapter-10-ms365-powerpoint.html"><small>Chương tiếp theo →</small><strong>10. Microsoft PowerPoint</strong></a>
+  </nav>
+        <footer class="chapter-footer">Bản dự thảo nội bộ · Chưa phát hành · Cập nhật nội dung: 19/08/2026</footer>
+      </article>
+    </main>
+  </div>
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Quay về đầu trang">↑</button>
+</body>
+</html>

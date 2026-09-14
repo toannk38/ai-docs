@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ứng dụng tạo bằng hội thoại vẫn là prototype. Không dùng dữ liệu thật ở vòng đầu, không publish Public và không bỏ qua threat review/UAT.">
+  <title>15. Apps in Amazon Quick | Hướng dẫn NAB</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/site.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="Về trang chủ hướng dẫn NAB">
+        <img src="../logo/NAB-logo.png" alt="Ngân hàng Nam Á - NAB" width="297" height="58">
+        <span class="brand-text">
+          <span class="brand-kicker">Cẩm nang nội bộ</span>
+          <span class="brand-title">Ứng dụng công nghệ và AI</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="home-link" href="../index.html">Trang chủ</a>
+        <button class="menu-button" type="button" data-menu-button aria-controls="chapter-sidebar" aria-expanded="false" aria-label="Mở danh mục chương">Danh mục</button>
+      </div>
+    </div>
+  </header>
+  <div class="site-layout">
+    <aside class="sidebar" id="chapter-sidebar" data-sidebar aria-label="Danh mục hướng dẫn">
+      <div class="sidebar-inner">
+        <p class="sidebar-title">23 chương hướng dẫn</p>
+        
+    <nav class="nav-group" aria-label="Nền tảng chung">
+      <p class="nav-group-title">Nền tảng chung</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-01-tong-quan.html">
+              <span class="nav-num">01</span>
+              <span>Tổng quan sáng kiến</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-02-quan-tri-rui-ro.html">
+              <span class="nav-num">02</span>
+              <span>Quản trị rủi ro dữ liệu</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-03-quy-trinh-va-prompt.html">
+              <span class="nav-num">03</span>
+              <span>Quy trình và kỹ thuật prompt</span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Microsoft 365 — trọng tâm">
+      <p class="nav-group-title">Microsoft 365 — trọng tâm</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-04-ms365-tong-quan.html">
+              <span class="nav-num">04</span>
+              <span>Microsoft 365 tổng quan<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-05-ms365-copilot.html">
+              <span class="nav-num">05</span>
+              <span>Microsoft Copilot<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-06-ms365-teams.html">
+              <span class="nav-num">06</span>
+              <span>Microsoft Teams<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-07-ms365-outlook.html">
+              <span class="nav-num">07</span>
+              <span>Microsoft Outlook<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-08-ms365-word.html">
+              <span class="nav-num">08</span>
+              <span>Microsoft Word<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-09-ms365-excel.html">
+              <span class="nav-num">09</span>
+              <span>Microsoft Excel<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-10-ms365-powerpoint.html">
+              <span class="nav-num">10</span>
+              <span>Microsoft PowerPoint<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Amazon Quick — trọng tâm">
+      <p class="nav-group-title">Amazon Quick — trọng tâm</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-11-amazon-quick-tong-quan.html">
+              <span class="nav-num">11</span>
+              <span>Amazon Quick tổng quan<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-12-amazon-quick-sight.html">
+              <span class="nav-num">12</span>
+              <span>Amazon Quick Sight<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-13-amazon-quick-research-index.html">
+              <span class="nav-num">13</span>
+              <span>Quick Research &amp; Index<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-14-amazon-quick-flows-automate.html">
+              <span class="nav-num">14</span>
+              <span>Quick Flows &amp; Automate<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-15-amazon-quick-apps.html" aria-current="page">
+              <span class="nav-num">15</span>
+              <span>Apps in Amazon Quick<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Công cụ tham khảo">
+      <p class="nav-group-title">Công cụ tham khảo</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-16-chatgpt.html">
+              <span class="nav-num">16</span>
+              <span>ChatGPT</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-17-notebooklm.html">
+              <span class="nav-num">17</span>
+              <span>NotebookLM</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-18-claude.html">
+              <span class="nav-num">18</span>
+              <span>Claude</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-19-gemini.html">
+              <span class="nav-num">19</span>
+              <span>Gemini</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-20-perplexity.html">
+              <span class="nav-num">20</span>
+              <span>Perplexity</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-21-canva-ai.html">
+              <span class="nav-num">21</span>
+              <span>Canva AI</span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Ứng dụng và hỗ trợ">
+      <p class="nav-group-title">Ứng dụng và hỗ trợ</p>
+      <ol class="chapter-nav">
+        
+          <li>
+            <a href="./chapter-22-tinh-huong-nghiep-vu.html">
+              <span class="nav-num">22</span>
+              <span>Tình huống nghiệp vụ</span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapter-23-ho-tro-va-faq.html">
+              <span class="nav-num">23</span>
+              <span>Hỗ trợ CNTT và FAQ</span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+      </div>
+    </aside>
+    <main class="main" id="main-content" tabindex="-1">
+      <article class="content-wrap">
+        <nav class="breadcrumb" aria-label="Đường dẫn">
+          <ol><li><a href="../index.html">Trang chủ</a></li><li>Amazon Quick — trọng tâm</li><li aria-current="page">15. Apps in Amazon Quick</li></ol>
+        </nav>
+        <header class="chapter-header">
+          <p class="eyebrow">Đang sử dụng tại NAB</p>
+          <h1>Apps in Amazon Quick: prototype ứng dụng nội bộ an toàn</h1>
+          <p class="lead">Ứng dụng tạo bằng hội thoại vẫn là prototype. Không dùng dữ liệu thật ở vòng đầu, không publish Public và không bỏ qua threat review/UAT.</p>
+          <div class="meta-row" aria-label="Thông tin tài liệu">
+            <span class="tag tag-live">Đang sử dụng tại NAB</span>
+            <span class="tag">Dự thảo 0.9</span>
+            <span class="tag">Kiểm chứng nguồn: 19/08/2026</span>
+            <span class="tag">Đối tượng: Người dùng NAB đã được cấp quyền Amazon Quick</span>
+            <span class="tag">Owner: Chủ biên / SME Amazon Quick</span>
+          </div>
+        </header>
+        <div class="status-notice">
+          <strong>Đang sử dụng tại NAB</strong>
+          <p>NAB đang sử dụng Amazon Quick; Apps, role, integration và quy trình SDLC/UAT cụ thể phải được SME/ATTT xác nhận.</p>
+        </div>
+        <nav class="page-toc" aria-label="Mục lục trong chương">
+          <strong>Trong chương này</strong>
+          <ol><li><a href="#muc-tieu">Mục tiêu</a></li><li><a href="#dieu-kien">Điều kiện</a></li><li><a href="#use-case">Use case</a></li><li><a href="#huong-dan">Hướng dẫn</a></li><li><a href="#kiem-soat">Kiểm soát</a></li><li><a href="#faq">FAQ</a></li><li><a href="#nguon">Nguồn</a></li></ol>
+        </nav>
+
+        <section id="muc-tieu">
+          <h2>Mục tiêu</h2>
+          <ul class="check-list"><li>Tạo prototype bằng dữ liệu giả lập và version rõ ràng.</li><li>Phê duyệt READ/WRITE cho từng asset/integration.</li><li>UAT quyền, dữ liệu, hành vi và rollback trước publish.</li></ul>
+        </section>
+
+        <section id="dieu-kien">
+          <h2>Đối tượng và điều kiện trước khi dùng</h2>
+          <p><strong>Đối tượng:</strong> Người dùng NAB đã được cấp quyền Amazon Quick</p>
+          <ul class="check-list"><li>Tenant bật Apps và role/subscription phù hợp.</li><li>Có Product Owner, Data Owner và reviewer CNTT/ATTT.</li><li>Service authentication, write, shared storage hoặc account-wide sharing có phê duyệt riêng.</li></ul>
+        </section>
+
+        <section id="use-case">
+          <h2>Use case và cách chọn phạm vi</h2>
+          <div class="grid grid-3">
+    <article class="card">
+      <span class="card-number" aria-hidden="true">1</span>
+      <h3>Prototype</h3>
+      <p>Mô phỏng giao diện và luồng bằng synthetic data, không connector/write ở vòng đầu.</p>
+    </article>
+    <article class="card">
+      <span class="card-number" aria-hidden="true">2</span>
+      <h3>Integration</h3>
+      <p>Chỉ thêm Space, visual hoặc action khi data-flow và quyền READ/WRITE được duyệt.</p>
+    </article>
+    <article class="card">
+      <span class="card-number" aria-hidden="true">3</span>
+      <h3>Pilot nội bộ</h3>
+      <p>Publish Limited cho user/group pilot sau UAT; không dùng Public cho use case NAB.</p>
+    </article></div>
+        </section>
+
+        
+
+        <section id="huong-dan">
+          <h2>Hướng dẫn từng bước</h2>
+          
+    <article class="walkthrough">
+      <header class="walkthrough-head">
+        <h3>Walkthrough 1: Prototype không integration</h3>
+        <p>Tạo ứng dụng bằng dữ liệu giả lập và yêu cầu không connector/AI/write.</p>
+      </header>
+      <div class="walkthrough-body">
+        <ol class="steps">
+          <li>Prompt nêu purpose, audience, views, fields, validation, lỗi mong đợi và accessibility.</li><li>Generate và kiểm tra live preview.</li><li>Test navigation, keyboard, input rỗng/sai/quá dài và thông báo lỗi.</li><li>Mỗi lượt chỉ đổi một điểm; ghi version sau mốc ổn định.</li><li>Nếu hỏng, preview/restore version; lưu test evidence và giới hạn đã biết.</li>
+        </ol>
+        <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> Prototype hoạt động với synthetic data và Assets không có integration ngoài thiết kế.</div>
+      </div>
+    </article>
+    <article class="walkthrough">
+      <header class="walkthrough-head">
+        <h3>Walkthrough 2: Thêm dữ liệu/integration được duyệt</h3>
+        <p>Mỗi nguồn/đích phải có data-flow và quyền rõ ràng.</p>
+      </header>
+      <div class="walkthrough-body">
+        <ol class="steps">
+          <li>Chọn private storage cho trạng thái cá nhân; shared storage chỉ cho dữ liệu cộng tác đã duyệt.</li><li>Thêm đúng Space/visual/action; kiểm tra tên asset và READ/WRITE khi consent.</li><li>Đối chiếu toàn bộ Assets với data-flow.</li><li>Test user được phép và user bị hạn chế để xác nhận RLS/CLS.</li><li>Ưu tiên user auth; với service auth, review phạm vi quyền dùng chung.</li><li>Tách bước AI Generate và nút Save/Submit để người dùng review từng write payload.</li>
+        </ol>
+        <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> Asset inventory khớp data-flow và negative permission tests pass.</div>
+      </div>
+    </article>
+    <article class="walkthrough">
+      <header class="walkthrough-head">
+        <h3>Walkthrough 3: UAT, publish và rollback nội bộ</h3>
+        <p>Mặc định chia sẻ Limited cho nhóm pilot.</p>
+      </header>
+      <div class="walkthrough-body">
+        <ol class="steps">
+          <li>Freeze version; UAT chức năng, quyền, validation, duplicate/timeout, recovery, accessibility và volume.</li><li>Owner/ATTT ký; chọn Limited và user/group pilot, không dùng Public.</li><li>Publish, kiểm thử URL bằng Viewer không phải tác giả.</li><li>Xác nhận viewer không edit/share và chỉ thấy asset họ được phép.</li><li>Mỗi lần republish phải regression; khi lỗi thu hồi share, restore stable version và publish lại/dừng app.</li>
+        </ol>
+        <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> URL chỉ mở cho audience duyệt; release/version, UAT và rollback evidence đầy đủ.</div>
+      </div>
+    </article>
+        </section>
+
+        <section id="kiem-soat">
+          <h2>Rủi ro và biện pháp kiểm soát</h2>
+          <div class="callout warning"><strong>Nguyên tắc dừng</strong><p>Nếu không xác định được quyền dữ liệu, tính năng được phép, nguồn kiểm chứng hoặc người chịu trách nhiệm cuối, hãy dừng thao tác và liên hệ Khối CNTT/đơn vị kiểm soát.</p></div>
+          <ul class="risk-list"><li>Mặc định share Limited; NAB không dùng Public cho nội dung nội bộ.</li><li>Shared storage có thể lộ dữ liệu cho mọi app user; dùng private cho trạng thái cá nhân.</li><li>Ưu tiên user authentication; service credential cần scope/monitor/review riêng.</li><li>AI inference có write phải được người dùng xem payload trước Save/Submit.</li><li>Sandbox không ngăn logic sai; UAT/threat review vẫn bắt buộc.</li><li>Ghi nhận giới hạn không export source code, owner phụ thuộc và exit plan.</li></ul>
+        </section>
+
+        <section id="faq">
+          <h2>Câu hỏi thường gặp</h2>
+          <button class="home-link" type="button" data-expand-faq aria-pressed="false">Mở tất cả FAQ</button>
+          <div class="faq-list">
+    <details class="faq-item">
+      <summary>Generate xong có thành hệ thống production?</summary>
+      <div class="faq-answer"><p>Không. Đây là bản tạo bằng AI cần SDLC rút gọn, security review và UAT.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Có dùng dữ liệu khách hàng để thử?</summary>
+      <div class="faq-answer"><p>Không ở prototype; dữ liệu thật chỉ khi Data Owner/ATTT cho phép và quyền đã test.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Private và shared storage khác gì?</summary>
+      <div class="faq-answer"><p>Private chỉ current user; shared cho người có quyền app. Không lưu secret trong cả hai.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Viewer app có vượt RLS dashboard?</summary>
+      <div class="faq-answer"><p>AWS thiết kế quyền nguồn vẫn áp dụng, nhưng NAB phải negative-test trên tenant.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Vì sao write do AI cần approve?</summary>
+      <div class="faq-answer"><p>Để người dùng xem payload trước khi lưu/gọi connector và chịu trách nhiệm hành động.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Có publish Public?</summary>
+      <div class="faq-answer"><p>Không cho use case NAB.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Có tải source code app để lưu?</summary>
+      <div class="faq-answer"><p>Theo giới hạn AWS hiện hành, không; cần version evidence, owner và exit plan.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>App hỏng sau chỉnh sửa?</summary>
+      <div class="faq-answer"><p>Restore version ổn định, test, publish lại; nếu integration/auth lỗi thì dừng share và báo SME.</p></div>
+    </details></div>
+        </section>
+
+        <section id="nguon">
+          <h2>Nguồn chính thức và kiểm chứng</h2>
+          <div class="sources">
+    <p><strong>Source ID kiểm soát:</strong> <code>NAB-AQ-001</code>, <code>NAB-AQ-002</code>, <code>VEN-AQ-001</code></p>
+    <ol><li><a href="https://docs.aws.amazon.com/quick/latest/userguide/using-amazon-quick-apps.html" target="_blank" rel="noopener noreferrer">Using Apps in Amazon Quick</a></li><li><a href="https://docs.aws.amazon.com/quick/latest/userguide/connecting-integrations-apps.html" target="_blank" rel="noopener noreferrer">Connecting integrations</a></li><li><a href="https://docs.aws.amazon.com/quick/latest/userguide/security-sandbox-apps.html" target="_blank" rel="noopener noreferrer">Security sandbox</a></li><li><a href="https://docs.aws.amazon.com/quick/latest/userguide/apps-limitations.html" target="_blank" rel="noopener noreferrer">Apps limitations</a></li><li><a href="https://docs.aws.amazon.com/quick/latest/userguide/apps-troubleshooting.html" target="_blank" rel="noopener noreferrer">Apps troubleshooting</a></li></ol>
+    <p class="source-note">Nguồn vendor/chuyên môn được truy cập ngày 19/08/2026. Liên kết ngoài chỉ được mở khi người dùng chủ động chọn và có kết nối Internet phù hợp.</p>
+  </div>
+        </section>
+
+        <nav class="pager" aria-label="Chuyển chương">
+    <a href="./chapter-14-amazon-quick-flows-automate.html"><small>← Chương trước</small><strong>14. Quick Flows &amp; Automate</strong></a>
+    <a href="./chapter-16-chatgpt.html"><small>Chương tiếp theo →</small><strong>16. ChatGPT</strong></a>
+  </nav>
+        <footer class="chapter-footer">Bản dự thảo nội bộ · Chưa phát hành · Cập nhật nội dung: 19/08/2026</footer>
+      </article>
+    </main>
+  </div>
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Quay về đầu trang">↑</button>
+</body>
+</html>
