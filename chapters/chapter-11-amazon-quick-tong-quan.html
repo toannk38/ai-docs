@@ -244,7 +244,7 @@
         </header>
         <div class="status-notice">
           <strong>Đang sử dụng tại NAB</strong>
-          <p>NAB đang sử dụng Amazon Quick. Account, Region, role, subscription, Private Mode, upload/file limits, output formats, connector và menu cụ thể phải được SME xác nhận trước phát hành.</p>
+          <p>NAB đang sử dụng Amazon Quick. Hãy dùng đúng account, Region, role, subscription và các tính năng được cấp.</p>
         </div>
         <div class="mobile-page-toc"><nav class="page-toc" aria-label="Mục lục trong chương">
     <strong>Nội dung chương này</strong>
@@ -258,7 +258,7 @@
 
         <section id="dieu-kien">
           <h2>Điều kiện trước khi dùng</h2>
-          <ul class="check-list"><li>Có tài khoản/SSO NAB, MFA và role/subscription được cấp; không dùng root user hoặc tài khoản cá nhân.</li><li>Dữ liệu đã phân loại; chỉ chọn dashboard, dataset, Space, knowledge base và connector được duyệt.</li><li>SME điền account name, Region, URL/SSO, vai trò, feature matrix và kênh hỗ trợ thực tế.</li></ul>
+          <ul class="check-list"><li>Có tài khoản/SSO NAB, MFA và role/subscription được cấp; không dùng root user hoặc tài khoản cá nhân.</li><li>Dữ liệu đã phân loại; chỉ chọn dashboard, dataset, Space, knowledge base và connector được duyệt.</li><li>Sử dụng account name, Region, URL/SSO, vai trò và kênh hỗ trợ do CNTT cung cấp.</li></ul>
         </section>
 
         <section id="use-case">
@@ -277,7 +277,7 @@
     <article class="card">
       <span class="card-number" aria-hidden="true">3</span>
       <h3>Private Mode</h3>
-      <p>Tắt ghi nhớ và truy xuất bộ nhớ khi thảo luận nội dung nhạy cảm (cần xác nhận hành vi trên tenant NAB).</p>
+      <p>Tắt ghi nhớ và truy xuất bộ nhớ khi thảo luận nội dung nhạy cảm.</p>
     </article>
     <article class="card">
       <span class="card-number" aria-hidden="true">4</span>
@@ -301,7 +301,7 @@
 
 
 
-      <ol class="steps"><li>Mở portal/SSO NAB; không dùng link lạ hoặc màn hình tự đăng ký.</li><li>Hoàn tất MFA và kiểm tra account/tenant, Region cùng hồ sơ người dùng theo checklist SME.</li><li>Đối chiếu role và menu đang thấy với feature matrix đã phê duyệt.</li><li>Kiểm tra asset mặc định không nằm ngoài phạm vi công việc.</li><li>Nếu sai account, thiếu menu hoặc quyền quá rộng, dừng thao tác và gửi ticket kèm ảnh đã che dữ liệu nhạy cảm.</li></ol>
+      <ol class="steps"><li>Mở portal/SSO NAB; không dùng link lạ hoặc màn hình tự đăng ký.</li><li>Hoàn tất MFA và kiểm tra account, Region cùng hồ sơ người dùng.</li><li>Đối chiếu role và menu đang thấy với feature matrix đã phê duyệt.</li><li>Kiểm tra asset mặc định không nằm ngoài phạm vi công việc.</li><li>Nếu sai account, thiếu menu hoặc quyền quá rộng, dừng thao tác và gửi ticket kèm ảnh đã che dữ liệu nhạy cảm.</li></ol>
 
 
     </section>
@@ -347,9 +347,9 @@
 
 
     </section><section class="guide-subsection" id="xac-nhan-tenant">
-      <h3>Xác nhận hành vi trên tenant NAB</h3>
-      <p>Hành vi Private Mode có thể khác tùy phiên bản và cấu hình tenant. Trước khi phát hành, SME phải xác nhận:</p>
-      <ul class="feature-list"><li><strong>Conversation history:</strong> <span>Hệ thống có ghi lịch sử cuộc trò chuyện hay không.</span></li><li><strong>Training:</strong> <span>Nội dung có được gửi để huấn luyện mô hình hay không.</span></li><li><strong>Retention:</strong> <span>Chính sách và thời gian lưu giữ dữ liệu được áp dụng như thế nào.</span></li><li><strong>Memory:</strong> <span>Private Mode có tương đương với không đọc và không ghi bộ nhớ trên tenant NAB hay không.</span></li></ul>
+      <h3>Cách Private Mode xử lý dữ liệu</h3>
+      <p>Khi sử dụng Private Mode, cần lưu ý các nội dung sau:</p>
+      <ul class="feature-list"><li><strong>Conversation history:</strong> <span>Hệ thống có ghi lịch sử cuộc trò chuyện hay không.</span></li><li><strong>Training:</strong> <span>Nội dung có được gửi để huấn luyện mô hình hay không.</span></li><li><strong>Retention:</strong> <span>Chính sách và thời gian lưu giữ dữ liệu được áp dụng như thế nào.</span></li><li><strong>Memory:</strong> <span>Không đọc và không ghi nội dung vào bộ nhớ hội thoại.</span></li></ul>
 
 
 
@@ -362,7 +362,7 @@
     <section class="guide-subsection" id="cac-muc-chinh">
       <h3>Các mục chính</h3>
 
-      <ul class="feature-list"><li><strong>New chat:</strong> <span>Bắt đầu cuộc trò chuyện mới.</span></li><li><strong>Search:</strong> <span>Tìm kiếm toàn bộ tài nguyên.</span></li><li><strong>My stuff:</strong> <span>Nội dung cá nhân gồm datasets, data sources, analyses, dashboards, mục yêu thích và thư mục.</span></li><li><strong>Spaces:</strong> <span>Không gian cộng tác tập hợp files, Dashboards, Topics, Datasets và Integration Actions. Giới hạn tối đa 100 files/Space cần được xác nhận trên tenant NAB.</span></li><li><strong>Research:</strong> <span>Nghiên cứu chuyên sâu bằng AI, tạo báo cáo dài và phân tích đa nguồn.</span></li><li><strong>Chat agents:</strong> <span>Xây dựng và quản lý AI agent tùy chỉnh với persona, tài liệu tham chiếu, spaces và hành động kết nối.</span></li><li><strong>Apps:</strong> <span>Biến ý tưởng thành ứng dụng web trong vài phút. Apps chỉ xuất hiện trong bản đồ điều hướng chương này; hướng dẫn chi tiết không chứa quy trình Apps.</span></li><li><strong>Flows:</strong> <span>Tạo và chia sẻ quy trình tự động hóa thông minh.</span></li><li><strong>Analyses:</strong> <span>Tạo trực quan hóa dữ liệu, xây dựng biểu đồ và sắp xếp trên các sheet.</span></li><li><strong>Dashboards:</strong> <span>Phiên bản đã xuất bản của Analysis, được chia sẻ để xem báo cáo tương tác.</span></li><li><strong>Data:</strong> <span>Quản lý kết nối nguồn dữ liệu như databases, data warehouses, cloud services và spreadsheets.</span></li><li><strong>My folders / Shared folders:</strong> <span>Tổ chức analyses và dashboards.</span></li><li><strong>More:</strong> <span>Truy cập các tính năng mở rộng.</span></li><li><strong>Recents:</strong> <span>Các cuộc trò chuyện gần đây được lưu trong 30 ngày theo hướng dẫn; thời gian retention thực tế cần được xác nhận trên tenant NAB.</span></li></ul>
+      <ul class="feature-list"><li><strong>New chat:</strong> <span>Bắt đầu cuộc trò chuyện mới.</span></li><li><strong>Search:</strong> <span>Tìm kiếm toàn bộ tài nguyên.</span></li><li><strong>My stuff:</strong> <span>Nội dung cá nhân gồm datasets, data sources, analyses, dashboards, mục yêu thích và thư mục.</span></li><li><strong>Spaces:</strong> <span>Không gian cộng tác tập hợp files, Dashboards, Topics, Datasets và Integration Actions; hỗ trợ tối đa 100 files/Space theo hướng dẫn.</span></li><li><strong>Research:</strong> <span>Nghiên cứu chuyên sâu bằng AI, tạo báo cáo dài và phân tích đa nguồn.</span></li><li><strong>Chat agents:</strong> <span>Xây dựng và quản lý AI agent tùy chỉnh với persona, tài liệu tham chiếu, spaces và hành động kết nối.</span></li><li><strong>Apps:</strong> <span>Biến ý tưởng thành ứng dụng web trong vài phút. Apps chỉ xuất hiện trong bản đồ điều hướng chương này; hướng dẫn chi tiết không chứa quy trình Apps.</span></li><li><strong>Flows:</strong> <span>Tạo và chia sẻ quy trình tự động hóa thông minh.</span></li><li><strong>Analyses:</strong> <span>Tạo trực quan hóa dữ liệu, xây dựng biểu đồ và sắp xếp trên các sheet.</span></li><li><strong>Dashboards:</strong> <span>Phiên bản đã xuất bản của Analysis, được chia sẻ để xem báo cáo tương tác.</span></li><li><strong>Data:</strong> <span>Quản lý kết nối nguồn dữ liệu như databases, data warehouses, cloud services và spreadsheets.</span></li><li><strong>My folders / Shared folders:</strong> <span>Tổ chức analyses và dashboards.</span></li><li><strong>More:</strong> <span>Truy cập các tính năng mở rộng.</span></li><li><strong>Recents:</strong> <span>Các cuộc trò chuyện gần đây được lưu trong 30 ngày theo hướng dẫn.</span></li></ul>
 
 
 
@@ -375,7 +375,7 @@
     <section class="guide-subsection" id="cac-thanh-phan">
       <h3>Các thành phần điều khiển</h3>
 
-      <ul class="feature-list"><li><strong>Dropdown &#39;Quick&#39;:</strong> <span>Chọn giữa các AI agent khác nhau và có thể chuyển đổi agent ngay trong cùng cuộc trò chuyện.</span></li><li><strong>Ô nhập câu hỏi:</strong> <span>Nhập yêu cầu bằng ngôn ngữ tự nhiên; hỗ trợ tối đa 20 files/cuộc trò chuyện, 50 MB/file và các định dạng Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML, HTML. Giới hạn thực tế cần được xác nhận trên tenant NAB.</span></li><li><strong>Dropdown &#39;All data&#39;:</strong> <span>Thu hẹp phạm vi kiến thức của agent theo Dashboards, Spaces, Topics, Datasets hoặc Integrations.</span></li><li><strong>Nút &#39;+&#39;:</strong> <span>Đính kèm files hoặc thêm nguồn dữ liệu bổ sung vào cuộc trò chuyện.</span></li><li><strong>Dropdown &#39;Smart&#39;:</strong> <span>Điều chỉnh chế độ xử lý AI và mức độ sâu của quá trình lý luận; hành vi cụ thể cần được xác nhận trên tenant NAB.</span></li></ul>
+      <ul class="feature-list"><li><strong>Dropdown &#39;Quick&#39;:</strong> <span>Chọn giữa các AI agent khác nhau và có thể chuyển đổi agent ngay trong cùng cuộc trò chuyện.</span></li><li><strong>Ô nhập câu hỏi:</strong> <span>Nhập yêu cầu bằng ngôn ngữ tự nhiên; hỗ trợ tối đa 20 files/cuộc trò chuyện, 50 MB/file và các định dạng Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML, HTML theo hướng dẫn.</span></li><li><strong>Dropdown &#39;All data&#39;:</strong> <span>Thu hẹp phạm vi kiến thức của agent theo Dashboards, Spaces, Topics, Datasets hoặc Integrations.</span></li><li><strong>Nút &#39;+&#39;:</strong> <span>Đính kèm files hoặc thêm nguồn dữ liệu bổ sung vào cuộc trò chuyện.</span></li><li><strong>Dropdown &#39;Smart&#39;:</strong> <span>Điều chỉnh chế độ xử lý AI và mức độ sâu của quá trình lý luận.</span></li></ul>
 
 
 
@@ -388,7 +388,7 @@
     <section class="guide-subsection" id="cac-output">
       <h3>Các định dạng output</h3>
 
-      <ul class="feature-list"><li><strong>Research:</strong> <span>Khởi chạy Quick Research để tạo báo cáo dài và phân tích đa nguồn. Theo hướng dẫn giao diện, quá trình mất khoảng 7–10 phút; thời gian thực tế có thể khác.</span></li><li><strong>Document:</strong> <span>Tạo tài liệu Word/DOCX hoặc PDF trực tiếp từ cuộc trò chuyện.</span></li><li><strong>Presentation:</strong> <span>Tạo bài thuyết trình PowerPoint/PPTX trực tiếp từ cuộc trò chuyện.</span></li><li><strong>Visual:</strong> <span>Tạo biểu đồ và hình ảnh trực quan hóa dữ liệu trực tiếp từ chat.</span></li><li><strong>Phạm vi hỗ trợ:</strong> <span>Các định dạng đầu ra phụ thuộc vào phiên bản và subscription; SME cần xác nhận trên tenant NAB.</span></li></ul>
+      <ul class="feature-list"><li><strong>Research:</strong> <span>Khởi chạy Quick Research để tạo báo cáo dài và phân tích đa nguồn. Theo hướng dẫn giao diện, quá trình mất khoảng 7–10 phút; thời gian thực tế có thể khác.</span></li><li><strong>Document:</strong> <span>Tạo tài liệu Word/DOCX hoặc PDF trực tiếp từ cuộc trò chuyện.</span></li><li><strong>Presentation:</strong> <span>Tạo bài thuyết trình PowerPoint/PPTX trực tiếp từ cuộc trò chuyện.</span></li><li><strong>Visual:</strong> <span>Tạo biểu đồ và hình ảnh trực quan hóa dữ liệu trực tiếp từ chat.</span></li><li><strong>Phạm vi hỗ trợ:</strong> <span>Các định dạng đầu ra có thể khác theo phiên bản và subscription được cấp.</span></li></ul>
 
 
 
@@ -401,7 +401,7 @@
     <section class="guide-subsection" id="cac-tinh-nang-more">
       <h3>Các tính năng trong More</h3>
 
-      <ul class="feature-list"><li><strong>Automations:</strong> <span>Tạo workflow đa bước kết hợp AI với dữ liệu và hành động.</span></li><li><strong>Connectors:</strong> <span>Kết nối Salesforce, Jira, ServiceNow, Slack và các ứng dụng bên ngoài qua OAuth hoặc API key để thực hiện hành động từ Quick.</span></li><li><strong>Knowledge:</strong> <span>Tạo Topics cho trải nghiệm hỏi đáp bằng ngôn ngữ tự nhiên từ datasets; hỗ trợ cấu hình synonyms, metadata và câu hỏi mẫu.</span></li><li><strong>Extensions:</strong> <span>Đưa Quick vào Chrome, Slack, Outlook, Microsoft Teams và Word.</span></li><li><strong>Scenarios:</strong> <span>Canvas phân tích dữ liệu với AI gợi ý dữ liệu liên quan và hỗ trợ khám phá insight theo kịch bản.</span></li><li><strong>Stories:</strong> <span>Tạo câu chuyện dữ liệu kết hợp văn bản, biểu đồ và insight.</span></li><li><strong>Customize navigation:</strong> <span>Tùy chỉnh thanh điều hướng theo nhu cầu cá nhân.</span></li><li><strong>Phạm vi hiển thị:</strong> <span>Các tính năng trong More phụ thuộc vào role, subscription và region; SME cần xác nhận danh sách thực tế trên tenant NAB.</span></li></ul>
+      <ul class="feature-list"><li><strong>Automations:</strong> <span>Tạo workflow đa bước kết hợp AI với dữ liệu và hành động.</span></li><li><strong>Connectors:</strong> <span>Kết nối Salesforce, Jira, ServiceNow, Slack và các ứng dụng bên ngoài qua OAuth hoặc API key để thực hiện hành động từ Quick.</span></li><li><strong>Knowledge:</strong> <span>Tạo Topics cho trải nghiệm hỏi đáp bằng ngôn ngữ tự nhiên từ datasets; hỗ trợ cấu hình synonyms, metadata và câu hỏi mẫu.</span></li><li><strong>Extensions:</strong> <span>Đưa Quick vào Chrome, Slack, Outlook, Microsoft Teams và Word.</span></li><li><strong>Scenarios:</strong> <span>Canvas phân tích dữ liệu với AI gợi ý dữ liệu liên quan và hỗ trợ khám phá insight theo kịch bản.</span></li><li><strong>Stories:</strong> <span>Tạo câu chuyện dữ liệu kết hợp văn bản, biểu đồ và insight.</span></li><li><strong>Customize navigation:</strong> <span>Tùy chỉnh thanh điều hướng theo nhu cầu cá nhân.</span></li><li><strong>Phạm vi hiển thị:</strong> <span>Các tính năng trong More hiển thị theo role, subscription và Region của người dùng.</span></li></ul>
 
 
 
@@ -430,13 +430,13 @@
     <article class="walkthrough">
       <header class="walkthrough-head">
         <h3>Walkthrough 2: Sử dụng Private Mode và kiểm tra upload limits</h3>
-        <p>Xác nhận giới hạn và hành vi theo tenant trước khi phát hành.</p>
+        <p>Kiểm tra Private Mode và giới hạn tải tệp trước khi sử dụng.</p>
       </header>
       <div class="walkthrough-body">
         <ol class="steps">
-          <li>Bật Private Mode từ thanh header — biểu tượng khoá xuất hiện.</li><li>Xác nhận với SME: conversation history có được ghi không, có gửi nội dung training không, Private Mode có tương đương not-memory-read + not-memory-write không.</li><li>Kiểm tra giới hạn upload: 20 files/cuộc trò chuyện, 50 MB/file, 100 files/Space theo hướng dẫn giao diện — giới hạn thực tế phụ thuộc tenant.</li><li>Xác nhận danh sách định dạng file được hỗ trợ trên tenant NAB.</li><li>Ghi giới hạn đã xác nhận vào tài liệu hướng dẫn NAB trước phát hành.</li>
+          <li>Bật Private Mode từ thanh header — biểu tượng khoá xuất hiện.</li><li>Kiểm tra trạng thái conversation history, training và memory được hiển thị trong Private Mode.</li><li>Kiểm tra giới hạn upload theo hướng dẫn: 20 files/cuộc trò chuyện, 50 MB/file và 100 files/Space.</li><li>Chỉ tải các định dạng file được giao diện hỗ trợ.</li><li>Không tải tệp nếu chưa rõ chế độ xử lý hoặc phạm vi lưu giữ dữ liệu.</li>
         </ol>
-        <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> Private Mode hoạt động như mong đợi, upload limits được SME xác nhận và không có lỗi upload.</div>
+        <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> Private Mode được bật, tệp đúng định dạng và không có lỗi upload.</div>
       </div>
     </article>
         </section>
@@ -453,11 +453,11 @@
           <div class="faq-list">
     <details class="faq-item">
       <summary>Private Mode có thật sự an toàn?</summary>
-      <div class="faq-answer"><p>Private Mode theo hướng dẫn giao diện không sử dụng bộ nhớ và không truy xuất bộ nhớ đã lưu. Tuy nhiên, hành vi cụ thể phụ thuộc vào phiên bản và cấu hình tenant — SME phải xác nhận có ghi conversation history không, có gửi nội dung training không trên tenant NAB.</p></div>
+      <div class="faq-answer"><p>Private Mode không sử dụng và không truy xuất bộ nhớ đã lưu. Người dùng vẫn phải tuân thủ phân loại dữ liệu và quyền truy cập.</p></div>
     </details>
     <details class="faq-item">
       <summary>Upload file có giới hạn gì?</summary>
-      <div class="faq-answer"><p>Theo hướng dẫn giao diện: tối đa 20 files/cuộc trò chuyện, 50 MB/file, hỗ trợ Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML, HTML. Giới hạn thực tế và danh sách định dạng file cần SME xác nhận trên tenant NAB.</p></div>
+      <div class="faq-answer"><p>Theo hướng dẫn: tối đa 20 files/cuộc trò chuyện, 50 MB/file; hỗ trợ Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML và HTML.</p></div>
     </details>
     <details class="faq-item">
       <summary>Tại sao không thấy menu Automations?</summary>
@@ -465,15 +465,15 @@
     </details>
     <details class="faq-item">
       <summary>Smart mode là gì?</summary>
-      <div class="faq-answer"><p>Chế độ xử lý AI điều chỉnh mức độ sâu của quá trình lý luận. Hành vi cụ thể cần SME xác nhận trên tenant NAB.</p></div>
+      <div class="faq-answer"><p>Chế độ xử lý AI điều chỉnh mức độ sâu của quá trình lý luận.</p></div>
     </details>
     <details class="faq-item">
       <summary>Recents lưu bao lâu?</summary>
-      <div class="faq-answer"><p>Theo hướng dẫn giao diện: 30 ngày. Thời gian retention thực tế cần SME xác nhận trên tenant NAB và không thay thế chính sách dữ liệu NAB.</p></div>
+      <div class="faq-answer"><p>Theo hướng dẫn: 30 ngày; nội dung vẫn phải tuân thủ chính sách dữ liệu NAB.</p></div>
     </details>
     <details class="faq-item">
       <summary>Output formats nào được hỗ trợ?</summary>
-      <div class="faq-answer"><p>Theo hướng dẫn giao diện: Research, Document (Word/DOCX, PDF), Presentation (PowerPoint/PPTX), Visual (chart, graph). Danh sách output thực tế phụ thuộc phiên bản và subscription — SME xác nhận trên tenant NAB.</p></div>
+      <div class="faq-answer"><p>Quick hỗ trợ Research, Document (Word/DOCX, PDF), Presentation (PowerPoint/PPTX) và Visual (chart, graph) theo tính năng được cấp.</p></div>
     </details>
     <details class="faq-item">
       <summary>Apps có phải là production system?</summary>

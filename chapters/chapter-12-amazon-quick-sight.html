@@ -244,7 +244,7 @@
         </header>
         <div class="status-notice">
           <strong>Đang sử dụng tại NAB</strong>
-          <p>NAB đang sử dụng Spaces và Chat Agents. Giới hạn files/Space, custom agent reference limits, connector availability và sharing controls phải được SME xác nhận trên tenant NAB trước phát hành.</p>
+          <p>NAB đang sử dụng Spaces và Chat Agents. Chỉ thêm dữ liệu đã được phê duyệt và chia sẻ theo quyền tối thiểu.</p>
         </div>
         <div class="mobile-page-toc"><nav class="page-toc" aria-label="Mục lục trong chương">
     <strong>Nội dung chương này</strong>
@@ -253,12 +253,12 @@
 
         <section id="muc-tieu">
           <h2>Mục tiêu</h2>
-          <ul class="check-list"><li>Tạo và quản lý Space — thêm files, datasets, dashboards, topics và members.</li><li>Hiểu giới hạn Space: tối đa 100 files/Space theo hướng dẫn (cần xác nhận trên tenant NAB).</li><li>Tạo Custom Chat Agent: cấu hình persona, reference documents, Spaces và action connectors.</li><li>Áp dụng least privilege sharing — chỉ chia sẻ với người cần và permission tối thiểu.</li><li>Kiểm soát quyền truy cập agent và Space theo chính sách NAB.</li></ul>
+          <ul class="check-list"><li>Tạo và quản lý Space — thêm files, datasets, dashboards, topics và members.</li><li>Hiểu giới hạn Space: tối đa 100 files/Space theo hướng dẫn.</li><li>Tạo Custom Chat Agent: cấu hình persona, reference documents, Spaces và action connectors.</li><li>Áp dụng least privilege sharing — chỉ chia sẻ với người cần và permission tối thiểu.</li><li>Kiểm soát quyền truy cập agent và Space theo chính sách NAB.</li></ul>
         </section>
 
         <section id="dieu-kien">
           <h2>Điều kiện trước khi dùng</h2>
-          <ul class="check-list"><li>Có tài khoản/role NAB với quyền tạo Space và Chat Agent.</li><li>Files, datasets, dashboards đã được phân loại và phê duyệt.</li><li>Reference documents cho custom agent đã được data owner xác nhận.</li><li>Connector và integration actions đã được IT security phê duyệt (nếu agent cần thực hiện hành động bên ngoài).</li><li>SME xác nhận giới hạn files/Space, agent reference limits (tối đa 10 files, 50 MB/file theo hướng dẫn) và sharing controls trên tenant NAB.</li></ul>
+          <ul class="check-list"><li>Có tài khoản/role NAB với quyền tạo Space và Chat Agent.</li><li>Files, datasets, dashboards đã được phân loại và phê duyệt.</li><li>Reference documents cho custom agent đã được data owner xác nhận.</li><li>Connector và integration actions đã được IT security phê duyệt (nếu agent cần thực hiện hành động bên ngoài).</li><li>Tuân thủ giới hạn files/Space, agent reference limits và sharing controls hiển thị trong Quick.</li></ul>
         </section>
 
         <section id="use-case">
@@ -324,7 +324,7 @@
     <p>Sau khi tạo Space, thêm tài nguyên và members để xây dựng môi trường cộng tác.</p>
     <section class="guide-subsection" id="them-files">
       <h3>Thêm files</h3>
-      <p>Upload files trực tiếp vào Space hoặc link files đã có trong My stuff. Giới hạn: tối đa 100 files/Space theo hướng dẫn giao diện — cần SME xác nhận giới hạn thực tế trên tenant NAB. Chỉ thêm files đã được phân loại và data owner phê duyệt.</p>
+      <p>Upload files trực tiếp vào Space hoặc link files đã có trong My stuff. Giới hạn theo hướng dẫn: tối đa 100 files/Space. Chỉ thêm files đã được phân loại và data owner phê duyệt.</p>
 
 
 
@@ -382,7 +382,7 @@
     <section class="guide-subsection" id="cau-hinh-persona">
       <h3>Cấu hình persona và reference documents</h3>
 
-      <ul class="feature-list"><li><strong>Persona:</strong> <span>Mô tả vai trò, tone và hành vi mong muốn. Ví dụ: &#39;You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.&#39;</span></li><li><strong>Reference documents:</strong> <span>Thêm tối đa 10 files, 50 MB/file theo hướng dẫn giao diện; giới hạn thực tế cần được SME xác nhận trên tenant NAB.</span></li><li><strong>Grounding:</strong> <span>Agent sử dụng nội dung trong các files tham chiếu để tạo câu trả lời.</span></li><li><strong>Phê duyệt dữ liệu:</strong> <span>Chỉ thêm tài liệu đã được data owner phê duyệt.</span></li></ul>
+      <ul class="feature-list"><li><strong>Persona:</strong> <span>Mô tả vai trò, tone và hành vi mong muốn. Ví dụ: &#39;You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.&#39;</span></li><li><strong>Reference documents:</strong> <span>Thêm tối đa 10 files, 50 MB/file theo hướng dẫn.</span></li><li><strong>Grounding:</strong> <span>Agent sử dụng nội dung trong các files tham chiếu để tạo câu trả lời.</span></li><li><strong>Phê duyệt dữ liệu:</strong> <span>Chỉ thêm tài liệu đã được data owner phê duyệt.</span></li></ul>
 
 
 
@@ -446,7 +446,7 @@
       </header>
       <div class="walkthrough-body">
         <ol class="steps">
-          <li>Chọn &#39;Chat agents&#39; từ sidebar → nhấn &#39;Create Agent&#39;.</li><li>Đặt tên agent mô tả vai trò (ví dụ: &#39;NAB Financial Policy Expert&#39;).</li><li>Viết persona chi tiết: vai trò, tone, hành vi (ví dụ: &#39;You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.&#39;).</li><li>Thêm reference documents (tối đa 10 files, 50 MB/file theo hướng dẫn — cần SME xác nhận giới hạn) — chỉ thêm documents đã được data owner phê duyệt.</li><li>Chọn Spaces để agent truy cập (optional) — agent sẽ thấy tất cả tài nguyên trong Space.</li><li>Test agent với sample questions — xác nhận grounding và citation đúng.</li><li>Chia sẻ agent với team nếu cần — áp dụng least privilege.</li>
+          <li>Chọn &#39;Chat agents&#39; từ sidebar → nhấn &#39;Create Agent&#39;.</li><li>Đặt tên agent mô tả vai trò (ví dụ: &#39;NAB Financial Policy Expert&#39;).</li><li>Viết persona chi tiết: vai trò, tone, hành vi (ví dụ: &#39;You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.&#39;).</li><li>Thêm reference documents (tối đa 10 files, 50 MB/file theo hướng dẫn) — chỉ thêm documents đã được data owner phê duyệt.</li><li>Chọn Spaces để agent truy cập (optional) — agent sẽ thấy tất cả tài nguyên trong Space.</li><li>Test agent với sample questions — xác nhận grounding và citation đúng.</li><li>Chia sẻ agent với team nếu cần — áp dụng least privilege.</li>
         </ol>
         <div class="verify-box"><strong>Kết quả cần kiểm chứng:</strong> Agent trả lời đúng persona, grounding với references và không hallucinate.</div>
       </div>
@@ -456,7 +456,7 @@
         <section id="kiem-soat">
           <h2>Rủi ro và biện pháp kiểm soát</h2>
           <div class="callout warning"><strong>Nguyên tắc dừng</strong><p>Nếu không xác định được quyền dữ liệu, tính năng được phép, nguồn kiểm chứng hoặc người chịu trách nhiệm cuối, hãy dừng thao tác và liên hệ Khối CNTT/đơn vị kiểm soát.</p></div>
-          <ul class="risk-list"><li>Chỉ chia sẻ Space/agent với người thực sự cần — không share công khai hoặc &#39;just in case&#39;.</li><li>Cấp quyền tối thiểu: Viewer nếu chỉ cần đọc, Contributor nếu cần edit, Owner chỉ cho người quản trị.</li><li>Review access định kỳ (ít nhất quarterly) — xóa members không còn làm việc trên dự án.</li><li>Reference documents trong agent: chỉ thêm documents được phân loại phù hợp và data owner đã approve.</li><li>Custom agent có actions: phải có approval riêng từ IT security, test kỹ trước production, monitor usage.</li><li>Giới hạn files/Space (100 files) và agent references (10 files, 50 MB/file) theo hướng dẫn — cần SME xác nhận trên tenant NAB.</li></ul>
+          <ul class="risk-list"><li>Chỉ chia sẻ Space/agent với người thực sự cần — không share công khai hoặc &#39;just in case&#39;.</li><li>Cấp quyền tối thiểu: Viewer nếu chỉ cần đọc, Contributor nếu cần edit, Owner chỉ cho người quản trị.</li><li>Review access định kỳ (ít nhất quarterly) — xóa members không còn làm việc trên dự án.</li><li>Reference documents trong agent: chỉ thêm documents được phân loại phù hợp và data owner đã approve.</li><li>Custom agent có actions: phải có approval riêng từ IT security, test kỹ trước production, monitor usage.</li><li>Tuân thủ giới hạn theo hướng dẫn: 100 files/Space và 10 reference files, 50 MB/file cho agent.</li></ul>
         </section>
 
         <section id="faq">
@@ -465,7 +465,7 @@
           <div class="faq-list">
     <details class="faq-item">
       <summary>Space có giới hạn gì?</summary>
-      <div class="faq-answer"><p>Theo hướng dẫn giao diện: tối đa 100 files/Space. Giới hạn thực tế cần SME xác nhận trên tenant NAB.</p></div>
+      <div class="faq-answer"><p>Theo hướng dẫn: tối đa 100 files/Space.</p></div>
     </details>
     <details class="faq-item">
       <summary>RLS/CLS có áp dụng trong Space?</summary>
@@ -477,7 +477,7 @@
     </details>
     <details class="faq-item">
       <summary>Agent reference limits là gì?</summary>
-      <div class="faq-answer"><p>Theo hướng dẫn giao diện: tối đa 10 files, 50 MB/file cho reference documents. Giới hạn thực tế cần SME xác nhận trên tenant NAB.</p></div>
+      <div class="faq-answer"><p>Theo hướng dẫn: tối đa 10 files, 50 MB/file cho reference documents.</p></div>
     </details>
     <details class="faq-item">
       <summary>Làm sao biết agent có actions nguy hiểm?</summary>
@@ -485,7 +485,7 @@
     </details>
     <details class="faq-item">
       <summary>Ai có thể tạo Space/agent?</summary>
-      <div class="faq-answer"><p>Phụ thuộc vào role và permissions trên tenant NAB. Thường cần role có quyền tạo shared resources — gửi ticket nếu không thấy nút Create.</p></div>
+      <div class="faq-answer"><p>Người có role và quyền tạo shared resources; gửi yêu cầu hỗ trợ nếu không thấy nút Create.</p></div>
     </details>
     <details class="faq-item">
       <summary>Space có thể chia sẻ ra ngoài NAB?</summary>

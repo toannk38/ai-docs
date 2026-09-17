@@ -42,7 +42,7 @@ EXPECTED_SLUGS = [
 EXPECTED_CHAPTERS = [CHAPTERS_DIR / slug for slug in EXPECTED_SLUGS]
 EXPECTED_HTML = [ROOT / "index.html", *EXPECTED_CHAPTERS]
 PUBLIC_DATA_WARNING = "Chỉ sử dụng công cụ AI tham khảo với dữ liệu công khai. Không sử dụng dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc bất kỳ dữ liệu nội bộ nào."
-QUICK_CONTENT_SHA256 = "47cc881119f368c49d7d54cfe5e237ac308e31a127898013a8aa4c4fe3633278"
+QUICK_CONTENT_SHA256 = "913eaafe3e00b22692e0d1a16f12cb0939752bc41c304d2f71fb461d021e0bd5"
 EXTERNAL_SCHEMES = {"http", "https", "mailto", "tel"}
 RESOURCE_TAG_ATTRS = {
     "script": "src",
@@ -247,6 +247,17 @@ def run() -> list[str]:
             for label in forbidden_labels:
                 if label in text:
                     errors.append(f"{rel}: obsolete label is still rendered: {label!r}")
+            tenant_confirmation_patterns = [
+                r"SME (?:phải |cần )?xác nhận",
+                r"xác nhận[^.<]{0,120}tenant NAB",
+                r"tenant NAB[^.<]{0,120}xác nhận",
+                r"cần xác nhận[^.<]{0,120}tenant",
+                r"SME[^.<]{0,80}(?:confirm|điền)",
+                r"checklist SME",
+            ]
+            for pattern in tenant_confirmation_patterns:
+                if re.search(pattern, text, re.I):
+                    errors.append(f"{rel}: tenant confirmation note is still rendered: {pattern!r}")
             if "Source ID kiểm soát:" not in text:
                 errors.append(f"{rel}: missing required metadata label 'Source ID kiểm soát:'")
             if not re.search(r"\b(?:NAB|VEN)-[A-Z]+-\d{3}\b", text):

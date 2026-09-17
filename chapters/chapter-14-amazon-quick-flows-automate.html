@@ -244,7 +244,7 @@
         </header>
         <div class="status-notice">
           <strong>Đang sử dụng tại NAB</strong>
-          <p>NAB đang sử dụng Amazon Quick; Scenarios, Research, web search, upload, knowledge base, ACL và Region phải được SME/ATTT xác nhận.</p>
+          <p>NAB đang sử dụng Scenarios và Quick Research. Chỉ dùng nguồn, web search, upload, knowledge base và connector được cấp quyền.</p>
         </div>
         <div class="mobile-page-toc"><nav class="page-toc" aria-label="Mục lục trong chương">
     <strong>Nội dung chương này</strong>
@@ -258,7 +258,7 @@
 
         <section id="dieu-kien">
           <h2>Điều kiện trước khi dùng</h2>
-          <ul class="check-list"><li>SME xác nhận Scenarios, Research, web search, upload, Space/dashboard access và connector nào được bật.</li><li>Data Owner duyệt phạm vi nguồn; ATTT duyệt connector, Region và mô hình ACL.</li><li>Chỉ dùng dữ liệu đã được phân loại và phê duyệt.</li><li>Action connector mặc định không dùng trong phân tích/nghiên cứu.</li></ul>
+          <ul class="check-list"><li>Chỉ sử dụng Scenarios, Research, web search, upload, Space/dashboard và connector được cấp quyền.</li><li>Data Owner duyệt phạm vi nguồn; ATTT duyệt connector, Region và mô hình ACL.</li><li>Chỉ dùng dữ liệu đã được phân loại và phê duyệt.</li><li>Action connector mặc định không dùng trong phân tích/nghiên cứu.</li></ul>
         </section>
 
         <section id="use-case">
@@ -296,7 +296,7 @@
 
     </section><section class="guide-subsection" id="scenarios-access">
       <h3>Truy cập Scenarios</h3>
-      <p>Scenarios thường nằm trong More menu hoặc My stuff section (tùy Quick version/configuration). SME xác nhận Scenarios có được bật trên tenant NAB và user nào có quyền. Access yêu cầu:</p><ul class="detail-list"><li>User có quyền truy cập datasets/Spaces làm input.</li><li>Admin đã bật Scenarios feature cho account.</li><li><strong>Không bypass RLS/CLS:</strong> <span>Scenarios vẫn tuân theo data permissions.</span></li></ul>
+      <p>Scenarios thường nằm trong More menu hoặc My stuff section. Access yêu cầu:</p><ul class="detail-list"><li>User có quyền truy cập datasets/Spaces làm input.</li><li>Scenarios được bật cho account.</li><li><strong>Không bypass RLS/CLS:</strong> <span>Scenarios vẫn tuân theo data permissions.</span></li></ul>
 
 
 
@@ -339,7 +339,7 @@
 
 
 
-      <p class="detail-note">SME cần xác nhận Research có được bật, các nguồn được phép sử dụng (web/Spaces/uploads/connectors) và chính sách retention. Một research cycle được ước tính khoảng 7–10 phút; thời gian thực tế có thể khác tùy phạm vi và số lượng nguồn.</p>
+      <p class="detail-note">Chỉ sử dụng các nguồn được cấp quyền như web, Spaces, uploads hoặc connectors. Một research cycle được ước tính khoảng 7–10 phút; thời gian thực tế có thể khác tùy phạm vi và số lượng nguồn.</p>
 
     </section>
 
@@ -351,7 +351,7 @@
       <p>Research có thể dùng một hoặc nhiều nguồn (nếu cross-boundary được duyệt):</p><ul class="detail-list"><li><strong>Web search:</strong> <span>public web, domain filtering, date range. Yêu cầu approval riêng vì outbound traffic và crawler footprint.</span></li><li><strong>Spaces:</strong> <span>knowledge base, files, topics đã lập chỉ mục. ACL áp dụng — Research chỉ truy cập được nguồn user có quyền.</span></li><li><strong>Uploads:</strong> <span>user upload files ad-hoc. Files vẫn cần data classification và không được chứa sensitive data chưa duyệt.</span></li><li><strong>Dashboards:</strong> <span>Research có thể query dashboards để tổng hợp numbers/trends; tuân theo RLS/CLS.</span></li></ul>
 
       <h4 class="guide-steps-title">Quy tắc khi chọn nguồn</h4>
-      <ol class="steps"><li>Xác nhận nguồn nào được phép: SME/ATTT confirm web/Spaces/uploads/connectors enabled.</li><li>Chọn nguồn tối thiểu cần thiết — không chọn all Spaces/dashboards vì tiện.</li><li>Nếu kết hợp web với nội bộ, xác nhận cross-boundary mixing đã được duyệt.</li><li>Ghi domain ưu tiên/tránh cho web search (nếu applicable).</li><li>Upload files vào NAB-approved storage trước khi dùng trong Research (không upload trực tiếp sensitive data).</li></ol>
+      <ol class="steps"><li>Chỉ chọn các nguồn web, Spaces, uploads hoặc connectors đã được cấp quyền.</li><li>Chọn nguồn tối thiểu cần thiết — không chọn all Spaces/dashboards vì tiện.</li><li>Nếu kết hợp web với nội bộ, xác nhận cross-boundary mixing đã được duyệt.</li><li>Ghi domain ưu tiên/tránh cho web search (nếu applicable).</li><li>Upload files vào NAB-approved storage trước khi dùng trong Research (không upload trực tiếp sensitive data).</li></ol>
 
 
     </section><section class="guide-subsection" id="dinh-nghia-goal-context">
@@ -359,7 +359,7 @@
       <p>Research goal phải specific: câu hỏi, phạm vi địa lý/thời gian, tiêu chí và định dạng output. Context giúp AI hiểu audience, use case và constraints. Ví dụ goal: &quot;Summarize Q2 2026 fintech regulatory changes in APAC, focusing on crypto and payments. Output: 2-page executive summary with citations.&quot; Context: &quot;For risk team quarterly review; prioritize authoritative sources (regulators, official announcements).&quot;</p>
 
       <h4 class="guide-steps-title">Cách thiết lập goal và context</h4>
-      <ol class="steps"><li>Viết goal: câu hỏi cụ thể, khoảng thời gian, địa lý, tiêu chí và định dạng.</li><li>Thêm context: audience, use case, authoritative source preferences.</li><li>Không đưa dữ liệu nhạy cảm NAB vào search terms/goal.</li><li>Review goal/context với SME nếu scope rộng hoặc cross-boundary.</li></ol>
+      <ol class="steps"><li>Viết goal: câu hỏi cụ thể, khoảng thời gian, địa lý, tiêu chí và định dạng.</li><li>Thêm context: audience, use case, authoritative source preferences.</li><li>Không đưa dữ liệu nhạy cảm NAB vào search terms/goal.</li><li>Thu hẹp goal/context nếu phạm vi quá rộng hoặc kết hợp nhiều loại nguồn.</li></ol>
 
 
     </section>
@@ -514,7 +514,7 @@
     </details>
     <details class="faq-item">
       <summary>Web search có được bật mặc định?</summary>
-      <div class="faq-answer"><p>Tùy tenant config; SME/ATTT xác nhận web search, domain filtering và outbound traffic có được phép.</p></div>
+      <div class="faq-answer"><p>Không mặc định cho mọi tài khoản; chỉ sử dụng khi giao diện cho phép và không đưa dữ liệu nội bộ vào truy vấn web.</p></div>
     </details></div>
         </section>
 
