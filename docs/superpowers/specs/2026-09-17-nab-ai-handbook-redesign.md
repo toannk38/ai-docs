@@ -37,9 +37,9 @@ Microsoft 365 và Amazon Quick là hai nhóm trọng tâm vì đang được s�
 
 11. Tổng quan và giao diện Amazon Quick
 12. Spaces và Chat Agents
-13. Quick Sight - Dữ liệu, Analyses và Dashboards
-14. Scenarios, Quick Research và Index
-15. Quick Flows, Automate và Apps
+13. Dữ liệu, Analyses và Dashboards
+14. Scenarios và Quick Research
+15. Quick Flows & Automate
 
 ### AI phổ biến - THAM KHẢO
 
@@ -63,13 +63,7 @@ Giữ gần như nguyên vẹn nội dung hiện có trong các chương 04-10, 
 
 ### Amazon Quick
 
-Amazon Quick tiếp tục có năm chương và `Spaces và Chat Agents` vẫn là một chương lớn độc lập. Toàn bộ nội dung Amazon Quick hiện có phải được giữ nguyên, bao gồm phần giới thiệu, mục tiêu, điều kiện, use case, guide sections, walkthrough, hình minh họa, kiểm soát, FAQ và nguồn. Việc cập nhật chỉ được đổi nhãn điều hướng hoặc bổ sung nội dung còn thiếu; không rút gọn, viết lại hoặc loại bỏ nội dung hiện tại.
-
-- Chương 11 giữ nguyên toàn bộ hướng dẫn đăng nhập, giao diện Home, Private Mode, sidebar, chat controls, output shortcuts và điều kiện truy cập an toàn.
-- Chương 12 giữ nguyên toàn bộ nội dung tạo Space, quản lý files, datasets, dashboards, topics, members, tạo Custom Agent, reference documents, action connectors và least-privilege sharing.
-- Chương 13 giữ nguyên toàn bộ nội dung Data Sources, Datasets, SPICE, Direct Query, Analyses, Dashboards, refresh, chia sẻ và RLS/CLS. Chỉ bổ sung cụm `Quick Sight` vào tên hiển thị để người dùng nhận biết nhanh nhóm năng lực BI.
-- Chương 14 giữ nguyên toàn bộ nội dung Scenarios và Quick Research. Nội dung Quick Index/Knowledge Base, connector, đồng bộ nguồn, ACL, kiểm thử quyền và xử lý nguồn lỗi thời được bổ sung sau nội dung hiện có. Scenarios không bị đổi tên thành Index; đây là các năng lực riêng trong cùng nhóm phân tích và nghiên cứu.
-- Chương 15 giữ nguyên toàn bộ nội dung Quick Flows và Quick Automate. Quick Apps chỉ được bổ sung thành một section tham khảo ở cuối chương, tập trung vào prototype, quyền đọc/ghi, UAT và phát hành giới hạn.
+Giữ nguyên toàn bộ phần Amazon Quick như bản hiện tại, bao gồm cấu trúc năm chương, tên chương, thứ tự, nội dung, hình ảnh, walkthrough, kiểm soát, FAQ và nguồn. Không bổ sung, rút gọn, viết lại hoặc tái cấu trúc các chương 11-15.
 
 ## 5. Nội dung AI tham khảo
 
@@ -113,7 +107,7 @@ Chương 21 giải thích sự khác nhau giữa chatbot và AI Agent, giới th
 - Nội dung riêng về ChatGPT, Claude, Gemini và Perplexity được rút gọn và gộp vào Chương 17.
 - Nội dung Canva AI được chia giữa Chương 19 và Chương 20 theo loại đầu ra.
 - Nội dung Microsoft 365 còn giá trị được giữ lại; việc chuyển chương không làm mất walkthrough, kiểm soát hoặc FAQ quan trọng.
-- Toàn bộ nội dung Amazon Quick hiện có được bảo toàn; nội dung Index và Apps chỉ được bổ sung sau phần hiện tại.
+- Toàn bộ phần Amazon Quick được giữ nguyên như bản hiện tại.
 
 ## 7. An toàn dữ liệu
 
@@ -151,7 +145,6 @@ Nguồn nội dung và renderer dự kiến thay đổi:
 
 - `tools/build-site.js`
 - `tools/content-general.js`
-- `tools/content-quick.js`
 - `tools/content-reference.js`
 - `tools/content-glossary.js` (tạo mới)
 - `assets/css/style.css`
@@ -169,8 +162,7 @@ Nguồn nội dung và renderer dự kiến thay đổi:
 - Không còn tệp chương cũ không nằm trong cấu trúc mới.
 - Không có ID trùng, section trùng, H1 trùng hoặc heading nhảy cấp.
 - Tất cả ảnh có `alt`; bảng không tràn ngang ở viewport hẹp.
-- Chương 12 vẫn là chương lớn độc lập về Spaces và Chat Agents.
-- Nội dung HTML sinh ra cho các chương 11-15 phải chứa đầy đủ toàn bộ nội dung Amazon Quick hiện có trước khi bổ sung Index và Apps.
+- Các chương 11-15, tên menu và nội dung Amazon Quick không thay đổi so với bản hiện tại.
 - Các cảnh báo bắt buộc xuất hiện tại Chương 02, 18, 20, 21 và 22.
 - Tất cả chương 16-21 hiển thị cảnh báo chỉ sử dụng dữ liệu công khai và không sử dụng dữ liệu của Nam A Bank hoặc dữ liệu nội bộ.
 - Microsoft 365 và Amazon Quick có nhãn `TRỌNG TÂM`; AI công cộng có nhãn `THAM KHẢO`; AI Agent có nhãn `NÂNG CAO`.
