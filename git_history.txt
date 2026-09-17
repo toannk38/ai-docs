@@ -1,0 +1,32 @@
+* f31ff2d Thu Sep 17 13:24:54 2026 +0700 fix: preserve Amazon Quick chapters exactly
+* 597b6ae Thu Sep 17 13:13:54 2026 +0700 fix: restore handbook format and protect Amazon Quick
+* 8377639 Thu Sep 17 12:20:15 2026 +0700 docs: finalize handbook content and verification
+* 00f549e Thu Sep 17 12:14:59 2026 +0700 feat: add grouped navigation and handbook home page
+* 081639a Thu Sep 17 12:12:20 2026 +0700 feat: consolidate public AI reference guidance
+* 90845fd Thu Sep 17 12:10:03 2026 +0700 feat: restructure handbook foundations and appendices
+* 473a6f0 Thu Sep 17 12:05:49 2026 +0700 feat: support structured handbook tables and callouts
+* fd7d07f Thu Sep 17 12:04:42 2026 +0700 test: define NAB handbook release contract
+* eea3296 Thu Sep 17 12:00:24 2026 +0700 docs: plan NAB AI handbook implementation
+* aa2477c Thu Sep 17 11:58:05 2026 +0700 docs: define NAB AI handbook redesign
+* e0e8127 Thu Sep 17 11:35:20 2026 +0700 update
+* 5ede9fb Thu Sep 17 11:32:19 2026 +0700 update keyword
+| * 80cc046 Thu Sep 17 11:09:55 2026 +0700 Update style
+| * 8ba3e77 Thu Sep 17 11:04:14 2026 +0700 update layout
+| * 6ea844d Thu Sep 17 09:58:47 2026 +0700 update quick docs
+| * d3a25f5 Thu Sep 17 09:43:07 2026 +0700 updated style
+| * 8a4a7dd Thu Sep 17 09:15:46 2026 +0700 ok
+| | * 9d9f4d2 Mon Sep 14 17:39:32 2026 +0700 feat: add regex filtering support to homepage search
+| | * 5eecaab Mon Sep 14 17:36:50 2026 +0700 fix: remove duplicate TOC numbering from CSS
+| | * 13359d0 Mon Sep 14 17:30:48 2026 +0700 fix: remove duplicate numbering in TOC
+| | * 771db35 Mon Sep 14 17:28:31 2026 +0700 fix: number all TOC entries sequentially
+| | * 6df1e1f Mon Sep 14 17:18:15 2026 +0700 feat: auto-generate TOC from guideSections with sequential numbers
+| | * 3c24799 Mon Sep 14 17:15:49 2026 +0700 refactor: use sequential numbering within each chapter section
+| | * ce375fb Mon Sep 14 17:07:31 2026 +0700 feat: add image zoom/lightbox functionality
+| | * 33a8550 Mon Sep 14 17:03:39 2026 +0700 fix: correct image paths in chapters 12-14 from quick-docs/ to ../quick-docs/
+| | * 3ab9497 Mon Sep 14 16:45:37 2026 +0700 Complete Amazon Quick HTML refresh: chapters 11-15
+| | * ada22d0 Mon Sep 14 16:32:38 2026 +0700 Task 5: Replace chapter 14 with Scenarios and Quick Research content
+| | * 3dd52c3 Mon Sep 14 16:24:47 2026 +0700 Task 4: Replace chapter 13 with SPICE/datasets/analyses content
+| |/  
+| * fd6fb6e Mon Sep 14 15:00:24 2026 +0700 update folder
+|/  
+* 93abd70 Mon Sep 14 14:56:04 2026 +0700 ok
