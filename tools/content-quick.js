@@ -562,6 +562,7 @@ module.exports = [
             id: "chuan-bi-dataset",
             title: "Chuẩn bị Dataset — join, calculated fields, filters",
             body: "Sau khi kết nối, Dataset editor cho phép join tables, add calculated fields, change data types, apply filters và rename columns.",
+            stepsTitle: "Các bước chuẩn bị Dataset",
             steps: [
               "Join thêm tables nếu cần — chọn join type (inner, left, right, full) và join keys.",
               "Add calculated fields: functions, aggregations, date math, string manipulation.",
@@ -626,6 +627,7 @@ module.exports = [
             id: "visuals-sheets",
             title: "Visuals, calculated fields và sheets",
             body: "Analysis có thể chứa nhiều visuals (charts, tables, KPIs, maps) và nhiều sheets. Calculated fields trong Analysis cho phép logic phức tạp: level-aware aggregations, window functions, conditional logic.",
+            stepsTitle: "Các bước xây dựng Analysis",
             steps: [
               "Add visual: chọn visual type từ toolbar hoặc để AutoGraph chọn.",
               "Add calculated field: Analysis-level calculated fields áp dụng cho mọi visual trong Analysis.",
@@ -688,6 +690,7 @@ module.exports = [
             id: "share-embed-dashboard",
             title: "Share, embed và scheduled email",
             body: "Dashboard có thể share với users/groups (viewer permissions), embed vào web app (iframe/SDK), hoặc schedule email delivery (PDF/CSV attachments). Không share public — chỉ share nội bộ NAB với users có quyền.",
+            stepsTitle: "Quy tắc chia sẻ và phân phối",
             steps: [
               "Share: Dashboard → Share icon → add users/groups → choose permissions.",
               "Embed: Dashboard → Share icon → Embed code (yêu cầu SDK integration và authentication).",
@@ -855,7 +858,9 @@ module.exports = [
             number: "14.2.2",
             id: "ai-suggestions-insights",
             title: "Sử dụng AI suggestions và insights",
-            body: "Sau khi AI đề xuất analysis canvas, bạn có thể: (1) Accept suggestions — thêm visual/filter vào canvas. (2) Refine goal — adjust mô tả để AI đề xuất alternatives. (3) Inspect data — drill-down, add filters, change aggregations. (4) Iterate — ask follow-up questions, explore related dimensions. AI insights không thay thế business judgment — luôn verify numbers, definitions và assumptions.",
+            body: "Sau khi AI đề xuất analysis canvas, bạn có thể: (1) Accept suggestions — thêm visual/filter vào canvas. (2) Refine goal — adjust mô tả để AI đề xuất alternatives. (3) Inspect data — drill-down, add filters, change aggregations. (4) Iterate — ask follow-up questions, explore related dimensions.",
+            note: "AI insights không thay thế business judgment — luôn verify numbers, definitions và assumptions.",
+            stepsTitle: "Các bước kiểm tra và tinh chỉnh",
             steps: [
               "Review AI-suggested visuals: chart type, dimensions, measures, filters.",
               "Kiểm tra aggregation logic: sum/avg/count, grain, join keys và control totals.",
@@ -876,7 +881,8 @@ module.exports = [
             number: "14.3.1",
             id: "research-access-methods",
             title: "Truy cập và use case",
-            body: "Quick Research thường có entry point trong sidebar, More menu hoặc Spaces context menu. Use cases: (1) Market research từ nguồn công khai — competitor analysis, trend reports, policy summaries. (2) Internal research từ Spaces/dashboards — tổng hợp multi-source reports, cross-team insights. (3) Ad-hoc research từ uploads — analyze documents user upload. SME xác nhận Research có được bật, nguồn nào allowed (web/Spaces/uploads/connectors) và retention. Hướng dẫn này ước tính 7–10 phút hoàn thành một research cycle; thời gian thực tế có thể khác tùy scope và source count."
+            body: "Quick Research thường có entry point trong sidebar, More menu hoặc Spaces context menu. Use cases: (1) Market research từ nguồn công khai — competitor analysis, trend reports, policy summaries. (2) Internal research từ Spaces/dashboards — tổng hợp multi-source reports, cross-team insights. (3) Ad-hoc research từ uploads — analyze documents user upload.",
+            note: "SME cần xác nhận Research có được bật, các nguồn được phép sử dụng (web/Spaces/uploads/connectors) và chính sách retention. Một research cycle được ước tính khoảng 7–10 phút; thời gian thực tế có thể khác tùy phạm vi và số lượng nguồn."
           }
         ]
       },
@@ -891,6 +897,7 @@ module.exports = [
             id: "chon-nguon",
             title: "Chọn nguồn: Web, Spaces, Uploads, Dashboards",
             body: "Research có thể dùng một hoặc nhiều nguồn (nếu cross-boundary được duyệt): (1) **Web search** — public web, domain filtering, date range. Yêu cầu approval riêng vì outbound traffic và crawler footprint. (2) **Spaces** — knowledge base, files, topics đã lập chỉ mục. ACL áp dụng — Research chỉ truy cập được nguồn user có quyền. (3) **Uploads** — user upload files ad-hoc. Files vẫn cần data classification và không được chứa sensitive data chưa duyệt. (4) **Dashboards** — Research có thể query dashboards để tổng hợp numbers/trends; tuân theo RLS/CLS.",
+            stepsTitle: "Quy tắc khi chọn nguồn",
             steps: [
               "Xác nhận nguồn nào được phép: SME/ATTT confirm web/Spaces/uploads/connectors enabled.",
               "Chọn nguồn tối thiểu cần thiết — không chọn all Spaces/dashboards vì tiện.",
@@ -904,6 +911,7 @@ module.exports = [
             id: "dinh-nghia-goal-context",
             title: "Định nghĩa goal và context",
             body: "Research goal phải specific: câu hỏi, phạm vi địa lý/thời gian, tiêu chí và định dạng output. Context giúp AI hiểu audience, use case và constraints. Ví dụ goal: \"Summarize Q2 2026 fintech regulatory changes in APAC, focusing on crypto and payments. Output: 2-page executive summary with citations.\" Context: \"For risk team quarterly review; prioritize authoritative sources (regulators, official announcements).\"",
+            stepsTitle: "Cách thiết lập goal và context",
             steps: [
               "Viết goal: câu hỏi cụ thể, khoảng thời gian, địa lý, tiêu chí và định dạng.",
               "Thêm context: audience, use case, authoritative source preferences.",
@@ -923,7 +931,9 @@ module.exports = [
             number: "14.5.1",
             id: "approve-plan",
             title: "Review và approve plan",
-            body: "AI plan nêu: (1) Nguồn nào sẽ được query. (2) Steps/subtasks để answer goal. (3) Expected format và timeline. Review plan, sửa phạm vi và loại trừ nguồn không cần trước khi approve. Nếu plan quá rộng hoặc bao gồm nguồn chưa duyệt, reject và refine goal.",
+            body: "AI plan nêu: (1) Nguồn nào sẽ được query. (2) Steps/subtasks để answer goal. (3) Expected format và timeline.",
+            note: "Review plan, sửa phạm vi và loại trừ nguồn không cần trước khi approve. Nếu plan quá rộng hoặc bao gồm nguồn chưa duyệt, reject và refine goal.",
+            stepsTitle: "Các bước review và phê duyệt",
             steps: [
               "Đọc plan: nguồn, steps, expected timeline.",
               "Kiểm tra nguồn: có phải authoritative? Có nguồn nào out-of-scope?",
@@ -939,7 +949,9 @@ module.exports = [
             number: "14.5.2",
             id: "verify-citations",
             title: "Inspect citations và verify evidence",
-            body: "Research output có citations cho mỗi claim. Mở từng citation để: (1) Kiểm tra tác giả, ngày publish, source type (official/blog/forum). (2) Đọc đoạn trích — citation có thực sự hỗ trợ claim? (3) Kiểm tra context — đoạn trích có bị cắt/diễn giải sai? (4) Cross-check — đối chiếu kết luận quan trọng với tối thiểu hai nguồn độc lập. Citation không bảo đảm claim đúng — luôn verify nguồn gốc.",
+            body: "Research output có citations cho mỗi claim. Mở từng citation để: (1) Kiểm tra tác giả, ngày publish, source type (official/blog/forum). (2) Đọc đoạn trích — citation có thực sự hỗ trợ claim? (3) Kiểm tra context — đoạn trích có bị cắt/diễn giải sai? (4) Cross-check — đối chiếu kết luận quan trọng với tối thiểu hai nguồn độc lập.",
+            note: "Citation không bảo đảm claim đúng — luôn verify nguồn gốc.",
+            stepsTitle: "Các bước kiểm chứng",
             steps: [
               "Mở từng citation link; ghi lại source type và date.",
               "Đọc full paragraph/section — không chỉ đọc highlighted snippet.",
@@ -956,6 +968,7 @@ module.exports = [
             id: "edit-export-research",
             title: "Edit và export Research",
             body: "Sau verification, edit output: bổ sung disclaimers, sửa diễn giải sai, thêm limitations. Export vào kho NAB được phép, gắn data classification label và cấp quyền đúng audience. Không gửi nguyên văn AI output cho stakeholders — luôn có reviewer kiểm chứng và chịu trách nhiệm nội dung.",
+            stepsTitle: "Quy tắc chỉnh sửa và xuất bản",
             steps: [
               "Edit output: thêm limitations (\"data as of <date>\"), disclaimers, source notes.",
               "Remove claims không verify được hoặc từ nguồn yếu.",

@@ -298,15 +298,21 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="flows-truy-cap-va-quyen">
       <h3>Truy cập và quyền</h3>
       <p>Quyền tạo, chạy và chia sẻ Flow phụ thuộc subscription, custom permissions và xác nhận của Admin NAB. Least privilege: chỉ cấp quyền đọc trừ khi use case yêu cầu write và đã có phê duyệt riêng. Connector bên thứ ba cần inventory về scope, credential và giới hạn rate.</p>
 
 
 
+
+
     </section><section class="guide-subsection" id="flows-canh-bao-pham-vi">
       <h3>Cảnh báo phạm vi</h3>
       <p>Flow do AI sinh chỉ là bản nháp — nó không kiểm chứng dữ kiện, nguồn hoặc downstream effect. Validation, testing và approval là nghĩa vụ của owner. Không bật schedule write hoặc chia sẻ rộng khi chưa qua kiểm soát.</p>
+
+
 
 
 
@@ -326,15 +332,21 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="cau-hinh-input-output">
       <h3>Cấu hình input và output</h3>
       <p>Đặt tham số input (user prompt, date range, ID filter), chọn nguồn (dataset, dashboard, Space, connector) và định dạng output (text, table, chart). Runtime cần handle missing/invalid input; không giả định dữ liệu luôn có sẵn.</p>
 
 
 
+
+
     </section><section class="guide-subsection" id="them-logic-actions">
       <h3>Thêm logic và actions</h3>
       <p>Dùng AI response, data insights, condition, loop và action ghi khi cần. Mọi write phải có validation trước, dùng test target, và bật human confirmation trừ khi có approval gate riêng. Flow read-only không cần confirmation; Flow có action hoặc schedule bắt buộc review.</p>
+
+
 
 
 
@@ -349,15 +361,21 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="conversational-execution">
       <h3>Conversational execution</h3>
       <p>User tương tác qua chat: nhập prompt, nhận câu hỏi làm rõ, điều chỉnh yêu cầu và refine output trong một luồng liên tục. Phù hợp exploratory work và khi spec ban đầu không rõ ràng. Mọi action write vẫn cần confirmation/approval.</p>
 
 
 
+
+
     </section><section class="guide-subsection" id="chay-flow-tu-chat">
       <h3>Chạy Flow từ sidebar chat</h3>
       <p>Gõ lệnh hoặc mention Flow name trong chat của Space; hệ thống detect intent, map tham số và chạy Flow tương ứng. Cần thiết lập trigger và input default; không giả định AI luôn map đúng entity.</p>
+
+
 
 
 
@@ -372,15 +390,21 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="automate-truy-cap-subscription">
       <h3>Truy cập và subscription</h3>
       <p>Tùy vào gói Quick Pro/Enterprise và NAB custom permissions. Feature, Region, connector, notification channel và approval workflow phải được Admin/SME xác nhận trước khi deploy. Production automation không được tự đăng ký connector hoặc tự phân quyền.</p>
 
 
 
+
+
     </section><section class="guide-subsection" id="automate-kiem-soat">
       <h3>Kiểm soát bắt buộc</h3>
       <p>Owner rõ ràng (process, system, data owner), risk rating, test data, UAT, version, audit log, monitoring và rollback runbook. Không tách credential test/prod chung, không nhúng secret trong prompt hoặc documentation artifact.</p>
+
+
 
 
 
@@ -395,9 +419,13 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="actions-connector">
       <h3>Actions và connector</h3>
       <p>Lập inventory connector trước: READ/WRITE capability, credential scope, resource giới hạn, rate limit và owner. Write action phải có validation, use test target, log đầy đủ và compensation/rollback nếu lỗi. Không gọi production write trong test phase.</p>
+
+
 
 
 
@@ -407,9 +435,13 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="notifications-alerting">
       <h3>Notifications và alerting</h3>
       <p>Thiết lập thông báo lỗi, thành công, HITL pending, timeout và credential expiry qua email/Slack/webhook. Bao gồm correlation ID, case link, run timestamp và đủ context để responder action ngay. Không spam; dùng digest hoặc severity threshold.</p>
+
+
 
 
 
@@ -424,9 +456,13 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="uat-approval">
       <h3>UAT và approval</h3>
       <p>User acceptance test bởi process owner và representative end-user. Xác nhận output đúng, notification kịp thời, HITL assignment works và rollback có thể thực thi. Approval bởi risk/ATTT nếu automation ghi vào sensitive/production system.</p>
+
+
 
 
 
@@ -436,15 +472,21 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="monitor-operational-control">
       <h3>Monitor và operational control</h3>
       <p>Theo dõi case/task queue, run success/failure rate, duration, credential status và connector health. Khi lỗi: dừng trigger ngay, cô lập side effect (ví dụ: đánh dấu case/task đã xử lý để tránh re-run), investigate root cause và rollback theo runbook. Không tự retry vô hạn hoặc tự restart without fix.</p>
 
 
 
+
+
     </section><section class="guide-subsection" id="rollback-recovery">
       <h3>Rollback và recovery</h3>
       <p>Runbook chứa: cách dừng automation, revert config, clean up partial writes, restore previous version và thông báo impacted users. Test runbook trong UAT; không để đến incident mới viết lần đầu.</p>
+
+
 
 
 

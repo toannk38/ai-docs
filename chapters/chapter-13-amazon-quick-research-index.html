@@ -301,7 +301,9 @@
       <h3>Kết nối data source</h3>
 
 
+
       <ol class="steps"><li>Từ sidebar, chọn Data → New dataset.</li><li>Chọn data source type (Athena, Redshift, RDS, S3, Upload file).</li><li>Cấu hình connection: tên, credentials (IAM role/user auth), region/endpoint.</li><li>Test connection và chọn table/query hoặc upload file.</li><li>Chọn SPICE hoặc Direct Query (xem 13.3).</li></ol>
+
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.1: Kết nối data source và chọn SPICE/Direct Query">
       <img src="../quick-docs/Images/HDSD/3-1.png" alt="Màn hình New dataset trong Amazon Quick với danh sách data source types: Athena, Redshift, S3, Upload file và các connector" loading="lazy" decoding="async">
@@ -312,7 +314,9 @@
       <h3>Chuẩn bị Dataset — join, calculated fields, filters</h3>
       <p>Sau khi kết nối, Dataset editor cho phép join tables, add calculated fields, change data types, apply filters và rename columns.</p>
 
+      <h4 class="guide-steps-title">Các bước chuẩn bị Dataset</h4>
       <ol class="steps"><li>Join thêm tables nếu cần — chọn join type (inner, left, right, full) và join keys.</li><li>Add calculated fields: functions, aggregations, date math, string manipulation.</li><li>Change data types: date/datetime, number/decimal, string, boolean.</li><li>Apply row-level filters để giảm data volume trước khi publish.</li><li>Save dataset; có thể schedule refresh nếu dùng SPICE.</li></ol>
+
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.2: Dataset editor — join, calculated fields và data types">
       <img src="../quick-docs/Images/HDSD/3-2.png" alt="Dataset editor với các columns, calculated fields, join relationships và data type settings" loading="lazy" decoding="async">
@@ -330,15 +334,21 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="khi-nao-dung-direct-query">
       <h3>Khi nào dùng Direct Query</h3>
       <p>Data thời gian thực (real-time), không muốn cache, data volume vượt SPICE capacity, hoặc data source đã optimized. Lưu ý latency cao hơn SPICE.</p>
 
 
 
+
+
     </section><section class="guide-subsection" id="refresh-schedule">
       <h3>Refresh schedule và incremental refresh</h3>
       <p>SPICE datasets cần refresh để cập nhật data. Full refresh tải lại toàn bộ; incremental refresh chỉ tải dữ liệu mới (cần cột timestamp/date). Schedule refresh qua Dataset settings — chọn frequency (hourly, daily, weekly) và timezone.</p>
+
+
 
 
 
@@ -351,7 +361,9 @@
       <h3>Tạo Analysis với AutoGraph</h3>
 
 
+
       <ol class="steps"><li>Từ sidebar, chọn Analyses → New analysis.</li><li>Chọn Dataset đã chuẩn bị.</li><li>AutoGraph tự động gợi ý visual type dựa trên fields được chọn.</li><li>Drag fields vào Dimensions/Measures/Filters; chọn aggregation (sum, avg, count, min, max).</li><li>Thêm filters (dataset-level, sheet-level, visual-level) để control data hiển thị.</li></ol>
+
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.3: Tạo Analysis với AutoGraph và filters">
       <img src="../quick-docs/Images/HDSD/4-1.png" alt="Analysis editor với AutoGraph gợi ý visual types, field wells, và filter panel" loading="lazy" decoding="async">
@@ -362,7 +374,9 @@
       <h3>Visuals, calculated fields và sheets</h3>
       <p>Analysis có thể chứa nhiều visuals (charts, tables, KPIs, maps) và nhiều sheets. Calculated fields trong Analysis cho phép logic phức tạp: level-aware aggregations, window functions, conditional logic.</p>
 
+      <h4 class="guide-steps-title">Các bước xây dựng Analysis</h4>
       <ol class="steps"><li>Add visual: chọn visual type từ toolbar hoặc để AutoGraph chọn.</li><li>Add calculated field: Analysis-level calculated fields áp dụng cho mọi visual trong Analysis.</li><li>Add sheet: tổ chức visuals thành tabs — mỗi sheet có filters riêng.</li><li>Format visual: titles, tooltips, colors, labels, conditional formatting.</li><li>Add parameters: interactive controls (dropdown, slider, date picker) để user thay đổi filters/calculations.</li></ol>
+
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.4: Analysis với visuals, sheets và parameters">
       <img src="../quick-docs/Images/HDSD/4-2.png" alt="Analysis với nhiều visuals, sheets tabs và parameter controls" loading="lazy" decoding="async">
@@ -378,7 +392,9 @@
       <h3>Share Analysis với colleagues</h3>
 
 
+
       <ol class="steps"><li>Mở Analysis → Share icon (góc trên bên phải).</li><li>Nhập email/username của colleagues.</li><li>Chọn permission: Co-owner (có thể edit) hoặc Viewer (chỉ xem).</li><li>Send invitation; colleagues nhận email notification.</li><li>Owner có thể revoke access bất kỳ lúc nào.</li></ol>
+
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.5: Chia sẻ Analysis với colleagues">
       <img src="../quick-docs/Images/HDSD/4-3.png" alt="Share Analysis dialog với user list, permission dropdown (Owner/Co-owner/Viewer) và nút Send invitation" loading="lazy" decoding="async">
@@ -394,7 +410,9 @@
       <h3>Publish Dashboard</h3>
 
 
+
       <ol class="steps"><li>Mở Analysis → Publish dashboard button.</li><li>Nhập tên Dashboard và description.</li><li>Chọn sheets để publish (có thể publish một subset của Analysis).</li><li>Chọn Share permissions: Owner chọn users/groups được xem Dashboard.</li><li>Publish; Dashboard URL được tạo ra.</li></ol>
+
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.6: Xuất bản Dashboard từ Analysis">
       <img src="../quick-docs/Images/HDSD/5-1.png" alt="Publish dashboard dialog với tên Dashboard, description, sheet selection và share permissions" loading="lazy" decoding="async">
@@ -405,7 +423,9 @@
       <h3>Share, embed và scheduled email</h3>
       <p>Dashboard có thể share với users/groups (viewer permissions), embed vào web app (iframe/SDK), hoặc schedule email delivery (PDF/CSV attachments). Không share public — chỉ share nội bộ NAB với users có quyền.</p>
 
+      <h4 class="guide-steps-title">Quy tắc chia sẻ và phân phối</h4>
       <ol class="steps"><li>Share: Dashboard → Share icon → add users/groups → choose permissions.</li><li>Embed: Dashboard → Share icon → Embed code (yêu cầu SDK integration và authentication).</li><li>Scheduled email: Dashboard → Schedule email → chọn recipients, frequency (daily/weekly/monthly), format (PDF/CSV).</li><li>Viewer controls: Dashboard viewers có thể filter, drill-down, export (nếu export được bật).</li></ol>
+
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.7: Chia sẻ Dashboard — users/groups, embed và scheduled email">
       <img src="../quick-docs/Images/HDSD/5-2.png" alt="Dashboard với share options: add users/groups, embed code, và scheduled email settings" loading="lazy" decoding="async">
@@ -423,9 +443,13 @@
 
 
 
+
+
     </section><section class="guide-subsection" id="schedule-refresh">
       <h3>Schedule refresh cho SPICE datasets</h3>
       <p>Dataset settings → Refresh schedule → add schedule (hourly, daily, weekly, monthly). Chọn timezone và time window. Full refresh tải lại toàn bộ data; incremental refresh chỉ tải data mới (cần cột timestamp). Monitor refresh history để phát hiện failures.</p>
+
+
 
 
 

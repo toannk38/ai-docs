@@ -225,7 +225,7 @@ function renderDetailItem(value) {
   const dashLabel = value.match(/^([^.!?]{2,70})\s+—\s+(.+)$/s);
   const match = markdownLabel || dashLabel;
   if (!match) return esc(value);
-  return `<strong>${esc(match[1])}</strong>${match[2] ? ` <span>${esc(match[2])}</span>` : ""}`;
+  return `<strong>${esc(match[1])}:</strong>${match[2] ? ` <span>${esc(match[2])}</span>` : ""}`;
 }
 
 function renderGuideBody(body) {
@@ -244,7 +244,9 @@ function renderGuideSections(items, rootPrefix = "./") {
       <h3>${esc(item.title || item.heading)}</h3>
       ${renderGuideBody(item.body)}
       ${item.items?.length ? `<ul class="feature-list">${item.items.map((entry) => `<li><strong>${esc(entry.label)}:</strong> <span>${esc(entry.text)}</span></li>`).join("")}</ul>` : ""}
+      ${item.steps && (item.body || item.items) ? `<h4 class="guide-steps-title">${esc(item.stepsTitle || "Hướng dẫn thực hiện")}</h4>` : ""}
       ${item.steps ? `<ol class="steps">${item.steps.map((step) => `<li>${esc(step)}</li>`).join("")}</ol>` : ""}
+      ${item.note ? `<p class="detail-note">${esc(item.note)}</p>` : ""}
       ${item.figures?.length ? `<div class="doc-figure-grid">${item.figures.map((figure) => renderFigure(figure, rootPrefix)).join("")}</div>` : ""}
     </section>`).join("")}
     ${section.figures?.length ? `<div class="doc-figure-grid">${section.figures.map((figure) => renderFigure(figure, rootPrefix)).join("")}</div>` : ""}
