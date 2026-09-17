@@ -1,31 +1,31 @@
-# Thiet ke cap nhat Cam nang ung dung AI va cong nghe tai NAB
+# Thiết kế cập nhật Cẩm nang ứng dụng AI và công nghệ tại NAB
 
-## 1. Muc tieu
+## 1. Mục tiêu
 
-Cap nhat website tai lieu tinh hien tai thanh cam nang thuc hanh ngan gon, truc quan cho nguoi dung noi bo NAB. Tai lieu huong dan cach chon cong cu, bao ve du lieu, kiem chung ket qua va phoi hop voi Khoi CNTT de ung dung cong nghe vao cong viec.
+Cập nhật website tài liệu tĩnh hiện tại thành cẩm nang thực hành ngắn gọn, trực quan cho người dùng nội bộ NAB. Tài liệu hướng dẫn cách chọn công cụ, bảo vệ dữ liệu, kiểm chứng kết quả và phối hợp với Khối CNTT để ứng dụng công nghệ vào công việc.
 
-Microsoft 365 va Amazon Quick la hai nhom trong tam vi dang duoc su dung tai NAB. Cac dich vu AI cong cong chi duoc gioi thieu de tham khao theo nhu cau; viec xuat hien trong cam nang khong dong nghia voi viec duoc NAB phe duyet su dung.
+Microsoft 365 và Amazon Quick là hai nhóm trọng tâm vì đang được sử dụng tại NAB. Các dịch vụ AI công cộng chỉ được giới thiệu để tham khảo theo nhu cầu; việc xuất hiện trong cẩm nang không đồng nghĩa với việc được NAB phê duyệt sử dụng.
 
-## 2. Nguyen tac kien truc
+## 2. Nguyên tắc kiến trúc
 
-- Giu website HTML, CSS va JavaScript thuan, hoat dong khi mo truc tiep bang `file://`.
-- Giu `tools/build-site.js` lam nguon sinh `index.html` va 23 trang trong `chapters/`.
-- Khong sua thu cong tung trang HTML vi se gay sai lech voi nguon noi dung.
-- Giu bo cuc desktop ba cot, sidebar, tim kiem, FAQ, lightbox, previous/next va responsive hien tai.
-- Bo sung cac khoi noi dung co cau truc nhu bang so sanh, bang du lieu, nhan trang thai va callout canh bao.
-- Khong them dependency hoac tai nguyen tu CDN.
+- Giữ website HTML, CSS và JavaScript thuần, hoạt động khi mở trực tiếp bằng `file://`.
+- Giữ `tools/build-site.js` làm nguồn sinh `index.html` và 23 trang trong `chapters/`.
+- Không sửa thủ công từng trang HTML vì sẽ gây sai lệch với nguồn nội dung.
+- Giữ bố cục desktop ba cột, sidebar, tìm kiếm, FAQ, lightbox, previous/next và responsive hiện tại.
+- Bổ sung các khối nội dung có cấu trúc như bảng so sánh, bảng dữ liệu, nhãn trạng thái và callout cảnh báo.
+- Không thêm dependency hoặc tài nguyên từ CDN.
 
-## 3. Cau truc 23 chuong
+## 3. Cấu trúc 23 chương
 
-### AI trong cong viec
+### AI trong công việc
 
-1. Tong quan
-2. Nguyen tac su dung AI an toan
-3. Ky thuat viet Prompt
+1. Tổng quan
+2. Nguyên tắc sử dụng AI an toàn
+3. Kỹ thuật viết Prompt
 
-### Microsoft 365 - TRONG TAM
+### Microsoft 365 - TRỌNG TÂM
 
-4. Microsoft 365 tong quan
+4. Microsoft 365 tổng quan
 5. Copilot
 6. Teams
 7. Outlook
@@ -33,136 +33,135 @@ Microsoft 365 va Amazon Quick la hai nhom trong tam vi dang duoc su dung tai NAB
 9. Excel
 10. PowerPoint
 
-### Amazon Quick - TRONG TAM
+### Amazon Quick - TRỌNG TÂM
 
-11. Tong quan va giao dien Amazon Quick
-12. Spaces va Chat Agents
-13. Quick Sight - Du lieu, Analyses va Dashboards
-14. Scenarios, Quick Research va Index
-15. Quick Flows, Automate va Apps
+11. Tổng quan và giao diện Amazon Quick
+12. Spaces và Chat Agents
+13. Quick Sight - Dữ liệu, Analyses và Dashboards
+14. Scenarios, Quick Research và Index
+15. Quick Flows, Automate và Apps
 
-### AI pho bien - THAM KHAO
+### AI phổ biến - THAM KHẢO
 
-16. Chon AI theo nhu cau
-17. AI hoi thoai va tro ly da nang
-18. NotebookLM - Lam viec voi tai lieu
-19. AI thiet ke va trinh bay
-20. AI tao hinh anh va video
-21. AI Agent va tu dong hoa
+16. Chọn AI theo nhu cầu
+17. AI hội thoại và trợ lý đa năng
+18. NotebookLM - Làm việc với tài liệu
+19. AI thiết kế và trình bày
+20. AI tạo hình ảnh và video
+21. AI Agent và tự động hóa
 
-### Phu luc
+### Phụ lục
 
-22. Du lieu duoc phep va khong duoc phep
-23. Giai thich thuat ngu
+22. Dữ liệu được phép và không được phép
+23. Giải thích thuật ngữ
 
-## 4. Xu ly noi dung trong tam
+## 4. Xử lý nội dung trọng tâm
 
 ### Microsoft 365
 
-Giu gan nhu nguyen ven noi dung hien co trong cac chuong 04-10, bao gom muc tieu, dieu kien, use case, walkthrough, rui ro, FAQ va nguon. Chi rut gon cau chu, doi nhan menu va thong nhat thuat ngu neu can; khong loai bo noi dung nghiep vu con gia tri.
+Giữ gần như nguyên vẹn nội dung hiện có trong các chương 04-10, bao gồm mục tiêu, điều kiện, use case, walkthrough, rủi ro, FAQ và nguồn. Chỉ rút gọn câu chữ, đổi nhãn menu và thống nhất thuật ngữ nếu cần; không loại bỏ nội dung nghiệp vụ còn giá trị.
 
 ### Amazon Quick
 
-Amazon Quick tiep tuc co nam chuong va `Spaces va Chat Agents` van la mot chuong lon doc lap.
+Amazon Quick tiếp tục có năm chương và `Spaces và Chat Agents` vẫn là một chương lớn độc lập.
 
-- Chuong 11 giu huong dan dang nhap, giao dien Home, Private Mode, sidebar, chat controls, output shortcuts va dieu kien truy cap an toan.
-- Chuong 12 giu day du noi dung tao Space, quan ly files, datasets, dashboards, topics, members, tao Custom Agent, reference documents, action connectors va least-privilege sharing.
-- Chuong 13 giu noi dung Data Sources, Datasets, SPICE, Direct Query, Analyses, Dashboards, refresh, chia se va RLS/CLS. Cum `Quick Sight` duoc them vao ten chuong de nguoi dung nhan biet nhanh nhom nang luc BI.
-- Chuong 14 giu Scenarios va Quick Research, dong thoi bo sung Quick Index/Knowledge Base, connector, dong bo nguon, ACL, kiem thu quyen va xu ly nguon loi thoi. Scenarios khong bi doi ten thanh Index; day la cac nang luc rieng trong cung nhom phan tich va nghien cuu.
-- Chuong 15 giu nguyen chieu sau cua Quick Flows va Quick Automate. Quick Apps chi la mot section tham khao o cuoi chuong, tap trung vao prototype, quyen doc/ghi, UAT va phat hanh gioi han.
+- Chương 11 giữ hướng dẫn đăng nhập, giao diện Home, Private Mode, sidebar, chat controls, output shortcuts và điều kiện truy cập an toàn.
+- Chương 12 giữ đầy đủ nội dung tạo Space, quản lý files, datasets, dashboards, topics, members, tạo Custom Agent, reference documents, action connectors và least-privilege sharing.
+- Chương 13 giữ nội dung Data Sources, Datasets, SPICE, Direct Query, Analyses, Dashboards, refresh, chia sẻ và RLS/CLS. Cụm `Quick Sight` được thêm vào tên chương để người dùng nhận biết nhanh nhóm năng lực BI.
+- Chương 14 giữ Scenarios và Quick Research, đồng thời bổ sung Quick Index/Knowledge Base, connector, đồng bộ nguồn, ACL, kiểm thử quyền và xử lý nguồn lỗi thời. Scenarios không bị đổi tên thành Index; đây là các năng lực riêng trong cùng nhóm phân tích và nghiên cứu.
+- Chương 15 giữ nguyên chiều sâu của Quick Flows và Quick Automate. Quick Apps chỉ là một section tham khảo ở cuối chương, tập trung vào prototype, quyền đọc/ghi, UAT và phát hành giới hạn.
 
-## 5. Noi dung AI tham khao
+## 5. Nội dung AI tham khảo
 
-### Chon cong cu theo nhu cau
+### Chọn công cụ theo nhu cầu
 
-Chuong 16 cung cap bang tra cuu bat dau tu cong viec can hoan thanh. Microsoft 365 va Amazon Quick luon duoc dat o cot uu tien tai NAB khi phu hop; dich vu AI cong cong nam o cot tham khao.
+Chương 16 cung cấp bảng tra cứu bắt đầu từ công việc cần hoàn thành. Microsoft 365 và Amazon Quick luôn được đặt ở cột ưu tiên tại NAB khi phù hợp; dịch vụ AI công cộng nằm ở cột tham khảo.
 
-### AI hoi thoai va tro ly da nang
+### AI hội thoại và trợ lý đa năng
 
-Chuong 17 gop ChatGPT, Claude, Gemini, Perplexity va Grok. Trang gom:
+Chương 17 gộp ChatGPT, Claude, Gemini, Perplexity và Grok. Trang gồm:
 
-- Giai thich ngan ve AI hoi thoai va tro ly da nang.
-- Bang so sanh theo the manh chinh va tinh huong phu hop.
-- Bang chon nhanh theo nhu cau.
-- Ghi chu ro day khong phai bang xep hang co dinh; nang luc thay doi theo thoi gian va can doi chieu nguon chinh thuc cung cong dong chuyen mon dang tin cay.
+- Giải thích ngắn về AI hội thoại và trợ lý đa năng.
+- Bảng so sánh theo thế mạnh chính và tình huống phù hợp.
+- Bảng chọn nhanh theo nhu cầu.
+- Ghi chú rõ đây không phải bảng xếp hạng cố định; năng lực thay đổi theo thời gian và cần đối chiếu nguồn chính thức cùng cộng đồng chuyên môn đáng tin cậy.
 
 ### NotebookLM
 
-Chuong 18 trinh bay NotebookLM nhu cong cu lam viec tren tap tai lieu nguoi dung cung cap. Trang neu cac tinh huong hoi dap, tom tat, tong hop, tao FAQ va ghi chu; dong thoi hien thi canh bao noi bat khong tai du lieu khach hang, tai lieu mat hoac du lieu noi bo nhay cam len dich vu AI cong cong khi chua duoc phe duyet.
+Chương 18 trình bày NotebookLM như công cụ làm việc trên tập tài liệu người dùng cung cấp. Trang nêu các tình huống hỏi đáp, tóm tắt, tổng hợp, tạo FAQ và ghi chú; đồng thời hiển thị cảnh báo nổi bật không tải dữ liệu khách hàng, tài liệu mật hoặc dữ liệu nội bộ nhạy cảm lên dịch vụ AI công cộng khi chưa được phê duyệt.
 
-### Thiet ke, hinh anh va video
+### Thiết kế, hình ảnh và video
 
-- Chuong 19 gioi thieu Canva AI, Gamma, Napkin AI va Microsoft Designer theo cac tinh huong slide, infographic, so do, banner va noi dung truc quan.
-- Chuong 20 gioi thieu cac nhom cong cu tao hinh anh va video, kem canh bao ve hinh anh khach hang, anh chup man hinh noi bo, deepfake va kiem tra dau ra truoc khi su dung chinh thuc.
+- Chương 19 giới thiệu Canva AI, Gamma, Napkin AI và Microsoft Designer theo các tình huống slide, infographic, sơ đồ, banner và nội dung trực quan.
+- Chương 20 giới thiệu các nhóm công cụ tạo hình ảnh và video, kèm cảnh báo về hình ảnh khách hàng, ảnh chụp màn hình nội bộ, deepfake và kiểm tra đầu ra trước khi sử dụng chính thức.
 
-### AI Agent va tu dong hoa
+### AI Agent và tự động hóa
 
-Chuong 21 giai thich su khac nhau giua chatbot va AI Agent, gioi thieu OpenClaw, n8n AI, Microsoft Copilot Studio, Dify va Flowise o muc tham khao ky thuat. Trang mang nhan `NANG CAO` va khong huong dan nguoi dung pho thong tu trien khai ket noi vao he thong hoac du lieu NAB.
+Chương 21 giải thích sự khác nhau giữa chatbot và AI Agent, giới thiệu OpenClaw, n8n AI, Microsoft Copilot Studio, Dify và Flowise ở mức tham khảo kỹ thuật. Trang mang nhãn `NÂNG CAO` và không hướng dẫn người dùng phổ thông tự triển khai kết nối vào hệ thống hoặc dữ liệu NAB.
 
-## 6. Tai su dung noi dung cu
+## 6. Tái sử dụng nội dung cũ
 
-- Noi dung tinh huong nghiep vu duoc dua vao Chuong 01 va bang chon cong cu tai Chuong 16.
-- Vai tro, ranh gioi trach nhiem va quy trinh ho tro cua Khoi CNTT duoc dua vao Chuong 01, trang chu va Chuong 21.
-- Noi dung quan tri rui ro duoc tai su dung trong Chuong 02 va Chuong 22.
-- Noi dung rieng ve ChatGPT, Claude, Gemini va Perplexity duoc rut gon va gop vao Chuong 17.
-- Noi dung Canva AI duoc chia giua Chuong 19 va Chuong 20 theo loai dau ra.
-- Noi dung Microsoft 365 va Amazon Quick con gia tri duoc giu lai; viec chuyen chuong khong lam mat walkthrough, kiem soat hoac FAQ quan trong.
+- Nội dung tình huống nghiệp vụ được đưa vào Chương 01 và bảng chọn công cụ tại Chương 16.
+- Vai trò, ranh giới trách nhiệm và quy trình hỗ trợ của Khối CNTT được đưa vào Chương 01, trang chủ và Chương 21.
+- Nội dung quản trị rủi ro được tái sử dụng trong Chương 02 và Chương 22.
+- Nội dung riêng về ChatGPT, Claude, Gemini và Perplexity được rút gọn và gộp vào Chương 17.
+- Nội dung Canva AI được chia giữa Chương 19 và Chương 20 theo loại đầu ra.
+- Nội dung Microsoft 365 và Amazon Quick còn giá trị được giữ lại; việc chuyển chương không làm mất walkthrough, kiểm soát hoặc FAQ quan trọng.
 
-## 7. An toan du lieu
+## 7. An toàn dữ liệu
 
-Chuong 02 va Chuong 22 dung cung mot bang phan loai gom ba muc:
+Chương 02 và Chương 22 dùng chung một bảng phân loại gồm ba mức:
 
-| Phan loai | Vi du | AI cong cong |
+| Phân loại | Ví dụ | AI công cộng |
 |---|---|---|
-| Duoc phep | Noi dung cong khai; van ban mau khong co du lieu that | Co the su dung trong cong cu da duoc NAB cho phep; van can kiem tra nguon va ban quyen |
-| Can than trong | Noi dung cong viec noi bo nhung khong co du lieu nhay cam | Thuc hien theo quy dinh noi bo va chi trong moi truong, tai khoan, tinh nang da duoc phe duyet |
-| Nghiem cam | Du lieu khach hang, giao dich, tai khoan, CCCD, mat khau, khoa API, du lieu mat, ma nguon nhay cam, cau hinh he thong | Khong duoc dua len dich vu AI cong cong khi chua duoc phe duyet |
+| Được phép | Nội dung công khai; văn bản mẫu không có dữ liệu thật | Có thể sử dụng trong công cụ đã được NAB cho phép; vẫn cần kiểm tra nguồn và bản quyền |
+| Cần thận trọng | Nội dung công việc nội bộ nhưng không có dữ liệu nhạy cảm | Thực hiện theo quy định nội bộ và chỉ trong môi trường, tài khoản, tính năng đã được phê duyệt |
+| Nghiêm cấm | Dữ liệu khách hàng, giao dịch, tài khoản, CCCD, mật khẩu, khóa API, dữ liệu mật, mã nguồn nhạy cảm, cấu hình hệ thống | Không được đưa lên dịch vụ AI công cộng khi chưa được phê duyệt |
 
-Canh bao bat buoc:
+Cảnh báo bắt buộc:
 
-> Khong nhap, sao chep hoac tai du lieu khach hang, du lieu giao dich, tai lieu mat, thong tin xac thuc hoac du lieu noi bo nhay cam len cac dich vu AI cong cong khi chua duoc phe duyet.
+> Không nhập, sao chép hoặc tải dữ liệu khách hàng, dữ liệu giao dịch, tài liệu mật, thông tin xác thực hoặc dữ liệu nội bộ nhạy cảm lên các dịch vụ AI công cộng khi chưa được phê duyệt.
 
-Tai lieu khong tu tao them chinh sach noi bo. Cac noi dung ve quyen, phan loai va phe duyet luon duoc trinh bay nhu huong dan va phai doi chieu quy dinh NAB dang co hieu luc.
+Tài liệu không tự tạo thêm chính sách nội bộ. Các nội dung về quyền, phân loại và phê duyệt luôn được trình bày như hướng dẫn và phải đối chiếu quy định NAB đang có hiệu lực.
 
-## 8. Giao dien va dieu huong
+## 8. Giao diện và điều hướng
 
-- Sidebar co nam nhom, tiep tuc cho phep thu gon va mo rong.
-- Tren trang chu, cac nhom co the mo de nguoi dung thay toan bo cau truc; tren trang chuong, nhom hien tai phai mo va muc hien tai duoc highlight ro.
-- Tim kiem sidebar tiep tuc loc tren du lieu da render san, khong gui du lieu ra ngoai.
-- Microsoft 365 va Amazon Quick hien nhan chu `TRONG TAM`.
-- Nhom AI cong cong hien nhan `THAM KHAO`.
-- Chuong AI Agent hien nhan `NANG CAO`.
-- Callout canh bao bao mat dung mau do va co do tuong phan cao hon callout thong tin.
-- Bang phai co wrapper cuon ngang o man hinh hep de khong lam hong responsive.
-- Giu mau sac, logo, typography, card, khoang cach va phong cach tong the hien tai.
+- Sidebar có năm nhóm, tiếp tục cho phép thu gọn và mở rộng.
+- Trên trang chủ, các nhóm có thể mở để người dùng thấy toàn bộ cấu trúc; trên trang chương, nhóm hiện tại phải mở và mục hiện tại được highlight rõ.
+- Tìm kiếm sidebar tiếp tục lọc trên dữ liệu đã render sẵn, không gửi dữ liệu ra ngoài.
+- Microsoft 365 và Amazon Quick hiển thị nhãn chữ `TRỌNG TÂM`.
+- Nhóm AI công cộng hiển thị nhãn `THAM KHẢO`.
+- Chương AI Agent hiển thị nhãn `NÂNG CAO`.
+- Callout cảnh báo bảo mật dùng màu đỏ và có độ tương phản cao hơn callout thông tin.
+- Bảng phải có wrapper cuộn ngang ở màn hình hẹp để không làm hỏng responsive.
+- Giữ màu sắc, logo, typography, card, khoảng cách và phong cách tổng thể hiện tại.
 
-## 9. Nguon du lieu va tep thay doi
+## 9. Nguồn dữ liệu và tệp thay đổi
 
-Nguon noi dung va renderer du kien thay doi:
+Nguồn nội dung và renderer dự kiến thay đổi:
 
 - `tools/build-site.js`
 - `tools/content-general.js`
 - `tools/content-quick.js`
 - `tools/content-reference.js`
-- `tools/content-glossary.js` (tao moi)
+- `tools/content-glossary.js` (tạo mới)
 - `assets/css/style.css`
-- `assets/js/site.js` chi thay doi neu can cho hanh vi accordion hoac highlight
+- `assets/js/site.js` chỉ thay đổi nếu cần cho hành vi accordion hoặc highlight
 - `qa/check-release.py`
 - `qa/source-register.md`
 
-`tools/content-ms365.js` chi duoc thay doi khi can thong nhat nhan hoac thuat ngu. `index.html` va `chapters/*.html` duoc sinh lai tu build script.
+`tools/content-ms365.js` chỉ được thay đổi khi cần thống nhất nhãn hoặc thuật ngữ. `index.html` và `chapters/*.html` được sinh lại từ build script.
 
-## 10. Kiem thu va tieu chi hoan tat
+## 10. Kiểm thử và tiêu chí hoàn tất
 
-- Build tao dung `index.html` va 23 tep chuong co numbering lien tuc.
-- Menu tren tat ca cac trang chua cung mot danh sach chuong, dung nhom va dung lien ket.
-- Breadcrumb, previous/next, anchor va muc luc trong trang khong bi hong.
-- Khong con tep chuong cu khong nam trong cau truc moi.
-- Khong co ID trung, section trung, H1 trung hoac heading nhay cap.
-- Tat ca anh co `alt`; bang khong tran ngang o viewport hep.
-- Chuong 12 van la chuong lon doc lap ve Spaces va Chat Agents.
-- Cac canh bao bat buoc xuat hien tai Chuong 02, 18, 20, 21 va 22.
-- Microsoft 365 va Amazon Quick co nhan `TRONG TAM`; AI cong cong co nhan `THAM KHAO`; AI Agent co nhan `NANG CAO`.
-- Chay thanh cong `node tools/build-site.js`, `node --check` cho JavaScript va `python3 qa/check-release.py`.
-- Kiem tra thu cong tren desktop, viewport hep, menu accordion, tim kiem, FAQ, lightbox va highlight muc hien tai.
-
+- Build tạo đúng `index.html` và 23 tệp chương có numbering liên tục.
+- Menu trên tất cả các trang chứa cùng một danh sách chương, đúng nhóm và đúng liên kết.
+- Breadcrumb, previous/next, anchor và mục lục trong trang không bị hỏng.
+- Không còn tệp chương cũ không nằm trong cấu trúc mới.
+- Không có ID trùng, section trùng, H1 trùng hoặc heading nhảy cấp.
+- Tất cả ảnh có `alt`; bảng không tràn ngang ở viewport hẹp.
+- Chương 12 vẫn là chương lớn độc lập về Spaces và Chat Agents.
+- Các cảnh báo bắt buộc xuất hiện tại Chương 02, 18, 20, 21 và 22.
+- Microsoft 365 và Amazon Quick có nhãn `TRỌNG TÂM`; AI công cộng có nhãn `THAM KHẢO`; AI Agent có nhãn `NÂNG CAO`.
+- Chạy thành công `node tools/build-site.js`, `node --check` cho JavaScript và `python3 qa/check-release.py`.
+- Kiểm tra thủ công trên desktop, viewport hẹp, menu accordion, tìm kiếm, FAQ, lightbox và highlight mục hiện tại.
