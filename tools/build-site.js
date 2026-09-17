@@ -89,32 +89,43 @@ function statusClass(kind) {
 
 function groupChapters() {
   return [
-    ["Nền tảng chung", chapters.filter((chapter) => chapter.id <= 3)],
-    ["Microsoft 365 — trọng tâm", chapters.filter((chapter) => chapter.id >= 4 && chapter.id <= 10)],
-    ["Amazon Quick — trọng tâm", chapters.filter((chapter) => chapter.id >= 11 && chapter.id <= 15)],
-    ["Công cụ tham khảo", chapters.filter((chapter) => chapter.id >= 16 && chapter.id <= 21)],
-    ["Ứng dụng và hỗ trợ", chapters.filter((chapter) => chapter.id >= 22)]
+    ["AI trong công việc", chapters.filter((chapter) => chapter.id <= 3)],
+    ["Microsoft 365 — TRỌNG TÂM", chapters.filter((chapter) => chapter.id >= 4 && chapter.id <= 10)],
+    ["Amazon Quick — TRỌNG TÂM", chapters.filter((chapter) => chapter.id >= 11 && chapter.id <= 15)],
+    ["AI phổ biến — THAM KHẢO", chapters.filter((chapter) => chapter.id >= 16 && chapter.id <= 21)],
+    ["Phụ lục", chapters.filter((chapter) => chapter.id >= 22)]
   ];
+}
+
+function navBadge(chapter) {
+  if (chapter.id >= 4 && chapter.id <= 15) return ["TRỌNG TÂM", "focus"];
+  if (chapter.id === 21) return ["NÂNG CAO", "advanced"];
+  if (chapter.id >= 16 && chapter.id <= 20) return ["THAM KHẢO", "reference"];
+  return null;
 }
 
 function renderNav(currentSlug, chapterPrefix = "./") {
   return groupChapters().map(([title, items], groupIndex) => {
     const groupId = `nav-group-${groupIndex + 1}`;
     const isCurrentGroup = items.some((chapter) => chapter.slug === currentSlug);
+    const expanded = currentSlug ? isCurrentGroup : true;
     return `
     <nav class="nav-group${isCurrentGroup ? " current-group" : ""}" aria-label="${esc(title)}">
-      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="${groupId}">
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="${expanded}" aria-controls="${groupId}">
         <span>${esc(title)}</span>
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <ol class="chapter-nav" id="${groupId}">
-        ${items.map((chapter) => `
+        ${items.map((chapter) => {
+          const badge = navBadge(chapter);
+          return `
           <li>
             <a href="${chapterPrefix}${esc(chapter.slug)}" data-nav-link data-search="${esc(`${chapterNo(chapter.id)} ${chapter.navTitle} ${chapter.title} ${chapter.group}`)}"${chapter.slug === currentSlug ? ' aria-current="page"' : ""}>
               <span class="nav-num">${chapterNo(chapter.id)}</span>
-              <span>${esc(chapter.navTitle)}${chapter.kind === "live" ? '<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span>' : ""}</span>
+              <span class="nav-label"><span>${esc(chapter.navTitle)}</span>${badge ? `<span class="nav-badge ${badge[1]}">${badge[0]}</span>` : ""}</span>
             </a>
-          </li>`).join("")}
+          </li>`;
+        }).join("")}
       </ol>
     </nav>`;
   }).join("");
@@ -193,6 +204,39 @@ function renderCards(items) {
       <h3>${esc(item.title)}</h3>
       <p>${esc(item.text)}</p>
     </article>`).join("")}</div>`;
+}
+
+function renderTable(block) {
+  const tableClass = block.className ? ` ${esc(block.className)}` : "";
+  const caption = block.caption ? `<caption>${esc(block.caption)}</caption>` : "";
+  return `<div class="table-wrap${block.wrapClassName ? ` ${esc(block.wrapClassName)}` : ""}">
+    <table class="content-table${tableClass}">
+      ${caption}
+      <thead><tr>${block.headers.map((header) => `<th scope="col">${esc(header)}</th>`).join("")}</tr></thead>
+      <tbody>${block.rows.map((row) => `<tr>${row.map((cell) => `<td>${esc(cell)}</td>`).join("")}</tr>`).join("")}</tbody>
+    </table>
+  </div>`;
+}
+
+function renderContentBlock(block) {
+  if (block.type === "table") return renderTable(block);
+  if (block.type === "callout") {
+    const items = block.items?.length ? renderList(block.items, "callout-list") : "";
+    return `<div class="callout ${esc(block.tone || "info")}">
+      <strong>${esc(block.title)}</strong>
+      ${block.text ? `<p>${esc(block.text)}</p>` : ""}
+      ${items}
+    </div>`;
+  }
+  throw new Error(`Unsupported content block: ${block.type}`);
+}
+
+function renderFeatureSections(sections = []) {
+  return sections.map((section) => `<section id="${esc(section.id)}" class="feature-section">
+    <h2>${esc(section.title)}</h2>
+    ${section.intro ? `<p>${esc(section.intro)}</p>` : ""}
+    ${(section.blocks || []).map(renderContentBlock).join("")}
+  </section>`).join("");
 }
 
 function renderWalkthroughs(items) {
@@ -279,16 +323,11 @@ function renderPager(index) {
 }
 
 function renderChapter(chapter, index) {
-  const statusNoticeClass = chapter.kind === "reference" ? "status-notice reference" : "status-notice";
-  const defaultTocItems = [
-    ["muc-tieu", "Mục tiêu"],
-    ["dieu-kien", "Điều kiện"],
-    ["use-case", "Use case"],
-    ["huong-dan", "Hướng dẫn"],
-    ["kiem-soat", "Kiểm soát"],
-    ["faq", "FAQ"],
-    ["nguon", "Nguồn"]
-  ];
+  const statusNoticeClass = chapter.publicDataOnly
+    ? "status-notice danger public-data-warning"
+    : chapter.kind === "reference"
+      ? "status-notice reference"
+      : "status-notice";
   const tocItems = chapter.guideSections?.length ? [
     ["muc-tieu", "Mục tiêu"],
     ["dieu-kien", "Điều kiện"],
@@ -298,7 +337,16 @@ function renderChapter(chapter, index) {
     ["kiem-soat", "Kiểm soát"],
     ["faq", "FAQ"],
     ["nguon", "Nguồn"]
-  ] : (chapter.toc || defaultTocItems);
+  ] : (chapter.toc || [
+    ["muc-tieu", "Mục tiêu"],
+    ["dieu-kien", "Điều kiện"],
+    ["use-case", "Use case"],
+    ...(chapter.featureSections || []).map((section) => [section.id, section.title]),
+    ["huong-dan", "Hướng dẫn"],
+    ["kiem-soat", "Kiểm soát"],
+    ["faq", "FAQ"],
+    ["nguon", "Nguồn"]
+  ]);
   return `<!doctype html>
 <html lang="vi">
 <head>
@@ -354,6 +402,8 @@ ${renderHeader(true, "../")}
           <h2>Use case và cách chọn phạm vi</h2>
           ${renderCards(chapter.useCases)}
         </section>
+
+        ${renderFeatureSections(chapter.featureSections)}
 
         ${chapter.guideSections ? renderGuideSections(chapter.guideSections, "../") : ""}
 
@@ -414,7 +464,7 @@ function renderHome() {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Cẩm nang nội bộ NAB về Microsoft 365, Amazon Quick và ứng dụng AI an toàn.">
-  <title>Hướng dẫn ứng dụng công nghệ và AI tại NAB</title>
+  <title>Cẩm nang ứng dụng AI và công nghệ trong công việc tại NAB</title>
   <link rel="icon" href="./logo/NAB-logo.png" type="image/png">
   <link rel="stylesheet" href="./assets/css/style.css">
   <script src="./assets/js/site.js" defer></script>
@@ -428,7 +478,7 @@ ${renderHeader(true)}
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
         <p class="eyebrow">Sáng kiến nội bộ · Khối Công nghệ thông tin</p>
-        <h1 id="hero-title">Ứng dụng công nghệ và AI an toàn, hiệu quả tại NAB</h1>
+        <h1 id="hero-title">Cẩm nang ứng dụng AI và công nghệ trong công việc tại NAB</h1>
         <p class="lead">Cẩm nang thực hành dành cho Đơn vị kinh doanh, tập trung chuyên sâu vào Microsoft 365 và Amazon Quick — hai nền tảng đang được sử dụng tại NAB.</p>
         <div class="meta-row">
           <span class="tag tag-reference">Bản dự thảo nội bộ — chưa phát hành</span>
@@ -438,7 +488,7 @@ ${renderHeader(true)}
         <div class="hero-actions">
           <a class="button" href="./chapters/chapter-01-tong-quan.html">Bắt đầu đọc</a>
           <a class="button secondary" href="#cong-cu-trong-tam">Đến công cụ trọng tâm</a>
-          <a class="button secondary" href="./chapters/chapter-23-ho-tro-va-faq.html">Yêu cầu hỗ trợ</a>
+          <a class="button secondary" href="#vai-tro-cntt">Vai trò Khối CNTT</a>
         </div>
       </div>
     </section>
@@ -475,7 +525,7 @@ ${renderHeader(true)}
         <article class="priority-card quick">
           <span class="priority-icon">AQ</span>
           <h3>Amazon Quick</h3>
-          <p>Quick Sight, Research, Index, Flows, Automate và Apps cho phân tích, nghiên cứu và tự động hóa có kiểm soát.</p>
+          <p>Tổng quan và giao diện, Spaces và Chat Agents, Dữ liệu/Analyses/Dashboards, Scenarios/Quick Research, Quick Flows &amp; Automate.</p>
           <p><a class="button" href="./chapters/chapter-11-amazon-quick-tong-quan.html">Mở hướng dẫn Amazon Quick</a></p>
         </article>
       </div>
@@ -490,18 +540,20 @@ ${renderHeader(true)}
       <div class="filter-bar"><label><span class="sr-only">Tìm chương</span><input type="search" data-tool-filter placeholder="Ví dụ: Excel, dashboard, dữ liệu, FAQ" aria-label="Tìm trong danh mục chương"></label></div>
       <div class="empty-state" data-empty-state role="status">Không tìm thấy chương phù hợp. Hãy thử từ khóa ngắn hơn.</div>
 
-      <h3>Nền tảng, use case và hỗ trợ</h3>
-      <div class="grid grid-3">${foundation.map((chapter) => renderHomeCard(chapter)).join("")}</div>
-      <h3>Microsoft 365 — trọng tâm</h3>
+      <h3>AI trong công việc</h3>
+      <div class="grid grid-3">${foundation.filter((chapter) => chapter.id <= 3).map((chapter) => renderHomeCard(chapter)).join("")}</div>
+      <h3>Microsoft 365 — TRỌNG TÂM</h3>
       <div class="grid grid-3">${ms.map((chapter) => renderHomeCard(chapter)).join("")}</div>
-      <h3>Amazon Quick — trọng tâm</h3>
+      <h3>Amazon Quick — TRỌNG TÂM</h3>
       <div class="grid grid-3">${quick.map((chapter) => renderHomeCard(chapter)).join("")}</div>
-      <h3>Công cụ tham khảo</h3>
-      <div class="callout warning"><strong>Lưu ý bắt buộc</strong><p>Việc một công cụ xuất hiện trong cẩm nang không đồng nghĩa với việc NAB đã phê duyệt sử dụng. Không dùng tài khoản cá nhân hoặc dữ liệu NAB khi chưa có phê duyệt rõ ràng.</p></div>
+      <h3>AI phổ biến — THAM KHẢO</h3>
+      <div class="callout danger public-data-warning"><strong>Lưu ý bắt buộc</strong><p>Chỉ sử dụng công cụ AI tham khảo với dữ liệu công khai. Không sử dụng dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc bất kỳ dữ liệu nội bộ nào.</p></div>
       <div class="grid grid-3">${reference.map((chapter) => renderHomeCard(chapter)).join("")}</div>
+      <h3>Phụ lục</h3>
+      <div class="grid grid-3">${foundation.filter((chapter) => chapter.id >= 22).map((chapter) => renderHomeCard(chapter)).join("")}</div>
     </section>
 
-    <section class="home-section" aria-labelledby="it-title">
+    <section class="home-section" id="vai-tro-cntt" aria-labelledby="it-title">
       <div class="grid grid-2">
         <div class="section-heading">
           <p class="eyebrow">Vai trò Khối CNTT</p>
@@ -511,7 +563,7 @@ ${renderHeader(true)}
         <div class="card">
           <h3>Chuẩn bị yêu cầu hỗ trợ</h3>
           <ul class="check-list"><li>Mục tiêu và kết quả mong muốn</li><li>Nhóm người dùng và data owner</li><li>Loại dữ liệu, nguồn và đích</li><li>Hành động đọc/ghi/chia sẻ/lên lịch</li><li>KPI thành công và người phê duyệt</li></ul>
-          <p><a class="button" href="./chapters/chapter-23-ho-tro-va-faq.html">Xem quy trình hỗ trợ</a></p>
+          <p><a class="button" href="./chapters/chapter-01-tong-quan.html">Xem hướng dẫn phối hợp</a></p>
         </div>
       </div>
     </section>
@@ -527,6 +579,12 @@ ${renderHeader(true)}
 
 assertContent();
 fs.mkdirSync(chaptersDir, { recursive: true });
+const expectedChapterFiles = new Set(chapters.map((chapter) => chapter.slug));
+for (const filename of fs.readdirSync(chaptersDir)) {
+  if (/^chapter-\d{2}-.*\.html$/.test(filename) && !expectedChapterFiles.has(filename)) {
+    fs.unlinkSync(path.join(chaptersDir, filename));
+  }
+}
 chapters.forEach((chapter, index) => {
   fs.writeFileSync(path.join(chaptersDir, chapter.slug), cleanOutput(renderChapter(chapter, index)), "utf8");
 });
