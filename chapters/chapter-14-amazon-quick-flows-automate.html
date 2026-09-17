@@ -293,13 +293,15 @@
     <h2>1. Scenarios — mục đích và access</h2>
     <p>Scenarios là AI-assisted analysis canvas cho phép khám phá insights từ data với AI suggestions. Thay vì tự build visuals từ đầu, bạn mô tả mục tiêu và Scenarios đề xuất analyses, insights và visualizations.</p>
     <section class="guide-subsection" id="scenarios-muc-dich">
-      <h3>1.1. Mục đích và use case</h3>
-      <p>Scenarios hỗ trợ: (1) Exploratory analysis — khám phá data mới, tìm patterns, outliers và trends. (2) What-if scenarios — thử các assumptions/parameters khác nhau. (3) AI-suggested insights — AI đề xuất dimensions, filters, aggregations based on your goal. (4) Collaborative analysis — share scenario canvas với colleagues, iterate trên cùng workspace.</p>
+      <h3>Mục đích và use case</h3>
+      <p>Scenarios hỗ trợ:</p><ul class="detail-list"><li><strong>Exploratory analysis</strong> <span>khám phá data mới, tìm patterns, outliers và trends.</span></li><li><strong>What-if scenarios</strong> <span>thử các assumptions/parameters khác nhau.</span></li><li><strong>AI-suggested insights</strong> <span>AI đề xuất dimensions, filters, aggregations based on your goal.</span></li><li><strong>Collaborative analysis</strong> <span>share scenario canvas với colleagues, iterate trên cùng workspace.</span></li></ul>
+
 
 
     </section><section class="guide-subsection" id="scenarios-access">
-      <h3>1.2. Truy cập Scenarios</h3>
-      <p>Scenarios thường nằm trong More menu hoặc My stuff section (tùy Quick version/configuration). SME xác nhận Scenarios có được bật trên tenant NAB và user nào có quyền. Access yêu cầu: (1) User có quyền truy cập datasets/Spaces làm input. (2) Admin đã bật Scenarios feature cho account. (3) Không bypass RLS/CLS — Scenarios vẫn tuân theo data permissions.</p>
+      <h3>Truy cập Scenarios</h3>
+      <p>Scenarios thường nằm trong More menu hoặc My stuff section (tùy Quick version/configuration). SME xác nhận Scenarios có được bật trên tenant NAB và user nào có quyền. Access yêu cầu:</p><ul class="detail-list"><li>User có quyền truy cập datasets/Spaces làm input.</li><li>Admin đã bật Scenarios feature cho account.</li><li><strong>Không bypass RLS/CLS</strong> <span>Scenarios vẫn tuân theo data permissions.</span></li></ul>
+
 
 
     </section>
@@ -308,7 +310,8 @@
     <h2>2. Tạo Scenario và AI-assisted analysis</h2>
     <p>Tạo Scenario mới, thêm data source (datasets/Spaces), mô tả mục tiêu analysis và để AI đề xuất visualizations và insights.</p>
     <section class="guide-subsection" id="tao-scenario-steps">
-      <h3>2.1. Các bước tạo Scenario</h3>
+      <h3>Các bước tạo Scenario</h3>
+
 
       <ol class="steps"><li>Mở More menu → My stuff → Scenarios (hoặc entry point tương đương theo version).</li><li>Nhấn Create Scenario hoặc New scenario.</li><li>Chọn data source: dataset đã có hoặc Space chứa data/dashboards.</li><li>Mô tả analysis goal: &quot;Find top revenue drivers&quot;, &quot;Identify churn risk segments&quot;, &quot;Compare Q1 vs Q2 performance&quot;.</li><li>AI đề xuất initial visuals, dimensions và filters; review và adjust.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
@@ -318,8 +321,9 @@
     <figcaption>Hình 14.1: Tạo Scenario với data source và analysis goal</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="ai-suggestions-insights">
-      <h3>2.2. Sử dụng AI suggestions và insights</h3>
-      <p>Sau khi AI đề xuất analysis canvas, bạn có thể: (1) Accept suggestions — thêm visual/filter vào canvas. (2) Refine goal — adjust mô tả để AI đề xuất alternatives. (3) Inspect data — drill-down, add filters, change aggregations. (4) Iterate — ask follow-up questions, explore related dimensions. AI insights không thay thế business judgment — luôn verify numbers, definitions và assumptions.</p>
+      <h3>Sử dụng AI suggestions và insights</h3>
+      <p>Sau khi AI đề xuất analysis canvas, bạn có thể:</p><ul class="detail-list"><li><strong>Accept suggestions</strong> <span>thêm visual/filter vào canvas.</span></li><li><strong>Refine goal</strong> <span>adjust mô tả để AI đề xuất alternatives.</span></li><li><strong>Inspect data</strong> <span>drill-down, add filters, change aggregations.</span></li><li><strong>Iterate</strong> <span>ask follow-up questions, explore related dimensions. AI insights không thay thế business judgment — luôn verify numbers, definitions và assumptions.</span></li></ul>
+
       <ol class="steps"><li>Review AI-suggested visuals: chart type, dimensions, measures, filters.</li><li>Kiểm tra aggregation logic: sum/avg/count, grain, join keys và control totals.</li><li>Add more data sources nếu cần cross-dataset analysis (tuân theo approval và ACL).</li><li>Refine canvas: remove không cần, add calculated fields, format labels và titles.</li><li>Save Scenario; có thể share với colleagues (Owner/Co-owner/Viewer permissions).</li></ol>
 
     </section>
@@ -328,8 +332,9 @@
     <h2>3. Quick Research — nghiên cứu có căn cứ</h2>
     <p>Quick Research tạo báo cáo tổng hợp từ nguồn được chỉ định: web search, Spaces, uploads, dashboards. Mục tiêu là tạo output có citation để truy vết từng claim về nguồn.</p>
     <section class="guide-subsection" id="research-access-methods">
-      <h3>3.1. Truy cập và use case</h3>
-      <p>Quick Research thường có entry point trong sidebar, More menu hoặc Spaces context menu. Use cases: (1) Market research từ nguồn công khai — competitor analysis, trend reports, policy summaries. (2) Internal research từ Spaces/dashboards — tổng hợp multi-source reports, cross-team insights. (3) Ad-hoc research từ uploads — analyze documents user upload. SME xác nhận Research có được bật, nguồn nào allowed (web/Spaces/uploads/connectors) và retention. Hướng dẫn này ước tính 7–10 phút hoàn thành một research cycle; thời gian thực tế có thể khác tùy scope và source count.</p>
+      <h3>Truy cập và use case</h3>
+      <p>Quick Research thường có entry point trong sidebar, More menu hoặc Spaces context menu. Use cases:</p><ul class="detail-list"><li><strong>Market research từ nguồn công khai</strong> <span>competitor analysis, trend reports, policy summaries.</span></li><li><strong>Internal research từ Spaces/dashboards</strong> <span>tổng hợp multi-source reports, cross-team insights.</span></li><li><strong>Ad-hoc research từ uploads</strong> <span>analyze documents user upload. SME xác nhận Research có được bật, nguồn nào allowed (web/Spaces/uploads/connectors) và retention. Hướng dẫn này ước tính 7–10 phút hoàn thành một research cycle; thời gian thực tế có thể khác tùy scope và source count.</span></li></ul>
+
 
 
     </section>
@@ -338,13 +343,15 @@
     <h2>4. Tạo Research — chọn nguồn và goal</h2>
     <p>Tạo Research mới, chọn nguồn (web/Spaces/uploads/dashboards), định nghĩa goal và context, review AI plan trước khi execute.</p>
     <section class="guide-subsection" id="chon-nguon">
-      <h3>4.1. Chọn nguồn: Web, Spaces, Uploads, Dashboards</h3>
-      <p>Research có thể dùng một hoặc nhiều nguồn (nếu cross-boundary được duyệt): (1) **Web search** — public web, domain filtering, date range. Yêu cầu approval riêng vì outbound traffic và crawler footprint. (2) **Spaces** — knowledge base, files, topics đã lập chỉ mục. ACL áp dụng — Research chỉ truy cập được nguồn user có quyền. (3) **Uploads** — user upload files ad-hoc. Files vẫn cần data classification và không được chứa sensitive data chưa duyệt. (4) **Dashboards** — Research có thể query dashboards để tổng hợp numbers/trends; tuân theo RLS/CLS.</p>
+      <h3>Chọn nguồn: Web, Spaces, Uploads, Dashboards</h3>
+      <p>Research có thể dùng một hoặc nhiều nguồn (nếu cross-boundary được duyệt):</p><ul class="detail-list"><li><strong>Web search</strong> <span>public web, domain filtering, date range. Yêu cầu approval riêng vì outbound traffic và crawler footprint.</span></li><li><strong>Spaces</strong> <span>knowledge base, files, topics đã lập chỉ mục. ACL áp dụng — Research chỉ truy cập được nguồn user có quyền.</span></li><li><strong>Uploads</strong> <span>user upload files ad-hoc. Files vẫn cần data classification và không được chứa sensitive data chưa duyệt.</span></li><li><strong>Dashboards</strong> <span>Research có thể query dashboards để tổng hợp numbers/trends; tuân theo RLS/CLS.</span></li></ul>
+
       <ol class="steps"><li>Xác nhận nguồn nào được phép: SME/ATTT confirm web/Spaces/uploads/connectors enabled.</li><li>Chọn nguồn tối thiểu cần thiết — không chọn all Spaces/dashboards vì tiện.</li><li>Nếu kết hợp web với nội bộ, xác nhận cross-boundary mixing đã được duyệt.</li><li>Ghi domain ưu tiên/tránh cho web search (nếu applicable).</li><li>Upload files vào NAB-approved storage trước khi dùng trong Research (không upload trực tiếp sensitive data).</li></ol>
 
     </section><section class="guide-subsection" id="dinh-nghia-goal-context">
-      <h3>4.2. Định nghĩa goal và context</h3>
+      <h3>Định nghĩa goal và context</h3>
       <p>Research goal phải specific: câu hỏi, phạm vi địa lý/thời gian, tiêu chí và định dạng output. Context giúp AI hiểu audience, use case và constraints. Ví dụ goal: &quot;Summarize Q2 2026 fintech regulatory changes in APAC, focusing on crypto and payments. Output: 2-page executive summary with citations.&quot; Context: &quot;For risk team quarterly review; prioritize authoritative sources (regulators, official announcements).&quot;</p>
+
       <ol class="steps"><li>Viết goal: câu hỏi cụ thể, khoảng thời gian, địa lý, tiêu chí và định dạng.</li><li>Thêm context: audience, use case, authoritative source preferences.</li><li>Không đưa dữ liệu nhạy cảm NAB vào search terms/goal.</li><li>Review goal/context với SME nếu scope rộng hoặc cross-boundary.</li></ol>
 
     </section>
@@ -353,8 +360,9 @@
     <h2>5. Review Research plan, approve và verify citations</h2>
     <p>Trước khi Research execute, AI đề xuất plan (nguồn, steps, expected output). Sau khi complete, verify từng citation và edit output trước export.</p>
     <section class="guide-subsection" id="approve-plan">
-      <h3>5.1. Review và approve plan</h3>
-      <p>AI plan nêu: (1) Nguồn nào sẽ được query. (2) Steps/subtasks để answer goal. (3) Expected format và timeline. Review plan, sửa phạm vi và loại trừ nguồn không cần trước khi approve. Nếu plan quá rộng hoặc bao gồm nguồn chưa duyệt, reject và refine goal.</p>
+      <h3>Review và approve plan</h3>
+      <p>AI plan nêu:</p><ul class="detail-list"><li>Nguồn nào sẽ được query.</li><li>Steps/subtasks để answer goal.</li><li>Expected format và timeline. Review plan, sửa phạm vi và loại trừ nguồn không cần trước khi approve. Nếu plan quá rộng hoặc bao gồm nguồn chưa duyệt, reject và refine goal.</li></ul>
+
       <ol class="steps"><li>Đọc plan: nguồn, steps, expected timeline.</li><li>Kiểm tra nguồn: có phải authoritative? Có nguồn nào out-of-scope?</li><li>Adjust scope: remove nguồn không cần, add constraints/filters.</li><li>Approve plan; Research bắt đầu processing.</li><li>Monitor progress: Research có thể mất vài phút tùy scope và source count.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 14.2: Review và approve Research plan">
@@ -363,8 +371,9 @@
     <figcaption>Hình 14.2: Review và approve Research plan</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="verify-citations">
-      <h3>5.2. Inspect citations và verify evidence</h3>
-      <p>Research output có citations cho mỗi claim. Mở từng citation để: (1) Kiểm tra tác giả, ngày publish, source type (official/blog/forum). (2) Đọc đoạn trích — citation có thực sự hỗ trợ claim? (3) Kiểm tra context — đoạn trích có bị cắt/diễn giải sai? (4) Cross-check — đối chiếu kết luận quan trọng với tối thiểu hai nguồn độc lập. Citation không bảo đảm claim đúng — luôn verify nguồn gốc.</p>
+      <h3>Inspect citations và verify evidence</h3>
+      <p>Research output có citations cho mỗi claim. Mở từng citation để:</p><ul class="detail-list"><li>Kiểm tra tác giả, ngày publish, source type (official/blog/forum).</li><li><strong>Đọc đoạn trích</strong> <span>citation có thực sự hỗ trợ claim?</span></li><li><strong>Kiểm tra context</strong> <span>đoạn trích có bị cắt/diễn giải sai?</span></li><li><strong>Cross-check</strong> <span>đối chiếu kết luận quan trọng với tối thiểu hai nguồn độc lập. Citation không bảo đảm claim đúng — luôn verify nguồn gốc.</span></li></ul>
+
       <ol class="steps"><li>Mở từng citation link; ghi lại source type và date.</li><li>Đọc full paragraph/section — không chỉ đọc highlighted snippet.</li><li>Kiểm tra authoritative source: regulator announcement &gt; news &gt; blog &gt; forum.</li><li>Đối chiếu cross-source: ít nhất hai nguồn độc lập cho claims quan trọng.</li><li>Ghi ngày truy cập, bất đồng và giới hạn vào workpaper.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 14.3: Verify citations — mở source, check author/date/context">
@@ -373,8 +382,9 @@
     <figcaption>Hình 14.3: Verify citations — mở source, check author/date/context</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="edit-export-research">
-      <h3>5.3. Edit và export Research</h3>
+      <h3>Edit và export Research</h3>
       <p>Sau verification, edit output: bổ sung disclaimers, sửa diễn giải sai, thêm limitations. Export vào kho NAB được phép, gắn data classification label và cấp quyền đúng audience. Không gửi nguyên văn AI output cho stakeholders — luôn có reviewer kiểm chứng và chịu trách nhiệm nội dung.</p>
+
       <ol class="steps"><li>Edit output: thêm limitations (&quot;data as of &lt;date&gt;&quot;), disclaimers, source notes.</li><li>Remove claims không verify được hoặc từ nguồn yếu.</li><li>Export format: PDF cho reports, markdown/docx nếu cần edit tiếp.</li><li>Lưu vào kho NAB, gắn data classification label.</li><li>Share với đúng users/groups — không public link, không email cá nhân.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 14.4: Edit và export Research output">
@@ -388,13 +398,15 @@
     <h2>6. Verification best practices và safe sharing</h2>
     <p>Research và Scenarios output đều cần verification: kiểm tra định nghĩa, control totals, citations và assumptions. Không accept AI output blindly.</p>
     <section class="guide-subsection" id="verification-checklist">
-      <h3>6.1. Verification checklist</h3>
-      <p>Trước khi dùng output: (1) Có objective/goal rõ ràng? (2) Nguồn có authoritative và current? (3) Citations có thực sự hỗ trợ claims? (4) Có cross-check bằng nguồn độc lập? (5) Có disclaimer về phạm vi, date cutoff và limitations? (6) Có reviewer chịu trách nhiệm verify?</p>
+      <h3>Verification checklist</h3>
+      <p>Trước khi dùng output:</p><ul class="detail-list"><li>Có objective/goal rõ ràng?</li><li>Nguồn có authoritative và current?</li><li>Citations có thực sự hỗ trợ claims?</li><li>Có cross-check bằng nguồn độc lập?</li><li>Có disclaimer về phạm vi, date cutoff và limitations?</li><li>Có reviewer chịu trách nhiệm verify?</li></ul>
+
 
 
     </section><section class="guide-subsection" id="safe-sharing">
-      <h3>6.2. Safe sharing và export controls</h3>
-      <p>Research/Scenarios output là dữ liệu mới và cần phân loại: (1) Export vào kho NAB được phép, không lưu local/personal drive. (2) Gắn data classification label theo dữ liệu nguồn nhạy cảm nhất. (3) Share với đúng users/groups — không public link. (4) Ghi audit trail: ai tạo, ai review, ai receive, purpose. (5) Không bypass ACL — không tạo bản sao bỏ quyền chỉ để chia sẻ rộng hơn.</p>
+      <h3>Safe sharing và export controls</h3>
+      <p>Research/Scenarios output là dữ liệu mới và cần phân loại:</p><ul class="detail-list"><li>Export vào kho NAB được phép, không lưu local/personal drive.</li><li>Gắn data classification label theo dữ liệu nguồn nhạy cảm nhất.</li><li><strong>Share với đúng users/groups</strong> <span>không public link.</span></li><li>Ghi audit trail: ai tạo, ai review, ai receive, purpose.</li><li><strong>Không bypass ACL</strong> <span>không tạo bản sao bỏ quyền chỉ để chia sẻ rộng hơn.</span></li></ul>
+
 
 
     </section>

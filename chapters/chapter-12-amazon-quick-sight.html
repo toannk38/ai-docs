@@ -298,8 +298,9 @@
     <h2>1. Spaces — giới thiệu</h2>
     <p>Spaces là không gian cộng tác cho phép tập hợp files, dashboards, topics, datasets và integration actions vào một nơi. Members có quyền truy cập Space sẽ thấy tất cả tài nguyên bên trong.</p>
     <section class="guide-subsection" id="spaces-muc-dich">
-      <h3>1.1. Mục đích và use case</h3>
+      <h3>Mục đích và use case</h3>
       <p>Spaces giúp team cộng tác hiệu quả: tập hợp tài liệu dự án, dashboard báo cáo, dataset phân tích và topics Q&amp;A vào một không gian duy nhất. Thay vì chia sẻ từng file riêng lẻ, bạn thêm members vào Space và họ tự động truy cập được tất cả tài nguyên.</p>
+
 
 
     </section>
@@ -308,7 +309,8 @@
     <h2>2. Tạo Space</h2>
     <p>Tạo Space mới từ sidebar, đặt tên mô tả rõ ràng và thêm tài nguyên cần thiết.</p>
     <section class="guide-subsection" id="buoc-tao-space">
-      <h3>2.1. Các bước tạo Space</h3>
+      <h3>Các bước tạo Space</h3>
+
 
       <ol class="steps"><li>Chọn &#39;Spaces&#39; từ sidebar bên trái.</li><li>Nhấn &#39;Create Space&#39; hoặc nút tương đương.</li><li>Đặt tên Space mô tả rõ mục đích và phạm vi (ví dụ: &#39;Q2 Sales Analysis&#39;, &#39;HR Policy Knowledge Base&#39;).</li><li>Thêm mô tả (optional nhưng khuyến khích) — giải thích mục đích và ai nên dùng.</li><li>Lưu Space — Space trống được tạo, sẵn sàng thêm tài nguyên.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
@@ -323,8 +325,9 @@
     <h2>3. Quản lý files, datasets, dashboards, topics và members</h2>
     <p>Sau khi tạo Space, thêm tài nguyên và members để xây dựng môi trường cộng tác.</p>
     <section class="guide-subsection" id="them-files">
-      <h3>3.1. Thêm files</h3>
+      <h3>Thêm files</h3>
       <p>Upload files trực tiếp vào Space hoặc link files đã có trong My stuff. Giới hạn: tối đa 100 files/Space theo hướng dẫn giao diện — cần SME xác nhận giới hạn thực tế trên tenant NAB. Chỉ thêm files đã được phân loại và data owner phê duyệt.</p>
+
 
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 12.2: Thêm files vào Space">
@@ -333,8 +336,9 @@
     <figcaption>Hình 12.2: Thêm files vào Space</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="them-datasets-dashboards">
-      <h3>3.2. Thêm datasets và dashboards</h3>
+      <h3>Thêm datasets và dashboards</h3>
       <p>Link datasets và dashboards có sẵn vào Space. Members sẽ truy cập được các tài nguyên này theo quyền của họ trên dataset/dashboard gốc. RLS/CLS vẫn áp dụng — Space không bypass data permissions.</p>
+
 
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 12.3: Datasets và Dashboards trong Space">
@@ -343,8 +347,9 @@
     <figcaption>Hình 12.3: Datasets và Dashboards trong Space</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="them-topics-members">
-      <h3>3.3. Thêm topics và members</h3>
+      <h3>Thêm topics và members</h3>
       <p>Topics là knowledge bases Q&amp;A từ datasets. Thêm topics vào Space để members hỏi đáp bằng ngôn ngữ tự nhiên. Thêm members bằng cách mời user hoặc group — áp dụng least privilege: chỉ mời người cần và chỉ cấp quyền tối thiểu (Viewer/Contributor/Owner). Review access định kỳ và xóa members không còn cần.</p>
+
 
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 12.4: Quản lý members và permissions trong Space">
@@ -358,8 +363,9 @@
     <h2>4. Chat Agents — giới thiệu</h2>
     <p>Chat Agents cho phép tạo AI agent tùy chỉnh với persona, knowledge base và khả năng thực hiện hành động. Thay vì dùng agent mặc định &#39;Quick&#39;, bạn tạo custom agent chuyên biệt cho domain hoặc use case cụ thể.</p>
     <section class="guide-subsection" id="agents-muc-dich">
-      <h3>4.1. Mục đích và use case</h3>
-      <p>Custom Chat Agents giúp: (1) Cá nhân hóa persona — agent trả lời theo tone, style và vai trò cụ thể. (2) Grounding với tài liệu chuyên môn — agent tham chiếu policies, SOPs, technical docs riêng của bạn. (3) Kết nối hành động — agent đọc/ghi Salesforce, Jira, ServiceNow qua connectors (cần approval). (4) Chia sẻ knowledge — publish agent cho team, họ dùng agent đã được config sẵn.</p>
+      <h3>Mục đích và use case</h3>
+      <p>Custom Chat Agents giúp:</p><ul class="detail-list"><li><strong>Cá nhân hóa persona</strong> <span>agent trả lời theo tone, style và vai trò cụ thể.</span></li><li><strong>Grounding với tài liệu chuyên môn</strong> <span>agent tham chiếu policies, SOPs, technical docs riêng của bạn.</span></li><li><strong>Kết nối hành động</strong> <span>agent đọc/ghi Salesforce, Jira, ServiceNow qua connectors (cần approval).</span></li><li><strong>Chia sẻ knowledge</strong> <span>publish agent cho team, họ dùng agent đã được config sẵn.</span></li></ul>
+
 
 
     </section>
@@ -368,8 +374,9 @@
     <h2>5. Tạo Custom Agent</h2>
     <p>Tạo agent mới từ sidebar Chat agents, cấu hình persona, reference sources và actions.</p>
     <section class="guide-subsection" id="cau-hinh-persona">
-      <h3>5.1. Cấu hình persona và reference documents</h3>
-      <p>Persona: Mô tả vai trò, tone và hành vi mong muốn (ví dụ: &#39;You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.&#39;). Reference documents: Thêm tối đa 10 files, 50 MB/file theo hướng dẫn giao diện (cần SME xác nhận giới hạn trên tenant NAB). Agent sẽ grounding với nội dung các files này. Chỉ thêm documents đã được data owner phê duyệt.</p>
+      <h3>Cấu hình persona và reference documents</h3>
+
+      <ul class="feature-list"><li><strong>Persona:</strong> <span>Mô tả vai trò, tone và hành vi mong muốn. Ví dụ: &#39;You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.&#39;</span></li><li><strong>Reference documents:</strong> <span>Thêm tối đa 10 files, 50 MB/file theo hướng dẫn giao diện; giới hạn thực tế cần được SME xác nhận trên tenant NAB.</span></li><li><strong>Grounding:</strong> <span>Agent sử dụng nội dung trong các files tham chiếu để tạo câu trả lời.</span></li><li><strong>Phê duyệt dữ liệu:</strong> <span>Chỉ thêm tài liệu đã được data owner phê duyệt.</span></li></ul>
 
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 12.5: Tạo Custom Chat Agent và cấu hình persona">
@@ -378,8 +385,9 @@
     <figcaption>Hình 12.5: Tạo Custom Chat Agent và cấu hình persona</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="them-spaces-actions">
-      <h3>5.2. Thêm Spaces và action connectors</h3>
-      <p>Spaces: Chọn Spaces để agent truy cập — agent sẽ thấy tất cả files/datasets/dashboards/topics trong Space đó. Action connectors: Kết nối Salesforce, Jira, ServiceNow... qua OAuth hoặc API key. Agent có thể đọc records, tạo tickets, update status (cần IT security approval trước khi bật). Áp dụng least privilege: chỉ bật actions cần thiết và chỉ cấp quyền tối thiểu trên connector.</p>
+      <h3>Thêm Spaces và action connectors</h3>
+
+      <ul class="feature-list"><li><strong>Spaces:</strong> <span>Chọn Space mà agent được phép truy cập. Agent sẽ thấy các files, datasets, dashboards và topics trong phạm vi đó.</span></li><li><strong>Action connectors:</strong> <span>Kết nối Salesforce, Jira, ServiceNow và các hệ thống khác qua OAuth hoặc API key.</span></li><li><strong>Hành động:</strong> <span>Agent có thể đọc records, tạo tickets hoặc cập nhật trạng thái; cần IT Security phê duyệt trước khi bật.</span></li><li><strong>Least privilege:</strong> <span>Chỉ bật actions cần thiết và chỉ cấp quyền tối thiểu trên connector.</span></li></ul>
 
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 12.6: Thêm Spaces và Actions cho Custom Agent">
@@ -393,7 +401,8 @@
     <h2>6. Best practices và least-privilege sharing</h2>
     <p>Kiểm soát quyền truy cập Space và agent theo nguyên tắc least privilege.</p>
     <section class="guide-subsection" id="nguyen-tac-chia-se">
-      <h3>6.1. Nguyên tắc chia sẻ an toàn</h3>
+      <h3>Nguyên tắc chia sẻ an toàn</h3>
+
 
       <ol class="steps"><li>Chỉ chia sẻ Space/agent với người thực sự cần — không share công khai hoặc &#39;just in case&#39;.</li><li>Cấp quyền tối thiểu: Viewer nếu chỉ cần đọc, Contributor nếu cần edit, Owner chỉ cho người quản trị.</li><li>Review access định kỳ (ít nhất quarterly) — xóa members không còn làm việc trên dự án.</li><li>Ghi log: ai được access, khi nào, lý do gì — lưu workpaper để audit.</li><li>Custom agent có actions: phải có approval riêng từ IT security, test kỹ trước production, monitor usage và revoke ngay khi phát hiện hành vi bất thường.</li><li>Reference documents trong agent: chỉ thêm documents được phân loại phù hợp và data owner đã approve.</li></ol>
 
@@ -452,7 +461,7 @@
     </details>
     <details class="faq-item">
       <summary>Custom agent có thể làm gì?</summary>
-      <div class="faq-answer"><p>Agent có thể: (1) Trả lời với persona tùy chỉnh. (2) Grounding với reference documents (tối đa 10 files, 50 MB/file theo hướng dẫn). (3) Truy cập Spaces. (4) Thực hiện hành động qua connectors (cần approval).</p></div>
+      <div class="faq-answer"><p>Agent có thể:</p><ul class="detail-list"><li>Trả lời với persona tùy chỉnh.</li><li>Grounding với reference documents (tối đa 10 files, 50 MB/file theo hướng dẫn).</li><li>Truy cập Spaces.</li><li>Thực hiện hành động qua connectors (cần approval).</li></ul></div>
     </details>
     <details class="faq-item">
       <summary>Agent reference limits là gì?</summary>

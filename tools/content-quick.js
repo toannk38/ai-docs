@@ -99,13 +99,24 @@ module.exports = [
             number: "11.3.1",
             id: "hanh-vi-private",
             title: "Hành vi Private Mode theo hướng dẫn giao diện",
-            body: "Không sử dụng bộ nhớ: Cuộc trò chuyện không được dùng để suy luận bộ nhớ mới. Không truy xuất bộ nhớ đã lưu: Hệ thống sẽ không đọc thông tin cá nhân đã ghi nhớ trước đó. Đảm bảo riêng tư toàn diện: Trải nghiệm hoàn toàn không có bộ nhớ, phù hợp khi thảo luận nội dung nhạy cảm. Biểu tượng khoá xuất hiện trên thanh header khi chế độ này bật."
+            items: [
+              { label: "Không sử dụng bộ nhớ", text: "Cuộc trò chuyện không được dùng để suy luận bộ nhớ mới." },
+              { label: "Không truy xuất bộ nhớ đã lưu", text: "Hệ thống sẽ không đọc thông tin cá nhân đã ghi nhớ trước đó." },
+              { label: "Đảm bảo riêng tư toàn diện", text: "Trải nghiệm không có bộ nhớ, phù hợp khi thảo luận nội dung nhạy cảm." },
+              { label: "Dấu hiệu nhận biết", text: "Biểu tượng khóa xuất hiện trên thanh header khi chế độ này được bật." }
+            ]
           },
           {
             number: "11.3.2",
             id: "xac-nhan-tenant",
             title: "Xác nhận hành vi trên tenant NAB",
-            body: "Hành vi Private Mode trên có thể khác tùy phiên bản và cấu hình tenant. SME phải xác nhận: có ghi conversation history không, có gửi nội dung để training không, có áp dụng retention policy không, và Private Mode có tương đương not-memory-read + not-memory-write hay không trên tenant NAB trước khi phát hành."
+            body: "Hành vi Private Mode có thể khác tùy phiên bản và cấu hình tenant. Trước khi phát hành, SME phải xác nhận:",
+            items: [
+              { label: "Conversation history", text: "Hệ thống có ghi lịch sử cuộc trò chuyện hay không." },
+              { label: "Training", text: "Nội dung có được gửi để huấn luyện mô hình hay không." },
+              { label: "Retention", text: "Chính sách và thời gian lưu giữ dữ liệu được áp dụng như thế nào." },
+              { label: "Memory", text: "Private Mode có tương đương với không đọc và không ghi bộ nhớ trên tenant NAB hay không." }
+            ]
           }
         ]
       },
@@ -119,7 +130,22 @@ module.exports = [
             number: "11.4.1",
             id: "cac-muc-chinh",
             title: "Các mục chính",
-            body: "New chat: Bắt đầu cuộc trò chuyện mới. Search: Tìm kiếm toàn bộ tài nguyên. My stuff: Nội dung cá nhân (datasets, data sources, analyses, dashboards, mục yêu thích, thư mục). Spaces: Không gian cộng tác — tập hợp files, Dashboards, Topics, Datasets và Integration Actions (tối đa 100 files/Space — cần xác nhận giới hạn trên tenant NAB). Research: Nghiên cứu chuyên sâu bằng AI, tạo báo cáo dài, phân tích đa nguồn. Chat agents: Xây dựng và quản lý AI agent tùy chỉnh — cấu hình persona, tài liệu tham chiếu, spaces và hành động kết nối. Apps: Biến ý tưởng thành ứng dụng web trong vài phút (Apps chỉ xuất hiện trong bản đồ điều hướng chương này; hướng dẫn chi tiết không chứa quy trình Apps). Flows: Tạo và chia sẻ quy trình tự động hóa thông minh. Analyses: Không gian tạo trực quan hóa dữ liệu, xây dựng biểu đồ, sắp xếp trên các sheet. Dashboards: Phiên bản đã xuất bản của Analysis, chia sẻ để xem báo cáo tương tác. Data: Quản lý kết nối nguồn dữ liệu (databases, data warehouses, cloud services, spreadsheets). My folders / Shared folders: Tổ chức analyses và dashboards. More: Truy cập các tính năng mở rộng. Recents: Cuộc trò chuyện gần đây — lưu trữ trong 30 ngày (cần xác nhận thời gian retention trên tenant NAB)."
+            items: [
+              { label: "New chat", text: "Bắt đầu cuộc trò chuyện mới." },
+              { label: "Search", text: "Tìm kiếm toàn bộ tài nguyên." },
+              { label: "My stuff", text: "Nội dung cá nhân gồm datasets, data sources, analyses, dashboards, mục yêu thích và thư mục." },
+              { label: "Spaces", text: "Không gian cộng tác tập hợp files, Dashboards, Topics, Datasets và Integration Actions. Giới hạn tối đa 100 files/Space cần được xác nhận trên tenant NAB." },
+              { label: "Research", text: "Nghiên cứu chuyên sâu bằng AI, tạo báo cáo dài và phân tích đa nguồn." },
+              { label: "Chat agents", text: "Xây dựng và quản lý AI agent tùy chỉnh với persona, tài liệu tham chiếu, spaces và hành động kết nối." },
+              { label: "Apps", text: "Biến ý tưởng thành ứng dụng web trong vài phút. Apps chỉ xuất hiện trong bản đồ điều hướng chương này; hướng dẫn chi tiết không chứa quy trình Apps." },
+              { label: "Flows", text: "Tạo và chia sẻ quy trình tự động hóa thông minh." },
+              { label: "Analyses", text: "Tạo trực quan hóa dữ liệu, xây dựng biểu đồ và sắp xếp trên các sheet." },
+              { label: "Dashboards", text: "Phiên bản đã xuất bản của Analysis, được chia sẻ để xem báo cáo tương tác." },
+              { label: "Data", text: "Quản lý kết nối nguồn dữ liệu như databases, data warehouses, cloud services và spreadsheets." },
+              { label: "My folders / Shared folders", text: "Tổ chức analyses và dashboards." },
+              { label: "More", text: "Truy cập các tính năng mở rộng." },
+              { label: "Recents", text: "Các cuộc trò chuyện gần đây được lưu trong 30 ngày theo hướng dẫn; thời gian retention thực tế cần được xác nhận trên tenant NAB." }
+            ]
           }
         ]
       },
@@ -133,7 +159,13 @@ module.exports = [
             number: "11.5.1",
             id: "cac-thanh-phan",
             title: "Các thành phần điều khiển",
-            body: "Dropdown 'Quick': Chọn giữa các AI agent khác nhau để trò chuyện, có thể chuyển đổi agent ngay trong cùng cuộc trò chuyện. Ô nhập câu hỏi: Nhập yêu cầu bằng ngôn ngữ tự nhiên, hỗ trợ tải lên tối đa 20 files/cuộc trò chuyện (Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML, HTML — tối đa 50MB/file; giới hạn và định dạng file cần xác nhận trên tenant NAB). Dropdown 'All data': Bộ lọc phạm vi dữ liệu (Knowledge setting) — thu hẹp phạm vi kiến thức agent theo Dashboards, Spaces, Topics, Datasets hoặc Integrations. Nút '+': Đính kèm files hoặc thêm nguồn dữ liệu bổ sung vào cuộc trò chuyện. Dropdown 'Smart': Chế độ xử lý AI / chế độ phân tích thông minh — điều chỉnh mức độ sâu của quá trình lý luận (hành vi cụ thể cần xác nhận trên tenant NAB)."
+            items: [
+              { label: "Dropdown 'Quick'", text: "Chọn giữa các AI agent khác nhau và có thể chuyển đổi agent ngay trong cùng cuộc trò chuyện." },
+              { label: "Ô nhập câu hỏi", text: "Nhập yêu cầu bằng ngôn ngữ tự nhiên; hỗ trợ tối đa 20 files/cuộc trò chuyện, 50 MB/file và các định dạng Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML, HTML. Giới hạn thực tế cần được xác nhận trên tenant NAB." },
+              { label: "Dropdown 'All data'", text: "Thu hẹp phạm vi kiến thức của agent theo Dashboards, Spaces, Topics, Datasets hoặc Integrations." },
+              { label: "Nút '+'", text: "Đính kèm files hoặc thêm nguồn dữ liệu bổ sung vào cuộc trò chuyện." },
+              { label: "Dropdown 'Smart'", text: "Điều chỉnh chế độ xử lý AI và mức độ sâu của quá trình lý luận; hành vi cụ thể cần được xác nhận trên tenant NAB." }
+            ]
           }
         ]
       },
@@ -147,7 +179,13 @@ module.exports = [
             number: "11.6.1",
             id: "cac-output",
             title: "Các định dạng output",
-            body: "Research: Khởi chạy Quick Research — tạo báo cáo dài chuyên nghiệp, phân tích đa nguồn sâu rộng (mất khoảng 7–10 phút theo hướng dẫn giao diện — thời gian thực tế có thể khác). Document: Tạo tài liệu (Word/DOCX, PDF) trực tiếp từ cuộc trò chuyện. Presentation: Tạo bài thuyết trình (PowerPoint/PPTX) trực tiếp từ cuộc trò chuyện. Visual: Tạo biểu đồ và hình ảnh trực quan hóa dữ liệu trực tiếp từ chat (hiển thị dữ liệu dưới dạng chart, graph). Các định dạng output hỗ trợ phụ thuộc vào phiên bản và subscription — SME xác nhận trên tenant NAB."
+            items: [
+              { label: "Research", text: "Khởi chạy Quick Research để tạo báo cáo dài và phân tích đa nguồn. Theo hướng dẫn giao diện, quá trình mất khoảng 7–10 phút; thời gian thực tế có thể khác." },
+              { label: "Document", text: "Tạo tài liệu Word/DOCX hoặc PDF trực tiếp từ cuộc trò chuyện." },
+              { label: "Presentation", text: "Tạo bài thuyết trình PowerPoint/PPTX trực tiếp từ cuộc trò chuyện." },
+              { label: "Visual", text: "Tạo biểu đồ và hình ảnh trực quan hóa dữ liệu trực tiếp từ chat." },
+              { label: "Phạm vi hỗ trợ", text: "Các định dạng đầu ra phụ thuộc vào phiên bản và subscription; SME cần xác nhận trên tenant NAB." }
+            ]
           }
         ]
       },
@@ -161,7 +199,16 @@ module.exports = [
             number: "11.7.1",
             id: "cac-tinh-nang-more",
             title: "Các tính năng trong More",
-            body: "Automations: Tự động hóa quy trình phức tạp, đa bước — tạo automation workflows kết hợp AI với dữ liệu và hành động. Connectors: Kết nối ứng dụng bên ngoài (Salesforce, Jira, ServiceNow, Slack...) qua OAuth hoặc API key để thực hiện hành động trực tiếp từ Quick. Knowledge: Tạo Topics cho trải nghiệm Q&A bằng ngôn ngữ tự nhiên từ datasets — cấu hình synonyms, metadata và câu hỏi mẫu. Extensions: Mở rộng Quick vào các công cụ: Chrome, Slack, Outlook, Microsoft Teams, Word — mang Quick vào môi trường làm việc hàng ngày. Scenarios: Canvas phân tích dữ liệu với AI gợi ý dữ liệu liên quan — khám phá insights theo kịch bản phân tích. Stories: Tạo câu chuyện dữ liệu kết hợp văn bản, biểu đồ và insights. Customize navigation: Tùy chỉnh thanh điều hướng theo nhu cầu cá nhân. Tính năng xuất hiện trong More phụ thuộc vào role, subscription và region — SME xác nhận danh sách thực tế trên tenant NAB."
+            items: [
+              { label: "Automations", text: "Tạo workflow đa bước kết hợp AI với dữ liệu và hành động." },
+              { label: "Connectors", text: "Kết nối Salesforce, Jira, ServiceNow, Slack và các ứng dụng bên ngoài qua OAuth hoặc API key để thực hiện hành động từ Quick." },
+              { label: "Knowledge", text: "Tạo Topics cho trải nghiệm hỏi đáp bằng ngôn ngữ tự nhiên từ datasets; hỗ trợ cấu hình synonyms, metadata và câu hỏi mẫu." },
+              { label: "Extensions", text: "Đưa Quick vào Chrome, Slack, Outlook, Microsoft Teams và Word." },
+              { label: "Scenarios", text: "Canvas phân tích dữ liệu với AI gợi ý dữ liệu liên quan và hỗ trợ khám phá insight theo kịch bản." },
+              { label: "Stories", text: "Tạo câu chuyện dữ liệu kết hợp văn bản, biểu đồ và insight." },
+              { label: "Customize navigation", text: "Tùy chỉnh thanh điều hướng theo nhu cầu cá nhân." },
+              { label: "Phạm vi hiển thị", text: "Các tính năng trong More phụ thuộc vào role, subscription và region; SME cần xác nhận danh sách thực tế trên tenant NAB." }
+            ]
           }
         ]
       }
@@ -352,7 +399,12 @@ module.exports = [
             number: "12.5.1",
             id: "cau-hinh-persona",
             title: "Cấu hình persona và reference documents",
-            body: "Persona: Mô tả vai trò, tone và hành vi mong muốn (ví dụ: 'You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.'). Reference documents: Thêm tối đa 10 files, 50 MB/file theo hướng dẫn giao diện (cần SME xác nhận giới hạn trên tenant NAB). Agent sẽ grounding với nội dung các files này. Chỉ thêm documents đã được data owner phê duyệt.",
+            items: [
+              { label: "Persona", text: "Mô tả vai trò, tone và hành vi mong muốn. Ví dụ: 'You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.'" },
+              { label: "Reference documents", text: "Thêm tối đa 10 files, 50 MB/file theo hướng dẫn giao diện; giới hạn thực tế cần được SME xác nhận trên tenant NAB." },
+              { label: "Grounding", text: "Agent sử dụng nội dung trong các files tham chiếu để tạo câu trả lời." },
+              { label: "Phê duyệt dữ liệu", text: "Chỉ thêm tài liệu đã được data owner phê duyệt." }
+            ],
             figures: [
               { src: "quick-docs/Images/HDSD/8-1.png", alt: "Giao diện tạo Custom Chat Agent với các trường cấu hình persona, name, description", caption: "Hình 12.5: Tạo Custom Chat Agent và cấu hình persona" }
             ]
@@ -361,7 +413,12 @@ module.exports = [
             number: "12.5.2",
             id: "them-spaces-actions",
             title: "Thêm Spaces và action connectors",
-            body: "Spaces: Chọn Spaces để agent truy cập — agent sẽ thấy tất cả files/datasets/dashboards/topics trong Space đó. Action connectors: Kết nối Salesforce, Jira, ServiceNow... qua OAuth hoặc API key. Agent có thể đọc records, tạo tickets, update status (cần IT security approval trước khi bật). Áp dụng least privilege: chỉ bật actions cần thiết và chỉ cấp quyền tối thiểu trên connector.",
+            items: [
+              { label: "Spaces", text: "Chọn Space mà agent được phép truy cập. Agent sẽ thấy các files, datasets, dashboards và topics trong phạm vi đó." },
+              { label: "Action connectors", text: "Kết nối Salesforce, Jira, ServiceNow và các hệ thống khác qua OAuth hoặc API key." },
+              { label: "Hành động", text: "Agent có thể đọc records, tạo tickets hoặc cập nhật trạng thái; cần IT Security phê duyệt trước khi bật." },
+              { label: "Least privilege", text: "Chỉ bật actions cần thiết và chỉ cấp quyền tối thiểu trên connector." }
+            ],
             figures: [
               { src: "quick-docs/Images/HDSD/8-2.png", alt: "Giao diện cấu hình Spaces và Actions cho Custom Agent", caption: "Hình 12.6: Thêm Spaces và Actions cho Custom Agent" }
             ]

@@ -220,13 +220,30 @@ function renderFigure(figure, rootPrefix = "./") {
   </figure>`;
 }
 
+function renderDetailItem(value) {
+  const markdownLabel = value.match(/^\*\*(.+?)\*\*\s*(?:—|:|-)?\s*(.*)$/s);
+  const dashLabel = value.match(/^([^.!?]{2,70})\s+—\s+(.+)$/s);
+  const match = markdownLabel || dashLabel;
+  if (!match) return esc(value);
+  return `<strong>${esc(match[1])}</strong>${match[2] ? ` <span>${esc(match[2])}</span>` : ""}`;
+}
+
+function renderGuideBody(body) {
+  if (!body) return "";
+  const parts = body.split(/\s*\(\d+\)\s*/);
+  if (parts.length < 2) return `<p>${esc(body)}</p>`;
+  const intro = parts.shift().trim();
+  return `${intro ? `<p>${esc(intro)}</p>` : ""}<ul class="detail-list">${parts.map((part) => `<li>${renderDetailItem(part.trim())}</li>`).join("")}</ul>`;
+}
+
 function renderGuideSections(items, rootPrefix = "./") {
   return items.map((section, sectionIndex) => `<section class="guide-section" id="${esc(section.id)}">
     <h2>${sectionIndex + 1}. ${esc(section.title)}</h2>
     ${section.intro ? `<p>${esc(section.intro)}</p>` : ""}
-    ${(section.subsections || []).map((item, subIndex) => `<section class="guide-subsection" id="${esc(item.id)}">
-      <h3>${sectionIndex + 1}.${subIndex + 1}. ${esc(item.title || item.heading)}</h3>
-      ${item.body ? `<p>${esc(item.body)}</p>` : ""}
+    ${(section.subsections || []).map((item) => `<section class="guide-subsection" id="${esc(item.id)}">
+      <h3>${esc(item.title || item.heading)}</h3>
+      ${renderGuideBody(item.body)}
+      ${item.items?.length ? `<ul class="feature-list">${item.items.map((entry) => `<li><strong>${esc(entry.label)}:</strong> <span>${esc(entry.text)}</span></li>`).join("")}</ul>` : ""}
       ${item.steps ? `<ol class="steps">${item.steps.map((step) => `<li>${esc(step)}</li>`).join("")}</ol>` : ""}
       ${item.figures?.length ? `<div class="doc-figure-grid">${item.figures.map((figure) => renderFigure(figure, rootPrefix)).join("")}</div>` : ""}
     </section>`).join("")}
@@ -238,7 +255,7 @@ function renderFaqs(items) {
   return `<div class="faq-list">${items.map(([question, answer]) => `
     <details class="faq-item">
       <summary>${esc(question)}</summary>
-      <div class="faq-answer"><p>${esc(answer)}</p></div>
+      <div class="faq-answer">${renderGuideBody(answer)}</div>
     </details>`).join("")}</div>`;
 }
 

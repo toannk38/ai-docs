@@ -298,7 +298,8 @@
     <h2>2. Tạo và chuẩn bị Dataset</h2>
 
     <section class="guide-subsection" id="ket-noi-source">
-      <h3>2.1. Kết nối data source</h3>
+      <h3>Kết nối data source</h3>
+
 
       <ol class="steps"><li>Từ sidebar, chọn Data → New dataset.</li><li>Chọn data source type (Athena, Redshift, RDS, S3, Upload file).</li><li>Cấu hình connection: tên, credentials (IAM role/user auth), region/endpoint.</li><li>Test connection và chọn table/query hoặc upload file.</li><li>Chọn SPICE hoặc Direct Query (xem 13.3).</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
@@ -308,8 +309,9 @@
     <figcaption>Hình 13.1: Kết nối data source và chọn SPICE/Direct Query</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="chuan-bi-dataset">
-      <h3>2.2. Chuẩn bị Dataset — join, calculated fields, filters</h3>
+      <h3>Chuẩn bị Dataset — join, calculated fields, filters</h3>
       <p>Sau khi kết nối, Dataset editor cho phép join tables, add calculated fields, change data types, apply filters và rename columns.</p>
+
       <ol class="steps"><li>Join thêm tables nếu cần — chọn join type (inner, left, right, full) và join keys.</li><li>Add calculated fields: functions, aggregations, date math, string manipulation.</li><li>Change data types: date/datetime, number/decimal, string, boolean.</li><li>Apply row-level filters để giảm data volume trước khi publish.</li><li>Save dataset; có thể schedule refresh nếu dùng SPICE.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.2: Dataset editor — join, calculated fields và data types">
@@ -323,18 +325,21 @@
     <h2>3. SPICE versus Direct Query</h2>
     <p>SPICE (Super-fast, Parallel, In-memory Calculation Engine) cache dữ liệu trong bộ nhớ — truy vấn nhanh nhưng cần refresh và chiếm capacity. Direct Query không cache — luôn real-time nhưng chậm hơn và phụ thuộc data source availability.</p>
     <section class="guide-subsection" id="khi-nao-dung-spice">
-      <h3>3.1. Khi nào dùng SPICE</h3>
+      <h3>Khi nào dùng SPICE</h3>
       <p>Interactive dashboards, scheduled refresh (hàng ngày/tuần), data không đổi liên tục, cần tốc độ cao. Lưu ý capacity limits — SME xác nhận SPICE capacity available trên tenant NAB.</p>
 
 
+
     </section><section class="guide-subsection" id="khi-nao-dung-direct-query">
-      <h3>3.2. Khi nào dùng Direct Query</h3>
+      <h3>Khi nào dùng Direct Query</h3>
       <p>Data thời gian thực (real-time), không muốn cache, data volume vượt SPICE capacity, hoặc data source đã optimized. Lưu ý latency cao hơn SPICE.</p>
 
 
+
     </section><section class="guide-subsection" id="refresh-schedule">
-      <h3>3.3. Refresh schedule và incremental refresh</h3>
+      <h3>Refresh schedule và incremental refresh</h3>
       <p>SPICE datasets cần refresh để cập nhật data. Full refresh tải lại toàn bộ; incremental refresh chỉ tải dữ liệu mới (cần cột timestamp/date). Schedule refresh qua Dataset settings — chọn frequency (hourly, daily, weekly) và timezone.</p>
+
 
 
     </section>
@@ -343,7 +348,8 @@
     <h2>4. Tạo Analysis — AutoGraph, visuals, filters và sheets</h2>
 
     <section class="guide-subsection" id="tao-analysis-autograph">
-      <h3>4.1. Tạo Analysis với AutoGraph</h3>
+      <h3>Tạo Analysis với AutoGraph</h3>
+
 
       <ol class="steps"><li>Từ sidebar, chọn Analyses → New analysis.</li><li>Chọn Dataset đã chuẩn bị.</li><li>AutoGraph tự động gợi ý visual type dựa trên fields được chọn.</li><li>Drag fields vào Dimensions/Measures/Filters; chọn aggregation (sum, avg, count, min, max).</li><li>Thêm filters (dataset-level, sheet-level, visual-level) để control data hiển thị.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
@@ -353,8 +359,9 @@
     <figcaption>Hình 13.3: Tạo Analysis với AutoGraph và filters</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="visuals-sheets">
-      <h3>4.2. Visuals, calculated fields và sheets</h3>
+      <h3>Visuals, calculated fields và sheets</h3>
       <p>Analysis có thể chứa nhiều visuals (charts, tables, KPIs, maps) và nhiều sheets. Calculated fields trong Analysis cho phép logic phức tạp: level-aware aggregations, window functions, conditional logic.</p>
+
       <ol class="steps"><li>Add visual: chọn visual type từ toolbar hoặc để AutoGraph chọn.</li><li>Add calculated field: Analysis-level calculated fields áp dụng cho mọi visual trong Analysis.</li><li>Add sheet: tổ chức visuals thành tabs — mỗi sheet có filters riêng.</li><li>Format visual: titles, tooltips, colors, labels, conditional formatting.</li><li>Add parameters: interactive controls (dropdown, slider, date picker) để user thay đổi filters/calculations.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.4: Analysis với visuals, sheets và parameters">
@@ -368,7 +375,8 @@
     <h2>5. Chia sẻ Analysis</h2>
     <p>Analysis có thể share với colleagues để cùng edit hoặc view. Permissions: Owner (full control), Co-owner (edit), Viewer (read-only).</p>
     <section class="guide-subsection" id="share-analysis">
-      <h3>5.1. Share Analysis với colleagues</h3>
+      <h3>Share Analysis với colleagues</h3>
+
 
       <ol class="steps"><li>Mở Analysis → Share icon (góc trên bên phải).</li><li>Nhập email/username của colleagues.</li><li>Chọn permission: Co-owner (có thể edit) hoặc Viewer (chỉ xem).</li><li>Send invitation; colleagues nhận email notification.</li><li>Owner có thể revoke access bất kỳ lúc nào.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
@@ -383,7 +391,8 @@
     <h2>6. Xuất bản và chia sẻ Dashboard</h2>
     <p>Dashboard là published, read-only version của Analysis. Viewer không edit được — chỉ xem, filter và export (nếu được phép). Dashboard có thể embed vào web app hoặc schedule email.</p>
     <section class="guide-subsection" id="publish-dashboard">
-      <h3>6.1. Publish Dashboard</h3>
+      <h3>Publish Dashboard</h3>
+
 
       <ol class="steps"><li>Mở Analysis → Publish dashboard button.</li><li>Nhập tên Dashboard và description.</li><li>Chọn sheets để publish (có thể publish một subset của Analysis).</li><li>Chọn Share permissions: Owner chọn users/groups được xem Dashboard.</li><li>Publish; Dashboard URL được tạo ra.</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
@@ -393,8 +402,9 @@
     <figcaption>Hình 13.6: Xuất bản Dashboard từ Analysis</figcaption>
   </figure></div>
     </section><section class="guide-subsection" id="share-embed-dashboard">
-      <h3>6.2. Share, embed và scheduled email</h3>
+      <h3>Share, embed và scheduled email</h3>
       <p>Dashboard có thể share với users/groups (viewer permissions), embed vào web app (iframe/SDK), hoặc schedule email delivery (PDF/CSV attachments). Không share public — chỉ share nội bộ NAB với users có quyền.</p>
+
       <ol class="steps"><li>Share: Dashboard → Share icon → add users/groups → choose permissions.</li><li>Embed: Dashboard → Share icon → Embed code (yêu cầu SDK integration và authentication).</li><li>Scheduled email: Dashboard → Schedule email → chọn recipients, frequency (daily/weekly/monthly), format (PDF/CSV).</li><li>Viewer controls: Dashboard viewers có thể filter, drill-down, export (nếu export được bật).</li></ol>
       <div class="doc-figure-grid"><figure class="doc-figure">
     <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: Hình 13.7: Chia sẻ Dashboard — users/groups, embed và scheduled email">
@@ -408,13 +418,15 @@
     <h2>7. Quản lý SPICE capacity và refresh</h2>
     <p>SPICE capacity có giới hạn per account/region. Admin monitor capacity usage, schedule refresh và allocate capacity cho datasets ưu tiên. Khi capacity đầy, datasets mới không import được hoặc refresh fail.</p>
     <section class="guide-subsection" id="monitor-capacity">
-      <h3>7.1. Monitor SPICE capacity</h3>
+      <h3>Monitor SPICE capacity</h3>
       <p>Admin vào QuickSight settings → SPICE capacity → xem total capacity, used capacity và available capacity. Nếu usage &gt; 80%, cân nhắc xóa datasets không dùng, chuyển sang Direct Query, hoặc mua thêm capacity.</p>
 
 
+
     </section><section class="guide-subsection" id="schedule-refresh">
-      <h3>7.2. Schedule refresh cho SPICE datasets</h3>
+      <h3>Schedule refresh cho SPICE datasets</h3>
       <p>Dataset settings → Refresh schedule → add schedule (hourly, daily, weekly, monthly). Chọn timezone và time window. Full refresh tải lại toàn bộ data; incremental refresh chỉ tải data mới (cần cột timestamp). Monitor refresh history để phát hiện failures.</p>
+
 
 
     </section>
