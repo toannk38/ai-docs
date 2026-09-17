@@ -45,12 +45,16 @@
 | NAB-AQ-001 | Bằng chứng tenant | Feature/role/connector matrix Amazon Quick tại NAB | Chương 11–15 | `[SME Amazon Quick]` | `[dd/mm/yyyy]` | `[dd/mm/yyyy]` | `[Link kho nội bộ]` | Cần bổ sung |
 | NAB-AQ-002 | Bằng chứng walkthrough | Kết quả thao tác lại các hướng dẫn Amazon Quick tại NAB | Chương 11–15 | `[SME Amazon Quick]` | `[dd/mm/yyyy]` | `[dd/mm/yyyy]` | `[Link kho nội bộ]` | Cần bổ sung |
 | VEN-AQ-001 | Tài liệu vendor | AWS — Amazon Quick User Guide | Khả năng sản phẩm, không thay cho phê duyệt NAB | `[SME Amazon Quick]` | 19/08/2026 | `[dd/mm/yyyy]` | `https://docs.aws.amazon.com/quick/latest/userguide/what-is.html` và nguồn từng chương | Chờ xác nhận |
-| NAB-OTH-001 | Phê duyệt nội bộ | Danh mục công cụ AI ngoài MS365/Amazon Quick được phép sử dụng | Chương 16–21 | `[Owner phê duyệt]` | `[dd/mm/yyyy]` | `[dd/mm/yyyy]` | `[Link kho nội bộ]` | Cần bổ sung |
-| VEN-OAI-001 | Tài liệu vendor | OpenAI Docs — ChatGPT Work admin FAQ | Chương 16; khả năng sản phẩm, không thay phê duyệt NAB | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | `https://learn.chatgpt.com/docs/enterprise/work-admin-faq` | Chờ xác nhận |
-| VEN-GGL-001 | Tài liệu vendor | Google Workspace AI, AI privacy và NotebookLM Help | Chương 17 và 19 | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | Nguồn chính thức ghi trong từng chương | Chờ xác nhận |
-| VEN-ANT-001 | Tài liệu vendor | Anthropic Claude Help Center | Chương 18 | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | `https://support.anthropic.com/` | Chờ xác nhận |
-| VEN-PPLX-001 | Tài liệu vendor | Perplexity Enterprise | Chương 20 | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | `https://www.perplexity.ai/enterprise` | Chờ xác nhận |
-| VEN-CANVA-001 | Tài liệu vendor | Canva AI và hướng dẫn sử dụng an toàn | Chương 21 | `[SME/ATTT/Brand]` | 19/08/2026 | `[dd/mm/yyyy]` | Nguồn chính thức ghi trong chương | Chờ xác nhận |
+| NAB-OTH-001 | Hướng dẫn nội bộ | Chỉ dùng công cụ AI tham khảo với dữ liệu công khai; không dùng dữ liệu Nam A Bank hoặc dữ liệu nội bộ | Chương 16–21 | `[ATTT/Khối CNTT]` | `[dd/mm/yyyy]` | `[dd/mm/yyyy]` | `[Link kho nội bộ]` | Cần bổ sung |
+| VEN-OAI-001 | Tài liệu vendor | OpenAI — khả năng công khai của ChatGPT | Chương 17; chỉ minh họa bằng dữ liệu công khai | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | Nguồn chính thức ghi trong chương | Chờ xác nhận |
+| VEN-GGL-001 | Tài liệu vendor | Google — Gemini và NotebookLM | Chương 17–18; chỉ minh họa bằng dữ liệu công khai | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | Nguồn chính thức ghi trong từng chương | Chờ xác nhận |
+| VEN-ANT-001 | Tài liệu vendor | Anthropic Claude Help Center | Chương 17; chỉ minh họa bằng dữ liệu công khai | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | `https://support.anthropic.com/` | Chờ xác nhận |
+| VEN-PPLX-001 | Tài liệu vendor | Perplexity Help Center | Chương 17; chỉ minh họa bằng dữ liệu công khai | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | `https://www.perplexity.ai/help-center` | Chờ xác nhận |
+| VEN-XAI-001 | Tài liệu vendor | xAI — Grok | Chương 17; khả năng sản phẩm công khai, ví dụ chỉ dùng dữ liệu công khai | `[SME/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | `https://x.ai/grok` | Chờ xác nhận |
+| VEN-CANVA-001 | Tài liệu vendor | Canva AI | Chương 19; khả năng thiết kế công khai, ví dụ chỉ dùng dữ liệu công khai | `[SME/ATTT/Brand]` | 19/08/2026 | `[dd/mm/yyyy]` | `https://www.canva.com/help/canva-ai/` | Chờ xác nhận |
+| VEN-DESIGN-001 | Tài liệu vendor | Gamma, Napkin AI và Microsoft Designer | Chương 19; khả năng sản phẩm công khai, ví dụ chỉ dùng dữ liệu công khai | `[SME/ATTT/Brand]` | 19/08/2026 | `[dd/mm/yyyy]` | Nguồn chính thức ghi trong chương | Chờ xác nhận |
+| VEN-MEDIA-001 | Tài liệu vendor | Công cụ tạo hình ảnh và video tiêu biểu | Chương 20; khả năng sản phẩm công khai, ví dụ chỉ dùng dữ liệu công khai | `[SME/ATTT/Brand]` | 19/08/2026 | `[dd/mm/yyyy]` | Nguồn chính thức ghi trong chương | Chờ xác nhận |
+| VEN-AUTO-001 | Tài liệu vendor | n8n AI, Dify và Flowise | Chương 21; tham khảo kỹ thuật, không kết nối hệ thống hoặc dữ liệu NAB | `[SME CNTT/ATTT]` | 19/08/2026 | `[dd/mm/yyyy]` | Nguồn chính thức ghi trong chương | Chờ xác nhận |
 | NAB-SUP-001 | Danh bạ nội bộ | Service Desk, đầu mối cấp quyền và báo sự cố | Chương 23 và footer | `[CNTT]` | `[dd/mm/yyyy]` | `[dd/mm/yyyy]` | `[Link kho nội bộ]` | Cần bổ sung |
 
 ## 4. Ma trận xác nhận tính năng tại NAB
@@ -71,15 +75,14 @@ Không suy diễn từ tên gói hoặc tài liệu vendor. SME đổi `Chờ x�
 | 09 | Excel Edit/Plan/Chat, formula, insight, PivotTable/chart và web import | Chờ xác nhận | `[Điền]` | NAB-MS-001 | `[Điền]` |
 | 10 | PowerPoint create from source, summary/notes, Designer và Brand Kit | Chờ xác nhận | `[Điền]` | NAB-MS-001 | `[Điền]` |
 | 11 | Amazon Quick account, subscription, Region và role | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 12 | Quick Sight dashboard/filter/KPI và Quick BI chat | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 12 | SPICE/Direct Query, refresh và control total | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 12 | RLS/CLS, export và chia sẻ dashboard | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 13 | Quick Research: web/internal source, citation và evidence | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 13 | Quick Index/knowledge base: connector, sync, ACL và permission test | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 14 | Quick Flows read-only, schedule, monitoring và retry | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 14 | Quick Automate: hành động ghi, approval/HITL, idempotency và rollback | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 15 | Apps: integration, READ/WRITE và private/shared storage | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
-| 15 | Apps: sandbox/UAT, publish Limited, share và rollback | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
+| 12 | Spaces: thành viên, nguồn, phạm vi chia sẻ và vòng đời | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
+| 12 | Chat Agents: instruction, knowledge, quyền và kiểm chứng câu trả lời | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
+| 13 | Datasets, Analyses và Dashboards; filter, KPI và Quick BI chat | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
+| 13 | SPICE/Direct Query, refresh, RLS/CLS, export và chia sẻ Dashboard | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
+| 14 | Scenarios: giả định, phương pháp, phạm vi và kiểm chứng kết quả | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
+| 14 | Quick Research: nguồn, citation và evidence | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
+| 15 | Quick Flows: read-only, schedule, monitoring và retry | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
+| 15 | Quick Automate: hành động ghi, approval/HITL, idempotency và rollback | Chờ xác nhận | `[Điền]` | NAB-AQ-001 | `[Điền]` |
 
 ### Nhật ký thao tác lại walkthrough
 
@@ -100,5 +103,5 @@ Mỗi walkthrough chương 04–15 cần một dòng; `Đạt` chỉ dùng khi S
 - [ ] Các nguồn chính sách, brand, danh bạ hỗ trợ và ma trận tenant đều ở trạng thái `Đã xác thực`.
 - [ ] 100% walkthrough MS365 và Amazon Quick có bằng chứng SME thao tác lại.
 - [ ] 100% trang có owner, phiên bản, ngày kiểm chứng và danh sách Source ID.
-- [ ] Các trang công cụ tham khảo có cảnh báo: “Không đồng nghĩa với việc được NAB phê duyệt sử dụng.”
+- [ ] 6/6 trang AI tham khảo có cảnh báo: “Chỉ sử dụng công cụ AI tham khảo với dữ liệu công khai. Không sử dụng dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc bất kỳ dữ liệu nội bộ nào.”
 - [ ] Không còn khẳng định không có nguồn; không còn source đã hết hiệu lực.

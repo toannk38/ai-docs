@@ -29,14 +29,14 @@ const sourceIdsByChapter = {
   13: ["NAB-AQ-001", "NAB-AQ-002", "VEN-AQ-001"],
   14: ["NAB-AQ-001", "NAB-AQ-002", "VEN-AQ-001"],
   15: ["NAB-AQ-001", "NAB-AQ-002", "VEN-AQ-001"],
-  16: ["NAB-OTH-001", "VEN-OAI-001"],
-  17: ["NAB-OTH-001", "VEN-GGL-001"],
-  18: ["NAB-OTH-001", "VEN-ANT-001"],
-  19: ["NAB-OTH-001", "VEN-GGL-001"],
-  20: ["NAB-OTH-001", "VEN-PPLX-001"],
-  21: ["NAB-OTH-001", "VEN-CANVA-001"],
-  22: ["NAB-POL-001", "NAB-MS-001", "NAB-AQ-001"],
-  23: ["NAB-POL-003", "NAB-SUP-001"]
+  16: ["NAB-POL-002", "VEN-MS-001", "VEN-AQ-001"],
+  17: ["NAB-OTH-001", "VEN-OAI-001", "VEN-ANT-001", "VEN-GGL-001", "VEN-PPLX-001", "VEN-XAI-001"],
+  18: ["NAB-OTH-001", "VEN-GGL-001"],
+  19: ["NAB-OTH-001", "VEN-CANVA-001", "VEN-DESIGN-001"],
+  20: ["NAB-OTH-001", "VEN-MEDIA-001"],
+  21: ["NAB-OTH-001", "VEN-AUTO-001", "VEN-MS-001"],
+  22: ["NAB-POL-001", "NAB-POL-002"],
+  23: ["NAB-POL-001", "VEN-MS-001", "VEN-AQ-001"]
 };
 
 function assertContent() {
