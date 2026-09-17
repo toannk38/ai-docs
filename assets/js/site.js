@@ -174,6 +174,53 @@
     });
   });
 
+  var imageTriggers = Array.prototype.slice.call(document.querySelectorAll("[data-image-zoom]"));
+  if (imageTriggers.length) {
+    var imageModal = document.createElement("div");
+    imageModal.className = "image-modal";
+    imageModal.setAttribute("role", "dialog");
+    imageModal.setAttribute("aria-modal", "true");
+    imageModal.setAttribute("aria-label", "Ảnh minh họa phóng to");
+    imageModal.setAttribute("aria-hidden", "true");
+    imageModal.innerHTML = '<button class="image-modal-close" type="button" aria-label="Đóng ảnh">&times;</button><img src="" alt=""><p class="image-modal-caption"></p>';
+    document.body.appendChild(imageModal);
+
+    var modalImage = imageModal.querySelector("img");
+    var modalCaption = imageModal.querySelector(".image-modal-caption");
+    var modalClose = imageModal.querySelector(".image-modal-close");
+    var lastImageTrigger = null;
+
+    function closeImageModal() {
+      imageModal.classList.remove("active");
+      imageModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastImageTrigger) lastImageTrigger.focus();
+    }
+
+    imageTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        var image = trigger.querySelector("img");
+        var caption = trigger.closest("figure").querySelector("figcaption");
+        lastImageTrigger = trigger;
+        modalImage.src = image.src;
+        modalImage.alt = image.alt;
+        modalCaption.textContent = caption ? caption.textContent : image.alt;
+        imageModal.classList.add("active");
+        imageModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        modalClose.focus();
+      });
+    });
+
+    modalClose.addEventListener("click", closeImageModal);
+    imageModal.addEventListener("click", function (event) {
+      if (event.target === imageModal || event.target === modalImage) closeImageModal();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && imageModal.classList.contains("active")) closeImageModal();
+    });
+  }
+
   window.addEventListener("resize", function () {
     if (!isMobile()) setMobileMenu(false);
   });

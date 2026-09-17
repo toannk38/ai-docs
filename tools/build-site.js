@@ -211,6 +211,29 @@ function renderWalkthroughs(items) {
     </article>`).join("");
 }
 
+function renderFigure(figure, rootPrefix = "./") {
+  return `<figure class="doc-figure">
+    <button class="doc-figure-trigger" type="button" data-image-zoom aria-label="Mở rộng: ${esc(figure.caption)}">
+      <img src="${rootPrefix}${esc(figure.src)}" alt="${esc(figure.alt)}" loading="lazy" decoding="async">
+    </button>
+    <figcaption>${esc(figure.caption)}</figcaption>
+  </figure>`;
+}
+
+function renderGuideSections(items, rootPrefix = "./") {
+  return items.map((section, sectionIndex) => `<section class="guide-section" id="${esc(section.id)}">
+    <h2>${sectionIndex + 1}. ${esc(section.title)}</h2>
+    ${section.intro ? `<p>${esc(section.intro)}</p>` : ""}
+    ${(section.subsections || []).map((item, subIndex) => `<section class="guide-subsection" id="${esc(item.id)}">
+      <h3>${sectionIndex + 1}.${subIndex + 1}. ${esc(item.title || item.heading)}</h3>
+      ${item.body ? `<p>${esc(item.body)}</p>` : ""}
+      ${item.steps ? `<ol class="steps">${item.steps.map((step) => `<li>${esc(step)}</li>`).join("")}</ol>` : ""}
+      ${item.figures?.length ? `<div class="doc-figure-grid">${item.figures.map((figure) => renderFigure(figure, rootPrefix)).join("")}</div>` : ""}
+    </section>`).join("")}
+    ${section.figures?.length ? `<div class="doc-figure-grid">${section.figures.map((figure) => renderFigure(figure, rootPrefix)).join("")}</div>` : ""}
+  </section>`).join("");
+}
+
 function renderFaqs(items) {
   return `<div class="faq-list">${items.map(([question, answer]) => `
     <details class="faq-item">
@@ -238,7 +261,7 @@ function renderPager(index) {
 
 function renderChapter(chapter, index) {
   const statusNoticeClass = chapter.kind === "reference" ? "status-notice reference" : "status-notice";
-  const tocItems = [
+  const defaultTocItems = [
     ["muc-tieu", "Mục tiêu"],
     ["dieu-kien", "Điều kiện"],
     ["use-case", "Use case"],
@@ -247,6 +270,16 @@ function renderChapter(chapter, index) {
     ["faq", "FAQ"],
     ["nguon", "Nguồn"]
   ];
+  const tocItems = chapter.guideSections?.length ? [
+    ["muc-tieu", "Mục tiêu"],
+    ["dieu-kien", "Điều kiện"],
+    ["use-case", "Use case"],
+    ...chapter.guideSections.map((section) => [section.id, section.title]),
+    ["huong-dan", "Hướng dẫn"],
+    ["kiem-soat", "Kiểm soát"],
+    ["faq", "FAQ"],
+    ["nguon", "Nguồn"]
+  ] : (chapter.toc || defaultTocItems);
   return `<!doctype html>
 <html lang="vi">
 <head>
@@ -302,6 +335,8 @@ ${renderHeader(true, "../")}
           <h2>Use case và cách chọn phạm vi</h2>
           ${renderCards(chapter.useCases)}
         </section>
+
+        ${chapter.guideSections ? renderGuideSections(chapter.guideSections, "../") : ""}
 
         ${chapter.promptTemplate ? `<section aria-labelledby="prompt-mau"><h2 id="prompt-mau">Prompt mẫu dùng chung</h2><pre class="prompt-template"><span class="prompt-label">Mẫu — thay nội dung trong ngoặc vuông</span>${esc(chapter.promptTemplate)}</pre></section>` : ""}
 

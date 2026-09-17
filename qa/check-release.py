@@ -45,7 +45,9 @@ class DocumentParser(HTMLParser):
         self.chapter_nav_current = 0
         self.walkthrough_count = 0
         self.faq_count = 0
+        self.doc_figures_missing_elements: list[str] = []
         self._chapter_nav_depth = 0
+        self._doc_figure_stack: list[dict[str, bool]] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = {key: value or "" for key, value in attrs}
@@ -68,6 +70,13 @@ class DocumentParser(HTMLParser):
             self.ids.append(values["id"])
         if tag == "nav" and "nav-group" in classes:
             self._chapter_nav_depth += 1
+        if tag == "figure" and "doc-figure" in classes:
+            self._doc_figure_stack.append({"img": False, "figcaption": False})
+        if self._doc_figure_stack:
+            if tag == "img":
+                self._doc_figure_stack[-1]["img"] = True
+            elif tag == "figcaption":
+                self._doc_figure_stack[-1]["figcaption"] = True
         if tag == "a":
             href = values.get("href", "")
             self.links.append((tag, href))
@@ -88,10 +97,24 @@ class DocumentParser(HTMLParser):
             self.title_depth -= 1
         if tag == "nav" and self._chapter_nav_depth:
             self._chapter_nav_depth -= 1
+        if tag == "figure" and self._doc_figure_stack:
+            figure = self._doc_figure_stack.pop()
+            if not figure["img"]:
+                self.doc_figures_missing_elements.append("img")
+            if not figure["figcaption"]:
+                self.doc_figures_missing_elements.append("figcaption")
 
     def handle_data(self, data: str) -> None:
         if self.title_depth:
             self.title_text.append(data)
+
+    def finish(self) -> None:
+        while self._doc_figure_stack:
+            figure = self._doc_figure_stack.pop()
+            if not figure["img"]:
+                self.doc_figures_missing_elements.append("img")
+            if not figure["figcaption"]:
+                self.doc_figures_missing_elements.append("figcaption")
 
 
 def parse_documents(paths: list[Path]) -> dict[Path, DocumentParser]:
@@ -99,6 +122,7 @@ def parse_documents(paths: list[Path]) -> dict[Path, DocumentParser]:
     for path in paths:
         parser = DocumentParser()
         parser.feed(path.read_text(encoding="utf-8"))
+        parser.finish()
         parsed[path] = parser
     return parsed
 
@@ -164,6 +188,8 @@ def run() -> list[str]:
             errors.append(f"{rel}: missing skip link")
         if doc.images_without_alt:
             errors.append(f"{rel}: images missing alt: {', '.join(doc.images_without_alt)}")
+        if doc.doc_figures_missing_elements:
+            errors.append(f"{rel}: documentation figures missing required elements: {', '.join(doc.doc_figures_missing_elements)}")
         duplicates = sorted({item for item in doc.ids if doc.ids.count(item) > 1})
         if duplicates:
             errors.append(f"{rel}: duplicate ids: {', '.join(duplicates)}")
