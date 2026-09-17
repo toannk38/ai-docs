@@ -1,6 +1,6 @@
 # Báo cáo kiểm thử kỹ thuật sơ bộ
 
-> Ngày kiểm tra: 19/08/2026  
+> Ngày kiểm tra: 17/09/2026  
 > Phạm vi: bản dự thảo 0.9 trong workspace  
 > Báo cáo này không thay thế UAT tenant NAB, review ATTT/Tuân thủ/Brand hoặc quyết định GO/NO-GO.
 
@@ -8,33 +8,39 @@
 
 | Hạng mục | Kết quả | Bằng chứng |
 |---|---|---|
-| Cấu trúc website | PASS | Có `index.html` ở thư mục gốc và 23 file chương trong `chapters/`, tổng 24 HTML. |
-| Liên kết nội bộ và fragment | PASS | `python3 qa/check-release.py`; 0 broken internal link, missing asset hoặc missing fragment. |
+| Sinh website | PASS | `node tools/build-site.js` tạo `index.html` và 23 trang chương. |
+| Cấu trúc và liên kết | PASS | `python3 qa/check-release.py`; đủ 23 slug chính xác, không có trang thừa, link/fragment/tài nguyên cục bộ hợp lệ. |
+| Cấu trúc nội dung | PASS | Checker xác nhận metadata, một mục menu hiện tại, định mức walkthrough/FAQ, bảng và cảnh báo bắt buộc. |
+| Ranh giới AI tham khảo | PASS | 6/6 chương 16–21 có nguyên văn cảnh báo chỉ dùng dữ liệu công khai; quét không còn cách diễn đạt làm yếu ranh giới này. |
+| Amazon Quick | PASS | SHA-256 `tools/content-quick.js` là `47cc881119f368c49d7d54cfe5e237ac308e31a127898013a8aa4c4fe3633278`; không có diff so với commit khóa `7b9d54a`. |
+| JavaScript | PASS | `node --check` đạt cho build script, toàn bộ module nội dung và `assets/js/site.js`. |
 | Ràng buộc `file://` | PASS tĩnh | Không có CDN, tài nguyên tự tải từ Internet, `fetch`, XHR, ES module hoặc service worker. |
-| JavaScript không bắt buộc | PASS tĩnh | Nội dung, sidebar và link chương được render sẵn trong HTML; JavaScript chỉ progressive enhancement. |
-| Trạng thái công cụ | PASS | Chương 04–15 có “Đang sử dụng tại NAB”; chương 16–21 có disclaimer bắt buộc. |
-| Metadata/accessibility cấu trúc | PASS | 24/24 trang có `lang="vi"`, title, một H1, main landmark, skip link và alt cho ảnh. |
-| Heading outline | PASS tĩnh | Heading đầu tiên là H1, không nhảy cấp; nhãn nhóm trong sidebar dùng phần tử văn bản thay vì tạo H2 đứng trước H1. |
-| Định mức nội dung | PASS tĩnh | Chương 04–15 có 2–3 walkthrough và 5–8 FAQ; chương 16–21 có 1 walkthrough và 3–5 FAQ. |
-| Source ID theo chương | PASS tĩnh | 23/23 chương hiển thị Source ID kiểm soát và mọi ID đều tồn tại trong `source-register.md`. |
-| Mở trực tiếp trên Firefox | PASS | Screenshot headless tại 1366×768 và 1920×1080 cho index; 1366×768 cho Excel và Quick Sight. |
-| Đường dẫn có khoảng trắng | PASS | Sao chép package sang thư mục `NAB QA.*`, chạy lại checker và mở `index.html` bằng `file://`. |
-| Sinh lại website | PASS | Chạy `node tools/build-site.js` không làm đổi tổng hợp SHA-256 của 24 HTML: `05a74f8e5defe25c3a35fb6ca3cc5e0c9c7f31e71bd6562358709e749fbd4fac`. |
-| Nguồn web | PASS có ngoại lệ truy cập tự động | 70 URL được rà; 67 trả 2xx, 3 URL Canva/Perplexity trả 403 cho client tự động; không còn URL trả 404. |
-| Thông báo PDF | PASS kỹ thuật | PDF 5 trang A4; tiếng Việt và bố cục trang đầu/trang cuối đã được kiểm tra bằng ảnh render. |
-| Thông báo DOCX | PASS kỹ thuật | DOCX mở lại để tạo PDF; logo được nhúng trong `word/media`, không còn quan hệ `file:///` hoặc `TargetMode="External"`. |
+| Giao diện Firefox desktop | PASS trực quan | Ảnh chụp headless 1366×768 cho trang chủ và Chương 17; bố cục ba cột, nhóm menu hiện tại, nhãn và cảnh báo hiển thị rõ, không thấy tràn ngang. |
+| Giao diện Firefox mobile | PASS trực quan có giới hạn | Ảnh chụp headless 390×844 cho Chương 20; header, nội dung, metadata và cảnh báo không chồng lấp hoặc tràn ngang. Bảng có wrapper cuộn ngang theo kiểm tra HTML/CSS tĩnh. |
+| Sinh lại ổn định | PASS | SHA-256 tổng hợp 24 HTML trước/sau rebuild đều là `c456dd4d576aa2cb299bee90aafb222344fd19a8f30c1acba155df3645666cfe`. |
+| Chính tả và tên cũ | PASS theo mẫu quét | Không còn slug cũ; không thấy `cihnsh`, `chính sác`, `Nam A bank`, `Chat GPT` hoặc `NoteBookLM`. |
 
 ## 2. Lệnh kiểm tra chính
 
 ```bash
 node tools/build-site.js
-python3 qa/check-release.py
-bash -n tools/build-notice.sh
-node --check assets/js/site.js
 node --check tools/build-site.js
-bash tools/build-notice.sh
-pdfinfo documents/thong-bao-noi-bo.pdf
+node --check tools/content-general.js
+node --check tools/content-ms365.js
+node --check tools/content-quick.js
+node --check tools/content-reference.js
+node --check tools/content-glossary.js
+node --check assets/js/site.js
+python3 qa/check-release.py
 ```
+
+Firefox 155.0.1 được chạy headless với các viewport:
+
+- `1366×768`: `index.html`.
+- `1366×768`: `chapter-17-ai-hoi-thoai-tro-ly-da-nang.html`.
+- `390×844`: `chapter-20-ai-tao-hinh-anh-video.html`.
+
+Firefox được cài qua Snap nên thư mục ảnh/profile tạm phải đặt trong workspace thay vì `/tmp`; đây là giới hạn môi trường kiểm thử, không phải thay đổi của website.
 
 Kết quả cuối của checker:
 
@@ -42,21 +48,17 @@ Kết quả cuối của checker:
 PASS: static release checks completed
 - index.html and 23 files in chapters/ present
 - internal links, fragments and local resources resolved
-- required metadata, navigation and disclaimers present
+- required metadata, navigation, tables and data warnings present
 - no external auto-loaded resources or forbidden file:// runtime APIs
 ```
-
-Regression sau khi đồng bộ Source ID và heading outline tiếp tục trả `PASS`. Việc chạy lại browser đích vẫn thuộc gate thủ công; kết quả static không thay thế Edge/Chrome trên Windows, zoom, keyboard-only hoặc UNC.
 
 ## 3. Chưa được xác minh trong môi trường hiện tại
 
 - Edge và Chrome do NAB quản lý trên Windows 10/11.
-- Mapped drive và UNC path thực tế của NAB.
-- Keyboard-only, Narrator, zoom 200% và contrast audit bằng công cụ accessibility chuyên dụng.
-- Print preview của toàn bộ 23 chương trên browser đích.
+- Mapped drive, đường dẫn có dấu/khoảng trắng và UNC path thực tế của NAB.
+- Keyboard-only, Narrator, zoom 200%, contrast audit chuyên dụng và print preview toàn bộ 23 chương.
 - Walkthrough Microsoft 365 và Amazon Quick trên tenant/account NAB.
-- License, role, Region, connector, retention, DLP, RLS/CLS, approval, schedule và Apps thực tế.
-- Pilot 5–8 người thuộc tối thiểu hai nhóm ĐVKD.
-- Xác nhận của ATTT, Tuân thủ/Pháp chế, Brand/Truyền thông và người phê duyệt phát hành.
+- License, role, Region, connector, retention, DLP, RLS/CLS, approval và schedule thực tế.
+- Pilot người dùng và xác nhận của ATTT, Tuân thủ/Pháp chế, Brand/Truyền thông cùng người phê duyệt phát hành.
 
 Các hạng mục này vẫn là release gate trong `qa/release-checklist.md` và không được suy diễn là đã đạt.
