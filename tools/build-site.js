@@ -81,27 +81,21 @@ function chapterNo(id) {
   return String(id).padStart(2, "0");
 }
 
-function statusClass(kind) {
-  if (kind === "live") return "tag-live";
-  if (kind === "reference") return "tag-reference";
-  return "";
-}
-
 function groupChapters() {
   return [
     ["AI trong công việc", chapters.filter((chapter) => chapter.id <= 3)],
-    ["Microsoft 365 — TRỌNG TÂM", chapters.filter((chapter) => chapter.id >= 4 && chapter.id <= 10)],
-    ["Amazon Quick — TRỌNG TÂM", chapters.filter((chapter) => chapter.id >= 11 && chapter.id <= 15)],
-    ["AI phổ biến — THAM KHẢO", chapters.filter((chapter) => chapter.id >= 16 && chapter.id <= 21)],
+    ["Microsoft 365", chapters.filter((chapter) => chapter.id >= 4 && chapter.id <= 10)],
+    ["Amazon Quick", chapters.filter((chapter) => chapter.id >= 11 && chapter.id <= 15)],
+    ["AI phổ biến", chapters.filter((chapter) => chapter.id >= 16 && chapter.id <= 21)],
     ["Phụ lục", chapters.filter((chapter) => chapter.id >= 22)]
   ];
 }
 
-function navBadge(chapter) {
-  if (chapter.id >= 4 && chapter.id <= 15) return ["TRỌNG TÂM", "focus"];
-  if (chapter.id === 21) return ["NÂNG CAO", "advanced"];
-  if (chapter.id >= 16 && chapter.id <= 20) return ["THAM KHẢO", "reference"];
-  return null;
+function displayGroup(chapter) {
+  if (chapter.id >= 4 && chapter.id <= 10) return "Microsoft 365";
+  if (chapter.id >= 11 && chapter.id <= 15) return "Amazon Quick";
+  if (chapter.id >= 16 && chapter.id <= 21) return "AI phổ biến";
+  return chapter.group;
 }
 
 function renderNav(currentSlug, chapterPrefix = "./") {
@@ -117,12 +111,11 @@ function renderNav(currentSlug, chapterPrefix = "./") {
       </button>
       <ol class="chapter-nav" id="${groupId}">
         ${items.map((chapter) => {
-          const badge = navBadge(chapter);
           return `
           <li>
-            <a href="${chapterPrefix}${esc(chapter.slug)}" data-nav-link data-search="${esc(`${chapterNo(chapter.id)} ${chapter.navTitle} ${chapter.title} ${chapter.group}`)}"${chapter.slug === currentSlug ? ' aria-current="page"' : ""}>
+            <a href="${chapterPrefix}${esc(chapter.slug)}" data-nav-link data-search="${esc(`${chapterNo(chapter.id)} ${chapter.navTitle} ${chapter.title} ${displayGroup(chapter)}`)}"${chapter.slug === currentSlug ? ' aria-current="page"' : ""}>
               <span class="nav-num">${chapterNo(chapter.id)}</span>
-              <span class="nav-label"><span>${esc(chapter.navTitle)}</span>${badge ? `<span class="nav-badge ${badge[1]}">${badge[0]}</span>` : ""}</span>
+              <span class="nav-label"><span>${esc(chapter.navTitle)}</span></span>
             </a>
           </li>`;
         }).join("")}
@@ -366,23 +359,16 @@ ${renderHeader(true, "../")}
     <main class="main" id="main-content" tabindex="-1">
       <article class="content-wrap">
         <nav class="breadcrumb" aria-label="Đường dẫn">
-          <ol><li><a href="../index.html">Trang chủ</a></li><li>${esc(chapter.group)}</li><li aria-current="page">${chapterNo(chapter.id)}. ${esc(chapter.navTitle)}</li></ol>
+          <ol><li><a href="../index.html">Trang chủ</a></li><li>${esc(displayGroup(chapter))}</li><li aria-current="page">${chapterNo(chapter.id)}. ${esc(chapter.navTitle)}</li></ol>
         </nav>
         <header class="chapter-header">
           <div class="chapter-header-accent" aria-hidden="true"></div>
           <p class="eyebrow">${esc(chapter.eyebrow)}</p>
           <h1>${esc(chapter.title)}</h1>
           <p class="lead">${esc(chapter.summary)}</p>
-          <div class="meta-row" aria-label="Thông tin tài liệu">
-            <span class="tag ${statusClass(chapter.kind)}">${esc(chapter.statusLabel)}</span>
-            <span class="tag">Dự thảo 0.9</span>
-            <span class="tag">Kiểm chứng nguồn: ${esc(chapter.sourceDate)}</span>
-            <span class="tag">Đối tượng: ${esc(chapter.audience)}</span>
-            <span class="tag">Owner: ${esc(chapter.owner)}</span>
-          </div>
         </header>
         <div class="${statusNoticeClass}">
-          <strong>${esc(chapter.statusLabel)}</strong>
+          <strong>${chapter.kind === "reference" ? "Lưu ý sử dụng" : esc(chapter.statusLabel)}</strong>
           <p>${esc(chapter.statusText)}</p>
         </div>
         <div class="mobile-page-toc">${renderPageToc(tocItems)}</div>
@@ -393,8 +379,7 @@ ${renderHeader(true, "../")}
         </section>
 
         <section id="dieu-kien">
-          <h2>Đối tượng và điều kiện trước khi dùng</h2>
-          <p><strong>Đối tượng:</strong> ${esc(chapter.audience)}</p>
+          <h2>Điều kiện trước khi dùng</h2>
           ${renderList(chapter.prerequisites)}
         </section>
 
@@ -432,7 +417,6 @@ ${renderHeader(true, "../")}
         </section>
 
         ${renderPager(index)}
-        <footer class="chapter-footer">Bản dự thảo nội bộ · Chưa phát hành · Cập nhật nội dung: ${esc(chapter.sourceDate)}</footer>
       </article>
     </main>
     ${renderRightSidebar(tocItems)}
@@ -445,9 +429,9 @@ ${renderHeader(true, "../")}
 }
 
 function renderHomeCard(chapter, extraClass = "") {
-  const search = `${chapter.navTitle} ${chapter.title} ${chapter.summary} ${chapter.group}`;
+  const search = `${chapter.navTitle} ${chapter.title} ${chapter.summary} ${displayGroup(chapter)}`;
   return `<a class="card tool-card ${extraClass}" href="./chapters/${esc(chapter.slug)}" data-tool-card data-search="${esc(search)}">
-    <div class="meta-row"><span class="tag ${statusClass(chapter.kind)}">${esc(chapter.statusLabel)}</span><span class="tag">Chương ${chapterNo(chapter.id)}</span></div>
+    <div class="meta-row"><span class="tag">Chương ${chapterNo(chapter.id)}</span></div>
     <h3>${esc(chapter.navTitle)}</h3>
     <p>${esc(chapter.summary)}</p>
   </a>`;
@@ -480,11 +464,6 @@ ${renderHeader(true)}
         <p class="eyebrow">Sáng kiến nội bộ · Khối Công nghệ thông tin</p>
         <h1 id="hero-title">Cẩm nang ứng dụng AI và công nghệ trong công việc tại NAB</h1>
         <p class="lead">Cẩm nang thực hành dành cho Đơn vị kinh doanh, tập trung chuyên sâu vào Microsoft 365 và Amazon Quick — hai nền tảng đang được sử dụng tại NAB.</p>
-        <div class="meta-row">
-          <span class="tag tag-reference">Bản dự thảo nội bộ — chưa phát hành</span>
-          <span class="tag">Phiên bản 0.9</span>
-          <span class="tag">Cập nhật 19/08/2026</span>
-        </div>
         <div class="hero-actions">
           <a class="button" href="./chapters/chapter-01-tong-quan.html">Bắt đầu đọc</a>
           <a class="button secondary" href="#cong-cu-trong-tam">Đến công cụ trọng tâm</a>
@@ -542,11 +521,11 @@ ${renderHeader(true)}
 
       <h3>AI trong công việc</h3>
       <div class="grid grid-3">${foundation.filter((chapter) => chapter.id <= 3).map((chapter) => renderHomeCard(chapter)).join("")}</div>
-      <h3>Microsoft 365 — TRỌNG TÂM</h3>
+      <h3>Microsoft 365</h3>
       <div class="grid grid-3">${ms.map((chapter) => renderHomeCard(chapter)).join("")}</div>
-      <h3>Amazon Quick — TRỌNG TÂM</h3>
+      <h3>Amazon Quick</h3>
       <div class="grid grid-3">${quick.map((chapter) => renderHomeCard(chapter)).join("")}</div>
-      <h3>AI phổ biến — THAM KHẢO</h3>
+      <h3>AI phổ biến</h3>
       <div class="callout danger public-data-warning"><strong>Lưu ý bắt buộc</strong><p>Chỉ sử dụng công cụ AI tham khảo với dữ liệu công khai. Không sử dụng dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc bất kỳ dữ liệu nội bộ nào.</p></div>
       <div class="grid grid-3">${reference.map((chapter) => renderHomeCard(chapter)).join("")}</div>
       <h3>Phụ lục</h3>
@@ -567,7 +546,6 @@ ${renderHeader(true)}
         </div>
       </div>
     </section>
-    <footer class="home-footer">Bản dự thảo nội bộ · Chưa phát hành · Owner và kênh Service Desk phải được điền trước GO/NO-GO</footer>
   </main>
   </div>
   <div class="sidebar-scrim" data-sidebar-scrim></div>

@@ -103,11 +103,6 @@ kbd { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
 .chapter-nav a:hover .nav-num { color: var(--nab-blue); }
 .chapter-nav a[aria-current="page"] .nav-num { color: rgb(255 255 255 / 80%); }
 .nav-label { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 7px; }
-.nav-badge { flex: 0 0 auto; padding: 2px 5px; border-radius: 999px; font-size: .54rem; font-weight: 850; letter-spacing: .04em; }
-.nav-badge.focus { background: #fff7dc; color: #815400; }
-.nav-badge.reference { background: var(--slate-100); color: var(--slate-500); }
-.nav-badge.advanced { background: #e8f1fb; color: var(--nab-blue-dark); }
-.chapter-nav a[aria-current="page"] .nav-badge { background: rgb(255 255 255 / 18%); color: #fff; }
 .nav-empty { display: none; margin: 14px 4px; color: var(--slate-500); font-size: .78rem; }
 .sidebar-expand, .right-sidebar-expand { position: fixed; z-index: 80; top: calc(var(--header-height) + 12px); display: none; align-items: center; gap: 7px; padding: 9px 11px; border: 1px solid var(--slate-300); border-radius: 11px; background: #fff; color: var(--slate-700); font-size: .7rem; font-weight: 700; box-shadow: var(--shadow); cursor: pointer; }
 .sidebar-expand { left: 8px; }
@@ -137,8 +132,6 @@ h4 { margin: 18px 0 7px; font-size: .94rem; }
 .lead { position: relative; max-width: 760px; margin: 0; color: var(--slate-600); font-size: .93rem; line-height: 1.7; }
 .meta-row { position: relative; display: flex; flex-wrap: wrap; gap: 7px; margin: 17px 0 0; }
 .tag { display: inline-flex; min-height: 27px; align-items: center; padding: 3px 9px; border: 1px solid var(--slate-200); border-radius: 999px; background: #fff; color: var(--slate-600); font-size: .7rem; font-weight: 650; }
-.tag-live { border-color: #b7e0cc; background: var(--success-bg); color: var(--success); }
-.tag-reference { border-color: #ead59d; background: var(--warning-bg); color: var(--warning); }
 .content-wrap > section, .content-wrap > .status-notice { margin: 18px 0; padding: 25px 28px; border: 1px solid var(--slate-200); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow-sm); }
 .content-wrap > section > :first-child { margin-top: 0; }
 .content-wrap > section > :last-child { margin-bottom: 0; }

@@ -193,6 +193,10 @@ def run() -> list[str]:
     chapter_names = set(EXPECTED_SLUGS)
     source_register_text = (ROOT / "qa" / "source-register.md").read_text(encoding="utf-8")
     registered_source_ids = set(re.findall(r"^\| ((?:NAB|VEN)-[A-Z]+-\d{3}) \|", source_register_text, re.M))
+    stylesheet = (ROOT / "assets" / "css" / "style.css").read_text(encoding="utf-8")
+    for selector in [".nav-badge", ".tag-live", ".tag-reference"]:
+        if selector in stylesheet:
+            errors.append(f"assets/css/style.css: obsolete label style is still present: {selector}")
 
     for path, doc in parsed.items():
         rel = path.relative_to(ROOT)
@@ -230,9 +234,21 @@ def run() -> list[str]:
 
         if path.name.startswith("chapter-"):
             text = path.read_text(encoding="utf-8")
-            for label in ["Dự thảo 0.9", "Kiểm chứng nguồn:", "Đối tượng:", "Owner:", "Source ID kiểm soát:"]:
-                if label not in text:
-                    errors.append(f"{rel}: missing required metadata label {label!r}")
+            forbidden_labels = [
+                'class="nav-badge',
+                "Dự thảo 0.9",
+                "Kiểm chứng nguồn:",
+                '<span class="tag">Đối tượng:',
+                '<span class="tag">Owner:',
+                "— TRỌNG TÂM",
+                "— THAM KHẢO",
+                ">NÂNG CAO<",
+            ]
+            for label in forbidden_labels:
+                if label in text:
+                    errors.append(f"{rel}: obsolete label is still rendered: {label!r}")
+            if "Source ID kiểm soát:" not in text:
+                errors.append(f"{rel}: missing required metadata label 'Source ID kiểm soát:'")
             if not re.search(r"\b(?:NAB|VEN)-[A-Z]+-\d{3}\b", text):
                 errors.append(f"{rel}: missing Source ID value")
             page_source_ids = set(re.findall(r"\b(?:NAB|VEN)-[A-Z]+-\d{3}\b", text))
