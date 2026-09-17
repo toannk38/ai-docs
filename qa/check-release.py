@@ -122,7 +122,8 @@ def run() -> list[str]:
         errors.append(f"Missing chapter numbers: {', '.join(missing_numbers)}")
         return errors
 
-    root_html_paths = sorted(ROOT.glob("*.html"))
+    # tmp.html is the explicitly retained visual reference, not a release page.
+    root_html_paths = sorted(path for path in ROOT.glob("*.html") if path.name != "tmp.html")
     chapter_html_paths = sorted(CHAPTERS_DIR.glob("*.html"))
     html_paths = [*root_html_paths, *chapter_html_paths]
     expected_paths = [path for path in EXPECTED_HTML if path is not None]

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Gemini app và Gemini trong Google Workspace có bề mặt, quyền và kiểm soát khác nhau; không giả định chính sách của một gói áp dụng cho tài khoản khác.">
   <title>19. Gemini | Hướng dẫn NAB</title>
+  <link rel="icon" href="../logo/NAB-logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/site.js" defer></script>
 </head>
@@ -20,35 +21,51 @@
           <span class="brand-title">Ứng dụng công nghệ và AI</span>
         </span>
       </a>
+      <div class="header-search" role="search">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <label class="sr-only" for="portal-search">Tìm nhanh chương</label>
+        <input id="portal-search" type="search" data-portal-search placeholder="Tìm nhanh chương..." autocomplete="off">
+        <kbd>Ctrl K</kbd>
+      </div>
       <div class="header-actions">
-        <a class="home-link" href="../index.html">Trang chủ</a>
-        <button class="menu-button" type="button" data-menu-button aria-controls="chapter-sidebar" aria-expanded="false" aria-label="Mở danh mục chương">Danh mục</button>
+        <a class="home-link" href="../index.html">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
+          <span>Trang chủ</span>
+        </a>
+        <button class="menu-button" type="button" data-menu-button aria-controls="chapter-sidebar" aria-expanded="false" aria-label="Mở danh mục chương"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Danh mục</span></button>
       </div>
     </div>
   </header>
-  <div class="site-layout">
+  <button class="sidebar-expand" type="button" data-sidebar-expand aria-label="Mở danh mục chương"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h16"/></svg><span>Mục lục</span></button>
+  <div class="site-layout" data-site-layout>
     <aside class="sidebar" id="chapter-sidebar" data-sidebar aria-label="Danh mục hướng dẫn">
+      <div class="sidebar-heading">
+        <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22Z"/><path d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22Z"/></svg>Danh mục chương</span>
+        <button type="button" data-sidebar-close aria-label="Thu gọn danh mục"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m11 18-6-6 6-6M19 18l-6-6 6-6"/></svg></button>
+      </div>
       <div class="sidebar-inner">
-        <p class="sidebar-title">23 chương hướng dẫn</p>
-        
+
     <nav class="nav-group" aria-label="Nền tảng chung">
-      <p class="nav-group-title">Nền tảng chung</p>
-      <ol class="chapter-nav">
-        
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-1">
+        <span>Nền tảng chung</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-1">
+
           <li>
-            <a href="./chapter-01-tong-quan.html">
+            <a href="./chapter-01-tong-quan.html" data-nav-link data-search="01 Tổng quan sáng kiến Tổng quan hướng dẫn ứng dụng công nghệ và AI tại NAB Nền tảng chung">
               <span class="nav-num">01</span>
               <span>Tổng quan sáng kiến</span>
             </a>
           </li>
           <li>
-            <a href="./chapter-02-quan-tri-rui-ro.html">
+            <a href="./chapter-02-quan-tri-rui-ro.html" data-nav-link data-search="02 Quản trị rủi ro dữ liệu Quản trị rủi ro khi sử dụng công nghệ và AI Nền tảng chung">
               <span class="nav-num">02</span>
               <span>Quản trị rủi ro dữ liệu</span>
             </a>
           </li>
           <li>
-            <a href="./chapter-03-quy-trinh-va-prompt.html">
+            <a href="./chapter-03-quy-trinh-va-prompt.html" data-nav-link data-search="03 Quy trình và kỹ thuật prompt Quy trình sử dụng AI an toàn và kỹ thuật prompt Nền tảng chung">
               <span class="nav-num">03</span>
               <span>Quy trình và kỹ thuật prompt</span>
             </a>
@@ -56,47 +73,50 @@
       </ol>
     </nav>
     <nav class="nav-group" aria-label="Microsoft 365 — trọng tâm">
-      <p class="nav-group-title">Microsoft 365 — trọng tâm</p>
-      <ol class="chapter-nav">
-        
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-2">
+        <span>Microsoft 365 — trọng tâm</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-2">
+
           <li>
-            <a href="./chapter-04-ms365-tong-quan.html">
+            <a href="./chapter-04-ms365-tong-quan.html" data-nav-link data-search="04 Microsoft 365 tổng quan Microsoft 365 tại NAB: tổng quan và lựa chọn đúng ứng dụng Microsoft 365 — trọng tâm">
               <span class="nav-num">04</span>
               <span>Microsoft 365 tổng quan<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-05-ms365-copilot.html">
+            <a href="./chapter-05-ms365-copilot.html" data-nav-link data-search="05 Microsoft Copilot Microsoft Copilot Chat: hỏi đáp và grounding có kiểm chứng Microsoft 365 — trọng tâm">
               <span class="nav-num">05</span>
               <span>Microsoft Copilot<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-06-ms365-teams.html">
+            <a href="./chapter-06-ms365-teams.html" data-nav-link data-search="06 Microsoft Teams Microsoft Teams và Copilot: họp, recap và action items Microsoft 365 — trọng tâm">
               <span class="nav-num">06</span>
               <span>Microsoft Teams<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-07-ms365-outlook.html">
+            <a href="./chapter-07-ms365-outlook.html" data-nav-link data-search="07 Microsoft Outlook Microsoft Outlook và Copilot: tóm tắt, soạn và kiểm tra trước gửi Microsoft 365 — trọng tâm">
               <span class="nav-num">07</span>
               <span>Microsoft Outlook<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-08-ms365-word.html">
+            <a href="./chapter-08-ms365-word.html" data-nav-link data-search="08 Microsoft Word Microsoft Word và Copilot: soạn thảo, viết lại và tóm tắt Microsoft 365 — trọng tâm">
               <span class="nav-num">08</span>
               <span>Microsoft Word<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-09-ms365-excel.html">
+            <a href="./chapter-09-ms365-excel.html" data-nav-link data-search="09 Microsoft Excel Microsoft Excel và Copilot: phân tích có thể đối soát Microsoft 365 — trọng tâm">
               <span class="nav-num">09</span>
               <span>Microsoft Excel<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-10-ms365-powerpoint.html">
+            <a href="./chapter-10-ms365-powerpoint.html" data-nav-link data-search="10 Microsoft PowerPoint Microsoft PowerPoint và Copilot: trình bày đúng nguồn, đúng thương hiệu Microsoft 365 — trọng tâm">
               <span class="nav-num">10</span>
               <span>Microsoft PowerPoint<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
@@ -104,77 +124,83 @@
       </ol>
     </nav>
     <nav class="nav-group" aria-label="Amazon Quick — trọng tâm">
-      <p class="nav-group-title">Amazon Quick — trọng tâm</p>
-      <ol class="chapter-nav">
-        
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-3">
+        <span>Amazon Quick — trọng tâm</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-3">
+
           <li>
-            <a href="./chapter-11-amazon-quick-tong-quan.html">
+            <a href="./chapter-11-amazon-quick-tong-quan.html" data-nav-link data-search="11 Amazon Quick tổng quan Amazon Quick: tổng quan và truy cập an toàn Amazon Quick — trọng tâm">
               <span class="nav-num">11</span>
               <span>Amazon Quick tổng quan<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-12-amazon-quick-sight.html">
+            <a href="./chapter-12-amazon-quick-sight.html" data-nav-link data-search="12 Amazon Quick Sight Amazon Quick Sight: đọc, kiểm chứng và chia sẻ dashboard Amazon Quick — trọng tâm">
               <span class="nav-num">12</span>
               <span>Amazon Quick Sight<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-13-amazon-quick-research-index.html">
+            <a href="./chapter-13-amazon-quick-research-index.html" data-nav-link data-search="13 Quick Research &amp; Index Amazon Quick Research và Quick Index: nghiên cứu có căn cứ Amazon Quick — trọng tâm">
               <span class="nav-num">13</span>
               <span>Quick Research &amp; Index<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-14-amazon-quick-flows-automate.html">
+            <a href="./chapter-14-amazon-quick-flows-automate.html" data-nav-link data-search="14 Quick Flows &amp; Automate Amazon Quick Flows và Quick Automate: tự động hóa có kiểm soát Amazon Quick — trọng tâm">
               <span class="nav-num">14</span>
               <span>Quick Flows &amp; Automate<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
           <li>
-            <a href="./chapter-15-amazon-quick-apps.html">
+            <a href="./chapter-15-amazon-quick-apps.html" data-nav-link data-search="15 Apps in Amazon Quick Apps in Amazon Quick: prototype ứng dụng nội bộ an toàn Amazon Quick — trọng tâm">
               <span class="nav-num">15</span>
               <span>Apps in Amazon Quick<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span></span>
             </a>
           </li>
       </ol>
     </nav>
-    <nav class="nav-group" aria-label="Công cụ tham khảo">
-      <p class="nav-group-title">Công cụ tham khảo</p>
-      <ol class="chapter-nav">
-        
+    <nav class="nav-group current-group" aria-label="Công cụ tham khảo">
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-4">
+        <span>Công cụ tham khảo</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-4">
+
           <li>
-            <a href="./chapter-16-chatgpt.html">
+            <a href="./chapter-16-chatgpt.html" data-nav-link data-search="16 ChatGPT ChatGPT — hướng dẫn tham khảo an toàn Công cụ tham khảo">
               <span class="nav-num">16</span>
               <span>ChatGPT</span>
             </a>
           </li>
           <li>
-            <a href="./chapter-17-notebooklm.html">
+            <a href="./chapter-17-notebooklm.html" data-nav-link data-search="17 NotebookLM NotebookLM — hỏi đáp trên tập nguồn tham khảo Công cụ tham khảo">
               <span class="nav-num">17</span>
               <span>NotebookLM</span>
             </a>
           </li>
           <li>
-            <a href="./chapter-18-claude.html">
+            <a href="./chapter-18-claude.html" data-nav-link data-search="18 Claude Claude — hướng dẫn tham khảo an toàn Công cụ tham khảo">
               <span class="nav-num">18</span>
               <span>Claude</span>
             </a>
           </li>
           <li>
-            <a href="./chapter-19-gemini.html" aria-current="page">
+            <a href="./chapter-19-gemini.html" data-nav-link data-search="19 Gemini Gemini — phân biệt ứng dụng và tích hợp Workspace Công cụ tham khảo" aria-current="page">
               <span class="nav-num">19</span>
               <span>Gemini</span>
             </a>
           </li>
           <li>
-            <a href="./chapter-20-perplexity.html">
+            <a href="./chapter-20-perplexity.html" data-nav-link data-search="20 Perplexity Perplexity — nghiên cứu web có kiểm chứng nguồn Công cụ tham khảo">
               <span class="nav-num">20</span>
               <span>Perplexity</span>
             </a>
           </li>
           <li>
-            <a href="./chapter-21-canva-ai.html">
+            <a href="./chapter-21-canva-ai.html" data-nav-link data-search="21 Canva AI Canva AI — thiết kế có kiểm soát thương hiệu và bản quyền Công cụ tham khảo">
               <span class="nav-num">21</span>
               <span>Canva AI</span>
             </a>
@@ -182,23 +208,27 @@
       </ol>
     </nav>
     <nav class="nav-group" aria-label="Ứng dụng và hỗ trợ">
-      <p class="nav-group-title">Ứng dụng và hỗ trợ</p>
-      <ol class="chapter-nav">
-        
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-5">
+        <span>Ứng dụng và hỗ trợ</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-5">
+
           <li>
-            <a href="./chapter-22-tinh-huong-nghiep-vu.html">
+            <a href="./chapter-22-tinh-huong-nghiep-vu.html" data-nav-link data-search="22 Tình huống nghiệp vụ Tình huống ứng dụng cho Đơn vị kinh doanh Ứng dụng và hỗ trợ">
               <span class="nav-num">22</span>
               <span>Tình huống nghiệp vụ</span>
             </a>
           </li>
           <li>
-            <a href="./chapter-23-ho-tro-va-faq.html">
+            <a href="./chapter-23-ho-tro-va-faq.html" data-nav-link data-search="23 Hỗ trợ CNTT và FAQ Hỗ trợ của Khối CNTT và câu hỏi thường gặp Ứng dụng và hỗ trợ">
               <span class="nav-num">23</span>
               <span>Hỗ trợ CNTT và FAQ</span>
             </a>
           </li>
       </ol>
     </nav>
+        <p class="nav-empty" data-nav-empty>Không tìm thấy chương phù hợp.</p>
       </div>
     </aside>
     <main class="main" id="main-content" tabindex="-1">
@@ -207,6 +237,7 @@
           <ol><li><a href="../index.html">Trang chủ</a></li><li>Công cụ tham khảo</li><li aria-current="page">19. Gemini</li></ol>
         </nav>
         <header class="chapter-header">
+          <div class="chapter-header-accent" aria-hidden="true"></div>
           <p class="eyebrow">Tham khảo — chưa mặc định phê duyệt</p>
           <h1>Gemini — phân biệt ứng dụng và tích hợp Workspace</h1>
           <p class="lead">Gemini app và Gemini trong Google Workspace có bề mặt, quyền và kiểm soát khác nhau; không giả định chính sách của một gói áp dụng cho tài khoản khác.</p>
@@ -222,10 +253,10 @@
           <strong>Công cụ tham khảo</strong>
           <p>Không đồng nghĩa với việc được NAB phê duyệt sử dụng. Chỉ thao tác sau khi có phê duyệt rõ ràng về tài khoản, dữ liệu và tính năng.</p>
         </div>
-        <nav class="page-toc" aria-label="Mục lục trong chương">
-          <strong>Trong chương này</strong>
-          <ol><li><a href="#muc-tieu">Mục tiêu</a></li><li><a href="#dieu-kien">Điều kiện</a></li><li><a href="#use-case">Use case</a></li><li><a href="#huong-dan">Hướng dẫn</a></li><li><a href="#kiem-soat">Kiểm soát</a></li><li><a href="#faq">FAQ</a></li><li><a href="#nguon">Nguồn</a></li></ol>
-        </nav>
+        <div class="mobile-page-toc"><nav class="page-toc" aria-label="Mục lục trong chương">
+    <strong>Nội dung chương này</strong>
+    <ol><li><a href="#muc-tieu"><span>01</span>Mục tiêu</a></li><li><a href="#dieu-kien"><span>02</span>Điều kiện</a></li><li><a href="#use-case"><span>03</span>Use case</a></li><li><a href="#huong-dan"><span>04</span>Hướng dẫn</a></li><li><a href="#kiem-soat"><span>05</span>Kiểm soát</a></li><li><a href="#faq"><span>06</span>FAQ</a></li><li><a href="#nguon"><span>07</span>Nguồn</a></li></ol>
+  </nav></div>
 
         <section id="muc-tieu">
           <h2>Mục tiêu</h2>
@@ -248,11 +279,11 @@
     </article></div>
         </section>
 
-        
+
 
         <section id="huong-dan">
           <h2>Hướng dẫn từng bước</h2>
-          
+
     <article class="walkthrough">
       <header class="walkthrough-head">
         <h3>Walkthrough 1: Tóm tắt thông cáo công khai</h3>
@@ -311,7 +342,17 @@
         <footer class="chapter-footer">Bản dự thảo nội bộ · Chưa phát hành · Cập nhật nội dung: 19/08/2026</footer>
       </article>
     </main>
+    <aside class="right-sidebar" id="right-sidebar" data-right-sidebar aria-label="Nội dung chương này">
+    <div class="right-sidebar-heading"><strong>Nội dung chương này</strong><button type="button" data-right-sidebar-close aria-label="Thu gọn mục lục trang"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m13 6 6 6-6 6M5 6l6 6-6 6"/></svg></button></div>
+    <nav class="page-toc" aria-label="Mục lục trong chương">
+    <strong>Nội dung chương này</strong>
+    <ol><li><a href="#muc-tieu"><span>01</span>Mục tiêu</a></li><li><a href="#dieu-kien"><span>02</span>Điều kiện</a></li><li><a href="#use-case"><span>03</span>Use case</a></li><li><a href="#huong-dan"><span>04</span>Hướng dẫn</a></li><li><a href="#kiem-soat"><span>05</span>Kiểm soát</a></li><li><a href="#faq"><span>06</span>FAQ</a></li><li><a href="#nguon"><span>07</span>Nguồn</a></li></ol>
+  </nav>
+    <div class="reading-note"><strong>Mẹo tra cứu</strong><p>Nhấn <kbd>Ctrl</kbd> + <kbd>K</kbd> để tìm nhanh một chương trong cẩm nang.</p></div>
+  </aside>
+  <button class="right-sidebar-expand" type="button" data-right-sidebar-expand aria-label="Mở mục lục trang"><span>Tiện ích</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
   </div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
   <button class="back-to-top" type="button" data-back-to-top aria-label="Quay về đầu trang">↑</button>
 </body>
 </html>

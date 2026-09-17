@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/InterVariable.woff2") format("woff2");
+}
+
+:root { --blue: #005baa; --blue-dark: #004380; --blue-light: #ebf4fc; --gold: #fdb813; --ink: #1e293b; --muted: #64748b; --line: #e2e8f0; }
+* { box-sizing: border-box; }
+html { background: #f8fafc; }
+body { margin: 0; padding: 36px 20px; color: var(--ink); font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 11pt; line-height: 1.55; }
+.skip-link { position: fixed; top: -60px; left: 16px; padding: 8px 12px; background: #fff; color: var(--blue-dark); }
+.skip-link:focus { top: 10px; }
+.document-toolbar { display: flex; width: min(100%, 210mm); margin: 0 auto 12px; justify-content: flex-end; }
+.document-toolbar a { padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--blue); font-size: 9pt; font-weight: 700; text-decoration: none; }
+.document-sheet { width: min(100%, 210mm); margin: 0 auto; padding: 18mm; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 12px 35px rgb(15 23 42 / 8%); }
+.masthead { width: 100%; margin-bottom: 14pt; text-align: center; }
+.masthead img { width: 178px; height: auto; }
+.document-meta { margin: 8pt 0 0; white-space: nowrap; text-align: center; }
+.document-meta strong { color: var(--blue); }
+.draft { margin: 12pt 0 20pt; padding: 9pt 12pt; border: 1px solid #efd48b; border-left: 4px solid var(--gold); border-radius: 8px; background: #fffbeb; color: #7a5100; font-weight: 800; text-align: center; }
+h1 { margin: 0 0 7pt; color: var(--blue-dark); font-size: 19pt; letter-spacing: .03em; text-align: center; }
+.subject { margin: 0 0 18pt; color: var(--blue-dark); font-size: 13pt; font-weight: 700; text-align: center; }
+h2 { margin: 18pt 0 7pt; color: var(--blue); font-size: 12pt; page-break-after: avoid; }
+p { margin: 6pt 0; text-align: justify; }
+li { margin: 4pt 0; }
+.mandatory { padding: 10pt 12pt; border-left: 4px solid var(--blue); border-radius: 8px; background: var(--blue-light); }
+.role { margin: 8pt 0; padding: 9pt 11pt; border: 1px solid var(--line); border-radius: 9px; background: #f8fafc; page-break-inside: avoid; }
+.role h3 { margin: 0 0 5pt; color: var(--blue-dark); font-size: 11pt; }
+.placeholder { color: #8a5a00; font-weight: 700; }
+.signature { margin: 24pt 0 14pt; text-align: center; page-break-inside: avoid; }
+.signature p { text-align: center; }
+.signature-space { height: 34pt; }
+.recipients { margin-top: 14pt; text-align: left; page-break-inside: avoid; }
+code { padding: 1px 4px; border-radius: 4px; background: #f1f5f9; font-family: ui-monospace, Consolas, monospace; }
+
+@media (max-width: 640px) {
+  body { padding: 0; font-size: 10pt; }
+  .document-toolbar { margin: 0; padding: 10px; }
+  .document-sheet { padding: 22px 16px; border: 0; border-radius: 0; box-shadow: none; }
+  .document-meta { white-space: normal; }
+}
+
+@media print {
+  @page { size: A4; margin: 18mm 18mm 20mm; }
+  html { background: #fff; }
+  body { padding: 0; }
+  .document-toolbar, .skip-link { display: none !important; }
+  .document-sheet { width: 100%; padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+}

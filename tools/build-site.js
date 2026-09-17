@@ -73,6 +73,10 @@ function esc(value) {
     .replaceAll("'", "&#39;");
 }
 
+function cleanOutput(value) {
+  return value.replace(/[ \t]+$/gm, "");
+}
+
 function chapterNo(id) {
   return String(id).padStart(2, "0");
 }
@@ -93,20 +97,27 @@ function groupChapters() {
   ];
 }
 
-function renderNav(currentSlug) {
-  return groupChapters().map(([title, items]) => `
-    <nav class="nav-group" aria-label="${esc(title)}">
-      <p class="nav-group-title">${esc(title)}</p>
-      <ol class="chapter-nav">
+function renderNav(currentSlug, chapterPrefix = "./") {
+  return groupChapters().map(([title, items], groupIndex) => {
+    const groupId = `nav-group-${groupIndex + 1}`;
+    const isCurrentGroup = items.some((chapter) => chapter.slug === currentSlug);
+    return `
+    <nav class="nav-group${isCurrentGroup ? " current-group" : ""}" aria-label="${esc(title)}">
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="${groupId}">
+        <span>${esc(title)}</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="${groupId}">
         ${items.map((chapter) => `
           <li>
-            <a href="./${esc(chapter.slug)}"${chapter.slug === currentSlug ? ' aria-current="page"' : ""}>
+            <a href="${chapterPrefix}${esc(chapter.slug)}" data-nav-link data-search="${esc(`${chapterNo(chapter.id)} ${chapter.navTitle} ${chapter.title} ${chapter.group}`)}"${chapter.slug === currentSlug ? ' aria-current="page"' : ""}>
               <span class="nav-num">${chapterNo(chapter.id)}</span>
               <span>${esc(chapter.navTitle)}${chapter.kind === "live" ? '<span class="nav-priority" aria-label="Nội dung trọng tâm">●</span>' : ""}</span>
             </a>
           </li>`).join("")}
       </ol>
-    </nav>`).join("");
+    </nav>`;
+  }).join("");
 }
 
 function renderHeader(includeMenu = true, rootPrefix = "./") {
@@ -121,12 +132,54 @@ function renderHeader(includeMenu = true, rootPrefix = "./") {
           <span class="brand-title">Ứng dụng công nghệ và AI</span>
         </span>
       </a>
+      <div class="header-search" role="search">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <label class="sr-only" for="portal-search">Tìm nhanh chương</label>
+        <input id="portal-search" type="search" data-portal-search placeholder="Tìm nhanh chương..." autocomplete="off">
+        <kbd>Ctrl K</kbd>
+      </div>
       <div class="header-actions">
-        <a class="home-link" href="${rootPrefix}index.html">Trang chủ</a>
-        ${includeMenu ? '<button class="menu-button" type="button" data-menu-button aria-controls="chapter-sidebar" aria-expanded="false" aria-label="Mở danh mục chương">Danh mục</button>' : ""}
+        <a class="home-link" href="${rootPrefix}index.html">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
+          <span>Trang chủ</span>
+        </a>
+        ${includeMenu ? '<button class="menu-button" type="button" data-menu-button aria-controls="chapter-sidebar" aria-expanded="false" aria-label="Mở danh mục chương"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Danh mục</span></button>' : ""}
       </div>
     </div>
   </header>`;
+}
+
+function renderSidebar(currentSlug, chapterPrefix = "./") {
+  return `<aside class="sidebar" id="chapter-sidebar" data-sidebar aria-label="Danh mục hướng dẫn">
+      <div class="sidebar-heading">
+        <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22Z"/><path d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22Z"/></svg>Danh mục chương</span>
+        <button type="button" data-sidebar-close aria-label="Thu gọn danh mục"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m11 18-6-6 6-6M19 18l-6-6 6-6"/></svg></button>
+      </div>
+      <div class="sidebar-inner">
+        ${renderNav(currentSlug, chapterPrefix)}
+        <p class="nav-empty" data-nav-empty>Không tìm thấy chương phù hợp.</p>
+      </div>
+    </aside>`;
+}
+
+function renderSidebarExpand() {
+  return `<button class="sidebar-expand" type="button" data-sidebar-expand aria-label="Mở danh mục chương"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h16"/></svg><span>Mục lục</span></button>`;
+}
+
+function renderPageToc(items) {
+  return `<nav class="page-toc" aria-label="Mục lục trong chương">
+    <strong>Nội dung chương này</strong>
+    <ol>${items.map(([id, label], index) => `<li><a href="#${id}"><span>${chapterNo(index + 1)}</span>${label}</a></li>`).join("")}</ol>
+  </nav>`;
+}
+
+function renderRightSidebar(items) {
+  return `<aside class="right-sidebar" id="right-sidebar" data-right-sidebar aria-label="Nội dung chương này">
+    <div class="right-sidebar-heading"><strong>Nội dung chương này</strong><button type="button" data-right-sidebar-close aria-label="Thu gọn mục lục trang"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m13 6 6 6-6 6M5 6l6 6-6 6"/></svg></button></div>
+    ${renderPageToc(items)}
+    <div class="reading-note"><strong>Mẹo tra cứu</strong><p>Nhấn <kbd>Ctrl</kbd> + <kbd>K</kbd> để tìm nhanh một chương trong cẩm nang.</p></div>
+  </aside>
+  <button class="right-sidebar-expand" type="button" data-right-sidebar-expand aria-label="Mở mục lục trang"><span>Tiện ích</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>`;
 }
 
 function renderList(items, className = "check-list") {
@@ -201,24 +254,22 @@ function renderChapter(chapter, index) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${esc(chapter.summary)}">
   <title>${chapterNo(chapter.id)}. ${esc(chapter.navTitle)} | Hướng dẫn NAB</title>
+  <link rel="icon" href="../logo/NAB-logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/site.js" defer></script>
 </head>
 <body>
 ${renderHeader(true, "../")}
-  <div class="site-layout">
-    <aside class="sidebar" id="chapter-sidebar" data-sidebar aria-label="Danh mục hướng dẫn">
-      <div class="sidebar-inner">
-        <p class="sidebar-title">23 chương hướng dẫn</p>
-        ${renderNav(chapter.slug)}
-      </div>
-    </aside>
+  ${renderSidebarExpand()}
+  <div class="site-layout" data-site-layout>
+    ${renderSidebar(chapter.slug)}
     <main class="main" id="main-content" tabindex="-1">
       <article class="content-wrap">
         <nav class="breadcrumb" aria-label="Đường dẫn">
           <ol><li><a href="../index.html">Trang chủ</a></li><li>${esc(chapter.group)}</li><li aria-current="page">${chapterNo(chapter.id)}. ${esc(chapter.navTitle)}</li></ol>
         </nav>
         <header class="chapter-header">
+          <div class="chapter-header-accent" aria-hidden="true"></div>
           <p class="eyebrow">${esc(chapter.eyebrow)}</p>
           <h1>${esc(chapter.title)}</h1>
           <p class="lead">${esc(chapter.summary)}</p>
@@ -234,10 +285,7 @@ ${renderHeader(true, "../")}
           <strong>${esc(chapter.statusLabel)}</strong>
           <p>${esc(chapter.statusText)}</p>
         </div>
-        <nav class="page-toc" aria-label="Mục lục trong chương">
-          <strong>Trong chương này</strong>
-          <ol>${tocItems.map(([id, label]) => `<li><a href="#${id}">${label}</a></li>`).join("")}</ol>
-        </nav>
+        <div class="mobile-page-toc">${renderPageToc(tocItems)}</div>
 
         <section id="muc-tieu">
           <h2>Mục tiêu</h2>
@@ -283,7 +331,9 @@ ${renderHeader(true, "../")}
         <footer class="chapter-footer">Bản dự thảo nội bộ · Chưa phát hành · Cập nhật nội dung: ${esc(chapter.sourceDate)}</footer>
       </article>
     </main>
+    ${renderRightSidebar(tocItems)}
   </div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
   <button class="back-to-top" type="button" data-back-to-top aria-label="Quay về đầu trang">↑</button>
 </body>
 </html>
@@ -311,11 +361,15 @@ function renderHome() {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Cẩm nang nội bộ NAB về Microsoft 365, Amazon Quick và ứng dụng AI an toàn.">
   <title>Hướng dẫn ứng dụng công nghệ và AI tại NAB</title>
+  <link rel="icon" href="./logo/NAB-logo.png" type="image/png">
   <link rel="stylesheet" href="./assets/css/style.css">
   <script src="./assets/js/site.js" defer></script>
 </head>
 <body>
-${renderHeader(false)}
+${renderHeader(true)}
+  ${renderSidebarExpand()}
+  <div class="site-layout home-layout" data-site-layout>
+  ${renderSidebar(null, "./chapters/")}
   <main class="home-main" id="main-content" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
@@ -407,8 +461,10 @@ ${renderHeader(false)}
         </div>
       </div>
     </section>
+    <footer class="home-footer">Bản dự thảo nội bộ · Chưa phát hành · Owner và kênh Service Desk phải được điền trước GO/NO-GO</footer>
   </main>
-  <footer class="home-footer">Bản dự thảo nội bộ · Chưa phát hành · Owner và kênh Service Desk phải được điền trước GO/NO-GO</footer>
+  </div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
   <button class="back-to-top" type="button" data-back-to-top aria-label="Quay về đầu trang">↑</button>
 </body>
 </html>
@@ -418,7 +474,7 @@ ${renderHeader(false)}
 assertContent();
 fs.mkdirSync(chaptersDir, { recursive: true });
 chapters.forEach((chapter, index) => {
-  fs.writeFileSync(path.join(chaptersDir, chapter.slug), renderChapter(chapter, index), "utf8");
+  fs.writeFileSync(path.join(chaptersDir, chapter.slug), cleanOutput(renderChapter(chapter, index)), "utf8");
 });
-fs.writeFileSync(path.join(root, "index.html"), renderHome(), "utf8");
+fs.writeFileSync(path.join(root, "index.html"), cleanOutput(renderHome()), "utf8");
 process.stdout.write(`Generated index.html and ${chapters.length} chapter pages.\n`);
