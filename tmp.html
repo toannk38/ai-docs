@@ -1,0 +1,577 @@
+<!DOCTYPE html><html class="h-full bg-slate-50 text-slate-800" lang="vi" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Cẩm Nang Nội Bộ - Ứng Dụng Công Nghệ &amp; AI | NAM A BANK</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            namabank: {
+              blue: '#005BAA',
+              'blue-dark': '#004380',
+              'blue-light': '#EBF4FC',
+              gold: '#FDB813',
+              'gold-hover': '#E5A60F',
+              accent: '#E39A00'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Custom Styles: Typography & Scrollbars -->
+<style data-purpose="custom-layout">
+    /* Custom clean scrollbars for sidebar navigation */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Transition classes for smooth sidebar collapsing */
+    #left-sidebar, #right-sidebar {
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col font-sans antialiased text-slate-800">
+<!-- BEGIN: TopHeader -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm" data-purpose="portal-header">
+<div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Left: Brand Logo & Title -->
+<div class="flex items-center space-x-6">
+<div class="flex flex-col">
+<span class="text-2xl font-extrabold tracking-tight text-namabank-blue uppercase">NAM A BANK</span>
+<span class="text-[10px] font-semibold text-namabank-blue -mt-1 tracking-wider uppercase">Ngân hàng Đẹp - Dịch vụ Tốt</span>
+</div>
+<div class="h-8 w-[1.5px] bg-slate-300 hidden md:block"></div>
+<div class="hidden md:block">
+<div class="text-xs uppercase tracking-wider font-extrabold text-namabank-blue">CẨM NANG NỘI BỘ</div>
+<div class="text-base font-bold text-slate-900 leading-tight">Ứng dụng công nghệ và AI</div>
+</div>
+</div>
+<!-- Center: Search Input Bar -->
+<div class="flex-1 max-w-xl mx-8 hidden lg:block" data-purpose="quick-search">
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="w-full pl-10 pr-24 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-namabank-blue focus:bg-white transition-all shadow-inner" placeholder="Tìm kiếm prompt, quy định bảo mật, kịch bản nghiệp vụ AI..." type="text">
+<div class="absolute inset-y-0 right-1.5 flex items-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium text-slate-500 bg-slate-200 border border-slate-300">Ctrl + K</span>
+</div>
+</div>
+</div>
+<!-- Right: Actions & Officer Profile -->
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:text-namabank-blue hover:bg-slate-100 transition border border-slate-200 shadow-sm" href="#" title="Trang chủ">
+<svg class="w-4 h-4 text-slate-500 group-hover:text-namabank-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Trang chủ</span>
+</a>
+<!-- Document Version Tag -->
+<!-- User Badge & Profile Avatar -->
+<div class="flex items-center pl-3 border-l border-slate-200">
+<div class="relative">
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></span>
+</div>
+<div class="ml-3 hidden xl:block text-left">
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: MainContentContainer -->
+<div class="flex-1 flex overflow-hidden relative">
+<!-- Floating Toggle Button for Left Sidebar when collapsed -->
+<button class="hidden fixed left-2 top-24 z-40 p-2.5 bg-white text-slate-700 hover:text-namabank-blue border border-slate-300 rounded-xl shadow-lg hover:shadow-xl transition-all items-center gap-1.5 text-xs font-semibold group" id="left-sidebar-expand-btn" onclick="toggleLeftSidebar()" title="Mở rộng mục lục">
+<svg class="w-4 h-4 text-slate-600 group-hover:text-namabank-blue transition transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h10M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[11px] pr-1">Mục lục</span>
+</button>
+<!-- Floating Toggle Button for Right Sidebar when collapsed -->
+<button class="hidden fixed right-2 top-24 z-40 p-2.5 bg-white text-slate-700 hover:text-namabank-blue border border-slate-300 rounded-xl shadow-lg hover:shadow-xl transition-all items-center gap-1.5 text-xs font-semibold group" id="right-sidebar-expand-btn" onclick="toggleRightSidebar()" title="Mở nội dung chương">
+<span class="text-[11px] pl-1">Tiện ích</span>
+<svg class="w-4 h-4 text-slate-600 group-hover:text-namabank-blue transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- BEGIN: LeftSidebarNav -->
+<aside class="w-80 flex-shrink-0 bg-white border-r border-slate-200 flex flex-col overflow-y-auto custom-scrollbar relative z-30 transition-all duration-300" data-purpose="chapter-navigation" id="left-sidebar">
+<!-- Sidebar Header with collapse button -->
+<div class="px-4 py-3.5 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur z-10">
+<div class="flex items-center gap-2">
+<svg class="w-4 h-4 text-namabank-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-xs font-extrabold uppercase tracking-wide text-slate-700">DANH MỤC CHƯƠNG</span>
+</div>
+<button class="p-1.5 rounded-lg text-slate-400 hover:text-namabank-blue hover:bg-slate-100 transition" onclick="toggleLeftSidebar()" title="Thu gọn sidebar trái">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M11 19l-7-7 7-7m8 14l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<nav class="p-4 space-y-4 text-sm">
+<!-- Group 1: NỀN TẢNG CHUNG -->
+<div class="border border-slate-100 rounded-xl overflow-hidden shadow-xs" data-purpose="nav-group-general">
+<button class="w-full flex items-center justify-between px-3 py-2.5 bg-slate-50/80 hover:bg-slate-100 text-left transition rounded-xl" onclick="toggleAccordion('acc-group-general', 'chevron-general')">
+<h3 class="text-xs font-black text-namabank-blue uppercase tracking-wide">NỀN TẢNG CHUNG</h3>
+<svg class="w-4 h-4 text-slate-400 transform transition-transform duration-200 rotate-180" fill="none" id="chevron-general" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="p-1 transition-all duration-300" id="acc-group-general">
+<ul class="space-y-1 text-slate-600">
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">01</span>
+<span class="">Tổng quan sáng kiến</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">02</span>
+<span class="">Quản trị rủi ro dữ liệu</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">03</span>
+<span class="">Quy trình và kỹ thuật prompt</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Group 2: MICROSOFT 365 — TRỌNG TÂM -->
+<div class="border border-namabank-blue/20 rounded-xl overflow-hidden shadow-xs bg-white" data-purpose="nav-group-microsoft">
+<button class="w-full flex items-center justify-between px-3 py-2.5 bg-namabank-blue-light/50 hover:bg-namabank-blue-light text-left transition rounded-xl" onclick="toggleAccordion('acc-group-microsoft', 'chevron-microsoft')">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-namabank-blue"></span>
+<h3 class="text-xs font-black text-namabank-blue uppercase tracking-wide">MICROSOFT 365 — TRỌNG TÂM</h3>
+</div>
+<svg class="w-4 h-4 text-namabank-blue transform transition-transform duration-200 rotate-180" fill="none" id="chevron-microsoft" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="p-1 transition-all duration-300" id="acc-group-microsoft">
+<ul class="space-y-1 text-slate-600">
+<!-- Active State Navigation Item -->
+<li class="">
+<a class="flex items-center px-3 py-2.5 rounded-lg bg-namabank-blue text-white font-semibold shadow-sm transition" href="#">
+<span class="w-7 text-xs text-white/80 font-bold">04</span>
+<span class="flex-1">Microsoft 365 tổng quan</span>
+<span class="w-2 h-2 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">05</span>
+<span class="flex-1">Microsoft Copilot</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">06</span>
+<span class="flex-1">Microsoft Teams</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">07</span>
+<span class="flex-1">Microsoft Outlook</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">08</span>
+<span class="flex-1">Microsoft Word</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">09</span>
+<span class="flex-1">Microsoft Excel</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">10</span>
+<span class="flex-1">Microsoft PowerPoint</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Group 3: AMAZON QUICK — TRỌNG TÂM -->
+<div class="border border-slate-100 rounded-xl overflow-hidden shadow-xs" data-purpose="nav-group-amazon">
+<button class="w-full flex items-center justify-between px-3 py-2.5 bg-slate-50/80 hover:bg-slate-100 text-left transition rounded-xl" onclick="toggleAccordion('acc-group-amazon', 'chevron-amazon')">
+<h3 class="text-xs font-black text-namabank-blue uppercase tracking-wide">AMAZON QUICK — TRỌNG TÂM</h3>
+<svg class="w-4 h-4 text-slate-400 transform transition-transform duration-200 rotate-180" fill="none" id="chevron-amazon" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="p-1 transition-all duration-300" id="acc-group-amazon">
+<ul class="space-y-1 text-slate-600">
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">11</span>
+<span class="flex-1">Tổng quan và giao diện Amazon Quick</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">12</span>
+<span class="flex-1">Spaces và Chat Agents</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">13</span>
+<span class="flex-1">Dữ liệu, Analyses và Dashboards</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">14</span>
+<span class="flex-1">Scenarios và Quick Research</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">15</span>
+<span class="flex-1">Quick Flows &amp; Automate</span>
+<span class="w-1.5 h-1.5 rounded-full bg-namabank-gold"></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Group 4: CÔNG CỤ THAM KHẢO -->
+<div class="border border-slate-100 rounded-xl overflow-hidden shadow-xs" data-purpose="nav-group-tools">
+<button class="w-full flex items-center justify-between px-3 py-2.5 bg-slate-50/80 hover:bg-slate-100 text-left transition rounded-xl" onclick="toggleAccordion('acc-group-tools', 'chevron-tools')">
+<h3 class="text-xs font-black text-namabank-blue uppercase tracking-wide">CÔNG CỤ THAM KHẢO</h3>
+<svg class="w-4 h-4 text-slate-400 transform transition-transform duration-200 rotate-180" fill="none" id="chevron-tools" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="p-1 transition-all duration-300" id="acc-group-tools">
+<ul class="space-y-1 text-slate-600">
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">16</span>
+<span class="">ChatGPT</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center px-3 py-2 rounded-lg hover:bg-slate-100 transition group font-medium" href="#">
+<span class="w-7 text-xs text-slate-400 font-semibold group-hover:text-namabank-blue">17</span>
+<span class="">NotebookLM</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</aside>
+<!-- END: LeftSidebarNav -->
+<!-- BEGIN: CentralReaderContent -->
+<main class="flex-1 overflow-y-auto custom-scrollbar bg-slate-50 p-6 lg:p-10 transition-all duration-300" data-purpose="article-body" id="main-content">
+<div class="max-w-4xl mx-auto space-y-8">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center space-x-2 text-xs text-slate-500 font-medium">
+<a class="hover:text-namabank-blue transition" href="#">Trang chủ Cẩm nang</a>
+<span class="text-slate-400">/</span>
+<a class="hover:text-namabank-blue transition" href="#">Microsoft 365 — Trọng tâm</a>
+<span class="text-slate-400">/</span>
+<span class="text-namabank-blue font-semibold">Chương 04: Microsoft 365 Tổng quan</span>
+</nav>
+<!-- Article Banner Header -->
+<section class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm relative overflow-hidden" data-purpose="article-header">
+<div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-namabank-gold/20 via-sky-100/30 to-transparent rounded-bl-full pointer-events-none"></div>
+<div class="flex flex-wrap items-center gap-2 mb-4">
+</div>
+<h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+            Chương 04: Microsoft 365 Tổng quan &amp; Ứng dụng AI Trong Nghiệp Vụ Ngân Hàng
+          </h1>
+<p class="mt-3 text-slate-600 leading-relaxed text-sm sm:text-base">
+            Hướng dẫn chuẩn hóa phương thức khai thác nền tảng văn phòng tích hợp trí tuệ nhân tạo (Microsoft 365 Copilot) dành cho toàn thể Cán bộ nhân viên Ngân hàng TMCP Nam Á, gia tăng năng suất và bảo toàn an ninh dữ liệu tài chính.
+          </p>
+</section>
+<!-- Section 1: Ecosystem Overview -->
+<section class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4" id="section-1">
+<h2 class="text-xl font-bold text-namabank-blue flex items-center">
+<span class="w-8 h-8 rounded-lg bg-sky-100 text-namabank-blue flex items-center justify-center mr-3 text-sm font-black">01</span>
+            Hệ sinh thái Microsoft 365 tích hợp AI tại Nam A Bank
+          </h2>
+<p class="text-slate-600 leading-relaxed text-sm">
+            Trong khuôn khổ chiến lược số hóa toàn diện ngân hàng, việc đưa AI vào các ứng dụng thường nhật như Word, Excel, Teams và Outlook không chỉ đơn thuần là tự động hóa tác vụ nhập liệu, mà còn đóng vai trò như một trợ lý nghiệp vụ sắc sảo hỗ trợ phân tích thông tin tức thời.
+          </p>
+<!-- 3-Column Pillar Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+<div class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-namabank-blue transition">
+<div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold mb-3 shadow-sm">W</div>
+<h3 class="font-bold text-slate-900 text-sm mb-1">Xử lý Văn bản &amp; Tờ trình</h3>
+<p class="text-xs text-slate-600 leading-normal">Soạn thảo tờ trình tín dụng, hợp đồng khung và tóm tắt biên bản họp nhanh hơn 65%.</p>
+</div>
+<div class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-namabank-blue transition">
+<div class="w-9 h-9 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold mb-3 shadow-sm">X</div>
+<h3 class="font-bold text-slate-900 text-sm mb-1">Báo cáo &amp; Mô hình tài chính</h3>
+<p class="text-xs text-slate-600 leading-normal">Truy vấn công thức phức tạp, phân tích biến động dòng tiền chi nhánh bằng ngôn ngữ tự nhiên.</p>
+</div>
+<div class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-namabank-blue transition">
+<div class="w-9 h-9 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold mb-3 shadow-sm">O</div>
+<h3 class="font-bold text-slate-900 text-sm mb-1">Email &amp; Phối hợp dự án</h3>
+<p class="text-xs text-slate-600 leading-normal">Trích xuất email dài, tự động phác thảo hồi đáp khách hàng ưu tiên theo chuẩn mực dịch vụ tốt.</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Data Governance & Compliance -->
+<section class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4" id="section-2">
+<h2 class="text-xl font-bold text-namabank-blue flex items-center">
+<span class="w-8 h-8 rounded-lg bg-sky-100 text-namabank-blue flex items-center justify-center mr-3 text-sm font-black">02</span>
+            Nguyên tắc bảo vệ dữ liệu khách hàng &amp; Tuân thủ nội bộ
+          </h2>
+<div class="p-4 rounded-xl bg-amber-50/80 border-l-4 border-namabank-gold text-amber-900 space-y-2 text-sm">
+<div class="font-bold flex items-center text-amber-950">
+<svg class="w-5 h-5 mr-1.5 text-namabank-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              QUY ĐỊNH BẮT BUỘC ĐỐI VỚI CBNV
+            </div>
+<p class="text-xs leading-relaxed">
+              Mọi dữ liệu định danh khách hàng (Họ tên, CCCD/Hộ chiếu, Số tài khoản, Số dư, Mật khẩu, OTP) <strong class="underline">tuyệt đối không được đưa vào prompt mở</strong> nếu chưa qua cơ chế ẩn danh hóa (masking). Dữ liệu ngân hàng tuân thủ phân lớp bảo mật của Ngân hàng Nhà nước và chính sách bảo vệ dữ liệu cá nhân theo Nghị định 13/2023/NĐ-CP.
+            </p>
+</div>
+<!-- Compliance Checklist -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="flex items-start space-x-2.5 p-3 rounded-lg border border-slate-200 bg-slate-50">
+<span class="text-emerald-600 font-bold text-base">✓</span>
+<div class="">
+<strong class="text-slate-800">Được phép:</strong> Sử dụng tài khoản M365 do Nam A Bank cấp phát chính thức (@namabank.com.vn) để vận hành AI.
+              </div>
+</div>
+<div class="flex items-start space-x-2.5 p-3 rounded-lg border border-slate-200 bg-slate-50">
+<span class="text-red-600 font-bold text-base">✕</span>
+<div class="">
+<strong class="text-slate-800">Nghiêm cấm:</strong> Sử dụng tài khoản cá nhân ngoài doanh nghiệp để sao chép dữ liệu ngân hàng phân tích.
+              </div>
+</div>
+</div>
+</section>
+<!-- Section 3: Standard Prompt Template -->
+<section class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4" id="section-3">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-namabank-blue flex items-center">
+<span class="w-8 h-8 rounded-lg bg-sky-100 text-namabank-blue flex items-center justify-center mr-3 text-sm font-black">03</span>
+              Khung Prompt Mẫu Chuẩn Hóa Dành Cho CBNV
+            </h2>
+<button class="inline-flex items-center px-3 py-1.5 rounded-lg border border-namabank-blue text-namabank-blue hover:bg-sky-50 text-xs font-semibold transition" id="copy-btn" onclick="copyPrompt()">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Sao chép Prompt</span>
+</button>
+</div>
+<p class="text-xs text-slate-500">Áp dụng công thức 4 thành phần: <span class="font-bold text-slate-700">[Vai trò] + [Bối cảnh &amp; Dữ liệu đầu vào đã khử định danh] + [Yêu cầu chi tiết] + [Quy cách đầu ra]</span>.</p>
+<!-- Prompt Box Container -->
+<div class="p-4 bg-slate-900 rounded-xl text-slate-100 font-mono text-xs leading-relaxed overflow-x-auto shadow-inner border border-slate-800" id="sample-prompt-text">
+            # VAI TRÒ:<br>
+            Bạn là Chuyên viên Phân tích Tín dụng Doanh nghiệp cao cấp tại Ngân hàng Nam Á.<br><br>
+            # NHIỆM VỤ:<br>
+            Đọc bản tóm tắt tình hình tài chính 3 năm gần nhất của Công ty Khách hàng [Doanh Nghiệp A - Ngành Logistics] và lập bảng tóm tắt đánh giá rủi ro sơ bộ.<br><br>
+            # ĐẦU RA YÊU CẦU:<br>
+            1. Bảng gồm 4 cột: [Chỉ tiêu tài chính | Năm 2022 | Năm 2023 | Đánh giá xu hướng]<br>
+            2. Chỉ ra 3 rủi ro lớn nhất về dòng tiền hoặc hệ số đòn bẩy tài chính.<br>
+            3. Đề xuất 2 điều kiện tiên quyết trước khi trình Hội đồng tín dụng.<br><br>
+            # LƯU Ý BẢO MẬT: Không suy đoán dữ liệu chưa được cung cấp và tuân thủ định dạng bảng chuyên nghiệp.
+          </div>
+</section>
+<!-- Section 4: Interactive Mini Quiz -->
+<!-- Pagination / Next Navigation Footer -->
+<div class="pt-6 pb-12 flex items-center justify-between border-t border-slate-200">
+<a class="inline-flex items-center px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 font-semibold text-xs transition" href="#">
+<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Chương trước: 03. Kỹ thuật Prompt
+          </a>
+<a class="inline-flex items-center px-4 py-2.5 rounded-xl bg-namabank-blue text-white hover:bg-namabank-blue-dark font-semibold text-xs shadow-md transition" href="#">
+            Chương kế tiếp: 05. Microsoft Copilot
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</main>
+<!-- END: CentralReaderContent -->
+<!-- BEGIN: RightQuickToolsSidebar -->
+<aside class="w-80 flex-shrink-0 bg-white border-l border-slate-200 hidden xl:flex flex-col overflow-y-auto custom-scrollbar p-6 space-y-6 relative transition-all duration-300" data-purpose="on-this-page-and-support" id="right-sidebar">
+<!-- Header with collapse button -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">NỘI DUNG CHƯƠNG NÀY</h4>
+<button class="p-1.5 rounded-lg text-slate-400 hover:text-namabank-blue hover:bg-slate-100 transition" onclick="toggleRightSidebar()" title="Thu gọn sidebar phải">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M13 5l7 7-7 7M5 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- On this page Nav -->
+<div>
+<ul class="space-y-2.5 text-xs text-slate-600 border-l-2 border-slate-200 pl-3">
+<li class="">
+<a class="block hover:text-namabank-blue transition font-medium hover:underline" href="#section-1">01. Hệ sinh thái M365 AI</a>
+</li>
+<li class="">
+<a class="block hover:text-namabank-blue transition font-medium hover:underline" href="#section-2">02. Bảo mật &amp; Tuân thủ dữ liệu</a>
+</li>
+<li class="">
+<a class="block hover:text-namabank-blue transition font-medium hover:underline" href="#section-3">03. Khung Prompt chuẩn Nam A Bank</a>
+</li>
+<li class="">
+<a class="block hover:text-namabank-blue transition font-medium hover:underline" href="#section-4">04. Câu hỏi kiểm tra nhận thức</a>
+</li>
+</ul>
+</div>
+<!-- Reading focus note -->
+
+</aside>
+<!-- END: RightQuickToolsSidebar -->
+</div>
+<!-- END: MainContentContainer -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="sidebar-interactions">
+  // Accordion Toggle for chapter groups in left sidebar
+  function toggleAccordion(contentId, chevronId) {
+    const content = document.getElementById(contentId);
+    const chevron = document.getElementById(chevronId);
+    if (!content) return;
+
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      if (chevron) chevron.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      if (chevron) chevron.classList.remove('rotate-180');
+    }
+  }
+
+  // Toggle Left Sidebar
+  function toggleLeftSidebar() {
+    const sidebar = document.getElementById('left-sidebar');
+    const expandBtn = document.getElementById('left-sidebar-expand-btn');
+
+    if (sidebar.classList.contains('hidden')) {
+      // Expand
+      sidebar.classList.remove('hidden');
+      expandBtn.classList.add('hidden');
+      expandBtn.classList.remove('flex');
+    } else {
+      // Collapse
+      sidebar.classList.add('hidden');
+      expandBtn.classList.remove('hidden');
+      expandBtn.classList.add('flex');
+    }
+  }
+
+  // Toggle Right Sidebar
+  function toggleRightSidebar() {
+    const sidebar = document.getElementById('right-sidebar');
+    const expandBtn = document.getElementById('right-sidebar-expand-btn');
+
+    if (sidebar.classList.contains('hidden')) {
+      // Expand
+      sidebar.classList.remove('hidden');
+      sidebar.classList.add('xl:flex');
+      expandBtn.classList.add('hidden');
+      expandBtn.classList.remove('flex');
+    } else {
+      // Collapse
+      sidebar.classList.remove('xl:flex');
+      sidebar.classList.add('hidden');
+      expandBtn.classList.remove('hidden');
+      expandBtn.classList.add('flex');
+    }
+  }
+</script>
+<script data-purpose="clipboard-interaction">
+    function copyPrompt() {
+      const promptText = document.getElementById('sample-prompt-text').innerText;
+      const copyBtn = document.getElementById('copy-btn');
+      
+      navigator.clipboard.writeText(promptText).then(() => {
+        copyBtn.innerHTML = `
+          <svg class="w-4 h-4 mr-1 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span class="text-emerald-700">Đã sao chép!</span>
+        `;
+        setTimeout(() => {
+          copyBtn.innerHTML = `
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            <span>Sao chép Prompt</span>
+          `;
+        }, 2500);
+      });
+    }
+  </script>
+<script data-purpose="quiz-handler">
+    function checkQuiz() {
+      const radios = document.getElementsByName('quiz-answer');
+      const feedback = document.getElementById('quiz-feedback');
+      if (!feedback) return;
+      feedback.classList.remove('hidden');
+
+      if (radios[1] && radios[1].checked) {
+        feedback.innerText = "Chính xác! Cần khử định danh và chỉ dùng AI trên môi trường M365 bảo mật Nam A Bank.";
+        feedback.className = "ml-3 text-xs font-bold text-emerald-600 inline-block";
+      } else {
+        feedback.innerText = "Chưa chính xác! Vui lòng đọc kỹ nguyên tắc bảo vệ dữ liệu khách hàng.";
+        feedback.className = "ml-3 text-xs font-bold text-red-600 inline-block";
+      }
+    }
+  </script>
+<!-- END: InteractiveScripts -->
+
+
+</body></html>
