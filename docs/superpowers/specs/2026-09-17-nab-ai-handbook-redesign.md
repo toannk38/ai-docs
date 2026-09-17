@@ -63,23 +63,29 @@ Giữ gần như nguyên vẹn nội dung hiện có trong các chương 04-10, 
 
 ### Amazon Quick
 
-Amazon Quick tiếp tục có năm chương và `Spaces và Chat Agents` vẫn là một chương lớn độc lập.
+Amazon Quick tiếp tục có năm chương và `Spaces và Chat Agents` vẫn là một chương lớn độc lập. Toàn bộ nội dung Amazon Quick hiện có phải được giữ nguyên, bao gồm phần giới thiệu, mục tiêu, điều kiện, use case, guide sections, walkthrough, hình minh họa, kiểm soát, FAQ và nguồn. Việc cập nhật chỉ được đổi nhãn điều hướng hoặc bổ sung nội dung còn thiếu; không rút gọn, viết lại hoặc loại bỏ nội dung hiện tại.
 
-- Chương 11 giữ hướng dẫn đăng nhập, giao diện Home, Private Mode, sidebar, chat controls, output shortcuts và điều kiện truy cập an toàn.
-- Chương 12 giữ đầy đủ nội dung tạo Space, quản lý files, datasets, dashboards, topics, members, tạo Custom Agent, reference documents, action connectors và least-privilege sharing.
-- Chương 13 giữ nội dung Data Sources, Datasets, SPICE, Direct Query, Analyses, Dashboards, refresh, chia sẻ và RLS/CLS. Cụm `Quick Sight` được thêm vào tên chương để người dùng nhận biết nhanh nhóm năng lực BI.
-- Chương 14 giữ Scenarios và Quick Research, đồng thời bổ sung Quick Index/Knowledge Base, connector, đồng bộ nguồn, ACL, kiểm thử quyền và xử lý nguồn lỗi thời. Scenarios không bị đổi tên thành Index; đây là các năng lực riêng trong cùng nhóm phân tích và nghiên cứu.
-- Chương 15 giữ nguyên chiều sâu của Quick Flows và Quick Automate. Quick Apps chỉ là một section tham khảo ở cuối chương, tập trung vào prototype, quyền đọc/ghi, UAT và phát hành giới hạn.
+- Chương 11 giữ nguyên toàn bộ hướng dẫn đăng nhập, giao diện Home, Private Mode, sidebar, chat controls, output shortcuts và điều kiện truy cập an toàn.
+- Chương 12 giữ nguyên toàn bộ nội dung tạo Space, quản lý files, datasets, dashboards, topics, members, tạo Custom Agent, reference documents, action connectors và least-privilege sharing.
+- Chương 13 giữ nguyên toàn bộ nội dung Data Sources, Datasets, SPICE, Direct Query, Analyses, Dashboards, refresh, chia sẻ và RLS/CLS. Chỉ bổ sung cụm `Quick Sight` vào tên hiển thị để người dùng nhận biết nhanh nhóm năng lực BI.
+- Chương 14 giữ nguyên toàn bộ nội dung Scenarios và Quick Research. Nội dung Quick Index/Knowledge Base, connector, đồng bộ nguồn, ACL, kiểm thử quyền và xử lý nguồn lỗi thời được bổ sung sau nội dung hiện có. Scenarios không bị đổi tên thành Index; đây là các năng lực riêng trong cùng nhóm phân tích và nghiên cứu.
+- Chương 15 giữ nguyên toàn bộ nội dung Quick Flows và Quick Automate. Quick Apps chỉ được bổ sung thành một section tham khảo ở cuối chương, tập trung vào prototype, quyền đọc/ghi, UAT và phát hành giới hạn.
 
 ## 5. Nội dung AI tham khảo
 
+Các chương 16-21 chỉ dùng dữ liệu công khai. Không được nhập, sao chép, tải lên hoặc kết nối dữ liệu của Nam A Bank, dữ liệu khách hàng, tài liệu nội bộ, ảnh chụp màn hình hệ thống, mã nguồn, cấu hình hay bất kỳ dữ liệu nội bộ nào vào các dịch vụ AI tham khảo. Mọi ví dụ, Prompt, tệp minh họa và walkthrough trong nhóm này phải sử dụng dữ liệu công khai.
+
+Mỗi chương 16-21 phải hiển thị cảnh báo ở vị trí dễ nhận biết:
+
+> Chỉ sử dụng công cụ AI tham khảo với dữ liệu công khai. Không sử dụng dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc bất kỳ dữ liệu nội bộ nào.
+
 ### Chọn công cụ theo nhu cầu
 
-Chương 16 cung cấp bảng tra cứu bắt đầu từ công việc cần hoàn thành. Microsoft 365 và Amazon Quick luôn được đặt ở cột ưu tiên tại NAB khi phù hợp; dịch vụ AI công cộng nằm ở cột tham khảo.
+Chương 16 cung cấp bảng tra cứu bắt đầu từ công việc cần hoàn thành. Microsoft 365 và Amazon Quick luôn được đặt ở cột ưu tiên tại NAB khi phù hợp; dịch vụ AI công cộng nằm ở cột tham khảo và chỉ áp dụng cho dữ liệu công khai.
 
 ### AI hội thoại và trợ lý đa năng
 
-Chương 17 gộp ChatGPT, Claude, Gemini, Perplexity và Grok. Trang gồm:
+Chương 17 gộp ChatGPT, Claude, Gemini, Perplexity và Grok. Các công cụ chỉ được minh họa bằng nội dung công khai. Trang gồm:
 
 - Giải thích ngắn về AI hội thoại và trợ lý đa năng.
 - Bảng so sánh theo thế mạnh chính và tình huống phù hợp.
@@ -88,16 +94,16 @@ Chương 17 gộp ChatGPT, Claude, Gemini, Perplexity và Grok. Trang gồm:
 
 ### NotebookLM
 
-Chương 18 trình bày NotebookLM như công cụ làm việc trên tập tài liệu người dùng cung cấp. Trang nêu các tình huống hỏi đáp, tóm tắt, tổng hợp, tạo FAQ và ghi chú; đồng thời hiển thị cảnh báo nổi bật không tải dữ liệu khách hàng, tài liệu mật hoặc dữ liệu nội bộ nhạy cảm lên dịch vụ AI công cộng khi chưa được phê duyệt.
+Chương 18 trình bày NotebookLM như công cụ làm việc trên tập tài liệu công khai do người dùng cung cấp. Trang nêu các tình huống hỏi đáp, tóm tắt, tổng hợp, tạo FAQ và ghi chú; đồng thời hiển thị cảnh báo nổi bật không tải dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc tài liệu nội bộ lên dịch vụ này.
 
 ### Thiết kế, hình ảnh và video
 
-- Chương 19 giới thiệu Canva AI, Gamma, Napkin AI và Microsoft Designer theo các tình huống slide, infographic, sơ đồ, banner và nội dung trực quan.
-- Chương 20 giới thiệu các nhóm công cụ tạo hình ảnh và video, kèm cảnh báo về hình ảnh khách hàng, ảnh chụp màn hình nội bộ, deepfake và kiểm tra đầu ra trước khi sử dụng chính thức.
+- Chương 19 giới thiệu Canva AI, Gamma, Napkin AI và Microsoft Designer theo các tình huống slide, infographic, sơ đồ, banner và nội dung trực quan sử dụng dữ liệu công khai.
+- Chương 20 giới thiệu các nhóm công cụ tạo hình ảnh và video, kèm cảnh báo không sử dụng hình ảnh khách hàng, nhân viên, tài sản nội bộ, ảnh chụp màn hình hệ thống hoặc dữ liệu của Nam A Bank làm đầu vào; đồng thời cảnh báo về deepfake và yêu cầu kiểm tra đầu ra trước khi sử dụng chính thức.
 
 ### AI Agent và tự động hóa
 
-Chương 21 giải thích sự khác nhau giữa chatbot và AI Agent, giới thiệu OpenClaw, n8n AI, Microsoft Copilot Studio, Dify và Flowise ở mức tham khảo kỹ thuật. Trang mang nhãn `NÂNG CAO` và không hướng dẫn người dùng phổ thông tự triển khai kết nối vào hệ thống hoặc dữ liệu NAB.
+Chương 21 giải thích sự khác nhau giữa chatbot và AI Agent, giới thiệu OpenClaw, n8n AI, Microsoft Copilot Studio, Dify và Flowise ở mức tham khảo kỹ thuật. Trang mang nhãn `NÂNG CAO`, chỉ sử dụng ví dụ công khai và không hướng dẫn kết nối các công cụ tham khảo vào hệ thống, tài khoản hoặc dữ liệu của Nam A Bank.
 
 ## 6. Tái sử dụng nội dung cũ
 
@@ -106,7 +112,8 @@ Chương 21 giải thích sự khác nhau giữa chatbot và AI Agent, giới th
 - Nội dung quản trị rủi ro được tái sử dụng trong Chương 02 và Chương 22.
 - Nội dung riêng về ChatGPT, Claude, Gemini và Perplexity được rút gọn và gộp vào Chương 17.
 - Nội dung Canva AI được chia giữa Chương 19 và Chương 20 theo loại đầu ra.
-- Nội dung Microsoft 365 và Amazon Quick còn giá trị được giữ lại; việc chuyển chương không làm mất walkthrough, kiểm soát hoặc FAQ quan trọng.
+- Nội dung Microsoft 365 còn giá trị được giữ lại; việc chuyển chương không làm mất walkthrough, kiểm soát hoặc FAQ quan trọng.
+- Toàn bộ nội dung Amazon Quick hiện có được bảo toàn; nội dung Index và Apps chỉ được bổ sung sau phần hiện tại.
 
 ## 7. An toàn dữ liệu
 
@@ -123,6 +130,8 @@ Cảnh báo bắt buộc:
 > Không nhập, sao chép hoặc tải dữ liệu khách hàng, dữ liệu giao dịch, tài liệu mật, thông tin xác thực hoặc dữ liệu nội bộ nhạy cảm lên các dịch vụ AI công cộng khi chưa được phê duyệt.
 
 Tài liệu không tự tạo thêm chính sách nội bộ. Các nội dung về quyền, phân loại và phê duyệt luôn được trình bày như hướng dẫn và phải đối chiếu quy định NAB đang có hiệu lực.
+
+Đối với riêng nhóm AI phổ biến - tham khảo, cẩm nang áp dụng ranh giới đơn giản và thống nhất: chỉ sử dụng dữ liệu công khai, không sử dụng dữ liệu của Nam A Bank hoặc dữ liệu nội bộ.
 
 ## 8. Giao diện và điều hướng
 
@@ -161,7 +170,9 @@ Nguồn nội dung và renderer dự kiến thay đổi:
 - Không có ID trùng, section trùng, H1 trùng hoặc heading nhảy cấp.
 - Tất cả ảnh có `alt`; bảng không tràn ngang ở viewport hẹp.
 - Chương 12 vẫn là chương lớn độc lập về Spaces và Chat Agents.
+- Nội dung HTML sinh ra cho các chương 11-15 phải chứa đầy đủ toàn bộ nội dung Amazon Quick hiện có trước khi bổ sung Index và Apps.
 - Các cảnh báo bắt buộc xuất hiện tại Chương 02, 18, 20, 21 và 22.
+- Tất cả chương 16-21 hiển thị cảnh báo chỉ sử dụng dữ liệu công khai và không sử dụng dữ liệu của Nam A Bank hoặc dữ liệu nội bộ.
 - Microsoft 365 và Amazon Quick có nhãn `TRỌNG TÂM`; AI công cộng có nhãn `THAM KHẢO`; AI Agent có nhãn `NÂNG CAO`.
 - Chạy thành công `node tools/build-site.js`, `node --check` cho JavaScript và `python3 qa/check-release.py`.
 - Kiểm tra thủ công trên desktop, viewport hẹp, menu accordion, tìm kiếm, FAQ, lightbox và highlight mục hiện tại.
