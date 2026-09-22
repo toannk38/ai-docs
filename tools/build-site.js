@@ -6,12 +6,408 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const chaptersDir = path.join(root, "chapters");
-const chapters = [
+const rawChapters = [
   ...require("./content-general"),
   ...require("./content-ms365"),
   ...require("./content-quick"),
   ...require("./content-reference")
-].sort((a, b) => a.id - b.id);
+];
+
+const copyReplacements = [
+  [/You are a senior financial analyst at NAB\. Be precise, cite sources, never speculate\./g, "Bạn là chuyên viên phân tích tài chính cấp cao tại NAB. Hãy trả lời chính xác, dẫn nguồn và không suy đoán."],
+  [/Find top revenue drivers/g, "Tìm các yếu tố chính thúc đẩy doanh thu"],
+  [/Identify churn risk segments/g, "Xác định các nhóm có nguy cơ rời bỏ"],
+  [/Compare Q1 vs Q2 performance/g, "So sánh kết quả quý 1 và quý 2"],
+  [/Summarize Q2 2026 fintech regulatory changes in APAC, focusing on crypto and payments\. Output: 2-page executive summary with citations\./g, "Tóm tắt các thay đổi quy định về công nghệ tài chính tại khu vực APAC trong quý 2 năm 2026, tập trung vào tiền mã hóa và thanh toán. Kết quả: bản tóm tắt điều hành dài 2 trang, có trích dẫn."],
+  [/For risk team quarterly review; prioritize authoritative sources \(regulators, official announcements\)\./g, "Dùng cho đợt rà soát hằng quý của bộ phận quản lý rủi ro; ưu tiên nguồn chính thống như cơ quan quản lý và thông báo chính thức."],
+  [/AI-assisted analysis canvas/g, "vùng phân tích có AI hỗ trợ"],
+  [/AI-suggested analysis canvas/g, "vùng phân tích do AI đề xuất"],
+  [/AI-suggested insights/g, "kết quả phân tích do AI đề xuất"],
+  [/scenario canvas/g, "vùng làm việc của Scenario"],
+  [/AI đề xuất initial visuals/g, "AI đề xuất các biểu đồ ban đầu"],
+  [/AI đề xuất analysis canvas/g, "AI đề xuất vùng phân tích"],
+  [/analysis goal/g, "mục tiêu phân tích"],
+  [/AI insights/g, "Kết quả phân tích của AI"],
+  [/review AI plan/gi, "kiểm tra kế hoạch do AI đề xuất"],
+  [/partial\/misinterpreted/g, "chỉ khớp một phần hoặc bị diễn giải sai"],
+  [/trước khi execute/g, "trước khi thực thi"],
+  [/data as of/g, "dữ liệu tính đến"],
+  [/source notes/g, "ghi chú nguồn"],
+  [/Remove claims/g, "Loại bỏ các nhận định"],
+  [/source register/g, "danh mục nguồn"],
+  [/Plan rộng/g, "Kế hoạch rộng"],
+  [/Report có/g, "Báo cáo có"],
+  [/feature và sensitivity policy/g, "tính năng và chính sách độ nhạy"],
+  [/brand\/accessibility review/g, "kiểm tra thương hiệu và khả năng tiếp cận"],
+  [/fact-check/g, "kiểm tra dữ kiện"],
+  [/based on your goal/g, "dựa trên mục tiêu của bạn"],
+  [/đề xuất alternatives/g, "đề xuất các phương án khác"],
+  [/change aggregations/g, "thay đổi cách tổng hợp"],
+  [/ask follow-up questions/g, "đặt câu hỏi tiếp nối"],
+  [/Add more data sources/g, "Thêm nguồn dữ liệu"],
+  [/cross-dataset analysis/g, "phân tích giữa nhiều Dataset"],
+  [/Refine canvas/g, "Tinh chỉnh vùng làm việc"],
+  [/format labels và titles/g, "định dạng nhãn và tiêu đề"],
+  [/Save Scenario/g, "Lưu Scenario"],
+  [/business judgment/g, "đánh giá nghiệp vụ"],
+  [/entry point/g, "điểm truy cập"],
+  [/Spaces context menu/g, "menu ngữ cảnh của Spaces"],
+  [/competitor analysis/g, "phân tích đối thủ"],
+  [/trend reports/g, "báo cáo xu hướng"],
+  [/policy summaries/g, "bản tóm tắt chính sách"],
+  [/multi-source reports/g, "báo cáo từ nhiều nguồn"],
+  [/cross-team insights/g, "kết quả phân tích liên nhóm"],
+  [/analyze documents user upload/g, "phân tích tài liệu do người dùng tải lên"],
+  [/user upload files/g, "file do người dùng tải lên"],
+  [/Research goal/g, "Mục tiêu Research"],
+  [/Context giúp/g, "Bối cảnh giúp"],
+  [/authoritative source preferences/g, "ưu tiên nguồn chính thống"],
+  [/search terms/g, "từ khóa tìm kiếm"],
+  [/AI plan/g, "Kế hoạch do AI đề xuất"],
+  [/Steps\/subtasks/g, "Các bước/tác vụ nhỏ"],
+  [/Expected format/g, "Định dạng dự kiến"],
+  [/expected timeline/g, "thời gian dự kiến"],
+  [/Adjust scope/g, "Điều chỉnh phạm vi"],
+  [/source count/g, "số lượng nguồn"],
+  [/Inspect citations/g, "Kiểm tra trích dẫn"],
+  [/verify evidence/g, "kiểm chứng căn cứ"],
+  [/full paragraph\/section/g, "toàn bộ đoạn hoặc mục"],
+  [/highlighted snippet/g, "đoạn trích được tô sáng"],
+  [/authoritative source/g, "độ tin cậy của nguồn"],
+  [/regulator announcement/g, "thông báo của cơ quan quản lý"],
+  [/cross-source/g, "nhiều nguồn"],
+  [/workpaper/g, "hồ sơ làm việc"],
+  [/Edit và export/g, "Biên tập và xuất"],
+  [/Export vào/g, "Xuất vào"],
+  [/users\/groups/g, "người dùng/nhóm"],
+  [/aggregation logic/g, "logic tổng hợp"],
+  [/chart type/g, "loại biểu đồ"],
+  [/calculated fields/g, "trường tính toán"],
+  [/join logic/g, "logic kết nối dữ liệu"],
+  [/definition document/g, "tài liệu định nghĩa"],
+  [/downstream effect/g, "tác động tới bước sau"],
+  [/response logic/g, "logic phản hồi"],
+  [/Runtime cần handle missing\/invalid input/g, "Khi chạy, hệ thống cần xử lý đầu vào thiếu hoặc không hợp lệ"],
+  [/detect intent/g, "nhận diện ý định"],
+  [/staging\/production deployment/g, "triển khai qua môi trường thử nghiệm và chính thức"],
+  [/centralized schedule/g, "lịch chạy tập trung"],
+  [/operational dashboard/g, "dashboard vận hành"],
+  [/risk rating/g, "mức độ rủi ro"],
+  [/rollback runbook/g, "tài liệu hướng dẫn khôi phục"],
+  [/lease privilege/g, "least privilege"],
+  [/responder action/g, "người xử lý hành động"],
+  [/pass cả happy\/negative cases/g, "đạt cả tình huống bình thường và tình huống lỗi"],
+  [/purpose and access/g, "mục đích và quyền truy cập"],
+  [/mục đích và access/g, "mục đích và quyền truy cập"],
+  [/Review Research plan/g, "Kiểm tra kế hoạch Research"],
+  [/Review và approve Research plan/g, "Kiểm tra và phê duyệt kế hoạch Research"],
+  [/Topics là/g, "Topic là"],
+  [/members hỏi đáp/g, "thành viên hỏi đáp"],
+  [/Thêm members/g, "Thêm thành viên"],
+  [/mời user hoặc group/g, "mời người dùng hoặc nhóm"],
+  [/Review access/g, "Rà soát quyền truy cập"],
+  [/cùng edit hoặc view/g, "cùng biên tập hoặc xem"],
+  [/Permissions:/g, "Quyền:"],
+  [/Dataset settings → Refresh schedule/g, "Dataset settings → Lịch cập nhật"],
+  [/Refresh schedule/g, "Lịch cập nhật"],
+  [/Schedule refresh/g, "Lập lịch cập nhật"],
+  [/Dataset settings/g, "phần cài đặt Dataset"],
+  [/Monitor refresh history/g, "Theo dõi lịch sử cập nhật"],
+  [/restrict viewer controls/g, "giới hạn các điều khiển của người xem"],
+  [/Approval bởi risk\/ATTT nếu automation ghi/g, "Cần bộ phận rủi ro hoặc ATTT phê duyệt nếu quy trình tự động hóa ghi"],
+  [/Dashboard owner hoặc admin/g, "Chủ sở hữu Dashboard hoặc quản trị viên"],
+  [/data permissions/g, "quyền dữ liệu"],
+  [/Research và Scenarios output/g, "Kết quả Research và Scenarios"],
+  [/data classification label/g, "nhãn phân loại dữ liệu"],
+  [/include out-of-scope data/g, "bao gồm dữ liệu ngoài phạm vi"],
+  [/Research\/Scenarios output/g, "Kết quả Research/Scenarios"],
+  [/Research plan/g, "kế hoạch Research"],
+  [/Research output/g, "kết quả Research"],
+  [/Scenarios output/g, "kết quả Scenarios"],
+  [/objective\/goal/g, "mục tiêu"],
+  [/date cutoff/g, "mốc thời gian dữ liệu"],
+  [/partial match/g, "chỉ khớp một phần"],
+  [/misinterpreted/g, "bị diễn giải sai"],
+  [/exploratory canvas/g, "vùng làm việc khám phá"],
+  [/production dashboards/g, "dashboard chính thức"],
+  [/full control/g, "toàn quyền kiểm soát"],
+  [/Review AI-suggested visuals/g, "Kiểm tra các biểu đồ do AI đề xuất"],
+  [/Upload files vào NAB-approved storage/g, "Tải file lên nơi lưu trữ đã được NAB phê duyệt"],
+  [/không upload trực tiếp sensitive data/g, "không tải trực tiếp dữ liệu nhạy cảm"],
+  [/không accept AI output blindly/gi, "không chấp nhận kết quả AI khi chưa kiểm chứng"],
+  [/Production automation/g, "Quy trình tự động hóa trong môi trường chính thức"],
+  [/production write/g, "ghi dữ liệu vào môi trường chính thức"],
+  [/sensitive\/production system/g, "hệ thống nhạy cảm hoặc môi trường chính thức"],
+  [/production system/g, "hệ thống chính thức"],
+  [/User acceptance test/g, "Kiểm thử chấp nhận của người dùng"],
+  [/Test environment/g, "Môi trường kiểm thử"],
+  [/data representative/g, "dữ liệu đại diện"],
+  [/Write action/g, "Hành động ghi dữ liệu"],
+  [/write action/g, "hành động ghi dữ liệu"],
+  [/inventory connector/g, "danh mục kết nối"],
+  [/credential scope/g, "phạm vi thông tin xác thực"],
+  [/resource limits/g, "giới hạn tài nguyên"],
+  [/resource giới hạn/g, "giới hạn tài nguyên"],
+  [/resource scope/g, "phạm vi tài nguyên"],
+  [/use test target/g, "dùng đích kiểm thử"],
+  [/explicit approval gate/g, "bước phê duyệt rõ ràng"],
+  [/không autonomous approve\/send\/write/g, "không được tự động phê duyệt, gửi hoặc ghi dữ liệu"],
+  [/HITL assignment works/g, "việc phân công HITL hoạt động đúng"],
+  [/Task assignment/g, "Việc phân công tác vụ"],
+  [/human review/g, "con người kiểm tra"],
+  [/clean up partial writes/g, "dọn dẹp phần dữ liệu đã ghi dở"],
+  [/restore previous version/g, "khôi phục phiên bản trước"],
+  [/impacted users/g, "người dùng bị ảnh hưởng"],
+  [/auth expiry check/g, "kiểm tra thời hạn xác thực"],
+  [/backup owner/g, "người phụ trách dự phòng"],
+  [/input default/g, "đầu vào mặc định"],
+  [/confirmation setting/g, "cấu hình xác nhận"],
+  [/test phase/g, "giai đoạn kiểm thử"],
+  [/Research execute/g, "Research được thực thi"],
+  [/expected output/g, "kết quả dự kiến"],
+  [/sau khi complete/gi, "sau khi hoàn tất"],
+  [/full context/g, "đầy đủ ngữ cảnh"],
+  [/\bverification\b/g, "kiểm chứng"],
+  [/\bdefinitions\b/g, "định nghĩa"],
+  [/control totals/g, "số liệu đối soát"],
+  [/\bcross-check\b/gi, "đối chiếu chéo"],
+  [/ngày publish/g, "ngày xuất bản"],
+  [/\bfailures\b/g, "lỗi"],
+  [/Citations/g, "Trích dẫn"],
+  [/match source/g, "khớp với nguồn"],
+  [/sign-off/g, "xác nhận"],
+  [/skip review/g, "bỏ qua bước kiểm tra"],
+  [/Access yêu cầu/g, "Điều kiện truy cập"],
+  [/all Spaces\/dashboards/g, "toàn bộ Spaces và dashboards"],
+  [/all Spaces/g, "toàn bộ Spaces"],
+  [/nếu applicable/g, "nếu phù hợp"],
+  [/\bbypass\b/g, "bỏ qua cơ chế kiểm soát"],
+  [/map đúng entity/g, "ánh xạ đúng đối tượng"],
+  [/được handle/g, "được xử lý"],
+  [/\baccept\b/g, "chấp nhận"],
+  [/knowledge bases/g, "các kho kiến thức"],
+  [/Co-owner/g, "Đồng sở hữu"],
+  [/data classification/g, "phân loại dữ liệu"],
+  [/out-of-scope/g, "ngoài phạm vi"],
+  [/citation có thể partial\/misinterpreted/g, "trích dẫn có thể chỉ khớp một phần hoặc bị diễn giải sai"],
+  [/check authoritative/g, "kiểm tra độ tin cậy của nguồn"],
+  [/AI-assisted analysis/g, "phân tích có AI hỗ trợ"],
+  [/AI-assisted/g, "có AI hỗ trợ"],
+  [/AI-suggested/g, "do AI đề xuất"],
+  [/human-in-the-loop/g, "có người tham gia kiểm soát"],
+  [/human gate/g, "bước phê duyệt của con người"],
+  [/human confirmation/g, "xác nhận của con người"],
+  [/least privilege/g, "quyền tối thiểu"],
+  [/read-only/g, "chỉ đọc"],
+  [/natural language/g, "ngôn ngữ tự nhiên"],
+  [/visual editor/g, "trình chỉnh sửa trực quan"],
+  [/data sources/g, "nguồn dữ liệu"],
+  [/data source/g, "nguồn dữ liệu"],
+  [/data owner/g, "chủ sở hữu dữ liệu"],
+  [/process owner/g, "người chịu trách nhiệm quy trình"],
+  [/system owner/g, "người chịu trách nhiệm hệ thống"],
+  [/business reviewer/g, "người kiểm tra nghiệp vụ"],
+  [/representative end-user/g, "người dùng đại diện"],
+  [/reviewer/g, "người kiểm tra"],
+  [/use cases/g, "các tình huống sử dụng"],
+  [/use case/g, "tình huống sử dụng"],
+  [/source grounding/g, "đối chiếu với nguồn"],
+  [/web search/g, "tìm kiếm web"],
+  [/knowledge base/g, "kho kiến thức"],
+  [/cross-boundary mixing/g, "việc kết hợp dữ liệu giữa các phạm vi"],
+  [/cross-boundary/g, "giữa các phạm vi"],
+  [/audit trail/g, "dấu vết kiểm tra"],
+  [/public link/g, "liên kết công khai"],
+  [/personal drive/g, "ổ lưu trữ cá nhân"],
+  [/scheduled email/g, "email theo lịch"],
+  [/refresh schedule/g, "lịch cập nhật"],
+  [/incremental refresh/g, "cập nhật tăng dần"],
+  [/real-time/g, "theo thời gian thực"],
+  [/blank canvas/g, "khung trống"],
+  [/blank flow/g, "Flow trống"],
+  [/happy path/g, "tình huống hoạt động bình thường"],
+  [/negative cases/g, "tình huống lỗi"],
+  [/invalid input/g, "đầu vào không hợp lệ"],
+  [/partial failure/g, "lỗi một phần"],
+  [/partial completion/g, "hoàn thành một phần"],
+  [/permission denied/g, "bị từ chối quyền"],
+  [/auth expiry/g, "hết hạn xác thực"],
+  [/rate limit/g, "giới hạn tần suất"],
+  [/side effect/g, "tác động ngoài dự kiến"],
+  [/root cause/g, "nguyên nhân gốc"],
+  [/without fix/g, "khi chưa khắc phục lỗi"],
+  [/Use cases/g, "Các tình huống sử dụng"],
+  [/Use case/g, "Tình huống sử dụng"],
+  [/AI suggestions/g, "gợi ý của AI"],
+  [/what-if scenarios/g, "các tình huống giả định"],
+  [/Exploratory analysis/g, "Phân tích khám phá"],
+  [/Collaborative analysis/g, "Phân tích cộng tác"],
+  [/Market research/g, "Nghiên cứu thị trường"],
+  [/Internal research/g, "Nghiên cứu nội bộ"],
+  [/Ad-hoc research/g, "Nghiên cứu phát sinh"],
+  [/Accept suggestions/g, "Chấp nhận gợi ý"],
+  [/Refine goal/g, "Điều chỉnh mục tiêu"],
+  [/Inspect data/g, "Kiểm tra dữ liệu"],
+  [/Review AI-suggested visuals/g, "Kiểm tra các biểu đồ do AI đề xuất"],
+  [/Review plan/g, "Kiểm tra kế hoạch"],
+  [/Approve plan/g, "Phê duyệt kế hoạch"],
+  [/Monitor progress/g, "Theo dõi tiến độ"],
+  [/Verify citations/g, "Kiểm chứng trích dẫn"],
+  [/Edit output/g, "Biên tập kết quả"],
+  [/Export format/g, "Định dạng xuất"],
+  [/Share với/g, "Chia sẻ với"],
+  [/Review Research plan, approve và verify citations/g, "Kiểm tra kế hoạch Research, phê duyệt và kiểm chứng trích dẫn"],
+  [/Review và approve plan/g, "Kiểm tra và phê duyệt kế hoạch"],
+  [/Verification best practices và safe sharing/g, "Cách kiểm chứng và chia sẻ an toàn"],
+  [/Verification checklist/g, "Danh sách kiểm tra"],
+  [/Safe sharing và export controls/g, "Chia sẻ an toàn và kiểm soát xuất dữ liệu"],
+  [/Monitor và operational control/g, "Giám sát và kiểm soát vận hành"],
+  [/Test, approve, monitor, stop và rollback/g, "Kiểm thử, phê duyệt, giám sát, dừng và khôi phục"],
+  [/UAT và approval/g, "UAT và phê duyệt"],
+  [/Version và deployment/g, "Phiên bản và triển khai"],
+  [/Rollback và recovery/g, "Khôi phục phiên bản và phục hồi"],
+  [/citation verification/g, "kiểm chứng trích dẫn"],
+  [/\bapproved\b/g, "được phê duyệt"],
+  [/\bcitations\b/g, "trích dẫn"],
+  [/\bcitation\b/g, "trích dẫn"],
+  [/\bgrounding\b/g, "đối chiếu nguồn"],
+  [/\bapprovals\b/g, "các phê duyệt"],
+  [/\bapproval\b/g, "phê duyệt"],
+  [/\bapprove\b/g, "phê duyệt"],
+  [/\breview\b/g, "kiểm tra"],
+  [/\boutputs\b/g, "kết quả"],
+  [/\boutput\b/g, "kết quả"],
+  [/\binputs\b/g, "đầu vào"],
+  [/\binput\b/g, "đầu vào"],
+  [/\binsights\b/g, "kết quả phân tích"],
+  [/\binsight\b/g, "kết quả phân tích"],
+  [/\bvisualizations\b/g, "biểu đồ trực quan"],
+  [/\bvisuals\b/g, "biểu đồ"],
+  [/\bvisual\b/g, "biểu đồ"],
+  [/\bfiltering\b/g, "lọc"],
+  [/\bfilters\b/g, "bộ lọc"],
+  [/\bfilter\b/g, "bộ lọc"],
+  [/\bmonitoring\b/g, "giám sát"],
+  [/\bmonitor\b/g, "theo dõi"],
+  [/\bdeployment\b/g, "triển khai"],
+  [/\bproduction\b/g, "môi trường chính thức"],
+  [/\brollback\b/g, "khôi phục"],
+  [/\brunbook\b/g, "tài liệu hướng dẫn vận hành"],
+  [/\bcredentials\b/g, "thông tin xác thực"],
+  [/\bcredential\b/g, "thông tin xác thực"],
+  [/\bconnectors\b/g, "kết nối"],
+  [/\bconnector\b/g, "kết nối"],
+  [/\bstakeholders\b/g, "các bên liên quan"],
+  [/\blimitations\b/g, "giới hạn"],
+  [/\bdisclaimers\b/g, "lưu ý về giới hạn"],
+  [/\bdisclaimer\b/g, "lưu ý về giới hạn"],
+  [/\bauthoritative\b/g, "chính thống"],
+  [/\bassumptions\b/g, "giả định"],
+  [/\bpatterns\b/g, "mẫu hình"],
+  [/\boutliers\b/g, "điểm bất thường"],
+  [/\btrends\b/g, "xu hướng"],
+  [/\bcolleagues\b/g, "đồng nghiệp"],
+  [/\bworkspace\b/g, "không gian làm việc"],
+  [/\breports\b/g, "báo cáo"],
+  [/\breport\b/g, "báo cáo"],
+  [/\bclaims\b/g, "nhận định"],
+  [/\bclaim\b/g, "nhận định"],
+  [/\bgoal\b/g, "mục tiêu"],
+  [/\bcontext\b/g, "bối cảnh"],
+  [/\btimeline\b/g, "thời gian dự kiến"],
+  [/\bsteps\b/g, "các bước"],
+  [/\bstep\b/g, "bước"],
+  [/\bscope\b/g, "phạm vi"],
+  [/\bsources\b/g, "nguồn"],
+  [/\bsource\b/g, "nguồn"],
+  [/\bpolicy\b/g, "chính sách"],
+  [/\blicense\b/g, "giấy phép sử dụng"],
+  [/\bowner\b/g, "người chịu trách nhiệm"],
+  [/\btemplate\b/g, "mẫu"],
+  [/\bschedule\b/g, "lịch chạy"],
+  [/\bexport\b/g, "xuất dữ liệu"],
+  [/\bshare\b/g, "chia sẻ"],
+  [/\bwrite\b/g, "ghi dữ liệu"],
+  [/\btest\b/g, "kiểm thử"],
+  [/\bverify\b/g, "kiểm chứng"],
+  [/\bvalidation\b/g, "kiểm tra hợp lệ"],
+  [/\bnotifications\b/g, "thông báo"],
+  [/\bnotification\b/g, "thông báo"],
+  [/\balerting\b/g, "cảnh báo"],
+  [/\bruntime\b/g, "khi chạy"],
+  [/\bdata\b/g, "dữ liệu"],
+  [/\banalysis\b/g, "phân tích"],
+  [/\banalyses\b/g, "các bản phân tích"],
+  [/\bcanvas\b/g, "vùng làm việc"],
+  [/\buploads\b/g, "file đã tải lên"],
+  [/\bobjective\b/g, "mục tiêu"],
+  [/\bover-reliance\b/g, "phụ thuộc quá mức"],
+  [/\bparameters\b/g, "tham số"],
+  [/\baccount\b/g, "tài khoản"],
+  [/\bpermissions\b/g, "quyền"],
+  [/\bversion\b/g, "phiên bản"],
+  [/\binitial\b/g, "ban đầu"],
+  [/\badjust\b/g, "điều chỉnh"],
+  [/\bbuild\b/g, "tạo"],
+  [/\bdimensions\b/g, "chiều dữ liệu"],
+  [/\baggregations\b/g, "cách tổng hợp"],
+  [/\biterate\b/g, "lặp lại"],
+  [/\bcompetitor\b/g, "đối thủ"],
+  [/\bmulti-source\b/g, "nhiều nguồn"],
+  [/\bcross-team\b/g, "liên nhóm"],
+  [/\bad-hoc\b/g, "phát sinh"],
+  [/\bpublic web\b/g, "web công khai"],
+  [/\bdate range\b/g, "khoảng thời gian"],
+  [/\bdata classification\b/g, "phân loại dữ liệu"],
+  [/\bsensitive data\b/g, "dữ liệu nhạy cảm"],
+  [/\bquery\b/g, "truy vấn"],
+  [/\bnumbers\b/g, "số liệu"],
+  [/\bspecific\b/g, "cụ thể"],
+  [/\baudience\b/g, "đối tượng đọc"],
+  [/\bconstraints\b/g, "ràng buộc"],
+  [/\bplan\b/g, "kế hoạch"],
+  [/\bsubtasks\b/g, "tác vụ nhỏ"],
+  [/\banswer\b/g, "trả lời"],
+  [/\bprocessing\b/g, "xử lý"],
+  [/\bprogress\b/g, "tiến độ"],
+  [/\bcurrent\b/g, "còn cập nhật"],
+  [/\breject\b/g, "từ chối"],
+  [/\brefine\b/g, "điều chỉnh"],
+  [/\bremove\b/g, "loại bỏ"],
+  [/\badd\b/g, "thêm"],
+  [/\bedit\b/g, "biên tập"],
+  [/\blocal\b/g, "máy cá nhân"],
+  [/\breceive\b/g, "nhận"],
+  [/\bpurpose\b/g, "mục đích"],
+  [/documentation artifact/g, "tài liệu"],
+  [/documentation/g, "tài liệu"],
+];
+
+function normalizeCopy(value) {
+  return copyReplacements.reduce((result, [pattern, replacement]) => result.replace(pattern, replacement), value);
+}
+
+function normalizeChapterCopy(value, pathParts = []) {
+  if (typeof value === "string") {
+    const field = pathParts.at(-1);
+    const pathText = pathParts.join(".");
+    if (["id", "slug", "src", "type", "tone", "kind", "className", "wrapClassName"].includes(field)) return value;
+    if (pathText.includes("sources")) return value;
+    if (/\.toc\.\d+\.0$/.test(pathText)) return value;
+    return normalizeCopy(value);
+  }
+  if (Array.isArray(value)) {
+    return value.map((item, index) => normalizeChapterCopy(item, [...pathParts, String(index)]));
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, normalizeChapterCopy(item, [...pathParts, key])]));
+  }
+  return value;
+}
+
+const chapters = rawChapters
+  .map((chapter) => chapter.id === 23 ? chapter : normalizeChapterCopy(chapter))
+  .sort((a, b) => a.id - b.id);
 
 const sourceIdsByChapter = {
   1: ["NAB-POL-002", "VEN-MS-001", "VEN-AQ-001"],
@@ -236,7 +632,7 @@ function renderWalkthroughs(items) {
   return items.map((walkthrough, index) => `
     <article class="walkthrough">
       <header class="walkthrough-head">
-        <h3>Walkthrough ${index + 1}: ${esc(walkthrough.title)}</h3>
+        <h3>Hướng dẫn ${index + 1}: ${esc(walkthrough.title)}</h3>
         <p>${esc(walkthrough.intro)}</p>
       </header>
       <div class="walkthrough-body">
@@ -300,9 +696,9 @@ function renderFaqs(items) {
 
 function renderSources(items, sourceDate, sourceIds) {
   return `<div class="sources">
-    <p><strong>Source ID kiểm soát:</strong> ${sourceIds.map((id) => `<code>${esc(id)}</code>`).join(", ")}</p>
+    <p><strong>Mã nguồn kiểm soát:</strong> ${sourceIds.map((id) => `<code>${esc(id)}</code>`).join(", ")}</p>
     <ol>${items.map(([label, url]) => `<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a></li>`).join("")}</ol>
-    <p class="source-note">Nguồn vendor/chuyên môn được truy cập ngày ${esc(sourceDate)}. Liên kết ngoài chỉ được mở khi người dùng chủ động chọn và có kết nối Internet phù hợp.</p>
+    <p class="source-note">Nguồn của nhà cung cấp hoặc nguồn chuyên môn được truy cập ngày ${esc(sourceDate)}. Liên kết ngoài chỉ được mở khi người dùng chủ động chọn và có kết nối Internet phù hợp.</p>
   </div>`;
 }
 
@@ -324,20 +720,20 @@ function renderChapter(chapter, index) {
   const tocItems = chapter.guideSections?.length ? [
     ["muc-tieu", "Mục tiêu"],
     ["dieu-kien", "Điều kiện"],
-    ["use-case", "Use case"],
+    ["use-case", "Tình huống sử dụng"],
     ...chapter.guideSections.map((section) => [section.id, section.title]),
     ["huong-dan", "Hướng dẫn"],
     ["kiem-soat", "Kiểm soát"],
-    ["faq", "FAQ"],
+    ["faq", "Câu hỏi thường gặp"],
     ["nguon", "Nguồn"]
   ] : (chapter.toc || [
     ["muc-tieu", "Mục tiêu"],
     ["dieu-kien", "Điều kiện"],
-    ["use-case", "Use case"],
+    ["use-case", "Tình huống sử dụng"],
     ...(chapter.featureSections || []).map((section) => [section.id, section.title]),
     ["huong-dan", "Hướng dẫn"],
     ["kiem-soat", "Kiểm soát"],
-    ["faq", "FAQ"],
+    ["faq", "Câu hỏi thường gặp"],
     ["nguon", "Nguồn"]
   ]);
   return `<!doctype html>
@@ -384,7 +780,7 @@ ${renderHeader(true, "../")}
         </section>
 
         <section id="use-case">
-          <h2>Use case và cách chọn phạm vi</h2>
+          <h2>Tình huống sử dụng và cách chọn phạm vi</h2>
           ${renderCards(chapter.useCases)}
         </section>
 
@@ -407,7 +803,7 @@ ${renderHeader(true, "../")}
 
         <section id="faq">
           <h2>Câu hỏi thường gặp</h2>
-          <button class="home-link" type="button" data-expand-faq aria-pressed="false">Mở tất cả FAQ</button>
+          <button class="home-link" type="button" data-expand-faq aria-pressed="false">Mở tất cả câu hỏi</button>
           ${renderFaqs(chapter.faqs)}
         </section>
 
@@ -479,9 +875,9 @@ ${renderHeader(true)}
       </div>
       <div class="grid grid-3">
         ${[
-          ["1", "Đúng công cụ", "Chỉ dùng tài khoản, tenant và tính năng được NAB cho phép."],
+          ["1", "Đúng công cụ", "Chỉ dùng tài khoản, môi trường tổ chức (tenant) và tính năng được NAB cho phép."],
           ["2", "Đúng dữ liệu", "Phân loại, tối thiểu hóa và không đưa dữ liệu cấm vào công cụ."],
-          ["3", "Đúng quyền", "Rà quyền nguồn, người nhận, connector và link chia sẻ."],
+          ["3", "Đúng quyền", "Rà quyền nguồn, người nhận, kết nối và liên kết chia sẻ."],
           ["4", "Có kiểm chứng", "Mở nguồn, đối soát số liệu, logic, thời điểm và giả định."],
           ["5", "Con người chịu trách nhiệm", "AI tạo bản nháp; người dùng và cấp duyệt chịu trách nhiệm cuối."]
         ].map(([num, title, text]) => `<article class="card"><span class="card-number">${num}</span><h3>${title}</h3><p>${text}</p></article>`).join("")}
@@ -541,7 +937,7 @@ ${renderHeader(true)}
         </div>
         <div class="card">
           <h3>Chuẩn bị yêu cầu hỗ trợ</h3>
-          <ul class="check-list"><li>Mục tiêu và kết quả mong muốn</li><li>Nhóm người dùng và data owner</li><li>Loại dữ liệu, nguồn và đích</li><li>Hành động đọc/ghi/chia sẻ/lên lịch</li><li>KPI thành công và người phê duyệt</li></ul>
+          <ul class="check-list"><li>Mục tiêu và kết quả mong muốn</li><li>Nhóm người dùng và chủ sở hữu dữ liệu</li><li>Loại dữ liệu, nguồn và đích</li><li>Hành động đọc, ghi, chia sẻ hoặc lên lịch</li><li>KPI thành công và người phê duyệt</li></ul>
           <p><a class="button" href="./chapters/chapter-01-tong-quan.html">Xem hướng dẫn phối hợp</a></p>
         </div>
       </div>

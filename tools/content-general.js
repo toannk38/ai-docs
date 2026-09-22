@@ -30,7 +30,7 @@ module.exports = [
       "Biết trách nhiệm của Đơn vị nghiệp vụ, Khối CNTT và các đơn vị kiểm soát."
     ],
     prerequisites: [
-      "Đọc Chương 02 trước khi đưa bất kỳ dữ liệu nào vào công cụ AI.",
+      "Đọc Chương 02 (Nguyên tắc sử dụng AI an toàn) trước khi đưa bất kỳ dữ liệu nào vào công cụ AI.",
       "Sử dụng tài khoản do NAB cấp và tuân thủ quyền truy cập hiện có.",
       "Đối chiếu chính sách, quy trình nghiệp vụ và hướng dẫn ATTT đang có hiệu lực."
     ],
@@ -138,7 +138,7 @@ module.exports = [
     audience: "Người dùng Microsoft 365, Amazon Quick và các công cụ AI được phép",
     owner: "Chủ biên / Khối CNTT (chờ phê duyệt)",
     objectives: ["Viết Prompt có sáu thành phần cốt lõi.", "Chia nhỏ nhiệm vụ và đặt điểm kiểm tra.", "Nhận biết đầu ra cần đối chiếu trước khi sử dụng."],
-    prerequisites: ["Đã đọc Chương 02.", "Đã chọn công cụ và môi trường được NAB cho phép.", "Có người chịu trách nhiệm nghiệp vụ đối với đầu ra."],
+    prerequisites: ["Đã đọc Chương 02 (Nguyên tắc sử dụng AI an toàn).", "Đã chọn công cụ và môi trường được NAB cho phép.", "Có người chịu trách nhiệm nghiệp vụ đối với đầu ra."],
     useCases: [{ title: "Soạn thảo", text: "Nêu đối tượng đọc, giọng văn, độ dài và cấu trúc." }, { title: "Phân tích", text: "Nêu định nghĩa chỉ tiêu, phạm vi và phép đối soát." }, { title: "Nghiên cứu", text: "Giới hạn nguồn, thời gian và yêu cầu trích dẫn." }],
     featureSections: [{
       id: "sau-thanh-phan-prompt",
@@ -206,8 +206,8 @@ module.exports = [
   {
     id: 23,
     slug: "chapter-23-giai-thich-thuat-ngu.html",
-    navTitle: "Giải thích thuật ngữ",
-    title: "Giải thích thuật ngữ công nghệ và AI",
+    navTitle: "Phụ lục: Giải thích thuật ngữ",
+    title: "Phụ lục: Giải thích thuật ngữ",
     group: "Phụ lục",
     eyebrow: "Phụ lục thuật ngữ",
     kind: "policy",
@@ -222,7 +222,7 @@ module.exports = [
     featureSections: [{
       id: "bang-thuat-ngu",
       title: "Bảng thuật ngữ",
-      blocks: [{ type: "table", headers: ["Thuật ngữ", "Tên tiếng Việt", "Giải thích đơn giản"], rows: glossaryRows }]
+      blocks: [{ type: "table", headers: ["Thuật ngữ", "Tên đầy đủ", "Giải thích", "Ví dụ", "Lưu ý"], rows: glossaryRows }]
     }],
     walkthroughs: [{
       title: "Tra cứu một thuật ngữ",

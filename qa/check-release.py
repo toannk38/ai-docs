@@ -258,8 +258,8 @@ def run() -> list[str]:
             for pattern in tenant_confirmation_patterns:
                 if re.search(pattern, text, re.I):
                     errors.append(f"{rel}: tenant confirmation note is still rendered: {pattern!r}")
-            if "Source ID kiểm soát:" not in text:
-                errors.append(f"{rel}: missing required metadata label 'Source ID kiểm soát:'")
+            if "Mã nguồn kiểm soát:" not in text:
+                errors.append(f"{rel}: missing required metadata label 'Mã nguồn kiểm soát:'")
             if not re.search(r"\b(?:NAB|VEN)-[A-Z]+-\d{3}\b", text):
                 errors.append(f"{rel}: missing Source ID value")
             page_source_ids = set(re.findall(r"\b(?:NAB|VEN)-[A-Z]+-\d{3}\b", text))
@@ -342,6 +342,239 @@ def run() -> list[str]:
         path = EXPECTED_CHAPTERS[number - 1]
         if "Đang sử dụng tại NAB" not in path.read_text(encoding="utf-8"):
             errors.append(f"{path.name}: missing live-tool status")
+
+    for path in EXPECTED_HTML:
+        text = path.read_text(encoding="utf-8")
+        if "Phụ lục: Giải thích thuật ngữ" not in text:
+            errors.append(f"{path.name}: navigation is missing the glossary appendix label")
+
+    glossary_text = EXPECTED_CHAPTERS[22].read_text(encoding="utf-8")
+    glossary_section = re.search(
+        r'<section id="bang-thuat-ngu".*?<tbody>(.*?)</tbody>',
+        glossary_text,
+        re.S,
+    )
+    if glossary_section is None:
+        errors.append("chapter-23-giai-thich-thuat-ngu.html: missing glossary table body")
+    else:
+        rows = re.findall(r"<tr>(.*?)</tr>", glossary_section.group(1), re.S)
+        cells = [re.findall(r"<td>(.*?)</td>", row, re.S) for row in rows]
+        if len(rows) < 30:
+            errors.append(
+                "chapter-23-giai-thich-thuat-ngu.html: glossary must contain at least 30 terms"
+            )
+        if any(len(row_cells) != 5 for row_cells in cells):
+            errors.append(
+                "chapter-23-giai-thich-thuat-ngu.html: every glossary row must have five columns"
+            )
+        terms = [re.sub(r"<[^>]+>", "", row_cells[0]).strip() for row_cells in cells if row_cells]
+        if terms != sorted(terms, key=str.casefold):
+            errors.append(
+                "chapter-23-giai-thich-thuat-ngu.html: glossary terms must be alphabetically sorted"
+            )
+
+    required_glossary_headers = ["Thuật ngữ", "Tên đầy đủ", "Giải thích", "Ví dụ", "Lưu ý"]
+    for header in required_glossary_headers:
+        if f'<th scope="col">{header}</th>' not in glossary_text:
+            errors.append(
+                f"chapter-23-giai-thich-thuat-ngu.html: missing glossary column {header!r}"
+            )
+
+    vietnamese_ui_labels = {
+        "Use case và cách chọn phạm vi": "Tình huống sử dụng và cách chọn phạm vi",
+        "Walkthrough ": "Hướng dẫn ",
+        "Mở tất cả FAQ": "Mở tất cả câu hỏi",
+    }
+    for path in EXPECTED_HTML:
+        text = path.read_text(encoding="utf-8")
+        for old_label, replacement in vietnamese_ui_labels.items():
+            if old_label in text:
+                errors.append(
+                    f"{path.name}: replace {old_label!r} with Vietnamese label {replacement!r}"
+                )
+
+    malformed_localization_fragments = [
+        "kho kiến thứcs",
+        "out-of-phạm vi",
+        "Co-người chịu trách nhiệm",
+        "dữ liệu classification",
+        "hết hạn xác thực check",
+        "User acceptance kiểm thử",
+        "assignment works",
+        "sensitive/môi trường chính thức system",
+        "partial/misinterpreted",
+        "check chính thống",
+        "môi trường chính thức system",
+        "không accept",
+        "Access yêu cầu",
+        "không chọn all",
+        "nếu applicable",
+        "NAB-được phê duyệt storage",
+        "không upload trực tiếp sensitive",
+        "Research execute",
+        "expected kết quả",
+        "sau khi complete",
+        "Citations có",
+        "full bối cảnh",
+        "Research/Scenarios kết quả",
+        "phân loại dữ liệu label",
+        "không bypass",
+        "Review do AI đề xuất",
+        "match nguồn",
+        "sign-off",
+        "có thể skip",
+        "có thể include",
+        "Production automation",
+        "Write action",
+        "use kiểm thử target",
+        "môi trường chính thức ghi dữ liệu",
+        "Test environment",
+        "dữ liệu representative",
+        "được handle",
+        "AI luôn map",
+        "không autonomous",
+        "explicit phê duyệt gate",
+        "human kiểm tra",
+        "Task assignment",
+        "clean up partial writes",
+        "restore previous phiên bản",
+        "impacted users",
+        "sensitivity chính sách",
+        "brand/accessibility kiểm tra",
+        "Research kế hoạch",
+        "Research kết quả",
+        "Scenarios kết quả",
+        "mục tiêu/mục tiêu",
+        "date cutoff",
+        "partial match",
+        "misinterpreted",
+        "exploratory vùng làm việc",
+        "môi trường chính thức dashboards",
+        "full control",
+        "inventory kết nối",
+        "thông tin xác thực phạm vi",
+        "resource giới hạn",
+        "kiểm thử phase",
+        "backup người chịu trách nhiệm",
+        "đầu vào default",
+        "confirmation setting",
+        "người chịu trách nhiệm hoặc admin",
+        "dữ liệu quyền",
+        "fact-check",
+        "mục đích và access",
+        "Review kế hoạch",
+        "Approval bởi",
+        "risk/ATTT",
+        "automation ghi",
+        "Topics là",
+        "members hỏi đáp",
+        "Thêm members",
+        "mời user hoặc group",
+        "Review access",
+        "cùng biên tập hoặc view",
+        "Permissions:",
+        "Dataset settings",
+        "Refresh lịch chạy",
+        "Monitor refresh history",
+        "phát hiện failures",
+        "restrict viewer controls",
+        "không thay thế verification",
+        "definitions",
+        "control totals",
+        "cross-check",
+        "source type",
+        "ngày publish",
+        "based on your",
+        "đề xuất alternatives",
+        "change cách tổng hợp",
+        "ask follow-up",
+        "Add more",
+        "cross-dataset phân tích",
+        "Refine vùng",
+        "format labels",
+        "Save Scenario",
+        "business judgment",
+        "entry point",
+        "context menu",
+        "đối thủ phân tích",
+        "trend báo cáo",
+        "policy summaries",
+        "multi-nguồn",
+        "liên nhóm kết quả",
+        "analyze documents",
+        "user upload files",
+        "Research mục tiêu",
+        "Context giúp",
+        "source preferences",
+        "search terms",
+        "AI kế hoạch",
+        "Steps/tác vụ",
+        "Expected format",
+        "expected thời gian",
+        "Adjust phạm vi",
+        "nguồn count",
+        "Inspect trích dẫn",
+        "verify evidence",
+        "full paragraph",
+        "highlighted snippet",
+        "chính thống nguồn",
+        "regulator announcement",
+        "cross-nguồn",
+        "workpaper",
+        "Edit và",
+        "Export vào",
+        "users/groups",
+        "aggregation logic",
+        "chart type",
+        "calculated fields",
+        "join logic",
+        "definition document",
+        "downstream effect",
+        "response logic",
+        "Runtime cần",
+        "missing/đầu vào",
+        "detect intent",
+        "staging/môi trường",
+        "centralized lịch chạy",
+        "operational dashboard",
+        "risk rating",
+        "rollback tài liệu",
+        "lease privilege",
+        "responder action",
+        "pass cả happy",
+        "partial/bị",
+        "trước khi execute",
+        "dữ liệu as of",
+        "nguồn notes",
+        "Remove nhận định",
+        "nguồn register",
+        "Plan rộng",
+        "Report có",
+        "phân tích có AI hỗ trợ vùng làm việc",
+        "do AI đề xuất kết quả phân tích",
+        "scenario vùng làm việc",
+        "AI đề xuất ban đầu biểu đồ",
+        "AI đề xuất analysis canvas",
+        "phân tích mục tiêu",
+        "AI kết quả phân tích",
+        "kiểm tra Kế hoạch",
+    ]
+    for path in EXPECTED_HTML:
+        text = path.read_text(encoding="utf-8")
+        for fragment in malformed_localization_fragments:
+            if fragment in text:
+                errors.append(
+                    f"{path.name}: malformed Vietnamese localization remains: {fragment!r}"
+                )
+
+    chapter_02_reference = re.compile(
+        r"(?:Đọc|đọc) Chương 02(?! \(Nguyên tắc sử dụng AI an toàn\))"
+    )
+    for path in EXPECTED_HTML:
+        if chapter_02_reference.search(path.read_text(encoding="utf-8")):
+            errors.append(
+                f"{path.name}: Chapter 02 reference must include its Vietnamese title"
+            )
 
     code_files = html_paths + list((ROOT / "assets" / "js").glob("*.js"))
     forbidden = re.compile(r"\bfetch\s*\(|XMLHttpRequest|navigator\.serviceWorker|type=[\"']module[\"']")

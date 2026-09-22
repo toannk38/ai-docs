@@ -32,7 +32,7 @@ module.exports = [
     title: "Chọn công cụ AI theo nhu cầu công việc",
     summary: "Bắt đầu từ đầu ra cần hoàn thành, ưu tiên nền tảng đang dùng tại NAB và chỉ tham khảo AI công cộng với dữ liệu công khai.",
     objectives: ["Chọn công cụ theo công việc thay vì theo xu hướng.", "Ưu tiên Microsoft 365 và Amazon Quick khi phù hợp.", "Giữ ranh giới chỉ dùng dữ liệu công khai với AI tham khảo."],
-    prerequisites: ["Đã đọc Chương 02.", "Xác định đầu ra và tiêu chí kiểm tra.", "Chỉ chuẩn bị nguồn công khai cho công cụ AI tham khảo."],
+    prerequisites: ["Đã đọc Chương 02 (Nguyên tắc sử dụng AI an toàn).", "Xác định đầu ra và tiêu chí kiểm tra.", "Chỉ chuẩn bị nguồn công khai cho công cụ AI tham khảo."],
     useCases: [{ title: "Soạn thảo và cộng tác", text: "Ưu tiên Microsoft 365." }, { title: "Phân tích và nghiên cứu", text: "Ưu tiên Amazon Quick khi phù hợp." }, { title: "Tìm hiểu lựa chọn khác", text: "Chỉ dùng dữ liệu công khai." }],
     featureSections: [{
       id: "bang-chon-cong-cu",
