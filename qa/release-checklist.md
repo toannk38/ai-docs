@@ -16,6 +16,7 @@
 ## 2. Package và tính toàn vẹn
 
 - [ ] Có đúng 24 trang HTML: `index.html` ở thư mục gốc và `chapter-01` đến `chapter-23` trong `chapters/`; tất cả đều khác rỗng.
+- [ ] `tools/content-quick.js` có SHA-256 `47cc881119f368c49d7d54cfe5e237ac308e31a127898013a8aa4c4fe3633278`.
 - [ ] Có `assets/css/style.css`, `assets/js/site.js`, `logo/NAB-logo.png`, `logo/background.png` và đủ hồ sơ QA trong `qa/`.
 - [ ] Bản phát hành chính thức có thông báo DOCX/PDF đã phê duyệt; bản Markdown chỉ là nguồn biên soạn.
 - [ ] Không có file tạm, file backup, credential, token, `.env`, lịch sử trình duyệt hoặc metadata nhạy cảm.
@@ -26,7 +27,8 @@
 - [ ] 23/23 chương đủ mục tiêu, đối tượng, điều kiện, hướng dẫn, kiểm chứng, rủi ro, FAQ, nguồn và hỗ trợ.
 - [ ] 12/12 trang MS365/Amazon Quick ưu tiên có trạng thái “Đang sử dụng tại NAB”; từng tính năng chỉ ghi “được phép” khi có bằng chứng.
 - [ ] 100% walkthrough MS365 và Amazon Quick đã được SME thao tác lại trên tenant NAB.
-- [ ] 6/6 trang công cụ tham khảo hiển thị nguyên văn: “Không đồng nghĩa với việc được NAB phê duyệt sử dụng.”
+- [ ] 6/6 trang AI tham khảo hiển thị nguyên văn: “Chỉ sử dụng công cụ AI tham khảo với dữ liệu công khai. Không sử dụng dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc bất kỳ dữ liệu nội bộ nào.”
+- [ ] Năm chương Amazon Quick giữ nguyên tên menu: “Tổng quan và giao diện Amazon Quick”, “Spaces và Chat Agents”, “Dữ liệu, Analyses và Dashboards”, “Scenarios và Quick Research”, “Quick Flows & Automate”.
 - [ ] 100% trang có owner, version, ngày kiểm chứng và Source ID; không còn nguồn hết hiệu lực.
 - [ ] `source-register.md` không còn nguồn bắt buộc ở trạng thái `Cần bổ sung`/`Chờ xác nhận`.
 - [ ] Không còn `TODO`, `TBD`, `[Điền]`, `[Họ tên]`, `[dd/mm/yyyy]`, lorem ipsum hoặc nội dung mẫu trong artefact phát hành.

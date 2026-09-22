@@ -22,7 +22,7 @@ module.exports = [
     slug: "chapter-11-amazon-quick-tong-quan.html",
     navTitle: "Tổng quan và giao diện Amazon Quick",
     title: "Amazon Quick: tổng quan, giao diện và truy cập an toàn",
-    statusText: "NAB đang sử dụng Amazon Quick. Account, Region, role, subscription, Private Mode, upload/file limits, output formats, connector và menu cụ thể phải được SME xác nhận trước phát hành.",
+    statusText: "NAB đang sử dụng Amazon Quick. Hãy dùng đúng account, Region, role, subscription và các tính năng được cấp.",
     summary: "Amazon Quick là nền tảng AI workspace toàn diện — kết nối ứng dụng, công cụ và nguồn dữ liệu tổ chức, giúp biến câu hỏi thành câu trả lời và hành động. Chương này hướng dẫn giao diện chính, Private Mode, điều hướng, chat controls và các output shortcuts.",
     objectives: [
       "Đăng nhập đúng account/role NAB, xác nhận ngữ cảnh và phát hiện quyền bất thường.",
@@ -33,12 +33,12 @@ module.exports = [
     prerequisites: [
       "Có tài khoản/SSO NAB, MFA và role/subscription được cấp; không dùng root user hoặc tài khoản cá nhân.",
       "Dữ liệu đã phân loại; chỉ chọn dashboard, dataset, Space, knowledge base và connector được duyệt.",
-      "SME điền account name, Region, URL/SSO, vai trò, feature matrix và kênh hỗ trợ thực tế."
+      "Sử dụng account name, Region, URL/SSO, vai trò và kênh hỗ trợ do CNTT cung cấp."
     ],
     useCases: [
       { title: "Truy cập an toàn", text: "Đăng nhập qua portal/SSO NAB, xác nhận đúng account/region/role và menu được cấp." },
       { title: "Chat có kiểm soát", text: "Hỏi dữ liệu với phạm vi nguồn rõ ràng, kiểm chứng citation và không chạy Action ngoài ý muốn." },
-      { title: "Private Mode", text: "Tắt ghi nhớ và truy xuất bộ nhớ khi thảo luận nội dung nhạy cảm (cần xác nhận hành vi trên tenant NAB)." },
+      { title: "Private Mode", text: "Tắt ghi nhớ và truy xuất bộ nhớ khi thảo luận nội dung nhạy cảm." },
       { title: "Output shortcuts", text: "Tạo Research/Document/Presentation/Visual trực tiếp từ chat thay vì chỉ nhận văn bản." },
       { title: "Điều hướng nhanh", text: "Truy cập Spaces, Chat Agents, Analyses, Dashboards, Data, Flows và More từ sidebar." }
     ],
@@ -55,7 +55,7 @@ module.exports = [
             title: "Truy cập qua portal NAB",
             steps: [
               "Mở portal/SSO NAB; không dùng link lạ hoặc màn hình tự đăng ký.",
-              "Hoàn tất MFA và kiểm tra account/tenant, Region cùng hồ sơ người dùng theo checklist SME.",
+              "Hoàn tất MFA và kiểm tra account, Region cùng hồ sơ người dùng.",
               "Đối chiếu role và menu đang thấy với feature matrix đã phê duyệt.",
               "Kiểm tra asset mặc định không nằm ngoài phạm vi công việc.",
               "Nếu sai account, thiếu menu hoặc quyền quá rộng, dừng thao tác và gửi ticket kèm ảnh đã che dữ liệu nhạy cảm."
@@ -109,13 +109,13 @@ module.exports = [
           {
             number: "11.3.2",
             id: "xac-nhan-tenant",
-            title: "Xác nhận hành vi trên tenant NAB",
-            body: "Hành vi Private Mode có thể khác tùy phiên bản và cấu hình tenant. Trước khi phát hành, SME phải xác nhận:",
+            title: "Cách Private Mode xử lý dữ liệu",
+            body: "Khi sử dụng Private Mode, cần lưu ý các nội dung sau:",
             items: [
               { label: "Conversation history", text: "Hệ thống có ghi lịch sử cuộc trò chuyện hay không." },
               { label: "Training", text: "Nội dung có được gửi để huấn luyện mô hình hay không." },
               { label: "Retention", text: "Chính sách và thời gian lưu giữ dữ liệu được áp dụng như thế nào." },
-              { label: "Memory", text: "Private Mode có tương đương với không đọc và không ghi bộ nhớ trên tenant NAB hay không." }
+              { label: "Memory", text: "Không đọc và không ghi nội dung vào bộ nhớ hội thoại." }
             ]
           }
         ]
@@ -134,7 +134,7 @@ module.exports = [
               { label: "New chat", text: "Bắt đầu cuộc trò chuyện mới." },
               { label: "Search", text: "Tìm kiếm toàn bộ tài nguyên." },
               { label: "My stuff", text: "Nội dung cá nhân gồm datasets, data sources, analyses, dashboards, mục yêu thích và thư mục." },
-              { label: "Spaces", text: "Không gian cộng tác tập hợp files, Dashboards, Topics, Datasets và Integration Actions. Giới hạn tối đa 100 files/Space cần được xác nhận trên tenant NAB." },
+              { label: "Spaces", text: "Không gian cộng tác tập hợp files, Dashboards, Topics, Datasets và Integration Actions; hỗ trợ tối đa 100 files/Space theo hướng dẫn." },
               { label: "Research", text: "Nghiên cứu chuyên sâu bằng AI, tạo báo cáo dài và phân tích đa nguồn." },
               { label: "Chat agents", text: "Xây dựng và quản lý AI agent tùy chỉnh với persona, tài liệu tham chiếu, spaces và hành động kết nối." },
               { label: "Apps", text: "Biến ý tưởng thành ứng dụng web trong vài phút. Apps chỉ xuất hiện trong bản đồ điều hướng chương này; hướng dẫn chi tiết không chứa quy trình Apps." },
@@ -144,7 +144,7 @@ module.exports = [
               { label: "Data", text: "Quản lý kết nối nguồn dữ liệu như databases, data warehouses, cloud services và spreadsheets." },
               { label: "My folders / Shared folders", text: "Tổ chức analyses và dashboards." },
               { label: "More", text: "Truy cập các tính năng mở rộng." },
-              { label: "Recents", text: "Các cuộc trò chuyện gần đây được lưu trong 30 ngày theo hướng dẫn; thời gian retention thực tế cần được xác nhận trên tenant NAB." }
+              { label: "Recents", text: "Các cuộc trò chuyện gần đây được lưu trong 30 ngày theo hướng dẫn." }
             ]
           }
         ]
@@ -161,10 +161,10 @@ module.exports = [
             title: "Các thành phần điều khiển",
             items: [
               { label: "Dropdown 'Quick'", text: "Chọn giữa các AI agent khác nhau và có thể chuyển đổi agent ngay trong cùng cuộc trò chuyện." },
-              { label: "Ô nhập câu hỏi", text: "Nhập yêu cầu bằng ngôn ngữ tự nhiên; hỗ trợ tối đa 20 files/cuộc trò chuyện, 50 MB/file và các định dạng Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML, HTML. Giới hạn thực tế cần được xác nhận trên tenant NAB." },
+              { label: "Ô nhập câu hỏi", text: "Nhập yêu cầu bằng ngôn ngữ tự nhiên; hỗ trợ tối đa 20 files/cuộc trò chuyện, 50 MB/file và các định dạng Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML, HTML theo hướng dẫn." },
               { label: "Dropdown 'All data'", text: "Thu hẹp phạm vi kiến thức của agent theo Dashboards, Spaces, Topics, Datasets hoặc Integrations." },
               { label: "Nút '+'", text: "Đính kèm files hoặc thêm nguồn dữ liệu bổ sung vào cuộc trò chuyện." },
-              { label: "Dropdown 'Smart'", text: "Điều chỉnh chế độ xử lý AI và mức độ sâu của quá trình lý luận; hành vi cụ thể cần được xác nhận trên tenant NAB." }
+              { label: "Dropdown 'Smart'", text: "Điều chỉnh chế độ xử lý AI và mức độ sâu của quá trình lý luận." }
             ]
           }
         ]
@@ -184,7 +184,7 @@ module.exports = [
               { label: "Document", text: "Tạo tài liệu Word/DOCX hoặc PDF trực tiếp từ cuộc trò chuyện." },
               { label: "Presentation", text: "Tạo bài thuyết trình PowerPoint/PPTX trực tiếp từ cuộc trò chuyện." },
               { label: "Visual", text: "Tạo biểu đồ và hình ảnh trực quan hóa dữ liệu trực tiếp từ chat." },
-              { label: "Phạm vi hỗ trợ", text: "Các định dạng đầu ra phụ thuộc vào phiên bản và subscription; SME cần xác nhận trên tenant NAB." }
+              { label: "Phạm vi hỗ trợ", text: "Các định dạng đầu ra có thể khác theo phiên bản và subscription được cấp." }
             ]
           }
         ]
@@ -207,7 +207,7 @@ module.exports = [
               { label: "Scenarios", text: "Canvas phân tích dữ liệu với AI gợi ý dữ liệu liên quan và hỗ trợ khám phá insight theo kịch bản." },
               { label: "Stories", text: "Tạo câu chuyện dữ liệu kết hợp văn bản, biểu đồ và insight." },
               { label: "Customize navigation", text: "Tùy chỉnh thanh điều hướng theo nhu cầu cá nhân." },
-              { label: "Phạm vi hiển thị", text: "Các tính năng trong More phụ thuộc vào role, subscription và region; SME cần xác nhận danh sách thực tế trên tenant NAB." }
+              { label: "Phạm vi hiển thị", text: "Các tính năng trong More hiển thị theo role, subscription và Region của người dùng." }
             ]
           }
         ]
@@ -240,15 +240,15 @@ module.exports = [
       },
       {
         title: "Sử dụng Private Mode và kiểm tra upload limits",
-        intro: "Xác nhận giới hạn và hành vi theo tenant trước khi phát hành.",
+        intro: "Kiểm tra Private Mode và giới hạn tải tệp trước khi sử dụng.",
         steps: [
           "Bật Private Mode từ thanh header — biểu tượng khoá xuất hiện.",
-          "Xác nhận với SME: conversation history có được ghi không, có gửi nội dung training không, Private Mode có tương đương not-memory-read + not-memory-write không.",
-          "Kiểm tra giới hạn upload: 20 files/cuộc trò chuyện, 50 MB/file, 100 files/Space theo hướng dẫn giao diện — giới hạn thực tế phụ thuộc tenant.",
-          "Xác nhận danh sách định dạng file được hỗ trợ trên tenant NAB.",
-          "Ghi giới hạn đã xác nhận vào tài liệu hướng dẫn NAB trước phát hành."
+          "Kiểm tra trạng thái conversation history, training và memory được hiển thị trong Private Mode.",
+          "Kiểm tra giới hạn upload theo hướng dẫn: 20 files/cuộc trò chuyện, 50 MB/file và 100 files/Space.",
+          "Chỉ tải các định dạng file được giao diện hỗ trợ.",
+          "Không tải tệp nếu chưa rõ chế độ xử lý hoặc phạm vi lưu giữ dữ liệu."
         ],
-        verify: "Private Mode hoạt động như mong đợi, upload limits được SME xác nhận và không có lỗi upload."
+        verify: "Private Mode được bật, tệp đúng định dạng và không có lỗi upload."
       }
     ],
     controls: [
@@ -259,12 +259,12 @@ module.exports = [
       "Conversation/memory/retention không thay thế chính sách dữ liệu NAB."
     ],
     faqs: [
-      ["Private Mode có thật sự an toàn?", "Private Mode theo hướng dẫn giao diện không sử dụng bộ nhớ và không truy xuất bộ nhớ đã lưu. Tuy nhiên, hành vi cụ thể phụ thuộc vào phiên bản và cấu hình tenant — SME phải xác nhận có ghi conversation history không, có gửi nội dung training không trên tenant NAB."],
-      ["Upload file có giới hạn gì?", "Theo hướng dẫn giao diện: tối đa 20 files/cuộc trò chuyện, 50 MB/file, hỗ trợ Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML, HTML. Giới hạn thực tế và danh sách định dạng file cần SME xác nhận trên tenant NAB."],
+      ["Private Mode có thật sự an toàn?", "Private Mode không sử dụng và không truy xuất bộ nhớ đã lưu. Người dùng vẫn phải tuân thủ phân loại dữ liệu và quyền truy cập."],
+      ["Upload file có giới hạn gì?", "Theo hướng dẫn: tối đa 20 files/cuộc trò chuyện, 50 MB/file; hỗ trợ Word, Excel, PowerPoint, PDF, JPEG, PNG, CSV, TXT, JSON, YAML, XML và HTML."],
       ["Tại sao không thấy menu Automations?", "Các mục trong More (Automations, Connectors, Knowledge, Extensions, Scenarios, Stories) phụ thuộc vào role, subscription và region. Gửi ticket nếu thiếu menu đã được phê duyệt."],
-      ["Smart mode là gì?", "Chế độ xử lý AI điều chỉnh mức độ sâu của quá trình lý luận. Hành vi cụ thể cần SME xác nhận trên tenant NAB."],
-      ["Recents lưu bao lâu?", "Theo hướng dẫn giao diện: 30 ngày. Thời gian retention thực tế cần SME xác nhận trên tenant NAB và không thay thế chính sách dữ liệu NAB."],
-      ["Output formats nào được hỗ trợ?", "Theo hướng dẫn giao diện: Research, Document (Word/DOCX, PDF), Presentation (PowerPoint/PPTX), Visual (chart, graph). Danh sách output thực tế phụ thuộc phiên bản và subscription — SME xác nhận trên tenant NAB."],
+      ["Smart mode là gì?", "Chế độ xử lý AI điều chỉnh mức độ sâu của quá trình lý luận."],
+      ["Recents lưu bao lâu?", "Theo hướng dẫn: 30 ngày; nội dung vẫn phải tuân thủ chính sách dữ liệu NAB."],
+      ["Output formats nào được hỗ trợ?", "Quick hỗ trợ Research, Document (Word/DOCX, PDF), Presentation (PowerPoint/PPTX) và Visual (chart, graph) theo tính năng được cấp."],
       ["Apps có phải là production system?", "Không. Apps là prototype ứng dụng web tương tác, không mặc nhiên là hệ thống production. Apps chỉ xuất hiện trong bản đồ điều hướng; hướng dẫn chi tiết không chứa quy trình Apps."],
       ["Quick Research mất bao lâu?", "Theo hướng dẫn giao diện: khoảng 7–10 phút. Thời gian thực tế có thể khác tùy phức tạp và nguồn dữ liệu."]
     ],
@@ -280,11 +280,11 @@ module.exports = [
     slug: "chapter-12-amazon-quick-sight.html",
     navTitle: "Spaces và Chat Agents",
     title: "Amazon Quick: Spaces và Chat Agents",
-    statusText: "NAB đang sử dụng Spaces và Chat Agents. Giới hạn files/Space, custom agent reference limits, connector availability và sharing controls phải được SME xác nhận trên tenant NAB trước phát hành.",
+    statusText: "NAB đang sử dụng Spaces và Chat Agents. Chỉ thêm dữ liệu đã được phê duyệt và chia sẻ theo quyền tối thiểu.",
     summary: "Spaces là không gian cộng tác tập hợp files, dashboards, topics, datasets và integration actions. Chat Agents cho phép tạo AI agent tùy chỉnh với persona, tài liệu tham chiếu, spaces và hành động kết nối. Chương này hướng dẫn tạo và quản lý Spaces cùng custom Chat Agents theo nguyên tắc least privilege.",
     objectives: [
       "Tạo và quản lý Space — thêm files, datasets, dashboards, topics và members.",
-      "Hiểu giới hạn Space: tối đa 100 files/Space theo hướng dẫn (cần xác nhận trên tenant NAB).",
+      "Hiểu giới hạn Space: tối đa 100 files/Space theo hướng dẫn.",
       "Tạo Custom Chat Agent: cấu hình persona, reference documents, Spaces và action connectors.",
       "Áp dụng least privilege sharing — chỉ chia sẻ với người cần và permission tối thiểu.",
       "Kiểm soát quyền truy cập agent và Space theo chính sách NAB."
@@ -294,7 +294,7 @@ module.exports = [
       "Files, datasets, dashboards đã được phân loại và phê duyệt.",
       "Reference documents cho custom agent đã được data owner xác nhận.",
       "Connector và integration actions đã được IT security phê duyệt (nếu agent cần thực hiện hành động bên ngoài).",
-      "SME xác nhận giới hạn files/Space, agent reference limits (tối đa 10 files, 50 MB/file theo hướng dẫn) và sharing controls trên tenant NAB."
+      "Tuân thủ giới hạn files/Space, agent reference limits và sharing controls hiển thị trong Quick."
     ],
     useCases: [
       { title: "Space cộng tác", text: "Tập hợp files, dashboards, topics và datasets liên quan dự án vào một Space — team members truy cập tập trung." },
@@ -350,7 +350,7 @@ module.exports = [
             number: "12.3.1",
             id: "them-files",
             title: "Thêm files",
-            body: "Upload files trực tiếp vào Space hoặc link files đã có trong My stuff. Giới hạn: tối đa 100 files/Space theo hướng dẫn giao diện — cần SME xác nhận giới hạn thực tế trên tenant NAB. Chỉ thêm files đã được phân loại và data owner phê duyệt.",
+            body: "Upload files trực tiếp vào Space hoặc link files đã có trong My stuff. Giới hạn theo hướng dẫn: tối đa 100 files/Space. Chỉ thêm files đã được phân loại và data owner phê duyệt.",
             figures: [
               { src: "quick-docs/Images/HDSD/2-2.png", alt: "Giao diện thêm files vào Space với nút upload và danh sách files hiện có", caption: "Hình 12.2: Thêm files vào Space" }
             ]
@@ -401,7 +401,7 @@ module.exports = [
             title: "Cấu hình persona và reference documents",
             items: [
               { label: "Persona", text: "Mô tả vai trò, tone và hành vi mong muốn. Ví dụ: 'You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.'" },
-              { label: "Reference documents", text: "Thêm tối đa 10 files, 50 MB/file theo hướng dẫn giao diện; giới hạn thực tế cần được SME xác nhận trên tenant NAB." },
+              { label: "Reference documents", text: "Thêm tối đa 10 files, 50 MB/file theo hướng dẫn." },
               { label: "Grounding", text: "Agent sử dụng nội dung trong các files tham chiếu để tạo câu trả lời." },
               { label: "Phê duyệt dữ liệu", text: "Chỉ thêm tài liệu đã được data owner phê duyệt." }
             ],
@@ -479,7 +479,7 @@ module.exports = [
           "Chọn 'Chat agents' từ sidebar → nhấn 'Create Agent'.",
           "Đặt tên agent mô tả vai trò (ví dụ: 'NAB Financial Policy Expert').",
           "Viết persona chi tiết: vai trò, tone, hành vi (ví dụ: 'You are a senior financial analyst at NAB. Be precise, cite sources, never speculate.').",
-          "Thêm reference documents (tối đa 10 files, 50 MB/file theo hướng dẫn — cần SME xác nhận giới hạn) — chỉ thêm documents đã được data owner phê duyệt.",
+          "Thêm reference documents (tối đa 10 files, 50 MB/file theo hướng dẫn) — chỉ thêm documents đã được data owner phê duyệt.",
           "Chọn Spaces để agent truy cập (optional) — agent sẽ thấy tất cả tài nguyên trong Space.",
           "Test agent với sample questions — xác nhận grounding và citation đúng.",
           "Chia sẻ agent với team nếu cần — áp dụng least privilege."
@@ -493,15 +493,15 @@ module.exports = [
       "Review access định kỳ (ít nhất quarterly) — xóa members không còn làm việc trên dự án.",
       "Reference documents trong agent: chỉ thêm documents được phân loại phù hợp và data owner đã approve.",
       "Custom agent có actions: phải có approval riêng từ IT security, test kỹ trước production, monitor usage.",
-      "Giới hạn files/Space (100 files) và agent references (10 files, 50 MB/file) theo hướng dẫn — cần SME xác nhận trên tenant NAB."
+      "Tuân thủ giới hạn theo hướng dẫn: 100 files/Space và 10 reference files, 50 MB/file cho agent."
     ],
     faqs: [
-      ["Space có giới hạn gì?", "Theo hướng dẫn giao diện: tối đa 100 files/Space. Giới hạn thực tế cần SME xác nhận trên tenant NAB."],
+      ["Space có giới hạn gì?", "Theo hướng dẫn: tối đa 100 files/Space."],
       ["RLS/CLS có áp dụng trong Space?", "Có. Space không bypass data permissions — members truy cập datasets/dashboards theo quyền của họ trên tài nguyên gốc."],
       ["Custom agent có thể làm gì?", "Agent có thể: (1) Trả lời với persona tùy chỉnh. (2) Grounding với reference documents (tối đa 10 files, 50 MB/file theo hướng dẫn). (3) Truy cập Spaces. (4) Thực hiện hành động qua connectors (cần approval)."],
-      ["Agent reference limits là gì?", "Theo hướng dẫn giao diện: tối đa 10 files, 50 MB/file cho reference documents. Giới hạn thực tế cần SME xác nhận trên tenant NAB."],
+      ["Agent reference limits là gì?", "Theo hướng dẫn: tối đa 10 files, 50 MB/file cho reference documents."],
       ["Làm sao biết agent có actions nguy hiểm?", "Kiểm tra connectors được bật — nếu agent kết nối Salesforce, Jira, ServiceNow và có quyền ghi, cần approval và monitoring riêng."],
-      ["Ai có thể tạo Space/agent?", "Phụ thuộc vào role và permissions trên tenant NAB. Thường cần role có quyền tạo shared resources — gửi ticket nếu không thấy nút Create."],
+      ["Ai có thể tạo Space/agent?", "Người có role và quyền tạo shared resources; gửi yêu cầu hỗ trợ nếu không thấy nút Create."],
       ["Space có thể chia sẻ ra ngoài NAB?", "Không khuyến khích. Chỉ chia sẻ với internal users/groups theo chính sách NAB."],
       ["Custom agent có được training trên reference docs?", "Không. Agent grounding/retrieval với documents mỗi lần trả lời, không fine-tune hay training lâu dài."]
     ],
@@ -517,11 +517,11 @@ module.exports = [
     slug: "chapter-13-amazon-quick-research-index.html",
     navTitle: "Dữ liệu, Analyses và Dashboards",
     title: "Amazon Quick — tạo datasets, analyses và dashboards",
-    statusText: "NAB đang sử dụng Amazon Quick; data sources, SPICE capacity, RLS/CLS, embed, scheduled email và connector phải được SME/Data Owner/ATTT xác nhận.",
+    statusText: "NAB đang sử dụng Amazon Quick cho dữ liệu, Analyses và Dashboards. Chỉ sử dụng nguồn, quyền truy cập và connector được cấp.",
     summary: "Datasets chuẩn bị dữ liệu từ data sources; Analyses tạo visuals/filters/sheets; Dashboards xuất bản, share và embed. SPICE cache trong bộ nhớ; Direct Query real-time nhưng chậm hơn.",
     objectives: ["Tạo dataset với SPICE hoặc Direct Query.", "Tạo Analysis với AutoGraph, visuals, filters và sheets.", "Xuất bản Dashboard, share và quản lý SPICE capacity."],
     prerequisites: [
-      "SME xác nhận data sources, SPICE capacity available, RLS/CLS requirements và connector được phép.",
+      "Bảo đảm data sources, SPICE capacity, RLS/CLS và connector phù hợp với phạm vi được cấp.",
       "Data Owner duyệt phạm vi dữ liệu; ATTT duyệt credentials, connector, Region và embed/export settings.",
       "Có định nghĩa KPI, metadata, grain và control totals đã được approve."
     ],
@@ -586,7 +586,7 @@ module.exports = [
             number: "13.3.1",
             id: "khi-nao-dung-spice",
             title: "Khi nào dùng SPICE",
-            body: "Interactive dashboards, scheduled refresh (hàng ngày/tuần), data không đổi liên tục, cần tốc độ cao. Lưu ý capacity limits — SME xác nhận SPICE capacity available trên tenant NAB."
+            body: "Interactive dashboards, scheduled refresh (hàng ngày/tuần), data không đổi liên tục, cần tốc độ cao. Theo dõi SPICE capacity trước khi nạp hoặc refresh dữ liệu."
           },
           {
             number: "13.3.2",
@@ -793,7 +793,7 @@ module.exports = [
     slug: "chapter-14-amazon-quick-flows-automate.html",
     navTitle: "Scenarios và Quick Research",
     title: "Scenarios và Quick Research: phân tích AI-assisted và nghiên cứu có căn cứ",
-    statusText: "NAB đang sử dụng Amazon Quick; Scenarios, Research, web search, upload, knowledge base, ACL và Region phải được SME/ATTT xác nhận.",
+    statusText: "NAB đang sử dụng Scenarios và Quick Research. Chỉ dùng nguồn, web search, upload, knowledge base và connector được cấp quyền.",
     summary: "Scenarios cung cấp AI-assisted analysis canvas để khám phá insights từ data. Quick Research tạo báo cáo có nguồn từ web, Spaces, uploads hoặc dashboards. Cả hai đều yêu cầu citation verification và kiểm soát nguồn.",
     objectives: [
       "Tạo Scenario và sử dụng AI suggestions để phân tích data.",
@@ -802,7 +802,7 @@ module.exports = [
       "Ngăn prompt injection, nguồn cũ và over-reliance vào AI output."
     ],
     prerequisites: [
-      "SME xác nhận Scenarios, Research, web search, upload, Space/dashboard access và connector nào được bật.",
+      "Chỉ sử dụng Scenarios, Research, web search, upload, Space/dashboard và connector được cấp quyền.",
       "Data Owner duyệt phạm vi nguồn; ATTT duyệt connector, Region và mô hình ACL.",
       "Chỉ dùng dữ liệu đã được phân loại và phê duyệt.",
       "Action connector mặc định không dùng trong phân tích/nghiên cứu."
@@ -829,7 +829,7 @@ module.exports = [
             number: "14.1.2",
             id: "scenarios-access",
             title: "Truy cập Scenarios",
-            body: "Scenarios thường nằm trong More menu hoặc My stuff section (tùy Quick version/configuration). SME xác nhận Scenarios có được bật trên tenant NAB và user nào có quyền. Access yêu cầu: (1) User có quyền truy cập datasets/Spaces làm input. (2) Admin đã bật Scenarios feature cho account. (3) Không bypass RLS/CLS — Scenarios vẫn tuân theo data permissions."
+            body: "Scenarios thường nằm trong More menu hoặc My stuff section. Access yêu cầu: (1) User có quyền truy cập datasets/Spaces làm input. (2) Scenarios được bật cho account. (3) Không bypass RLS/CLS — Scenarios vẫn tuân theo data permissions."
           }
         ]
       },
@@ -882,7 +882,7 @@ module.exports = [
             id: "research-access-methods",
             title: "Truy cập và use case",
             body: "Quick Research thường có entry point trong sidebar, More menu hoặc Spaces context menu. Use cases: (1) Market research từ nguồn công khai — competitor analysis, trend reports, policy summaries. (2) Internal research từ Spaces/dashboards — tổng hợp multi-source reports, cross-team insights. (3) Ad-hoc research từ uploads — analyze documents user upload.",
-            note: "SME cần xác nhận Research có được bật, các nguồn được phép sử dụng (web/Spaces/uploads/connectors) và chính sách retention. Một research cycle được ước tính khoảng 7–10 phút; thời gian thực tế có thể khác tùy phạm vi và số lượng nguồn."
+            note: "Chỉ sử dụng các nguồn được cấp quyền như web, Spaces, uploads hoặc connectors. Một research cycle được ước tính khoảng 7–10 phút; thời gian thực tế có thể khác tùy phạm vi và số lượng nguồn."
           }
         ]
       },
@@ -899,7 +899,7 @@ module.exports = [
             body: "Research có thể dùng một hoặc nhiều nguồn (nếu cross-boundary được duyệt): (1) **Web search** — public web, domain filtering, date range. Yêu cầu approval riêng vì outbound traffic và crawler footprint. (2) **Spaces** — knowledge base, files, topics đã lập chỉ mục. ACL áp dụng — Research chỉ truy cập được nguồn user có quyền. (3) **Uploads** — user upload files ad-hoc. Files vẫn cần data classification và không được chứa sensitive data chưa duyệt. (4) **Dashboards** — Research có thể query dashboards để tổng hợp numbers/trends; tuân theo RLS/CLS.",
             stepsTitle: "Quy tắc khi chọn nguồn",
             steps: [
-              "Xác nhận nguồn nào được phép: SME/ATTT confirm web/Spaces/uploads/connectors enabled.",
+              "Chỉ chọn các nguồn web, Spaces, uploads hoặc connectors đã được cấp quyền.",
               "Chọn nguồn tối thiểu cần thiết — không chọn all Spaces/dashboards vì tiện.",
               "Nếu kết hợp web với nội bộ, xác nhận cross-boundary mixing đã được duyệt.",
               "Ghi domain ưu tiên/tránh cho web search (nếu applicable).",
@@ -916,7 +916,7 @@ module.exports = [
               "Viết goal: câu hỏi cụ thể, khoảng thời gian, địa lý, tiêu chí và định dạng.",
               "Thêm context: audience, use case, authoritative source preferences.",
               "Không đưa dữ liệu nhạy cảm NAB vào search terms/goal.",
-              "Review goal/context với SME nếu scope rộng hoặc cross-boundary."
+              "Thu hẹp goal/context nếu phạm vi quá rộng hoặc kết hợp nhiều loại nguồn."
             ]
           }
         ]
@@ -1068,7 +1068,7 @@ module.exports = [
       ["Research plan quá rộng — có thể skip review?", "Không; reject plan và refine goal. Plan rộng tốn thời gian, nguồn và có thể include out-of-scope data."],
       ["Có share Research qua email cá nhân?", "Không; export vào kho NAB, gắn data classification label và share với đúng users/groups trong môi trường được phép."],
       ["Scenarios có bypass RLS/CLS?", "Không; Scenarios tuân theo data permissions. Nếu user không có quyền trên dataset, không tạo được Scenario từ dataset đó."],
-      ["Web search có được bật mặc định?", "Tùy tenant config; SME/ATTT xác nhận web search, domain filtering và outbound traffic có được phép."]
+      ["Web search có được bật mặc định?", "Không mặc định cho mọi tài khoản; chỉ sử dụng khi giao diện cho phép và không đưa dữ liệu nội bộ vào truy vấn web."]
     ],
     sources: [
       ["Amazon QuickSight Scenarios", "https://docs.aws.amazon.com/quicksight/latest/user/scenarios.html"],
@@ -1081,7 +1081,7 @@ module.exports = [
     slug: "chapter-15-amazon-quick-apps.html",
     navTitle: "Quick Flows & Automate",
     title: "Amazon Quick Flows và Quick Automate: tự động hóa có kiểm soát",
-    statusText: "NAB đang sử dụng Amazon Quick; quyền tạo/chạy/chia sẻ, connector, schedule, approval và HITL phải được SME/ATTT xác nhận.",
+    statusText: "NAB đang sử dụng Quick Flows và Automate. Chỉ dùng quyền tạo, chạy, chia sẻ, connector và schedule được cấp.",
     summary: "Flow hoặc automation do AI sinh chỉ là bản nháp. Hành động ghi vào production cần owner, least privilege, UAT, approval, logging và rollback.",
     objectives: ["Tạo Flow read-only có thể kiểm thử.", "Thiết kế human gate cho write/schedule.", "Quản lý vòng đời Automate từ test đến monitoring/rollback."],
     prerequisites: [
@@ -1136,7 +1136,7 @@ module.exports = [
         title: "Quick Automate — mục đích và quyền truy cập",
         subsections: [
           { id: "automate-la-gi", heading: "Automate là gì", body: "Quick Automate cho quy trình dài hơn, khối lượng lớn, cần exception handling, HITL gate, case management và monitoring. Khác Flow: có staging/production deployment, version control, centralized schedule, và operational dashboard. Dành cho enterprise workflow yêu cầu kiểm soát và truy vết đầy đủ." },
-          { id: "automate-truy-cap-subscription", heading: "Truy cập và subscription", body: "Tùy vào gói Quick Pro/Enterprise và NAB custom permissions. Feature, Region, connector, notification channel và approval workflow phải được Admin/SME xác nhận trước khi deploy. Production automation không được tự đăng ký connector hoặc tự phân quyền." },
+          { id: "automate-truy-cap-subscription", heading: "Truy cập và subscription", body: "Tính năng hiển thị theo gói Quick Pro/Enterprise và quyền được cấp. Production automation không được tự đăng ký connector hoặc tự phân quyền." },
           { id: "automate-kiem-soat", heading: "Kiểm soát bắt buộc", body: "Owner rõ ràng (process, system, data owner), risk rating, test data, UAT, version, audit log, monitoring và rollback runbook. Không tách credential test/prod chung, không nhúng secret trong prompt hoặc documentation artifact." }
         ],
         figures: []
@@ -1219,7 +1219,7 @@ module.exports = [
       ["Flow khác Automate?", "Flow cho tác vụ ngắn cá nhân/nhóm; Automate cho quy trình enterprise tập trung và điều khiển nâng cao."],
       ["Có thể ghi thẳng hệ thống từ output AI?", "Không trước validation, approval và UAT; write cần kiểm soát riêng."],
       ["Schedule có tự xác nhận action?", "Tùy cấu hình; NAB mặc định giữ confirmation cho write trừ khi có phê duyệt rủi ro riêng."],
-      ["Ai được share/approve Flow?", "Phụ thuộc subscription/custom permissions và quy trình NAB; SME phải xác nhận."],
+      ["Ai được share/approve Flow?", "Người có subscription, custom permissions và vai trò phê duyệt phù hợp trong quy trình NAB."],
       ["Có test trực tiếp production?", "Không. Dùng test target/Test environment trước UAT."],
       ["Xử lý lỗi thế nào?", "Phân loại business/system exception, retry tạm thời có giới hạn, HITL/compensation và dừng khi cần."],
       ["Vì sao schedule dừng?", "Kiểm tra connector auth, version, share/delete, Region và run history; không tự đổi credential prod."],

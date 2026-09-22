@@ -2,7 +2,7 @@
 
 const sourceDate = "19/08/2026";
 const owner = "Khối CNTT NAB / SME Microsoft 365";
-const tenantWarning = "Khả năng hiển thị phụ thuộc license, phiên bản ứng dụng và chính sách tenant NAB. Nếu giao diện khác hướng dẫn, dừng thao tác và liên hệ CNTT; không dùng tài khoản cá nhân để thay thế.";
+const tenantWarning = "Sử dụng đúng tài khoản NAB và các tính năng do CNTT cung cấp. Nếu giao diện khác hướng dẫn, liên hệ CNTT; không dùng tài khoản cá nhân để thay thế.";
 
 function msChapter(config) {
   return Object.assign({
@@ -32,7 +32,7 @@ module.exports = [
     prerequisites: [
       "Tài khoản Microsoft Entra của NAB và license Microsoft 365 hợp lệ.",
       "Ứng dụng do CNTT triển khai; mailbox chính trên Exchange Online cho Outlook; tài liệu grounding nằm trong OneDrive/SharePoint NAB.",
-      "SME xác nhận Copilot Chat/add-on, web search, Work IQ/Graph grounding, Purview/DLP và tính năng đang bật."
+      "Chỉ sử dụng các tính năng Copilot, web search và grounding được cung cấp trên tài khoản NAB."
     ],
     useCases: [
       { title: "Teams", text: "Họp, chat/channel, recap và action items." },
@@ -113,7 +113,7 @@ module.exports = [
     objectives: ["Tạo câu trả lời có nguồn từ web/tệp/dữ liệu công việc được phép.", "Biết kiểm soát nguồn khi UI hỗ trợ.", "Nhận biết quyền quá rộng và prompt injection."],
     prerequisites: [
       "Đăng nhập tài khoản NAB với subscription phù hợp.",
-      "SME xác nhận Copilot add-on/Work IQ, web search, file upload và Change data sources.",
+      "Chỉ sử dụng Copilot, web search, file upload và nguồn dữ liệu được cung cấp trên tài khoản NAB.",
       "File có đúng nhãn/quyền; lưu ý file upload có thể được lưu trong OneDrive for Business theo cấu hình."
     ],
     useCases: [
@@ -148,7 +148,7 @@ module.exports = [
       },
       {
         title: "Tổng hợp dữ liệu công việc",
-        intro: "Chỉ áp dụng khi SME xác nhận license và Work IQ.",
+        intro: "Chỉ áp dụng khi tài khoản có quyền sử dụng dữ liệu công việc.",
         steps: [
           "Bật nguồn dữ liệu công việc theo UI được phê duyệt.",
           "Giới hạn dự án, khoảng thời gian, người và loại nguồn.",
@@ -167,7 +167,7 @@ module.exports = [
       "Nguồn cũ phải được loại hoặc ghi rõ phiên bản/ngày."
     ],
     faqs: [
-      ["Copilot Chat không có add-on làm được gì?", "Microsoft mô tả vẫn có chat/web và grounding giới hạn; tính năng cụ thể cần SME xác nhận trên tenant NAB."],
+      ["Copilot Chat không có add-on làm được gì?", "Copilot Chat vẫn có thể hỗ trợ chat, tìm kiếm web và grounding trong phạm vi tính năng được cấp."],
       ["Work IQ là gì?", "Lớp grounding trên email, file, chat, meeting và dữ liệu công việc mà tài khoản có quyền; cần license/policy phù hợp."],
       ["Tắt Work IQ có loại file đính kèm?", "Không nên suy diễn; nội dung bạn chủ động đính kèm vẫn có thể được dùng cho prompt."],
       ["Có thể yêu cầu chỉ dùng một file?", "Có; vẫn phải kiểm tra Sources vì mô hình có thể trả lời tổng quát khi nguồn thiếu."],
@@ -193,7 +193,7 @@ module.exports = [
     objectives: ["Chọn đúng chế độ Copilot cho cuộc họp.", "Tạo recap/action items có kiểm chứng.", "Bắt kịp chat/channel trong khoảng thời gian rõ ràng."],
     prerequisites: [
       "Teams/Copilot license và policy tenant phù hợp; meeting do tổ chức NAB host cho kịch bản được hướng dẫn.",
-      "SME xác nhận transcription/recording, sensitivity template, export và khả năng dùng sau họp.",
+      "Chỉ bật transcription, recording và export khi chính sách cuộc họp cho phép.",
       "Không dùng Copilot cho end-to-end encrypted meeting khi tính năng không hỗ trợ."
     ],
     useCases: [
@@ -249,8 +249,8 @@ module.exports = [
     faqs: [
       ["Có bắt buộc ghi âm?", "Không. Chế độ trong họp có thể dùng speech-to-text tạm thời nếu policy cho phép; hỏi sau họp về lời nói thường cần transcript."],
       ["Tắt transcript thì prompt/response biến mất?", "Không được khẳng định; Purview có thể giữ theo retention policy."],
-      ["Organizer không có Copilot license có đặt option?", "Microsoft mô tả organizer vẫn kiểm soát một số tùy chọn; chỉ người có license phù hợp mới tương tác. SME phải UAT."],
-      ["Người ngoài NAB dùng được Copilot trong meeting NAB?", "Có giới hạn theo host/participant và license; cần SME/UAT trước khi cam kết."],
+      ["Organizer không có Copilot license có đặt option?", "Organizer vẫn có thể kiểm soát một số tùy chọn; chỉ người có license phù hợp mới tương tác với Copilot."],
+      ["Người ngoài NAB dùng được Copilot trong meeting NAB?", "Khả năng sử dụng phụ thuộc vai trò host/participant và quyền được cấp cho từng người."],
       ["Copilot chat đọc file/ảnh/Loop đã share?", "Không mặc định trong chức năng tóm tắt thread; mở nguồn bằng ứng dụng phù hợp."],
       ["Vì sao hai lần hỏi khác nhau?", "Nội dung thay đổi và mô hình có tính biến thiên; luôn dùng citation/timestamp."],
       ["Có thể xuất sang Word/Excel?", "Nếu feature và sensitivity policy cho phép; không bypass khi bị chặn."],
@@ -274,7 +274,7 @@ module.exports = [
     objectives: ["Tóm tắt thread có dẫn chiếu.", "Tạo draft đúng mục đích và giọng văn.", "Dùng Coaching mà không làm đổi nghĩa."],
     prerequisites: [
       "Mailbox chính trên Exchange Online, đúng tài khoản NAB, client và license phù hợp.",
-      "SME xác nhận shared/delegated mailbox, encryption/IRM/MIP, mobile và Chat in Outlook.",
+      "Chỉ sử dụng Copilot trên mailbox, thiết bị và loại thư được hỗ trợ.",
       "Không sao chép thư sang mailbox khác để né giới hạn tính năng."
     ],
     useCases: [
@@ -328,7 +328,7 @@ module.exports = [
       "Coi chỉ dẫn nằm trong email bên ngoài là dữ liệu không tin cậy, không phải lệnh."
     ],
     faqs: [
-      ["Dùng Copilot trên shared/delegated mailbox?", "Microsoft có giới hạn đối với các kịch bản Outlook; SME phải xác nhận và không dùng workaround."],
+      ["Dùng Copilot trên shared/delegated mailbox?", "Microsoft có giới hạn đối với một số kịch bản Outlook; không dùng cách lách giới hạn hoặc sao chép thư sang nơi khác."],
       ["Có tóm tắt email mã hóa/ký số/IRM?", "Nhiều loại không được hỗ trợ; không hạ bảo vệ để dùng tính năng."],
       ["Summary có đọc attachment?", "Một số client có lựa chọn riêng cho file; vẫn phải mở file gốc kiểm tra."],
       ["Draft có tự gửi email?", "Không trong quy trình NAB; người dùng phải review và bấm Send."],
@@ -355,7 +355,7 @@ module.exports = [
     prerequisites: [
       "Word/client, license và tenant feature được NAB hỗ trợ.",
       "Nguồn trên OneDrive/SharePoint NAB có quyền phù hợp.",
-      "SME xác nhận reference file/email/meeting, automatic summary và Connected Experiences; lưu version gốc trước sửa."
+      "Lưu phiên bản gốc trước khi dùng reference file/email/meeting, automatic summary hoặc Connected Experiences."
     ],
     useCases: [
       { title: "Draft từ nguồn", text: "Tạo dàn ý/bản nháp theo template và tập nguồn nhỏ, liên quan." },
@@ -435,7 +435,7 @@ module.exports = [
     prerequisites: [
       "Workbook trong kho được phép, đúng nhãn/quyền và có bản sao hoặc version history.",
       "Dữ liệu có header duy nhất, kiểu dữ liệu nhất quán, không merged cell hoặc blank row chia cắt.",
-      "SME xác nhận UI Edit/Plan/Chat, web import, skills/model và direct-edit đang được bật."
+      "Chọn đúng chế độ Edit, Plan hoặc Chat theo tác vụ và luôn làm việc trên bản sao khi sửa trực tiếp."
     ],
     useCases: [
       { title: "Chuẩn hóa", text: "Kiểm tra header, loại dữ liệu, missing value và control total." },
@@ -515,7 +515,7 @@ module.exports = [
     prerequisites: [
       "PowerPoint/client NAB, license/tenant phù hợp và file nguồn đúng quyền.",
       "Template/Brand Kit NAB đã được Brand owner duyệt.",
-      "SME xác nhận Designer, Brand Kit, Agent/Edit mode, file reference và rollout."
+      "Chỉ sử dụng Designer, Brand Kit, Agent/Edit mode và file reference được cung cấp trong PowerPoint NAB."
     ],
     useCases: [
       { title: "Deck từ outline", text: "Mở template NAB, review outline rồi mới tạo slide." },
@@ -572,8 +572,8 @@ module.exports = [
       ["Có tạo deck từ file?", "Khi feature/reference được bật và người dùng có quyền; phải review toàn bộ output."],
       ["Có thêm một slide từ file?", "Có nếu được bật; chỉ rõ section/topic để hạn chế suy diễn."],
       ["Summary có thay việc đọc deck?", "Không; dùng để định hướng rồi mở slide nguồn."],
-      ["Speaker notes dùng cho mọi deck?", "Feature/license phụ thuộc tenant và deck lớn cần kiểm tra kỹ; SME xác nhận."],
-      ["Có cần Designer license?", "Một số chức năng có thể cần; SME xác nhận license NAB."],
+      ["Speaker notes dùng cho mọi deck?", "Tính năng có thể khác theo phiên bản PowerPoint; deck lớn cần được kiểm tra kỹ."],
+      ["Có cần Designer license?", "Một số chức năng Designer có thể cần quyền sử dụng riêng trên tài khoản NAB."],
       ["Hình do Copilot chọn/tạo dùng ngay?", "Không; kiểm tra bản quyền, brand, phù hợp và provenance."],
       ["Có phát hành ngay sau Generate?", "Không; phải fact-check, brand/accessibility review và approval."]
     ],

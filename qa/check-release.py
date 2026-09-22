@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import re
 import sys
 import zipfile
@@ -13,11 +14,35 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 CHAPTERS_DIR = ROOT / "chapters"
-EXPECTED_CHAPTERS = [
-    next(CHAPTERS_DIR.glob(f"chapter-{number:02d}-*.html"), None)
-    for number in range(1, 24)
+EXPECTED_SLUGS = [
+    "chapter-01-tong-quan.html",
+    "chapter-02-nguyen-tac-su-dung-ai-an-toan.html",
+    "chapter-03-ky-thuat-viet-prompt.html",
+    "chapter-04-ms365-tong-quan.html",
+    "chapter-05-ms365-copilot.html",
+    "chapter-06-ms365-teams.html",
+    "chapter-07-ms365-outlook.html",
+    "chapter-08-ms365-word.html",
+    "chapter-09-ms365-excel.html",
+    "chapter-10-ms365-powerpoint.html",
+    "chapter-11-amazon-quick-tong-quan.html",
+    "chapter-12-amazon-quick-sight.html",
+    "chapter-13-amazon-quick-research-index.html",
+    "chapter-14-amazon-quick-flows-automate.html",
+    "chapter-15-amazon-quick-apps.html",
+    "chapter-16-chon-ai-theo-nhu-cau.html",
+    "chapter-17-ai-hoi-thoai-tro-ly-da-nang.html",
+    "chapter-18-notebooklm-lam-viec-voi-tai-lieu.html",
+    "chapter-19-ai-thiet-ke-trinh-bay.html",
+    "chapter-20-ai-tao-hinh-anh-video.html",
+    "chapter-21-ai-agent-tu-dong-hoa.html",
+    "chapter-22-du-lieu-duoc-phep-khong-duoc-phep.html",
+    "chapter-23-giai-thich-thuat-ngu.html",
 ]
+EXPECTED_CHAPTERS = [CHAPTERS_DIR / slug for slug in EXPECTED_SLUGS]
 EXPECTED_HTML = [ROOT / "index.html", *EXPECTED_CHAPTERS]
+PUBLIC_DATA_WARNING = "Chỉ sử dụng công cụ AI tham khảo với dữ liệu công khai. Không sử dụng dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc bất kỳ dữ liệu nội bộ nào."
+QUICK_CONTENT_SHA256 = "913eaafe3e00b22692e0d1a16f12cb0939752bc41c304d2f71fb461d021e0bd5"
 EXTERNAL_SCHEMES = {"http", "https", "mailto", "tel"}
 RESOURCE_TAG_ATTRS = {
     "script": "src",
@@ -45,6 +70,8 @@ class DocumentParser(HTMLParser):
         self.chapter_nav_current = 0
         self.walkthrough_count = 0
         self.faq_count = 0
+        self.table_count = 0
+        self.danger_callout_count = 0
         self.doc_figures_missing_elements: list[str] = []
         self._chapter_nav_depth = 0
         self._doc_figure_stack: list[dict[str, bool]] = []
@@ -56,6 +83,10 @@ class DocumentParser(HTMLParser):
             self.walkthrough_count += 1
         if "faq-item" in classes:
             self.faq_count += 1
+        if tag == "table" and "content-table" in classes:
+            self.table_count += 1
+        if "danger" in classes and ({"callout", "status-notice"} & classes):
+            self.danger_callout_count += 1
         if tag == "html":
             self.html_lang = values.get("lang")
         if tag == "main":
@@ -141,16 +172,11 @@ def local_target(source: Path, href: str) -> tuple[Path, str] | None:
 def run() -> list[str]:
     errors: list[str] = []
 
-    if any(path is None for path in EXPECTED_CHAPTERS):
-        missing_numbers = [str(index + 1) for index, path in enumerate(EXPECTED_CHAPTERS) if path is None]
-        errors.append(f"Missing chapter numbers: {', '.join(missing_numbers)}")
-        return errors
-
     # tmp.html is the explicitly retained visual reference, not a release page.
     root_html_paths = sorted(path for path in ROOT.glob("*.html") if path.name != "tmp.html")
     chapter_html_paths = sorted(CHAPTERS_DIR.glob("*.html"))
     html_paths = [*root_html_paths, *chapter_html_paths]
-    expected_paths = [path for path in EXPECTED_HTML if path is not None]
+    expected_paths = EXPECTED_HTML
     if root_html_paths != [ROOT / "index.html"]:
         errors.append("Root must contain only index.html; chapters belong in chapters/")
     if len(chapter_html_paths) != 23:
@@ -164,9 +190,13 @@ def run() -> list[str]:
         return errors
 
     parsed = parse_documents(html_paths)
-    chapter_names = {path.name for path in EXPECTED_CHAPTERS if path is not None}
+    chapter_names = set(EXPECTED_SLUGS)
     source_register_text = (ROOT / "qa" / "source-register.md").read_text(encoding="utf-8")
     registered_source_ids = set(re.findall(r"^\| ((?:NAB|VEN)-[A-Z]+-\d{3}) \|", source_register_text, re.M))
+    stylesheet = (ROOT / "assets" / "css" / "style.css").read_text(encoding="utf-8")
+    for selector in [".nav-badge", ".tag-live", ".tag-reference"]:
+        if selector in stylesheet:
+            errors.append(f"assets/css/style.css: obsolete label style is still present: {selector}")
 
     for path, doc in parsed.items():
         rel = path.relative_to(ROOT)
@@ -204,9 +234,32 @@ def run() -> list[str]:
 
         if path.name.startswith("chapter-"):
             text = path.read_text(encoding="utf-8")
-            for label in ["Dự thảo 0.9", "Kiểm chứng nguồn:", "Đối tượng:", "Owner:", "Source ID kiểm soát:"]:
-                if label not in text:
-                    errors.append(f"{rel}: missing required metadata label {label!r}")
+            forbidden_labels = [
+                'class="nav-badge',
+                "Dự thảo 0.9",
+                "Kiểm chứng nguồn:",
+                '<span class="tag">Đối tượng:',
+                '<span class="tag">Owner:',
+                "— TRỌNG TÂM",
+                "— THAM KHẢO",
+                ">NÂNG CAO<",
+            ]
+            for label in forbidden_labels:
+                if label in text:
+                    errors.append(f"{rel}: obsolete label is still rendered: {label!r}")
+            tenant_confirmation_patterns = [
+                r"SME (?:phải |cần )?xác nhận",
+                r"xác nhận[^.<]{0,120}tenant NAB",
+                r"tenant NAB[^.<]{0,120}xác nhận",
+                r"cần xác nhận[^.<]{0,120}tenant",
+                r"SME[^.<]{0,80}(?:confirm|điền)",
+                r"checklist SME",
+            ]
+            for pattern in tenant_confirmation_patterns:
+                if re.search(pattern, text, re.I):
+                    errors.append(f"{rel}: tenant confirmation note is still rendered: {pattern!r}")
+            if "Mã nguồn kiểm soát:" not in text:
+                errors.append(f"{rel}: missing required metadata label 'Mã nguồn kiểm soát:'")
             if not re.search(r"\b(?:NAB|VEN)-[A-Z]+-\d{3}\b", text):
                 errors.append(f"{rel}: missing Source ID value")
             page_source_ids = set(re.findall(r"\b(?:NAB|VEN)-[A-Z]+-\d{3}\b", text))
@@ -226,6 +279,10 @@ def run() -> list[str]:
                     errors.append(f"{rel}: reference-tool page needs one walkthrough, found {doc.walkthrough_count}")
                 if not 3 <= doc.faq_count <= 5:
                     errors.append(f"{rel}: reference-tool page needs 3-5 FAQs, found {doc.faq_count}")
+            if number in {2, 3, 16, 17, 19, 20, 21, 22, 23} and doc.table_count < 1:
+                errors.append(f"{rel}: expected at least one content table")
+            if number in {2, 16, 17, 18, 19, 20, 21, 22} and doc.danger_callout_count < 1:
+                errors.append(f"{rel}: expected at least one prominent danger warning")
 
         for tag, resource in doc.resources:
             parts = urlsplit(resource)
@@ -273,17 +330,251 @@ def run() -> list[str]:
 
     for number in range(16, 22):
         path = EXPECTED_CHAPTERS[number - 1]
-        assert path is not None
         text = path.read_text(encoding="utf-8")
-        phrase = "Không đồng nghĩa với việc được NAB phê duyệt sử dụng."
-        if phrase not in text:
-            errors.append(f"{path.name}: missing mandatory reference-tool disclaimer")
+        if PUBLIC_DATA_WARNING not in text:
+            errors.append(f"{path.name}: missing public-data-only warning")
+
+    quick_content = (ROOT / "tools" / "content-quick.js").read_bytes()
+    if hashlib.sha256(quick_content).hexdigest() != QUICK_CONTENT_SHA256:
+        errors.append("tools/content-quick.js changed; Amazon Quick content must remain unchanged")
 
     for number in range(4, 16):
         path = EXPECTED_CHAPTERS[number - 1]
-        assert path is not None
         if "Đang sử dụng tại NAB" not in path.read_text(encoding="utf-8"):
             errors.append(f"{path.name}: missing live-tool status")
+
+    for path in EXPECTED_HTML:
+        text = path.read_text(encoding="utf-8")
+        if "Phụ lục: Giải thích thuật ngữ" not in text:
+            errors.append(f"{path.name}: navigation is missing the glossary appendix label")
+
+    glossary_text = EXPECTED_CHAPTERS[22].read_text(encoding="utf-8")
+    glossary_section = re.search(
+        r'<section id="bang-thuat-ngu".*?<tbody>(.*?)</tbody>',
+        glossary_text,
+        re.S,
+    )
+    if glossary_section is None:
+        errors.append("chapter-23-giai-thich-thuat-ngu.html: missing glossary table body")
+    else:
+        rows = re.findall(r"<tr>(.*?)</tr>", glossary_section.group(1), re.S)
+        cells = [re.findall(r"<td>(.*?)</td>", row, re.S) for row in rows]
+        if len(rows) < 30:
+            errors.append(
+                "chapter-23-giai-thich-thuat-ngu.html: glossary must contain at least 30 terms"
+            )
+        if any(len(row_cells) != 5 for row_cells in cells):
+            errors.append(
+                "chapter-23-giai-thich-thuat-ngu.html: every glossary row must have five columns"
+            )
+        terms = [re.sub(r"<[^>]+>", "", row_cells[0]).strip() for row_cells in cells if row_cells]
+        if terms != sorted(terms, key=str.casefold):
+            errors.append(
+                "chapter-23-giai-thich-thuat-ngu.html: glossary terms must be alphabetically sorted"
+            )
+
+    required_glossary_headers = ["Thuật ngữ", "Tên đầy đủ", "Giải thích", "Ví dụ", "Lưu ý"]
+    for header in required_glossary_headers:
+        if f'<th scope="col">{header}</th>' not in glossary_text:
+            errors.append(
+                f"chapter-23-giai-thich-thuat-ngu.html: missing glossary column {header!r}"
+            )
+
+    vietnamese_ui_labels = {
+        "Use case và cách chọn phạm vi": "Tình huống sử dụng và cách chọn phạm vi",
+        "Walkthrough ": "Hướng dẫn ",
+        "Mở tất cả FAQ": "Mở tất cả câu hỏi",
+    }
+    for path in EXPECTED_HTML:
+        text = path.read_text(encoding="utf-8")
+        for old_label, replacement in vietnamese_ui_labels.items():
+            if old_label in text:
+                errors.append(
+                    f"{path.name}: replace {old_label!r} with Vietnamese label {replacement!r}"
+                )
+
+    malformed_localization_fragments = [
+        "kho kiến thứcs",
+        "out-of-phạm vi",
+        "Co-người chịu trách nhiệm",
+        "dữ liệu classification",
+        "hết hạn xác thực check",
+        "User acceptance kiểm thử",
+        "assignment works",
+        "sensitive/môi trường chính thức system",
+        "partial/misinterpreted",
+        "check chính thống",
+        "môi trường chính thức system",
+        "không accept",
+        "Access yêu cầu",
+        "không chọn all",
+        "nếu applicable",
+        "NAB-được phê duyệt storage",
+        "không upload trực tiếp sensitive",
+        "Research execute",
+        "expected kết quả",
+        "sau khi complete",
+        "Citations có",
+        "full bối cảnh",
+        "Research/Scenarios kết quả",
+        "phân loại dữ liệu label",
+        "không bypass",
+        "Review do AI đề xuất",
+        "match nguồn",
+        "sign-off",
+        "có thể skip",
+        "có thể include",
+        "Production automation",
+        "Write action",
+        "use kiểm thử target",
+        "môi trường chính thức ghi dữ liệu",
+        "Test environment",
+        "dữ liệu representative",
+        "được handle",
+        "AI luôn map",
+        "không autonomous",
+        "explicit phê duyệt gate",
+        "human kiểm tra",
+        "Task assignment",
+        "clean up partial writes",
+        "restore previous phiên bản",
+        "impacted users",
+        "sensitivity chính sách",
+        "brand/accessibility kiểm tra",
+        "Research kế hoạch",
+        "Research kết quả",
+        "Scenarios kết quả",
+        "mục tiêu/mục tiêu",
+        "date cutoff",
+        "partial match",
+        "misinterpreted",
+        "exploratory vùng làm việc",
+        "môi trường chính thức dashboards",
+        "full control",
+        "inventory kết nối",
+        "thông tin xác thực phạm vi",
+        "resource giới hạn",
+        "kiểm thử phase",
+        "backup người chịu trách nhiệm",
+        "đầu vào default",
+        "confirmation setting",
+        "người chịu trách nhiệm hoặc admin",
+        "dữ liệu quyền",
+        "fact-check",
+        "mục đích và access",
+        "Review kế hoạch",
+        "Approval bởi",
+        "risk/ATTT",
+        "automation ghi",
+        "Topics là",
+        "members hỏi đáp",
+        "Thêm members",
+        "mời user hoặc group",
+        "Review access",
+        "cùng biên tập hoặc view",
+        "Permissions:",
+        "Dataset settings",
+        "Refresh lịch chạy",
+        "Monitor refresh history",
+        "phát hiện failures",
+        "restrict viewer controls",
+        "không thay thế verification",
+        "definitions",
+        "control totals",
+        "cross-check",
+        "source type",
+        "ngày publish",
+        "based on your",
+        "đề xuất alternatives",
+        "change cách tổng hợp",
+        "ask follow-up",
+        "Add more",
+        "cross-dataset phân tích",
+        "Refine vùng",
+        "format labels",
+        "Save Scenario",
+        "business judgment",
+        "entry point",
+        "context menu",
+        "đối thủ phân tích",
+        "trend báo cáo",
+        "policy summaries",
+        "multi-nguồn",
+        "liên nhóm kết quả",
+        "analyze documents",
+        "user upload files",
+        "Research mục tiêu",
+        "Context giúp",
+        "source preferences",
+        "search terms",
+        "AI kế hoạch",
+        "Steps/tác vụ",
+        "Expected format",
+        "expected thời gian",
+        "Adjust phạm vi",
+        "nguồn count",
+        "Inspect trích dẫn",
+        "verify evidence",
+        "full paragraph",
+        "highlighted snippet",
+        "chính thống nguồn",
+        "regulator announcement",
+        "cross-nguồn",
+        "workpaper",
+        "Edit và",
+        "Export vào",
+        "users/groups",
+        "aggregation logic",
+        "chart type",
+        "calculated fields",
+        "join logic",
+        "definition document",
+        "downstream effect",
+        "response logic",
+        "Runtime cần",
+        "missing/đầu vào",
+        "detect intent",
+        "staging/môi trường",
+        "centralized lịch chạy",
+        "operational dashboard",
+        "risk rating",
+        "rollback tài liệu",
+        "lease privilege",
+        "responder action",
+        "pass cả happy",
+        "partial/bị",
+        "trước khi execute",
+        "dữ liệu as of",
+        "nguồn notes",
+        "Remove nhận định",
+        "nguồn register",
+        "Plan rộng",
+        "Report có",
+        "phân tích có AI hỗ trợ vùng làm việc",
+        "do AI đề xuất kết quả phân tích",
+        "scenario vùng làm việc",
+        "AI đề xuất ban đầu biểu đồ",
+        "AI đề xuất analysis canvas",
+        "phân tích mục tiêu",
+        "AI kết quả phân tích",
+        "kiểm tra Kế hoạch",
+    ]
+    for path in EXPECTED_HTML:
+        text = path.read_text(encoding="utf-8")
+        for fragment in malformed_localization_fragments:
+            if fragment in text:
+                errors.append(
+                    f"{path.name}: malformed Vietnamese localization remains: {fragment!r}"
+                )
+
+    chapter_02_reference = re.compile(
+        r"(?:Đọc|đọc) Chương 02(?! \(Nguyên tắc sử dụng AI an toàn\))"
+    )
+    for path in EXPECTED_HTML:
+        if chapter_02_reference.search(path.read_text(encoding="utf-8")):
+            errors.append(
+                f"{path.name}: Chapter 02 reference must include its Vietnamese title"
+            )
 
     code_files = html_paths + list((ROOT / "assets" / "js").glob("*.js"))
     forbidden = re.compile(r"\bfetch\s*\(|XMLHttpRequest|navigator\.serviceWorker|type=[\"']module[\"']")
@@ -302,13 +593,18 @@ def run() -> list[str]:
         ROOT / "qa/project-control.md",
         ROOT / "qa/technical-test-report.md",
         ROOT / ".codex/plan.md",
-        ROOT / "documents/thong-bao-noi-bo.docx",
-        ROOT / "documents/thong-bao-noi-bo.pdf",
     ]:
         if not required.is_file() or required.stat().st_size == 0:
             errors.append(f"Missing or empty required file: {required.relative_to(ROOT)}")
 
-    notice_docx = ROOT / "documents/thong-bao-noi-bo.docx"
+    documents_dir = ROOT / "documents"
+    notice_docx = documents_dir / "thong-bao-noi-bo.docx"
+    notice_pdf = documents_dir / "thong-bao-noi-bo.pdf"
+    if documents_dir.is_dir():
+        for notice in [notice_docx, notice_pdf]:
+            if not notice.is_file() or notice.stat().st_size == 0:
+                errors.append(f"Missing or empty required file: {notice.relative_to(ROOT)}")
+
     if notice_docx.is_file():
         try:
             with zipfile.ZipFile(notice_docx) as archive:
@@ -325,7 +621,6 @@ def run() -> list[str]:
         except (OSError, KeyError, zipfile.BadZipFile) as exc:
             errors.append(f"Notice DOCX is invalid: {exc}")
 
-    notice_pdf = ROOT / "documents/thong-bao-noi-bo.pdf"
     if notice_pdf.is_file() and not notice_pdf.read_bytes().startswith(b"%PDF-"):
         errors.append("Notice PDF does not have a valid PDF header")
 
@@ -342,5 +637,5 @@ if __name__ == "__main__":
     print("PASS: static release checks completed")
     print("- index.html and 23 files in chapters/ present")
     print("- internal links, fragments and local resources resolved")
-    print("- required metadata, navigation and disclaimers present")
+    print("- required metadata, navigation, tables and data warnings present")
     print("- no external auto-loaded resources or forbidden file:// runtime APIs")
