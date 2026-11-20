@@ -1,3 +1,14 @@
-.superpowers
+# Thông tin đăng nhập — không bao giờ commit
+.env
+auth.json
+auth-reader.json
+
+# Dữ liệu chụp/quay thô (chưa che, chưa duyệt)
+capture/raw/
+
+# Node
+node_modules/
+tmp/
+demo_docs/
+.superpowers/sdd
 .claude
-tmp-screenshot

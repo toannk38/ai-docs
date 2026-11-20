@@ -1,0 +1,23 @@
+{
+  "name": "nab-quick-capture",
+  "private": true,
+  "description": "Chụp ảnh/quay video hướng dẫn Amazon Quick cho cẩm nang NAB (Playwright + TypeScript)",
+  "type": "commonjs",
+  "scripts": {
+    "login": "tsx capture/login.ts",
+    "capture": "tsx capture/run.ts",
+    "survey": "tsx capture/survey.ts",
+    "samples": "tsx capture/samples/make-samples.ts",
+    "typecheck": "tsc --noEmit -p capture/tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "docx": "^9.16.0",
+    "dotenv": "^18.0.10",
+    "exceljs": "^4.4.0",
+    "otplib": "^12.0.1",
+    "playwright": "^1.64.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

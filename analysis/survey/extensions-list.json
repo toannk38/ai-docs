@@ -1,0 +1,65 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/app-integrations",
+  "title": "Quick",
+  "headings": [
+    "Extensions",
+    "Use Quick functionality in your preferred enterprise tools",
+    "Here when you need me, Demo."
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Search conversations",
+    "Conversation options",
+    "Learn more",
+    "Dismiss",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Search extensions",
+    "Ask a question..."
+  ],
+  "text": "Extensions\nUse Quick functionality in your preferred enterprise tools\n\nGive your users access to powerful Quick features such as chat assistants, content generation, and task automation directly within products like Microsoft Outlook, Slack, and more. An admin must enable an extension type before it can be created.\n\nLearn more\nDismiss\n​\nWord add-in\nAvailable\n\nDraft, refine, review, and format document instantly...\n\nMICROSOFT WORD\n\nOutlook add-in\nAvailable\n\nChat with your inbox, prioritize emails, and manage your calendar instantly...\n\nMICROSOFT OUTLOOK\n\nExcel add-in\nAvailable\n\nAnalyze patterns, create charts and tables, and generate insights instantly...\n\nMICROSOFT EXCEL\n\nPowerPoint add-in\nAvailable\n\nCreate, refine, and enhance presentations instantly...\n\nMICROSOFT POWERPOINT\n\nBrowser extension\nAvailable\n\nInstantly analyze webpages to get insights, summaries, and answers-and perform actions from your browser.\n\nSUPPORTED BROWSERS",
+  "screenshot": "extensions-list.png",
+  "surveyedAt": "2026-11-19T07:46:39.354Z"
+}

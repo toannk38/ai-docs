@@ -1,0 +1,52 @@
+{
+  "flow": "q15-4-automations",
+  "title": "Automations (tổng quan)",
+  "status": "ok",
+  "capturedAt": "2026-11-19T13:08:13.835Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "settle",
+      "caption": "Chờ.",
+      "action": "hold",
+      "tStart": 6234,
+      "tEnd": 13437,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/automations"
+    },
+    {
+      "index": 2,
+      "id": "overview",
+      "caption": "More → Automations: giới thiệu tính năng (tạo automation bằng AI, AI agent thao tác ứng dụng, triển khai và theo dõi).",
+      "action": "shot",
+      "target": "{\"text\":\"/Transform business processes with AI-powered automations/i\"}",
+      "label": "Automations",
+      "tStart": 13438,
+      "tEnd": 16222,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/automations",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "projects",
+      "caption": "Danh sách Projects / Groups và nút Start building — chỉ dùng khi được Khối CNTT, ATTT phê duyệt.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^start building$/i\"}",
+      "label": "Start building",
+      "tStart": 16222,
+      "tEnd": 17499,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/automations",
+      "screenshot": "step-02.png"
+    }
+  ]
+}

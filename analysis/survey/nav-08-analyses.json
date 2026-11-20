@@ -1,0 +1,81 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/analyses",
+  "title": "Quick",
+  "headings": [
+    "Analyses",
+    "Create insightful and interactive visualizations",
+    "Hi Demo! What's on your mind?"
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ],
+    [
+      "Go to first page",
+      "Go to previous page",
+      "1",
+      "Go to next page"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Close chat",
+    "Search conversations",
+    "Conversation options",
+    "Create analysis",
+    "Dismiss",
+    "Generate analysis",
+    "Name",
+    "Owner",
+    "Last Updated",
+    "Action",
+    "More options",
+    "Go to first page",
+    "Go to previous page",
+    "1",
+    "Go to next page",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "itemsPerPage",
+    "Ask a question..."
+  ],
+  "text": "Analyses\nCreate insightful and interactive visualizations\n\nTransform your data into dynamic charts and graphs with intuitive analysis tools. Share your completed analyses as interactive dashboards or multi-page reports.\n\nCreate analysis\nDismiss\nGenerate analysis\nCreate analysis\n\nName\n\nOwner\n\nLast Updated\n\nAction\n\nemployee_data.csv analysis\n\nMe\n2 months ago\n\nemployee_data.csv analysis\n\nMe\n2 months ago\nItems per page\n50\n​\n1",
+  "screenshot": "nav-08-analyses.png",
+  "surveyedAt": "2026-11-19T07:38:09.431Z"
+}

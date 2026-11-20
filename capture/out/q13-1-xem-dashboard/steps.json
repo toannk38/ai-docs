@@ -1,0 +1,160 @@
+{
+  "flow": "q13-1-xem-dashboard",
+  "title": "Xem và hỏi dữ liệu trên dashboard",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:53:53.421Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "list",
+      "caption": "Mở Dashboards trên thanh điều hướng, chọn dashboard cần xem.",
+      "action": "click",
+      "target": "{\"text\":\"Hiệu quả kinh doanh chi nhánh (dữ liệu giả lập)\"}",
+      "label": "Dashboard",
+      "tStart": 6113,
+      "tEnd": 12427,
+      "waits": [
+        {
+          "label": "Mở dashboard",
+          "tStart": 11050,
+          "tEnd": 12423
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "view",
+      "caption": "Dashboard mở cùng khung chat bên phải: hỏi đáp ngay trên dữ liệu của dashboard.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Hỏi về dashboard",
+      "tStart": 12427,
+      "tEnd": 16435,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "ask",
+      "caption": "Nhập câu hỏi về số liệu.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Câu hỏi",
+      "tStart": 16435,
+      "tEnd": 23924,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "value": "Chi nhánh nào có tổng giá trị giao dịch cao nhất quý 3/2026?",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "send",
+      "caption": "Gửi.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^send$/i\"}",
+      "tStart": 23924,
+      "tEnd": 65705,
+      "waits": [
+        {
+          "label": "Quick đang phân tích",
+          "tStart": 25578,
+          "tEnd": 65705
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 5,
+      "id": "answer",
+      "caption": "Câu trả lời dựa trên dữ liệu dashboard; đối chiếu lại với biểu đồ trước khi dùng.",
+      "action": "shot",
+      "tStart": 65705,
+      "tEnd": 67965,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 6,
+      "id": "close-chat",
+      "caption": "Đóng khung chat để xem toàn bộ dashboard.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^close chat$/i\"}",
+      "tStart": 67965,
+      "tEnd": 69664,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 7,
+      "id": "hover",
+      "caption": "Di chuột lên biểu đồ.",
+      "action": "hover",
+      "target": "{\"text\":\"/by Chi Nhánh/i\"}",
+      "tStart": 69664,
+      "tEnd": 70464,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 8,
+      "id": "menu",
+      "caption": "Bấm ⋮ (Menu options) ở góc biểu đồ: View summary data, Export to CSV…",
+      "action": "click",
+      "target": "button[aria-label*=\"Menu options\"]:visible >> nth=0",
+      "label": "Menu biểu đồ",
+      "tStart": 70464,
+      "tEnd": 73976,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 9,
+      "id": "menu-close",
+      "caption": "Đóng menu.",
+      "action": "press",
+      "tStart": 73976,
+      "tEnd": 74284,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "value": "Escape"
+    },
+    {
+      "index": 10,
+      "id": "export",
+      "caption": "Biểu tượng Export trên thanh công cụ: tải dashboard dạng PDF. Chỉ lưu tệp vào nơi được phép.",
+      "action": "click",
+      "target": "button[aria-label=\"Export\"]:visible >> nth=0",
+      "label": "Export",
+      "tStart": 74284,
+      "tEnd": 77760,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 11,
+      "id": "export-close",
+      "caption": "Đóng.",
+      "action": "press",
+      "tStart": 77760,
+      "tEnd": 78070,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "value": "Escape"
+    }
+  ]
+}

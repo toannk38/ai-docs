@@ -1,0 +1,45 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/db3b4cb1-9a80-4d11-b1ec-61e5cdc2eb7c",
+  "title": "Quick",
+  "headings": [
+    "Test Space",
+    "Ready when you are, Demo."
+  ],
+  "nav": [
+    [
+      "Spaces",
+      "Add to favorites, Test Space"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "Add to favorites, Test Space",
+    "opba-ai",
+    "Help",
+    "Close chat",
+    "Delete",
+    "All",
+    "Introducing Multiselect filters",
+    "Introducing folders",
+    "Clear sort",
+    "Column actions",
+    "Sort descending",
+    "More actions",
+    "Toggle private mode",
+    "Conversation history",
+    "Context panel toggle",
+    "Test Space",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Search by name...",
+    "Ask a question..."
+  ],
+  "text": "Spaces\n\nTest Space\n\nopba-ai\nAll spaces\nTest Space\nShare\n\nEnter your space description...\n\nAll\nAdd\n\nName\n\n\t\n\nStatus\n\n\t\n\nAdded on\n\n\t\n\nAdded by\n\n\t\n\nActions\n\n\n\nLecture 4 - CNN.pdf\n\t\nReady\n\t9 days ago\tnhanvien.demo\t\n\n\nreturn-policy.pdf\n\t\nReady\n\t2 months ago\tnhanvien.demo\t\n\n\nelectronics_manual.pdf\n\t\nReady\n\t2 months ago\tnhanvien.demo\t\nExpand\nReady when you are, Demo.\n\nQuick\n\nSmart\nResearch\nDocument\nUsage is subject to\nAWS Responsible AI Policy",
+  "screenshot": "space-detail.png",
+  "surveyedAt": "2026-11-19T07:40:24.791Z"
+}

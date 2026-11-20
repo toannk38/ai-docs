@@ -1,0 +1,183 @@
+{
+  "flow": "q12-6-chia-se-agent",
+  "title": "Chia sẻ chat agent",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:09:36.246Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "actions",
+      "caption": "Trang Chat agents: bấm nút ⋮ ở cột Action của agent cần chia sẻ.",
+      "action": "click",
+      "target": "tr:has-text(\"Trợ lý Quy định Ngân hàng\") >> button >> nth=-1",
+      "label": "Action",
+      "tStart": 6295,
+      "tEnd": 11485,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "share",
+      "caption": "Chọn Share.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Share\\\\s*$/\"}",
+      "label": "Share",
+      "tStart": 11485,
+      "tEnd": 14298,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "dialog",
+      "caption": "Hộp thoại Share agent: ô tìm người nhận, mức quyền, danh sách đã chia sẻ, Copy link và Copy embed code.",
+      "action": "shot",
+      "target": "[role=\"dialog\"]",
+      "label": "Share agent",
+      "tStart": 14298,
+      "tEnd": 15821,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "search",
+      "caption": "Gõ username, email hoặc tên nhóm của người nhận (ví dụ toannk2_reader).",
+      "action": "type",
+      "target": "[role=\"dialog\"] input",
+      "label": "Người nhận",
+      "tStart": 15821,
+      "tEnd": 19955,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "value": "toannk2_reader",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 5,
+      "id": "pick",
+      "caption": "Chọn đúng người nhận trong danh sách gợi ý (kiểm tra cả email).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*toannk2_reader\\\\s*$/\"}",
+      "label": "Chọn người nhận",
+      "tStart": 19955,
+      "tEnd": 22655,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 6,
+      "id": "level",
+      "caption": "Chọn mức quyền: Can view (chỉ dùng agent) — mặc định và nên dùng; Can manage chỉ cho người cùng quản lý agent.",
+      "action": "click",
+      "target": "[role=\"dialog\"] button:has-text(\"Can view\") >> nth=0",
+      "label": "Mức quyền",
+      "tStart": 22655,
+      "tEnd": 26142,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 7,
+      "id": "close-level",
+      "caption": "Giữ Can view.",
+      "action": "press",
+      "tStart": 26142,
+      "tEnd": 26479,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "value": "Escape"
+    },
+    {
+      "index": 8,
+      "id": "submit",
+      "caption": "Bấm Share để chia sẻ.",
+      "action": "click",
+      "target": "[role=\"dialog\"] button:text-is(\"Share\")",
+      "label": "Share",
+      "tStart": 26479,
+      "tEnd": 31050,
+      "waits": [
+        {
+          "label": "Chia sẻ",
+          "tStart": 29216,
+          "tEnd": 31050
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "screenshot": "step-07.png"
+    },
+    {
+      "index": 9,
+      "id": "record",
+      "caption": "Ghi việc chia sẻ (để thu hồi khi dọn dẹp).",
+      "action": "custom",
+      "tStart": 31050,
+      "tEnd": 31064,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents"
+    },
+    {
+      "index": 10,
+      "id": "re-actions",
+      "caption": "Trang Chat agents: bấm nút ⋮ ở cột Action của agent cần chia sẻ.",
+      "action": "click",
+      "target": "tr:has-text(\"Trợ lý Quy định Ngân hàng\") >> button >> nth=-1",
+      "label": "Action",
+      "tStart": 31064,
+      "tEnd": 32770,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents"
+    },
+    {
+      "index": 11,
+      "id": "re-share",
+      "caption": "Chọn Share.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Share\\\\s*$/\"}",
+      "label": "Share",
+      "tStart": 32770,
+      "tEnd": 34525,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents"
+    },
+    {
+      "index": 12,
+      "id": "shared-with",
+      "caption": "Mở lại Share để kiểm tra: người nhận đã có trong danh sách Shared with với đúng mức quyền.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*toannk2_reader\\\\s*$/\"}",
+      "label": "Đã chia sẻ",
+      "tStart": 34525,
+      "tEnd": 36436,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "screenshot": "step-08.png"
+    },
+    {
+      "index": 13,
+      "id": "cancel",
+      "caption": "Đóng hộp thoại.",
+      "action": "click",
+      "target": "[role=\"dialog\"] button:text-is(\"Cancel\")",
+      "tStart": 36436,
+      "tEnd": 38167,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents"
+    }
+  ]
+}

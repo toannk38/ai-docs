@@ -1,0 +1,143 @@
+{
+  "flow": "q15-2-chay-thu-chia-se",
+  "title": "Chạy thử và chia sẻ flow",
+  "status": "failed",
+  "failure": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText(/^\\s*toannk2_reader\\s*$/).first() to be visible\u001b[22m\n",
+  "capturedAt": "2026-11-19T13:16:43.966Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "wait",
+      "caption": "Mở flow.",
+      "action": "waitFor",
+      "tStart": 6089,
+      "tEnd": 9211,
+      "waits": [
+        {
+          "label": "Tải flow",
+          "tStart": 9198,
+          "tEnd": 9210
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df"
+    },
+    {
+      "index": 2,
+      "id": "coach",
+      "caption": "Đóng hướng dẫn nổi.",
+      "action": "custom",
+      "tStart": 9211,
+      "tEnd": 11878,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df"
+    },
+    {
+      "index": 3,
+      "id": "runmode",
+      "caption": "Flow đã Publish (nhãn Published); ở Run mode, bước đầu chờ bạn tải tệp.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*Published\\\\s*$/\"}",
+      "label": "Published",
+      "tStart": 11878,
+      "tEnd": 13467,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 4,
+      "id": "upload",
+      "caption": "Ở bước tải tệp, chọn văn bản cần tóm tắt (Word .docx hoặc PDF; chỉ tài liệu được phép).",
+      "action": "upload",
+      "target": "{\"text\":\"/browse for files/i\"}",
+      "label": "Chọn tệp",
+      "note": "Hộp thoại chọn file của hệ điều hành không hiện trong headless — tài liệu ghi bước 'chọn file từ máy'.",
+      "tStart": 13467,
+      "tEnd": 18318,
+      "waits": [
+        {
+          "label": "Tải tệp",
+          "tStart": 18305,
+          "tEnd": 18318
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 5,
+      "id": "coach2",
+      "caption": "Đóng hướng dẫn nổi.",
+      "action": "custom",
+      "tStart": 18318,
+      "tEnd": 20639,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df"
+    },
+    {
+      "index": 6,
+      "id": "start",
+      "caption": "Bấm Start để chạy.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^start$/i\"}",
+      "label": "Start",
+      "tStart": 20640,
+      "tEnd": 137937,
+      "waits": [
+        {
+          "label": "Flow đang chạy",
+          "tStart": 32845,
+          "tEnd": 137936
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 7,
+      "id": "result",
+      "caption": "Kết quả chạy thử: kiểm tra tóm tắt và các điểm lưu ý có đúng điều, khoản trong văn bản không.",
+      "action": "shot",
+      "tStart": 137937,
+      "tEnd": 140284,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 8,
+      "id": "share",
+      "caption": "Bấm Share để chia sẻ flow.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^share$/i\"}",
+      "label": "Share",
+      "tStart": 140284,
+      "tEnd": 144443,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 9,
+      "id": "search",
+      "caption": "Gõ username hoặc email người nhận (ví dụ toannk2_reader); mức quyền Viewer = chỉ chạy flow.",
+      "action": "type",
+      "target": "[role=\"dialog\"] input >> nth=0",
+      "label": "Người nhận",
+      "tStart": 144443,
+      "tEnd": 150466,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "value": "toannk2_reader",
+      "screenshot": "step-06.png"
+    }
+  ]
+}

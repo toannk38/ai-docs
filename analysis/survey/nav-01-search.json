@@ -1,0 +1,60 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+  "title": "Quick - Home",
+  "headings": [
+    "Ready when you are, Demo."
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Search conversations",
+    "Conversation options",
+    "Private mode",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Presentation",
+    "Visual",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Ask a question..."
+  ],
+  "text": "opba-ai\nNew chat\nSearch\nMy stuff\nSpaces\nResearch\nChat agents\nApps\nFlows\nAnalyses\nDashboards\nData\nMy folders\nShared folders\nMore\nRecents\n\nInitial Greeting\n\nLời chào hỏi ban đầu\n\nMẫu Hợp Đồng Mua Bán Phần Mềm\n\nMẫu hợp đồng mua bán\n\nAI Assistant Capabilities Overview\n\nQuick Interface Documentation Request\n\nPrivate mode\nReady when you are, Demo.\n\nQuick\n\nAll data\nSmart\nResearch\nDocument\nPresentation\nVisual\nUsage is subject to\nAWS Responsible AI Policy",
+  "screenshot": "nav-01-search.png",
+  "surveyedAt": "2026-11-19T07:37:07.773Z"
+}

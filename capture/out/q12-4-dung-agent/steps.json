@@ -1,0 +1,109 @@
+{
+  "flow": "q12-4-dung-agent",
+  "title": "Dùng chat agent",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:07:43.656Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "picker",
+      "caption": "Ở ô chat, bấm Quick ▾ (chọn agent).",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/select agent/i\"}",
+      "label": "Chọn agent",
+      "tStart": 5734,
+      "tEnd": 10758,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "choose",
+      "caption": "Chọn agent cần dùng trong danh sách.",
+      "action": "click",
+      "target": "{\"text\":\"/Trợ lý Quy định Ngân hàng/i\"}",
+      "label": "Agent tra cứu quy định",
+      "tStart": 10758,
+      "tEnd": 13558,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "ask",
+      "caption": "Đặt câu hỏi; agent trả lời theo vai trò và nguồn kiến thức đã cấu hình.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Câu hỏi",
+      "tStart": 13558,
+      "tEnd": 20919,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "value": "Ngân hàng Nhà nước có những nhiệm vụ, quyền hạn chính nào?",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "send",
+      "caption": "Gửi câu hỏi.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^send$/i\"}",
+      "tStart": 20919,
+      "tEnd": 49345,
+      "waits": [
+        {
+          "label": "Agent đang trả lời",
+          "tStart": 22732,
+          "tEnd": 49344
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/chat?conversationId=399929ec-cce5-4d2f-ae18-87aa8dec3a4c"
+    },
+    {
+      "index": 5,
+      "id": "answer",
+      "caption": "Câu trả lời của agent có dẫn điều luật và trích dẫn tài liệu.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^sources$/i\"}",
+      "label": "Trả lời của agent",
+      "tStart": 49345,
+      "tEnd": 51113,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/chat?conversationId=399929ec-cce5-4d2f-ae18-87aa8dec3a4c",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 6,
+      "id": "list",
+      "caption": "Cách khác: mở Chat agents, bấm Chat ở dòng agent cần dùng.",
+      "action": "goto",
+      "tStart": 51113,
+      "tEnd": 56042,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents"
+    },
+    {
+      "index": 7,
+      "id": "list-chat",
+      "caption": "Trang Chat agents: danh sách agent bạn tạo hoặc được chia sẻ; bấm Chat để trò chuyện với agent.",
+      "action": "shot",
+      "target": "{\"role\":\"row\",\"name\":\"/Trợ lý Quy định Ngân hàng/i\"}",
+      "label": "Bấm Chat",
+      "tStart": 56042,
+      "tEnd": 57652,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+      "screenshot": "step-05.png"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "flow": "q13-6-chia-se-dashboard",
+  "title": "Chia sẻ dashboard",
+  "status": "ok",
+  "capturedAt": "2026-11-19T12:59:40.616Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "wait",
+      "caption": "Mở dashboard.",
+      "action": "waitFor",
+      "tStart": 6388,
+      "tEnd": 7517,
+      "waits": [
+        {
+          "label": "Mở dashboard",
+          "tStart": 7453,
+          "tEnd": 7516
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 2,
+      "id": "dashboard",
+      "caption": "Dashboard đã xuất bản.",
+      "action": "shot",
+      "tStart": 7517,
+      "tEnd": 10759,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "share",
+      "caption": "Bấm biểu tượng Share ở thanh công cụ.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^share$/i\"}",
+      "tStart": 10759,
+      "tEnd": 12859,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 4,
+      "id": "share-menu",
+      "caption": "Chọn Share dashboard (Share this view chỉ chia sẻ góc nhìn đang lọc).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Share dashboard\\\\s*$/\"}",
+      "label": "Share dashboard",
+      "tStart": 12859,
+      "tEnd": 18119,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 5,
+      "id": "share-page",
+      "caption": "Trang Share dashboard: bên trái mời người dùng/nhóm, bên phải Manage permissions (danh sách đang có quyền), Copy link, Copy embed code.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/search by user email or group name/i\"}",
+      "label": "Mời người dùng",
+      "tStart": 18119,
+      "tEnd": 20628,
+      "waits": [
+        {
+          "label": "Tải danh sách quyền",
+          "tStart": 20624,
+          "tEnd": 20627
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 6,
+      "id": "reset",
+      "caption": "Nếu lần chạy trước đã chia sẻ thì thu hồi để chụp lại từ đầu (chỉ đối tượng do script tạo).",
+      "action": "custom",
+      "tStart": 20628,
+      "tEnd": 28557,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences"
+    },
+    {
+      "index": 7,
+      "id": "search",
+      "caption": "Gõ username hoặc email người nhận (ví dụ toannk2_reader).",
+      "action": "type",
+      "target": "{\"placeholder\":\"/search by user email or group name/i\"}",
+      "label": "Người nhận",
+      "tStart": 28557,
+      "tEnd": 34847,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+      "value": "toannk2_reader",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 8,
+      "id": "enter",
+      "caption": "Nhấn Enter để tìm.",
+      "action": "press",
+      "tStart": 34847,
+      "tEnd": 35153,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+      "value": "Enter"
+    },
+    {
+      "index": 9,
+      "id": "add",
+      "caption": "Bấm Add cạnh đúng người nhận (kiểm tra email): danh sách mức quyền hiện ra.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^add$/i\"}",
+      "label": "Add",
+      "tStart": 35153,
+      "tEnd": 38655,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 10,
+      "id": "viewer",
+      "caption": "Chọn Viewer (xem, xuất, in). User Reader chỉ có mức Viewer.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Viewer\\\\s*$/\"}",
+      "label": "Viewer",
+      "tStart": 38655,
+      "tEnd": 43508,
+      "waits": [
+        {
+          "label": "Cấp quyền",
+          "tStart": 42627,
+          "tEnd": 43508
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 11,
+      "id": "record",
+      "caption": "Ghi chia sẻ.",
+      "action": "custom",
+      "tStart": 43508,
+      "tEnd": 43513,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences"
+    },
+    {
+      "index": 12,
+      "id": "granted",
+      "caption": "Người nhận có trong Manage permissions với quyền Viewer. Thu hồi bằng biểu tượng thùng rác cuối dòng.",
+      "action": "shot",
+      "target": "{\"text\":\"/Not available for readers/\"}",
+      "label": "Viewer — đã chia sẻ",
+      "tStart": 43513,
+      "tEnd": 45347,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+      "screenshot": "step-07.png"
+    }
+  ]
+}

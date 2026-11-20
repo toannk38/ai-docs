@@ -1,0 +1,67 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/mystuff",
+  "title": "Quick - My Stuff",
+  "headings": [
+    "Let's tackle something together."
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Search conversations",
+    "Conversation options",
+    "Grid view",
+    "List view",
+    "Widget options",
+    "Column actions",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [
+    "Recents",
+    "Favorites"
+  ],
+  "inputs": [
+    "Ask a question..."
+  ],
+  "text": "opba-ai\nNew chat\nSearch\nMy stuff\nSpaces\nResearch\nChat agents\nApps\nFlows\nAnalyses\nDashboards\nData\nMy folders\nShared folders\nMore\nRecents\n\nInitial Greeting\n\nLời chào hỏi ban đầu\n\nMẫu Hợp Đồng Mua Bán Phần Mềm\n\nMẫu hợp đồng mua bán\n\nAI Assistant Capabilities Overview\n\nQuick Interface Documentation Request\n\nMy stuff\nAdd widget\nRecents\nFavorites\n\nName\n\n\t\n\nType\n\n\t\n\nLast viewed\n\n\nQuick\t\nChat Agent\t25 minutes ago\nTest Space\t\nSpace\t9 days ago\nBáo Cáo Hàng Ngày Tự Động\t\nFlow\t2 months ago\nAI Ethics in Banking: Bias, Transparency, Privacy, and Responsible Implementation\t\nResearch\t2 months ago\nMy Assistant Agent\t\nChat Agent\t2 months ago\nEmployee Dashboard\t\nDashboard\t2 months ago\nemployee_data.csv analysis\t\nAnalysis\t2 months ago\nemployee_data.csv analysis\t\nAnalysis\t2 months ago\nMy runs\n\nTotal runs by asset type\n\n4\n\nChat agents (4)\nFlows (0)\nAutomations (0)\nApps (0)\nNov 1\nNov 4\nNov 7\nNov 10\nNov 13\nNov 16\nNov 19\nNov 22\nNov 25\nNov 28\n0\n1\n2\n3\nMy tasks\n0\nOpen Tasks\nNo data\nMy triggers\nCreate\n\nCreate your first trigger and find it here\n\nCreate trigger\nBusiness metrics\n\nPin visuals to your homepage directly from dashboards\n\nOpen a dashboard, choose a visual, and select the home + icon.\n\nGo to dashboards\nMy usage\nResource usage so far\nAgent hours\nResets in 12 days\n2min used\nExpand\nLet's tackle something together.\n\nQuick\n\nAll\nSmart\nResearch\nDocument\nUsage is subject to\nAWS Responsible AI Policy",
+  "screenshot": "nav-02-my-stuff.png",
+  "surveyedAt": "2026-11-19T07:37:17.028Z"
+}

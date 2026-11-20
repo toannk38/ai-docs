@@ -1,0 +1,78 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+  "title": "Quick - Data",
+  "headings": [
+    "Data",
+    "Chat with datasets",
+    "Here when you need me, Demo."
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Close chat",
+    "Search conversations",
+    "Conversation options",
+    "Dismiss",
+    "Datasets",
+    "Topics",
+    "Data sources",
+    "Create dataset",
+    "All datasets",
+    "Name",
+    "Owner",
+    "Last Modified",
+    "Action",
+    "Chat",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [
+    "Datasets",
+    "Topics",
+    "Data sources"
+  ],
+  "inputs": [
+    "Search datasets by name",
+    "Ask a question..."
+  ],
+  "text": "Data\nChat with datasets\n\nAsk questions about your structured data and get AI-powered answers. Datasets are collections of organized business data like sales figures, customer metrics, or operational statistics.\n\nDismiss\nDatasets\nTopics\nData sources\nCreate dataset\n​\nAll datasets\nName\nOwner\nLast Modified\nAction\nemployee_data.csv\nSPICE\nMe\n2 months ago\n\nChat",
+  "screenshot": "nav-10-data.png",
+  "surveyedAt": "2026-11-19T07:38:26.806Z"
+}

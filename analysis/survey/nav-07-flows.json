@@ -1,0 +1,90 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/flows",
+  "title": "Quick - Flows",
+  "headings": [
+    "Flows",
+    "Create workflows for everyday tasks",
+    "Welcome back, Demo! How can I help?"
+  ],
+  "nav": [
+    [],
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ],
+    [
+      "Go to first page",
+      "Go to previous page",
+      "1",
+      "Go to next page",
+      "Go to last page"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Search conversations",
+    "Conversation options",
+    "Create flow",
+    "Dismiss",
+    "Flow library",
+    "Triggers",
+    "Pending approval 0",
+    "Flows list grid view",
+    "Flows list table view",
+    "More actions",
+    "Go to first page",
+    "Go to previous page",
+    "1",
+    "Go to next page",
+    "Go to last page",
+    "Toggle private mode",
+    "Conversation history",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [
+    "Flow library",
+    "Triggers",
+    "Pending approval 0"
+  ],
+  "inputs": [
+    "Search",
+    "input",
+    "input",
+    "itemsPerPage",
+    "Ask a question..."
+  ],
+  "text": "Flows\nCreate workflows for everyday tasks\n\nCreate and share AI-powered workflows for repetitive tasks, using simple natural language. Learn More\n\nCreate flow\nDismiss\nFlow library\nTriggers\nPending approval\n0\nCreate flow\n​\nShow: All flows\n​\nSort: Last updated (most recent)\n​\nBáo Cáo Hàng Ngày Tự Động\n\nWorkflow tự động lấy dữ liệu từ nguồn kết nối, phân tích chỉ số quan trọng, phát hiện xu hướng và bất thường, tạo báo cáo tóm tắt, xuất file Excel/CSV và gửi email cho người nhận.\n\nOwner: Nhân viên Demo Demo\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nWhiteboard Notes Generator\nPre-built\n\nUpload a picture of your whiteboarding session to generate notes and action items\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nFlows Idea Generator\nPre-built\n\nBrainstorm ideas for how you can leverage Flows for everyday work. Provide context on your role, nature of work, what takes time to get quick suggestions.\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\n5-Why Root Cause Analysis\nPre-built\n\nConduct a systematic 5-why analysis to identify root causes and underlying motivations for problems, solutions, or project ideas\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nMarketing Video Analyzer\nPre-built\n\nAnalyze marketing videos to generate comprehensive summaries with timestamps, key insights, and suggestions for titles and descriptions.\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nSocial Media Content Creator\nPre-built\n\nCreate tailored social media content for different platforms with customized brand voice, content type, and specifications\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nJob Description Generator\nPre-built\n\nCreate professional job descriptions based on team name, job title, level, and location with appropriate salary ranges.\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nProduct Launch Email Generator\nPre-built\n\nGenerate product launch emails with customized sales messaging based on all the products you list\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nCustomer Interest Optimizer\nPre-built\n\nThis flow will identify whether a customer has expressed interest in recieving emails based on the feedback they provided on the product. Using their preferred language, the flow will generate a email draft that acknowledges their feedback and provides an update on the product.\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nFlows Prompt Helper\nPre-built\n\nCreates flow ideas and starter prompts for Quick Flows relevant for your role to streamline the repetitive tasks you do\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nRFP Response Generator\nPre-built\n\nAutomates the creation of Request for Proposal (RFP) responses by analyzing new RFP requests, identifying questions, and leveraging past responses to generate tailored, comprehensive answers.\n\n1 users • 0 runs\n\nUpdated: 2 months ago\n\nItems per page\n50\n​\n1",
+  "leak": "Phát hiện thông tin POC/nhạy cảm còn hiển thị tại nav-07-flows: luật che bổ sung (tên hiển thị…). Dừng chụp.",
+  "surveyedAt": "2026-11-19T07:38:00.730Z"
+}

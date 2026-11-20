@@ -1,0 +1,124 @@
+{
+  "flow": "q15-1-chay-flow",
+  "title": "Chạy flow có sẵn",
+  "status": "ok",
+  "capturedAt": "2026-11-19T12:49:19.750Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "settle",
+      "caption": "Chờ.",
+      "action": "hold",
+      "tStart": 6465,
+      "tEnd": 11554,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/flows"
+    },
+    {
+      "index": 2,
+      "id": "library",
+      "caption": "Mở Flows → Flow library: flow có nhãn Pre-built là flow mẫu dùng ngay được. Bấm vào flow cần chạy.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*5-Why Root Cause Analysis\\\\s*$/\"}",
+      "label": "Flow mẫu",
+      "tStart": 11554,
+      "tEnd": 16599,
+      "waits": [
+        {
+          "label": "Mở flow",
+          "tStart": 14702,
+          "tEnd": 16598
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/ebc18852-868c-4cd9-b230-da82c5c2cd4b",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "coach",
+      "caption": "Đóng hướng dẫn nổi.",
+      "action": "custom",
+      "tStart": 16599,
+      "tEnd": 20293,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/ebc18852-868c-4cd9-b230-da82c5c2cd4b"
+    },
+    {
+      "index": 4,
+      "id": "form",
+      "caption": "Trang flow: ô nhập thông tin đầu vào, nút Start; New run, Create trigger (chạy theo lịch), lịch sử chạy.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/^Example:/\"}",
+      "label": "Đầu vào",
+      "tStart": 20293,
+      "tEnd": 21784,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/ebc18852-868c-4cd9-b230-da82c5c2cd4b",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 5,
+      "id": "input",
+      "caption": "Nhập vấn đề cần phân tích (không đưa dữ liệu khách hàng thật).",
+      "action": "fill",
+      "target": "{\"placeholder\":\"/^Example:/\"}",
+      "label": "Vấn đề",
+      "tStart": 21784,
+      "tEnd": 25055,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/ebc18852-868c-4cd9-b230-da82c5c2cd4b",
+      "value": "Thời gian xử lý hồ sơ vay tiêu dùng tại một chi nhánh tăng từ 3 ngày lên 7 ngày trong quý vừa qua (tình huống minh hoạ). Hãy phân tích nguyên nhân gốc bằng 5-Why và trả lời bằng tiếng Việt.",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 6,
+      "id": "start",
+      "caption": "Bấm Start.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^start$/i\"}",
+      "label": "Start",
+      "tStart": 25055,
+      "tEnd": 180325,
+      "waits": [
+        {
+          "label": "Flow đang chạy",
+          "tStart": 37291,
+          "tEnd": 180324
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/ebc18852-868c-4cd9-b230-da82c5c2cd4b",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 7,
+      "id": "result",
+      "caption": "Flow chạy xong từng bước (dấu ✓): Root Cause Analysis, Implementation Roadmap; khung bên phải tóm tắt. Download để tải kết quả, Start a new run để chạy lại.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^download$/i\"}",
+      "label": "Download",
+      "tStart": 180325,
+      "tEnd": 182725,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/ebc18852-868c-4cd9-b230-da82c5c2cd4b",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 8,
+      "id": "dump",
+      "caption": "In trạng thái.",
+      "action": "custom",
+      "tStart": 182725,
+      "tEnd": 182750,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/ebc18852-868c-4cd9-b230-da82c5c2cd4b"
+    }
+  ]
+}

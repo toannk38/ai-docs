@@ -1,0 +1,55 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/admin/landing",
+  "title": "Quick - Admin",
+  "headings": [
+    "Manage Account",
+    "Shortcuts",
+    "Documentation",
+    "User upgrades"
+  ],
+  "nav": [],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help"
+  ],
+  "tabs": [
+    "Manage account",
+    "Account settings",
+    "Manage assets",
+    "Amazon Q",
+    "Manage subscriptions",
+    "SPICE capacity",
+    "Index capacity",
+    "Manage users",
+    "Manage domains",
+    "Mobile settings",
+    "Manage IP/VPC restrictions",
+    "Manage VPC connections",
+    "Manage OAuth Client Applications",
+    "KMS Keys",
+    "AWS resources",
+    "Default access policy",
+    "IAM policy assignments",
+    "AWS actions",
+    "AWS Agent Registry",
+    "Extension access",
+    "Custom permissions",
+    "Configure SageMaker",
+    "Limit profiles",
+    "Approval policies",
+    "Data loss prevention",
+    "Inbound connectors",
+    "OAuth applications",
+    "Brand customization",
+    "Agent customization",
+    "Email customization",
+    "Quick Usage Metrics"
+  ],
+  "inputs": [
+    "Search"
+  ],
+  "text": "Manage Account\nAccount name: opba-ai\nUnderstand Quick user subscriptions and roles\nThe new Quick Professional subscription maps to the Reader Pro (Professional) role, and the new Reader role with AI capabilities has similar feature set as Professional role. The new Quick Enterprise subscription maps to the Author Pro (Enterprise) and Admin Pro (Enterprise) roles. To learn more about the features included in these subscriptions, visit the Quick pricing page. Manage users.\nShortcuts\nManage users\n\nInvite your team to build\n\nManage assets\n\nEnsure users have access to the right resources\n\nManage subscriptions\n\nCheck current plans and additional offers\n\nAWS resources\n\nAllow connections to first-party services\n\nBrand customization\n\nShow off your brand to all users\n\nCustom permissions\n\nChoose the right capabilities for your users\n\nDocumentation\nSee all\n\nDeveloping with AWS Quick\n\nAPI operations and software development kits (SDKs) for AWS Quick that enable you to access Quick from your preferred programming language.\n\nGet started with AWS Quick API\n\nYou can manage most aspects of your deployment with the AWS SDKs to access an API that's tailored to the programming language or platform that you're using.\n\nEmbed assets with AWS Quick\n\nEmbedded Analytics allows users to integrate business analytics into their own applications and web portals.\n\nUser upgrades\nManage\n\nUsers can upgrade to get more capabilities in Quick.",
+  "screenshot": "manage-account.png",
+  "surveyedAt": "2026-11-19T07:43:39.269Z"
+}

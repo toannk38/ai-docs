@@ -1,0 +1,120 @@
+{
+  "flow": "q11-3-giao-dien",
+  "title": "Làm quen giao diện Amazon Quick",
+  "status": "ok",
+  "capturedAt": "2026-11-19T10:46:16.765Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "home",
+      "caption": "Trang chủ Amazon Quick: thanh điều hướng bên trái, ô chat ở giữa, nút tài khoản và Private mode ở góc phải.",
+      "action": "shot",
+      "tStart": 4936,
+      "tEnd": 6611,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "sidebar",
+      "caption": "Thanh điều hướng: các mục chính (Spaces, Research, Chat agents, Flows, Dashboards, Data…).",
+      "action": "shot",
+      "target": "nav, [role=navigation]",
+      "label": "Thanh điều hướng",
+      "tStart": 6611,
+      "tEnd": 8676,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "chat-box",
+      "caption": "Ô chat: chọn agent, phạm vi dữ liệu, chế độ trả lời và các nút tạo nhanh.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Ô chat",
+      "tStart": 8676,
+      "tEnd": 9647,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "my-stuff",
+      "caption": "My stuff: mục bạn xem gần đây (Recents) và mục yêu thích (Favorites).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*My stuff\\\\s*$/\"}",
+      "label": "My stuff",
+      "tStart": 9647,
+      "tEnd": 13599,
+      "waits": [
+        {
+          "label": "Mở My stuff",
+          "tStart": 11758,
+          "tEnd": 11759
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/mystuff",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 5,
+      "id": "more-menu",
+      "caption": "Menu More: các mục ít dùng hơn (Automations, Knowledge, Scenarios, Stories) và Customize navigation để sắp xếp thanh điều hướng.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*More\\\\s*$/\"}",
+      "label": "More",
+      "tStart": 13599,
+      "tEnd": 16876,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/mystuff",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 6,
+      "id": "close-more",
+      "caption": "Đóng menu.",
+      "action": "press",
+      "tStart": 16876,
+      "tEnd": 17210,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/mystuff",
+      "value": "Escape"
+    },
+    {
+      "index": 7,
+      "id": "account-menu",
+      "caption": "Nút tài khoản: xem account name, username, đổi ngôn ngữ, Preferences và Sign out.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*opba-ai\\\\s*$/\"}",
+      "label": "Tài khoản",
+      "tStart": 17210,
+      "tEnd": 20464,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/mystuff",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 8,
+      "id": "close-account",
+      "caption": "Đóng menu.",
+      "action": "press",
+      "tStart": 20464,
+      "tEnd": 20778,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/mystuff",
+      "value": "Escape"
+    }
+  ]
+}

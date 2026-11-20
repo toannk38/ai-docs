@@ -1,0 +1,61 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/folders/shared",
+  "title": "Quick - Shared folders",
+  "headings": [
+    "No shared folders",
+    "Hi Demo! What's on your mind?"
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Search conversations",
+    "Conversation options",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Ask a question..."
+  ],
+  "text": "opba-ai\nNew chat\nSearch\nMy stuff\nSpaces\nResearch\nChat agents\nApps\nFlows\nAnalyses\nDashboards\nData\nMy folders\nShared folders\nMore\nRecents\n\nInitial Greeting\n\nLời chào hỏi ban đầu\n\nMẫu Hợp Đồng Mua Bán Phần Mềm\n\nMẫu hợp đồng mua bán\n\nAI Assistant Capabilities Overview\n\nQuick Interface Documentation Request\n\nShared folders\nNew Folder\nNo shared folders\n\nShare analyses, dashboards, and data with coworkers. To get started, ask your admin to create one.\n\nExpand\nHi Demo! What's on your mind?\n\nQuick\n\nAll\nSmart\nResearch\nDocument\nUsage is subject to\nAWS Responsible AI Policy",
+  "screenshot": "nav-12-shared-folders.png",
+  "surveyedAt": "2026-11-19T07:38:44.570Z"
+}

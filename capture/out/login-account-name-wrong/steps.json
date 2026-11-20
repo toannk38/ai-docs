@@ -1,0 +1,62 @@
+{
+  "flow": "login-account-name-wrong",
+  "title": "Lỗi khi nhập username/email vào ô Quick account name",
+  "status": "ok",
+  "capturedAt": "2026-11-19T05:11:07.317Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": "raw.webm",
+  "steps": [
+    {
+      "index": 1,
+      "id": "type-wrong",
+      "caption": "SAI: nhập email/username vào ô Quick account name.",
+      "action": "type",
+      "target": "#account-name-input",
+      "label": "✗ Sai: đây là email, không phải account name",
+      "banner": "✗ SAI — không nhập email/username vào ô này",
+      "tStart": 2646,
+      "tEnd": 9527,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue",
+      "value": "ten.dang.nhap@example.com",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "click-next",
+      "caption": "Bấm Next.",
+      "action": "click",
+      "target": "#account-name-submit-button",
+      "tStart": 9527,
+      "tEnd": 11559,
+      "waits": [
+        {
+          "label": "Hiện lỗi",
+          "tStart": 11546,
+          "tEnd": 11559
+        }
+      ],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue"
+    },
+    {
+      "index": 3,
+      "id": "error",
+      "caption": "Nếu thấy thông báo \"Invalid account name\" -> bạn đã nhập sai account name. Xoá nội dung trong ô và nhập opba-ai.",
+      "action": "shot",
+      "target": "{\"text\":\"/invalid account name/i\"}",
+      "label": "Thông báo lỗi Invalid account name",
+      "banner": "Thấy lỗi này? Quay lại nhập opba-ai",
+      "tStart": 11559,
+      "tEnd": 15266,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue",
+      "screenshot": "step-02.png"
+    }
+  ]
+}

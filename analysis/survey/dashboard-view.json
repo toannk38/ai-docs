@@ -1,0 +1,54 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/fc2ecd79-4552-4737-9a95-e449dafc149c",
+  "title": "Quick - Employee Dashboard",
+  "headings": [
+    "Average Workforce Scores by Department",
+    "Employee Headcount by Department",
+    "Average Salary by Job Role",
+    "Employee Hires Over Time",
+    "Employee Attrition Breakdown",
+    "Active Employee Headcount",
+    "What brings you here today?"
+  ],
+  "nav": [
+    [
+      "Dashboards",
+      "Add to favorites"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "Add to favorites",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Undo",
+    "Redo",
+    "No customized visuals in this sheet",
+    "Scheduling",
+    "Version history",
+    "View bookmarks",
+    "Export",
+    "View Data",
+    "Save as",
+    "Share",
+    "Update layout view",
+    "View alerts",
+    "Toggle private mode",
+    "Conversation history",
+    "Context panel toggle",
+    "Employee Dashboard",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Ask a question..."
+  ],
+  "text": "Dashboards\n\nEmployee Dashboard\n\nOriginal dashboard\n\nopba-ai\nReset to original\nAnalyze this dashboard in a Scenario\n\nCreate\n\nEmployee Overview Dashboard\nHigh-level overview of workforce metrics including headcount, salary, attrition, hiring trends, and performance scores\n\nAverage Workforce Scores by Department\n\nComparing performance, engagement, and satisfaction across departments\n\nVertical bar chart, Average Workforce Scores by Department, Clustered bar chart comparing average performance rating, engagement score, and satisfaction score across departments\nPress Shift + Enter to open a table summary of the chart\n\nEmployee Headcount by Department\n\nWorkforce distribution across organizational departments\n\nVertical bar chart, Employee Headcount by Department, Bar chart comparing employee counts across departments, revealing workforce distribution and staffing levels\nPress Shift + Enter to open a table summary of the chart\n\nAverage Salary by Job Role\n\nCompensation levels across organizational roles\n\nHorizontal bar chart, Average Salary by Job Role, Horizontal bar chart comparing average annual salary across job roles, revealing compensation differences between positions\nPress Shift + Enter to open a table summary of the chart\n\nEmployee Hires Over Time\n\nMonthly hiring volume tracked by hire date\n\nLine chart, Employee Hires Over Time, Line chart tracking count of employee hires by month, revealing hiring trends and workforce growth patterns over time\nPress Shift + Enter to open a table summary of the chart\n\nEmployee Attrition Breakdown\n\nWorkforce distribution by active and attrition status\n\nDonut chart, Employee Attrition Breakdown, Pie chart showing employee count distribution across attrition flag categories, revealing workforce retention proportions\nPress Shift + Enter to open a table summary of the chart\n\nActive Employee Headcount\n\nDistinct count of currently active workforce members\n\nKey Performance Indicator (KPI), , KPI displaying the distinct count of active employees, indicating current workforce size against total employee base\nPress Shift + Enter to open a table summary of the chart\nExpand\nWhat brings you here today?\n\nQuick\n\nSmart\nResearch\nDocument\nUsage is subject to\nAWS Responsible AI Policy",
+  "screenshot": "dashboard-view.png",
+  "surveyedAt": "2026-11-19T07:45:33.830Z"
+}

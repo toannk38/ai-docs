@@ -1,0 +1,16 @@
+{
+  "flow": "q15-2-chinh-chia-se-flow",
+  "title": "Xem, chạy thử và chia sẻ flow",
+  "status": "failed",
+  "failure": "locator.waitFor: Timeout 120000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^publish$/i }).first() to be visible\u001b[22m\n",
+  "capturedAt": "2026-11-19T13:08:53.161Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": []
+}

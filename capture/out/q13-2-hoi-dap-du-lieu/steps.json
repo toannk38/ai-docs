@@ -1,0 +1,107 @@
+{
+  "flow": "q13-2-hoi-dap-du-lieu",
+  "title": "Hỏi đáp với dữ liệu",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:57:15.206Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "settle",
+      "caption": "Chờ trang Data tải xong.",
+      "action": "hold",
+      "tStart": 6146,
+      "tEnd": 13936,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset"
+    },
+    {
+      "index": 2,
+      "id": "chat",
+      "caption": "Mở Data → Datasets, bấm Chat ở dòng dataset cần hỏi.",
+      "action": "click",
+      "target": "[role=\"row\"]:has-text(\"aws-quick-demo-data\") >> text=Chat",
+      "label": "Chat",
+      "tStart": 13936,
+      "tEnd": 19263,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "panel",
+      "caption": "Khung chat mở với dataset đã chọn làm phạm vi dữ liệu.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Hỏi về dataset",
+      "tStart": 19264,
+      "tEnd": 21060,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 4,
+      "id": "ask",
+      "caption": "Đặt câu hỏi cụ thể: chỉ số, chiều phân tích, khoảng thời gian.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Câu hỏi",
+      "tStart": 21060,
+      "tEnd": 29201,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "value": "Tổng giá trị giao dịch theo vùng trong quý 3/2026, sắp xếp giảm dần",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 5,
+      "id": "send",
+      "caption": "Gửi.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^send$/i\"}",
+      "tStart": 29201,
+      "tEnd": 49130,
+      "waits": [
+        {
+          "label": "Quick đang phân tích",
+          "tStart": 30915,
+          "tEnd": 49130
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset"
+    },
+    {
+      "index": 6,
+      "id": "answer",
+      "caption": "Quick trả lời bằng bảng/biểu đồ từ dataset.",
+      "action": "shot",
+      "tStart": 49130,
+      "tEnd": 51423,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 7,
+      "id": "explain",
+      "caption": "Bấm Explanation để xem Quick đã lọc, tính toán thế nào — đối chiếu trước khi dùng.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^explanation$/i\"}",
+      "label": "Explanation",
+      "tStart": 51423,
+      "tEnd": 55447,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-05.png"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/integrations?tab=knowledge-base",
+  "title": "Quick",
+  "headings": [
+    "Knowledge",
+    "Connect Quick to other applications",
+    "Looking to add data for visualizations and analysis?",
+    "What brings you here today?"
+  ],
+  "nav": [
+    [],
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Search conversations",
+    "Conversation options",
+    "Learn more",
+    "Dismiss",
+    "New integration",
+    "Go to data sources",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Ask a question..."
+  ],
+  "text": "Knowledge\nConnect Quick to other applications\n\nUse integrations to perform actions in, or access data and knowledge from, other applications.\n\nLearn more\nDismiss\nSet up new knowledge base\n\nCreate a knowledge base to retrieve data in the selected application.\n\nAmazon Bedrock Managed Knowledge Base\n\nAmazon Bedrock manages your knowledge base infrastructure, handling maintenance, optimization, and scaling automatically so you can focus on your content.\n\nAmazon Q Business\n\nAnalyze, search, and get insights from your Q Business applications.\n\nAmazon S3\n\nUnlock insights from your documents, presentations, spreadsheets, and multimedia files through intelligent search and analysis at enterprise scale.\n\nAtlassian Confluence Cloud\n\nTransform your team wikis, project documentation, and blogs into an AI-powered research platform for instant insights.\n\nBox\n\nTransform your files, documents, and collaborative content stored in Box into a searchable knowledge base with AI-powered analysis.\n\nGoogle Drive\n\nTurn your shared documents, presentations, and collaborative files into an intelligent knowledge hub with instant search and insights.\n\nIDC\n\nAccess market intelligence and industry insights from IDC, the trusted global provider of technology research and strategic guidance.\n\nMicrosoft OneDrive\n\nTransform your personal documents, files and spreadsheets into searchable insights with AI-powered analysis.\n\nMicrosoft SharePoint Online\n\nConvert your organizational policies, procedures, and team documentation into a searchable enterprise knowledge base with AI-enhanced analysis.\n\nWebcrawler\n\nTransform live web content, and news articles into searchable insights through automated content discovery and AI-powered analysis.\n\nExisting knowledge bases\n\nUse knowledge bases to specify the content from external applications that can be used throughout Quick.\n\nNo knowledge bases yet.\n\nLooking to add data for visualizations and analysis?\n\nCreate data sources to connect your company's data for use in analyses and dashboards.\n\nDismiss\nGo to data sources",
+  "screenshot": "more-knowledge.png",
+  "surveyedAt": "2026-11-19T07:41:26.858Z"
+}

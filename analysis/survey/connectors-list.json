@@ -1,0 +1,74 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/integrations?tab=action",
+  "title": "Quick",
+  "headings": [
+    "Connectors",
+    "Connect Quick to other applications",
+    "Looking to add data for visualizations and analysis?",
+    "What should we explore?"
+  ],
+  "nav": [
+    [],
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Search conversations",
+    "Conversation options",
+    "Learn more",
+    "Dismiss",
+    "Available",
+    "Create for your team",
+    "Connect",
+    "Go to data sources",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [
+    "Available",
+    "Create for your team"
+  ],
+  "inputs": [
+    "Search",
+    "Ask a question..."
+  ],
+  "text": "Connectors\nConnect Quick to other applications\n\nUse integrations to perform actions in, or access data and knowledge from, other applications.\n\nLearn more\nDismiss\nConnect your work apps to Amazon Quick\n\nEnhance your workflow by connecting the apps you already use. Your AI assistant will help you get more done, faster.\n\n​\nAvailable\nCreate for your team\nConnect\nAirtable\n\nUse different Airtable actions, including creating and updating records, managing bases and tables, filtering views, and performing relational data operations.\n\nConnect\nAsana\n\nUse different Asana features, including task management, project tracking, and workflow operations.\n\nConnect\nBee\n\nBee delivers personal AI memory, capturing and summarizing conversations, meetings, facts, and to-dos so you can search and act on them.\n\nConnect\nBox Agent\n\nConnect to Box AI Agents to ask questions, extract insights, and analyze content across files and hubs.\n\nConnect\nDropbox\n\nUse different Dropbox actions, including uploading files, managing folder structures, generating sharing links, and controlling access permissions.\n\nConnect\nGmail\n\nUse different Gmail actions, including reading emails, searching your inbox, drafting messages, managing labels, and organizing threads.\n\nConnect\nGong\n\nAsk Gong about any account or deal and generate comprehensive account or deal AI briefs, right inside Amazon Quick.\n\nConnect\nGoogle Analytics\n\nUse different Google Analytics actions, including querying traffic reports, retrieving audience data, monitoring conversion events, and accessing performance metrics.\n\nConnect\nGoogle Calendar\n\nUse different Google Calendar actions, including creating and updating events, checking availability, managing invites, and retrieving schedules.\n\nConnect\nGoogle Docs\n\nUse different Google Docs actions, including creating and editing documents, reading content and collaborating on text-based files.\n\nConnect\nGoogle Drive\n\nTurn your shared documents, presentations, and collaborative files into an intelligent knowledge hub with instant search and insights.\n\nConnect\nGoogle Meet\n\nUse different Google Meet actions, including scheduling video meetings, listing hosted meetings, retrieving transcripts, and updating access settings.\n\nConnect\nGoogle Sheets\n\nUse different Google Sheets actions, including creating and editing spreadsheets, reading and writing cell ranges and performing data operations.\n\nConnect\nGoogle Slides\n\nUse different Google Slides actions, including creating presentations, editing slides, managing layouts, and adding speaker notes.\n\nConnect\nMicrosoft OneNote\n\nUse different OneNote features, including notebook management, section and page operations, and content creation.\n\nConnect\nMicrosoft Outlook\n\nUse different Outlook features, including calendar management, email operations, and contact handling.\n\nConnect\nMicrosoft Teams\n\nUse different Teams features, including channel management, messaging, and meeting operations.\n\nConnect\nOneDrive\n\nUse different OneDrive features, inclu",
+  "screenshot": "connectors-list.png",
+  "surveyedAt": "2026-11-19T07:46:23.512Z"
+}

@@ -1,0 +1,45 @@
+{
+  "flow": "q13-4-stories",
+  "title": "Kể chuyện dữ liệu với Stories",
+  "status": "failed",
+  "failure": "Hết thời gian chờ: Mở trình tạo story",
+  "capturedAt": "2026-11-19T13:05:40.092Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "wait",
+      "caption": "Mở dashboard.",
+      "action": "waitFor",
+      "tStart": 6610,
+      "tEnd": 9756,
+      "waits": [
+        {
+          "label": "Mở dashboard",
+          "tStart": 9738,
+          "tEnd": 9755
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 2,
+      "id": "create",
+      "caption": "Trên dashboard, bấm Create (góc phải).",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^create$/i\"}",
+      "label": "Create",
+      "tStart": 9756,
+      "tEnd": 11836,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    }
+  ]
+}

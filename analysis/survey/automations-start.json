@@ -1,0 +1,41 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/automations/quick-start",
+  "title": "Quick - Automations",
+  "headings": [
+    "Create multi-agent automations for business processes",
+    "Get started with samples",
+    "Market Analysis AI Assistant",
+    "Multi-Agent Customer Support",
+    "Form Filling UI Automation",
+    "Salesforce Case Management Automation",
+    "ServiceNow Incident Management Automation",
+    "Treasury Bank Statement Gathering",
+    "Treasury Bank Transaction Entry",
+    "Weather Forecast Agent",
+    "Web Application Login"
+  ],
+  "nav": [
+    [
+      "Automations"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Edit name",
+    "Add document",
+    "Skip",
+    "Generate"
+  ],
+  "tabs": [],
+  "inputs": [
+    "input",
+    "div",
+    "input",
+    "Search samples"
+  ],
+  "text": "Create multi-agent automations for business processes\nTell us about your automation or get started with a sample\n\nNew automation project\n\nGroup: nhanvien.demo's group\n​\n\n\n\n\nAutomation will run as\n\nService\nAdd document\n\nSelect from existing documents or Drag and drop a file in .docx format (15MB limit).\n\n0/5,000 characters\nSkip\nGenerate\nGet started with samples\n​\nAll\nCustomer Service\nFinance\nIT\nMarketing & Sales\nOther\nMarket Analysis AI Assistant\nFinance\n\nThis AI-powered automation leverages an UI agent to act as a financial analyst, collecting daily market data and providing summarized analysis.\n\nBEGINNER\n\nMulti-Agent Customer Support\nCustomer Service\n\nThis automation uses multiple specialized AI agents to handle customer support emails. The agents automatically triage incoming emails, take action based on categorization of the issue, and escalate complex issues to human supervisors for review.\n\nEXPERT\n\nForm Filling UI Automation\nOther\n\nThis automation solution tackles the RPA Challenge by processing Excel data and using AI-powered UI automation capabilities to fill web forms.\n\nBEGINNER\n\nSalesforce Case Management Automation\nMarketing & Sales\n\nThis automation creates and updates Salesforce cases.\n\nINTERMEDIATE\n\nServiceNow Incident Management Automation\nIT\n\nThis automation creates and updates ServiceNow incidents.\n\nINTERMEDIATE\n\nTreasury Bank Statement Gathering\nFinance\n\nThis automation retrieves bank statements from an external portal, uses an AI agent to extract transaction details from the PDF, and creates cases for each transaction for downstream processing.\n\nINTERMEDIATE\n\nTreasury Bank Transaction Entry\nFinance\n\nThis automation processes bank transaction cases and enters each transaction into a banking portal using a UI agent, with human-in-the-loop approval for high-value payments and business exception handling for rejected transactions.\n\nINTERMEDIATE\n\nWeather Forecast Agent\nOther\n\nThis automation utilizes a UI agent to retrieve comprehensive weather information for a specified city from the National Weather Service website.\n\nBEGINNER\n\nWeb Application Login\nOther\n\nThis automation demonstrates secure website authentication using a practice test login site, implementing configurable retry logic with browser restart capabilities and comprehensive error handling.\n\nINTERMEDIATE",
+  "screenshot": "automations-start.png",
+  "surveyedAt": "2026-11-19T07:46:07.621Z"
+}

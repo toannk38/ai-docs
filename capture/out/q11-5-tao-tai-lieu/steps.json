@@ -1,0 +1,88 @@
+{
+  "flow": "q11-5-tao-tai-lieu",
+  "title": "Tạo tài liệu, slide và hình từ chat",
+  "status": "ok",
+  "capturedAt": "2026-11-19T10:50:46.592Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "buttons",
+      "caption": "Dưới ô chat có các nút tạo nhanh: Research, Document, Presentation, Visual.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*Document\\\\s*$/\"}",
+      "label": "Nút tạo nhanh",
+      "tStart": 6334,
+      "tEnd": 8845,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "document",
+      "caption": "Bấm Document.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Document\\\\s*$/\"}",
+      "label": "Document",
+      "tStart": 8845,
+      "tEnd": 12291,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "describe",
+      "caption": "Mô tả tài liệu cần tạo: mục đích, người đọc, độ dài, các ý chính.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/ask|describe|document/i\"}",
+      "label": "Mô tả tài liệu",
+      "tStart": 12291,
+      "tEnd": 25392,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "value": "Soạn bản tóm tắt một trang về Pháp lệnh ngoại hối của Việt Nam cho nhân viên mới: phạm vi, các loại giao dịch, nguyên tắc sử dụng ngoại hối.",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "send",
+      "caption": "Gửi yêu cầu và chờ Quick tạo tài liệu (có thể mất vài phút).",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^send$/i\"}",
+      "label": "Gửi",
+      "tStart": 25392,
+      "tEnd": 203652,
+      "waits": [
+        {
+          "label": "Quick đang tạo tài liệu",
+          "tStart": 28048,
+          "tEnd": 203652
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/chat?conversationId=0144f8ab-9c7b-4360-9ec9-b36e285367aa",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 5,
+      "id": "result",
+      "caption": "Tài liệu tạo xong: View để xem, Download để tải tệp .docx, Open in Word để mở bằng Word. Kiểm tra lại nội dung trước khi dùng.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^\\\\s*Download\\\\s*$/\"}",
+      "label": "Tải tài liệu",
+      "tStart": 203652,
+      "tEnd": 205431,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/chat?conversationId=0144f8ab-9c7b-4360-9ec9-b36e285367aa",
+      "screenshot": "step-05.png"
+    }
+  ]
+}

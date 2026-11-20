@@ -1,0 +1,76 @@
+{
+  "flow": "login-account-name",
+  "title": "Nhập account name opba-ai trên trang đăng nhập Amazon Quick chung",
+  "status": "ok",
+  "capturedAt": "2026-11-19T05:11:31.095Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": "raw.webm",
+  "steps": [
+    {
+      "index": 1,
+      "id": "generic-signin",
+      "caption": "Nếu mở trang đăng nhập Amazon Quick chung (link không có account name), bạn sẽ thấy ô Quick account name.",
+      "action": "shot",
+      "target": "#account-name-input",
+      "label": "Ô Quick account name",
+      "tStart": 2504,
+      "tEnd": 4450,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "type-account-name",
+      "caption": "Ô này nhập opba-ai — KHÔNG nhập username hay email của bạn. Username chỉ nhập ở bước sau, trên trang đăng nhập.",
+      "action": "type",
+      "target": "#account-name-input",
+      "label": "Nhập: opba-ai",
+      "banner": "Ô này nhập opba-ai — KHÔNG nhập username hay email",
+      "tStart": 4450,
+      "tEnd": 11613,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue",
+      "value": "opba-ai",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "account-next",
+      "caption": "Bấm Next. Bạn được chuyển sang trang đăng nhập (Identity Center).",
+      "action": "click",
+      "target": "#account-name-submit-button",
+      "label": "Next",
+      "tStart": 11613,
+      "tEnd": 20404,
+      "waits": [
+        {
+          "label": "Chuyển sang trang đăng nhập Identity Center",
+          "tStart": 14961,
+          "tEnd": 20403
+        }
+      ],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=42c5b59b-232f-464f-940f-8bfa85b07356",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "idc-username-page",
+      "caption": "Trang đăng nhập: bây giờ mới nhập username của bạn (xem các bước đăng nhập).",
+      "action": "shot",
+      "target": "{\"label\":\"/^username$/i\"}",
+      "label": "Username nhập ở đây",
+      "tStart": 20404,
+      "tEnd": 22582,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=42c5b59b-232f-464f-940f-8bfa85b07356",
+      "screenshot": "step-04.png"
+    }
+  ]
+}

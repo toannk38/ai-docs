@@ -1,0 +1,923 @@
+[
+  {
+    "pageId": "11-2",
+    "flow": "q11-1-portal+q11-1-mfa-screen",
+    "capturedAt": "2026-11-19T15:09:07.842Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-2/step-01.png",
+        "sha256": "cb4b8178b0d89dafdef270afc3a607c0ac7cd47acd244d4e31f56c44efa217f1",
+        "bytes": 67376
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-2/step-02.png",
+        "sha256": "f46b520160522f2239eac0b8919dce7b787ec982a75b00ccc9658ac135cce38f",
+        "bytes": 58387
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-2/step-03.png",
+        "sha256": "74581b646cd319dd4ad2454f1c4321e9eaa6c5116c92645cbde5f2ae163c1f46",
+        "bytes": 52453
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-2/step-04.png",
+        "sha256": "b554ebaa46252b1578e07a297000e863134929f0b40bb14cf896aa466d7940fa",
+        "bytes": 52775
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-2/step-05.png",
+        "sha256": "bb612e4299e997765ef39ec80591274ea056c77e2b2d62bed9d9d82a5b30727e",
+        "bytes": 51446
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-2/step-06.png",
+        "sha256": "97a085b081c49cdfe20e3f3b528e147d07dc246a2962e8f6bc9dbb0b36849043",
+        "bytes": 60750
+      }
+    ]
+  },
+  {
+    "pageId": "11-3",
+    "flow": "q11-2-link-quick+q11-2-link-banner",
+    "capturedAt": "2026-11-19T15:09:07.847Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-01.png",
+        "sha256": "68a24294b73f0a95761d49dba4bc3aa1e7f7db21a952bb4236aba28ff59a0437",
+        "bytes": 69509
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-02.png",
+        "sha256": "b2b3d9618543d9372eaec6d7f3f509fa3a978942517be167386a30219a747c44",
+        "bytes": 29739
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-03.png",
+        "sha256": "a623f007a9eeea7793ff4d5492f9ce24099df0f53ead5e727e85136ba9aea693",
+        "bytes": 45029
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-04.png",
+        "sha256": "aeabf2aa4237635a46d4b20d35818280051d3c7d4fbc4ce24ae5880c3655f5dc",
+        "bytes": 43573
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-05.png",
+        "sha256": "db161c33acbb5a95cfd71888cd326e5783fa43ee07cd57510cc1473c4177405e",
+        "bytes": 44489
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-06.png",
+        "sha256": "f46b520160522f2239eac0b8919dce7b787ec982a75b00ccc9658ac135cce38f",
+        "bytes": 58387
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-07.png",
+        "sha256": "74581b646cd319dd4ad2454f1c4321e9eaa6c5116c92645cbde5f2ae163c1f46",
+        "bytes": 52453
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-08.png",
+        "sha256": "edd17951317d23d564ccba5adde63ef93521db5181d4c819b97d1ccf42900aa3",
+        "bytes": 97612
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-3/step-09.png",
+        "sha256": "016ba1162e7e4b2ab344ff09aeb75180f98dc76d967ba9c421ac115eb4ef5511",
+        "bytes": 113829
+      }
+    ]
+  },
+  {
+    "pageId": "11-5",
+    "flow": "q11-3-giao-dien",
+    "capturedAt": "2026-11-19T10:46:16.765Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-5/step-01.png",
+        "sha256": "255c9dbbf784343bd48d02a8bcee2aaa34ac31e338855739edd4a1531b20704f",
+        "bytes": 53035
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-5/step-02.png",
+        "sha256": "9036dce4253cfb8910d179e266475cda565298f22cc36fea9563656071ff302b",
+        "bytes": 95039
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-5/step-03.png",
+        "sha256": "8b8470319f07b46f92bd71cb86633ae08c6b819b6083bd7596f8b47117675503",
+        "bytes": 96192
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-5/step-04.png",
+        "sha256": "ae8a524dfa710a8af089e5e75c61690bc7ebaa11f7f20a6acbcff1666e6b73e6",
+        "bytes": 125181
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-5/step-05.png",
+        "sha256": "0c89d20118d6cff67c315ca7237c274ce2bc4eab073d89686f4657d27fc70e74",
+        "bytes": 164542
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-5/step-06.png",
+        "sha256": "3efaa6a5a97d76269ea35b21244786b2e6dfa15b1262ba5c4501663ac1fb1562",
+        "bytes": 161152
+      }
+    ]
+  },
+  {
+    "pageId": "11-6",
+    "flow": "q11-4-chat",
+    "capturedAt": "2026-11-19T10:47:19.944Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-6/step-01.png",
+        "sha256": "ef5bc42d3d27c1a7b621c2978987fc4393a8c702a24cfe5db1f7eecfad3ca504",
+        "bytes": 97966
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-6/step-02.png",
+        "sha256": "e22ab14df731fa7eac337889fca3fc8e32765317fe4ba060813dd355994ea02f",
+        "bytes": 115206
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-6/step-03.png",
+        "sha256": "ebfa22cb62bd70e845a9032bd072237499be48e0b6e69ca08c04e2fe92857290",
+        "bytes": 108622
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-6/step-04.png",
+        "sha256": "5058b074f0c083173b736b467184c58ec7ac7d8fe8ca002cb22680a6cfb5ec48",
+        "bytes": 105436
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-6/step-05.png",
+        "sha256": "b5f98299cbe80a4a39dbb2eab0e2b6fa1ea5be5f1bcd0403f3e748a9919040a0",
+        "bytes": 100779
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-6/step-06.png",
+        "sha256": "c711b96f20fffd352b84cd724a36996ba42d62992c08ec9d7b5b1fd5bae010fb",
+        "bytes": 103867
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-6/step-07.png",
+        "sha256": "cd930c07360879e2304649128680c8adc1de5266cdc88a753a5b4a2fbfd3290d",
+        "bytes": 190668
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-6/step-08.png",
+        "sha256": "d427682c60c544548ddcc960bdc4d3946b26d9caaa5545f2aa7a3ed925f73fa9",
+        "bytes": 201659
+      }
+    ]
+  },
+  {
+    "pageId": "11-7",
+    "flow": "q11-5-tao-tai-lieu",
+    "capturedAt": "2026-11-19T10:50:46.592Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-7/step-01.png",
+        "sha256": "8f548e93d69a359a4b17ee354613e67db939761dbc9ef31e3371cae23b48bb11",
+        "bytes": 96711
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-7/step-02.png",
+        "sha256": "d07b0507e1c935e3c331a7782f8c32a10a9b2962efb93d29ba720c30215f5206",
+        "bytes": 92906
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-7/step-03.png",
+        "sha256": "57ee854e9a1e7b6486dfdb0840a48aa27c5ee5eae7fe73dabbf3a2302f5bea32",
+        "bytes": 97372
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/11-7/step-04.png",
+        "sha256": "c2c5fe6ae9bffb48493125aa9d7318b6d1a6f1e083f25a3d17770934a7d970f7",
+        "bytes": 153853
+      }
+    ]
+  },
+  {
+    "pageId": "12-1",
+    "flow": "q12-1-hoi-dap-space",
+    "capturedAt": "2026-11-19T11:17:19.296Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-1/step-01.png",
+        "sha256": "246b16b7d981a0a50c34545d3f2a55035fc83765778760cc45e78f6854a27288",
+        "bytes": 97635
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-1/step-02.png",
+        "sha256": "da36e3b6437ad8955f2e68192c7f4da1880be7459571cfb5b3a2da03d068f9df",
+        "bytes": 100642
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-1/step-03.png",
+        "sha256": "5e2354b0ea990eac18ca8d4f89f8fe63bf0ebffadf0827ed45c47d858cfbca6e",
+        "bytes": 100092
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-1/step-04.png",
+        "sha256": "0a7ba3023bd7fd4a448abf1359326a36a884d22b42f0e51e598ff971dc0cf775",
+        "bytes": 157760
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-1/step-05.png",
+        "sha256": "9d8d390445e9f9330bd7d1b046009a89e6cdffe9d047b612b67f0edf64594ac5",
+        "bytes": 94442
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-1/step-06.png",
+        "sha256": "e6f20fa21913bef981ed0e20e0294ce9b8213736d6335e188bf42de0454e4707",
+        "bytes": 122318
+      }
+    ]
+  },
+  {
+    "pageId": "12-2",
+    "flow": "q12-2-tao-space",
+    "capturedAt": "2026-11-19T10:56:20.073Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-2/step-01.png",
+        "sha256": "5fbb0860d1aeb6c5856497f833e4bbe44d3cbbb008f5bc8949672efa5d5d6452",
+        "bytes": 165716
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-2/step-02.png",
+        "sha256": "1a2c8dbc4576ea5764bbc5fa967b39af25c83fdf3fbb55a259b108bd3af13dd4",
+        "bytes": 160871
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-2/step-03.png",
+        "sha256": "ef868e665d52dac9ddd89cb31f680f8e46bcb1e0e2c789d15a990e1f14d8e750",
+        "bytes": 167109
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-2/step-04.png",
+        "sha256": "68af82098a9105e94afd9dea9650e8865fa6a9a4f1953e752e88210b83c8781e",
+        "bytes": 116860
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-2/step-05.png",
+        "sha256": "1cc8ecaa64448a81945e804dd144ebc317c5ce8f1dc68dad20defd544a32f514",
+        "bytes": 116926
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-2/step-06.png",
+        "sha256": "34dddb847480063a46d224c9d5d5c33a6ce9e08f74683d99229bab5d8a9c7b85",
+        "bytes": 141764
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-2/step-07.png",
+        "sha256": "9d7b5d3f602989b30a70b3634497f25e0aa733be9c80b6b50329d2b50e42f093",
+        "bytes": 128386
+      }
+    ]
+  },
+  {
+    "pageId": "12-3",
+    "flow": "q12-3-chia-se-space",
+    "capturedAt": "2026-11-19T11:14:05.127Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-3/step-01.png",
+        "sha256": "ff88b40791963c007cd407faef768efc5863f7aed3e2df25afa93f71adf5e296",
+        "bytes": 100284
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-3/step-02.png",
+        "sha256": "f6a633dcfd5afb8fc72ab036e47a4936a106a5154c6bc8b0c420c8e019db50f1",
+        "bytes": 106948
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-3/step-03.png",
+        "sha256": "164d387bd2db9adb397d4aba70c60e24d4947fd05972661a978de00d82378c8b",
+        "bytes": 106408
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-3/step-04.png",
+        "sha256": "c546563858bbfcb5906811215109e7e4e17d6342f5c57eac29142c01fb493750",
+        "bytes": 112224
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-3/step-05.png",
+        "sha256": "4fe2f6e9da273f34c3a052a0096e613800f6d26f21a51966c92aa00b1715bbe5",
+        "bytes": 112594
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-3/step-06.png",
+        "sha256": "9d85938395367289057a9976b21c790e931a959150faf07853c19f7e1beb80d9",
+        "bytes": 116912
+      }
+    ]
+  },
+  {
+    "pageId": "12-4",
+    "flow": "q12-4-dung-agent",
+    "capturedAt": "2026-11-19T11:07:43.656Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-4/step-01.png",
+        "sha256": "27db76e20b42b61d5f9826fb40aae486a3ded828be9af96d860b0952d9329d29",
+        "bytes": 119328
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-4/step-02.png",
+        "sha256": "d673c69d19fdabd6436e6a8c8fcc097466d4e8eea5fff11f9e78cf3bceeb1e44",
+        "bytes": 121851
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-4/step-03.png",
+        "sha256": "37cb384b065e23f0a6e2b6b9761985d1cf91cfb993440a79b6ad87a81234465a",
+        "bytes": 118784
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-4/step-04.png",
+        "sha256": "0ad769b35034918d454e961b6bf63edf384377bc94242d8f5cded5183f5e2b8f",
+        "bytes": 154063
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-4/step-05.png",
+        "sha256": "37428723aa2bfff2597ec69968645c15a2960cd6bc94452fa8c7642589f0a4ff",
+        "bytes": 239338
+      }
+    ]
+  },
+  {
+    "pageId": "12-5",
+    "flow": "q12-5-tao-agent",
+    "capturedAt": "2026-11-19T11:05:55.695Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-5/step-01.png",
+        "sha256": "ee1cb34c621d8f905a7972865e0e479d72eb18dc3852bdd0e49ccfe7db4a2239",
+        "bytes": 235663
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-5/step-02.png",
+        "sha256": "f459907a6182dadda5ac49fa0432ff8d96b5836048893d732416baf39ac1e7bc",
+        "bytes": 66216
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-5/step-03.png",
+        "sha256": "a85f036b89198866c6ff868fcfe609e8db61be75b59590f2ded5945eff886b82",
+        "bytes": 66955
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-5/step-04.png",
+        "sha256": "86ea49810fb111b608aca5cde38de97838f716bb346c9a8d0aa88a5eab4f02af",
+        "bytes": 130523
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-5/step-05.png",
+        "sha256": "2d8930006932269ad6d55b8c9826795f4319dd3584bde0bf5d5de43e5c8d6d77",
+        "bytes": 146901
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-5/step-06.png",
+        "sha256": "f89578a7dc891da71d4beb4bf1b39f99ce124e6a61b89b939ab4a8499d8db424",
+        "bytes": 146880
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-5/step-07.png",
+        "sha256": "0460df3b2a1872beee8b33df58f7e6a678c7e3f6009ec143dcf57140af654861",
+        "bytes": 191897
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-5/step-08.png",
+        "sha256": "27ee0402e72b07e293cc0a495a64996997f72580c129a50fe69f77e46d534e97",
+        "bytes": 189540
+      }
+    ]
+  },
+  {
+    "pageId": "12-6",
+    "flow": "q12-6-chia-se-agent",
+    "capturedAt": "2026-11-19T11:09:36.246Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-6/step-01.png",
+        "sha256": "79b6818e2a9dff33caace3d8caf16c5a520485ba735a6f50d226c6b899783dac",
+        "bytes": 251521
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-6/step-02.png",
+        "sha256": "3573ed32ecb477f88d4d1bf4676151d33bb4f6da5b35d8acd9a0d452afcb071f",
+        "bytes": 252090
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-6/step-03.png",
+        "sha256": "c0f876f1d5785759de5d76eda70585efeb58f8b1a7a21b0b64383e04a713d80b",
+        "bytes": 217039
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-6/step-04.png",
+        "sha256": "683a6327849ba685efb012c294ed7b661932c8e12881a829d99a1b216bdef65f",
+        "bytes": 222712
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-6/step-05.png",
+        "sha256": "a5c83340035ed443a4811d1914abac71f26666529f5c6d21faa0528bf5916f60",
+        "bytes": 217852
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-6/step-06.png",
+        "sha256": "3a38c77258a50d9d1656b1e806e4cb39427c19ec56b9cb7b5dbdf17031b969a5",
+        "bytes": 222608
+      }
+    ]
+  },
+  {
+    "pageId": "12-7",
+    "flow": "q12-reader-agent+q12-reader-space+q12-7-agents-list",
+    "capturedAt": "2026-11-19T15:09:07.849Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-7/step-01.png",
+        "sha256": "1821c54fdd8b64aac1d1c3f1f5db4886b532608658b7e0a3ebd6ec0d2871335a",
+        "bytes": 188357
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-7/step-02.png",
+        "sha256": "1761f1e7cb6516ed8d2a62c5fb02a57d3a25bc21b508f42ea67a888204eed67d",
+        "bytes": 227612
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-7/step-03.png",
+        "sha256": "723405ae2876ea5ead43e80671e12b0a2f70860387066df30cb781a8555ee8bd",
+        "bytes": 100386
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-7/step-04.png",
+        "sha256": "dc8297d3be4df9a7e49312207195aa6dbec09fe8a545d656465ac77ec659b7fa",
+        "bytes": 113215
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-7/step-05.png",
+        "sha256": "64fd30e91946c105c9640ff7c98a602a668caede39addad53114e404c19b2e8d",
+        "bytes": 67307
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/12-7/step-06.png",
+        "sha256": "5f903c2c941f63fe180d0ca0276a31dd1f73c5ef49922884f222e2b7aa677b65",
+        "bytes": 272849
+      }
+    ]
+  },
+  {
+    "pageId": "13-1",
+    "flow": "q13-1-xem-dashboard",
+    "capturedAt": "2026-11-19T11:53:53.421Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-1/step-01.png",
+        "sha256": "2d07945c40cf2e2646f017c711eac942c64b3924399f0b83411a71db0ba7a608",
+        "bytes": 157071
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-1/step-02.png",
+        "sha256": "14ac09d3c5f7c3b1afe40068d1fad88398bd8c308565ed3537a7906df335edf0",
+        "bytes": 137429
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-1/step-03.png",
+        "sha256": "5af524bd4c6ad4eda3c40bec966ca9f3c1994e13f4ab61043d3b35ffe631de64",
+        "bytes": 139103
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-1/step-04.png",
+        "sha256": "c7df3c3003af3f86e12a084f9b1a2fe1f28120875d86aea38be2ff22305dd8d9",
+        "bytes": 183411
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-1/step-05.png",
+        "sha256": "80e875ed87cf35ac420ec3d2f5facbc05c97f90c02aa750e64d26f68defc55a3",
+        "bytes": 155854
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-1/step-06.png",
+        "sha256": "9f77f7da762168f64470a9c9041f70e8c1d7d887d998391aacec0f6a436e8138",
+        "bytes": 153597
+      }
+    ]
+  },
+  {
+    "pageId": "13-2",
+    "flow": "q13-2-hoi-dap-du-lieu+q13-reader-view",
+    "capturedAt": "2026-11-19T11:55:30.287Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-2/step-01.png",
+        "sha256": "09fccc51f8bbe8c59f87a9eb333253f73f722ee69641025122ba46a2e9e06996",
+        "bytes": 202036
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-2/step-02.png",
+        "sha256": "76808c5abe627e294804151ce8bc6c00d87357e44eb9924eda425e117f1be112",
+        "bytes": 204673
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-2/step-03.png",
+        "sha256": "8e656e2fd8af41d79ec80fe051a65e00144aadb9f608bf9d92a9662ad190abfc",
+        "bytes": 206690
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-2/step-04.png",
+        "sha256": "dcd77a1ed1ea5a248ec76f722c2c02ef71371e8e1312bb5d3b313027f33c1544",
+        "bytes": 244005
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-2/step-05.png",
+        "sha256": "64a7b6241a4acdf9936a2e612723764a037ccdde3d8e84da3c87878433f3f76c",
+        "bytes": 61459
+      }
+    ]
+  },
+  {
+    "pageId": "13-3",
+    "flow": "q13-3-scenarios+q13-3-scenarios-ket-qua",
+    "capturedAt": "2026-11-19T12:46:48.866Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-3/step-01.png",
+        "sha256": "395e196fe2a5059a030ca6c8f8d3bfdcaf967e2bef4043aa9ac022c6571c26f1",
+        "bytes": 152007
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-3/step-02.png",
+        "sha256": "33ac55e28a7cbac4d88a4470793ff9d67a6775158d06ff0f1f9fca79e3c44714",
+        "bytes": 49069
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-3/step-03.png",
+        "sha256": "69ed3b766e50c2219ccf678e7693ec9a9be91947b2a20b5de4ba26ad14d8dc94",
+        "bytes": 54099
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-3/step-04.png",
+        "sha256": "0a7b31a858f43df93aa524e849359f150f9a40e75d3348346fa353d0e4de0c31",
+        "bytes": 52508
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-3/step-05.png",
+        "sha256": "2338d66ea024b360454c4a81c320b7dfc5dd8d59761a012c35c9b715bf82aeac",
+        "bytes": 79701
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-3/step-06.png",
+        "sha256": "0e728bed683921aaf18ffefbacb777020f8f5d58fb32f0bb8bae60860ed7e977",
+        "bytes": 78955
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-3/step-07.png",
+        "sha256": "3e5597529acce73186240469400675c1fb40c4effd968c871aba637be6ccd494",
+        "bytes": 96597
+      }
+    ]
+  },
+  {
+    "pageId": "13-4",
+    "flow": "q13-5-tao-dataset",
+    "capturedAt": "2026-11-19T11:24:35.948Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-4/step-01.png",
+        "sha256": "1fa9fe18a004a3fa66776e7d87330f8fe2612e74ab1e65d75d59794a21a24475",
+        "bytes": 198567
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-4/step-02.png",
+        "sha256": "477fe4391467a5749f0b4d5ef804819e2d75df12263c4e00c0903ed7029e60a3",
+        "bytes": 126580
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-4/step-03.png",
+        "sha256": "05521b3e436540964d92f675b932ba97dc3186730f6eaadd539787d7ede5629e",
+        "bytes": 159592
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-4/step-04.png",
+        "sha256": "8b3968ef5791e83629a433b8b18eca5b2982f46523208bfa29a1b2282a8287a1",
+        "bytes": 162765
+      }
+    ]
+  },
+  {
+    "pageId": "13-5",
+    "flow": "q13-6-dung-bieu-do+q13-6-analysis-dashboard+q13-6-chia-se-dashboard+q13-5-share-page",
+    "capturedAt": "2026-11-19T15:09:07.847Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-01.png",
+        "sha256": "6a1c6e1ce91674381346480ea1e1764adf1f6e9b50fd944744a5f1218d82228d",
+        "bytes": 120881
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-02.png",
+        "sha256": "de8b5f287a874c6fafa1ccab8f266cae8849b84cfd45e0e7b0a327600709221c",
+        "bytes": 123913
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-03.png",
+        "sha256": "65d2b5a20ce0cb91ca29253d6d139e92825b91c62acdccde01c23bcf84cf0a76",
+        "bytes": 150405
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-04.png",
+        "sha256": "736f12c7085b62580ae5efd7b41266a743f7f39816aebace6908921059637033",
+        "bytes": 149148
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-05.png",
+        "sha256": "1a4cd82a8d54b41b7d36848b8191d972b08ec8939b3998dbcf284ed1a1655b36",
+        "bytes": 207734
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-06.png",
+        "sha256": "9013d50da7a2a4b0273093ff1a14f26f49ecbc5060c2efed4bc5c6f90252568c",
+        "bytes": 217573
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-07.png",
+        "sha256": "15e0cb6ca50e286a4d22d0e6c9b6e1b8bc67c64c64c31904b97021591a5b8948",
+        "bytes": 241693
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-08.png",
+        "sha256": "35da2773ee39cb01963e198fbe32929c5064594a6fe232a1d52a1b85a471148b",
+        "bytes": 241937
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-09.png",
+        "sha256": "a131c29eb074ca98ab34d457ffba24ce353f2bf786e66b2abef27e222775f8f0",
+        "bytes": 242529
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-10.png",
+        "sha256": "8d6158d67d2261448aca6b4c2e41fcbc484b6975e69aeb05ffc4e62edf5135c9",
+        "bytes": 147043
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-11.png",
+        "sha256": "fcfcd6e3ac75d4793c8c5eb77ec48a1b8fe1c828ae320ff3673b3480ac19eb48",
+        "bytes": 155270
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-12.png",
+        "sha256": "7a2db2a517c14cb1e68cd02231b97fa1a9bd4c960b090b7e9e7b462b54c5e49a",
+        "bytes": 62762
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-13.png",
+        "sha256": "f9b5f079be90d73ee9b02c6f73a178bbffabc8420119c51f444f8d3ab3db1634",
+        "bytes": 63030
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/13-5/step-14.png",
+        "sha256": "fbbea2f5a6a22225969e8473dc62f9494d84117695146ba83000ddf910e98eb6",
+        "bytes": 67856
+      }
+    ]
+  },
+  {
+    "pageId": "14-1",
+    "flow": "q14-1-tao-research",
+    "capturedAt": "2026-11-19T12:30:49.643Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-01.png",
+        "sha256": "6c6831ae4378349e431275f30b5b8c9064d0afb71f06720d51a3f250a1368c1d",
+        "bytes": 175416
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-02.png",
+        "sha256": "fa320b85311439b36fcf8de230735f92ad900bf2ffe80956efd04a34a643045d",
+        "bytes": 746631
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-03.png",
+        "sha256": "718f5eed57d0eaa61b42fbab71db2b5c89756aa00b1e8685525c3c5bcc0e19ae",
+        "bytes": 756838
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-04.png",
+        "sha256": "9dd2c13149bedcc383a3739b84eed022fa14798376055c28d15018a9e0fe33fe",
+        "bytes": 740023
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-05.png",
+        "sha256": "255e85658d0eba348268d2501fb83c8ce7ef77239b0435235bdf5f72fcfdd51d",
+        "bytes": 744011
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-06.png",
+        "sha256": "3043f841f3d40fced191129ba4ac42ed650cecdaf817c405149366e55438cf51",
+        "bytes": 229297
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-07.png",
+        "sha256": "4f4e6879dfee91c6e134088b1b4473bfdd3c475fe8d4a7ef4c9232e9abe7a368",
+        "bytes": 221387
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-08.png",
+        "sha256": "21cb1b7188f2ab725e2af2a9cea2cc8609ce41c683a9c1775e360ba371a8e9ab",
+        "bytes": 743544
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-09.png",
+        "sha256": "5b6de820992560ea92339a636c3083dae3eca682466baa94d84a690ba67fc220",
+        "bytes": 744337
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-1/step-10.png",
+        "sha256": "f091b7156403b866ae84c60ca7011cc3d1dddef16c561c9124cf05c27d2ce2a7",
+        "bytes": 284678
+      }
+    ]
+  },
+  {
+    "pageId": "14-2",
+    "flow": "q14-2-kiem-chung-research",
+    "capturedAt": "2026-11-19T12:51:46.769Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-2/step-01.png",
+        "sha256": "54c7600460df7a71f1a70313ee70be598a94047ea38e1a57a8ffe4c8e63e8ae6",
+        "bytes": 182015
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-2/step-02.png",
+        "sha256": "3b99faef86ab376ae5e90b2605f18b1188e59408d14442cebef7d837df5f4220",
+        "bytes": 344561
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-2/step-03.png",
+        "sha256": "60f66a3b6c06e51e11ff28a21c539e0d22827ae6b81919a469604802067e1677",
+        "bytes": 380345
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-2/step-04.png",
+        "sha256": "4b5ce34aadefa5f8eac0efb252e04530f9d7a0f20269fcd48c7585e53483ddf6",
+        "bytes": 358969
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-2/step-05.png",
+        "sha256": "6b89ee604e38b829ad000f4977ba49164bd14f336667c2084b063474f377e086",
+        "bytes": 366960
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/14-2/step-06.png",
+        "sha256": "84dc4136c029c9a75e2c25f2cdefb576fc42dd5b6661fdf20d71fe2fb0f15708",
+        "bytes": 323208
+      }
+    ]
+  },
+  {
+    "pageId": "15-1",
+    "flow": "q15-1-chay-flow",
+    "capturedAt": "2026-11-19T12:49:19.750Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-1/step-01.png",
+        "sha256": "d2a339dccd68468bf7f0bbf0e0575d1f27356c1aeda6725f34031b5c700f221b",
+        "bytes": 205054
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-1/step-02.png",
+        "sha256": "370dfeccf8ccf600933a0757e4bbd42c44f8c6b49bcf6506dffac82bcf02d7a8",
+        "bytes": 489212
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-1/step-03.png",
+        "sha256": "b8abd83d87ebe6ebec1cc68cc313a4183c8db472e5178ed4f78a3e1a5f28b721",
+        "bytes": 488840
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-1/step-04.png",
+        "sha256": "34f94f9cd75978bd6f9f93a4bf2e4eee6a4493d398afc9adcfceb5b206167f51",
+        "bytes": 487736
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-1/step-05.png",
+        "sha256": "a7a9a382708da0bae45aed1adf09279984381f1c5dbb95add3087a0990862c51",
+        "bytes": 404500
+      }
+    ]
+  },
+  {
+    "pageId": "15-2",
+    "flow": "q15-2-tao-flow+q15-2-publish-shots+q15-2-run-shots+q15-2-share-search",
+    "capturedAt": "2026-11-19T15:09:07.849Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-01.png",
+        "sha256": "2d7f1e6a1a4822e6093e0eef7540a1e6ff7d207ad02d9bbb5ca0f81c64a40d00",
+        "bytes": 206426
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-02.png",
+        "sha256": "082e75d26d64d64dd69141434bc76c1881050c534ad1d4256796cc35be34f5ab",
+        "bytes": 68102
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-03.png",
+        "sha256": "ac7be5de5975f8d65dee1facd1cf4fd86ddf2bbe48e16cb809bf29e3917bec4f",
+        "bytes": 68590
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-04.png",
+        "sha256": "86b9257fdd4316fa6bc2c7f2433322adf854cfe7bd9cc44f6572ee6ca38f201f",
+        "bytes": 104423
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-05.png",
+        "sha256": "4dc8abf5da79a2271e30d8efa2d5198da2c8553f2479b55e40a50ece4a341f8c",
+        "bytes": 102873
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-06.png",
+        "sha256": "7d013ae01492cc7cfab74a5577849258e8e12b4fd9a8f8e2b9ce3bae04389604",
+        "bytes": 105429
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-07.png",
+        "sha256": "0f1c231dea8184875aa77a655fd227b2f99a58582069b8f774f336de33a0d51a",
+        "bytes": 103083
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-08.png",
+        "sha256": "c029a3a3c80e13d407db78675be7f5d4203f9e82fa39f4fc0dc67e52f0c7c85d",
+        "bytes": 480376
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-09.png",
+        "sha256": "853c16313fd2ca21f2c9a9eb6851eaddb27c5eca0bcf41c2cca9b80b85d3515c",
+        "bytes": 499284
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-10.png",
+        "sha256": "9bfeed2fd24cce56749c861cc834e73fcb8a75245e7530c5bfba845c4e04fd7b",
+        "bytes": 460409
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-11.png",
+        "sha256": "a36b0c4352b208d7bc79cd6d5b38ee34201742a13f764eeb16872733d17badd9",
+        "bytes": 464463
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-2/step-12.png",
+        "sha256": "ad0e8289ad9477fae4f6766e48766c2bfdba10e6ae2056cf5a7f7d03688c4b6f",
+        "bytes": 344764
+      }
+    ]
+  },
+  {
+    "pageId": "15-3",
+    "flow": "q15-3-tao-app+q15-3-app-ket-qua",
+    "capturedAt": "2026-11-19T13:31:06.520Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-3/step-01.png",
+        "sha256": "9d3133b683731fbe9d19781d93a3a56d979e58af16af2fd14d7ea350c0602fda",
+        "bytes": 119970
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-3/step-02.png",
+        "sha256": "4806c7a5d64d01a260006a2885c444eba6ca908cade3cd3a0bfa5b0e5b97ae7c",
+        "bytes": 131249
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-3/step-03.png",
+        "sha256": "5a69f601057ed5e9b79ac77b3ca7cc27886ae42414164fea08ff20b1d85b792c",
+        "bytes": 144616
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-3/step-04.png",
+        "sha256": "4079508e2dadb38d15ed5b55723459612c4b5bd1139065c3fe4c7e6c8123cf41",
+        "bytes": 151815
+      }
+    ]
+  },
+  {
+    "pageId": "15-4",
+    "flow": "q15-4-automations",
+    "capturedAt": "2026-11-19T13:08:13.835Z",
+    "files": [
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-4/step-01.png",
+        "sha256": "e2b99757626b3e053d760e716272a84e5783af031cd6259daa8a3d7cb710cb63",
+        "bytes": 242452
+      },
+      {
+        "path": "assets/images/screenshots/amazon-quick/15-4/step-02.png",
+        "sha256": "b8dd5eebaa5831610e9afdd97322e353867b3f598cc503067f0e43baabc2d7f1",
+        "bytes": 243395
+      }
+    ]
+  }
+]

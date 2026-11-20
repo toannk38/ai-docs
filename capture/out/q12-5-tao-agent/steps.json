@@ -1,0 +1,146 @@
+{
+  "flow": "q12-5-tao-agent",
+  "title": "Tạo chat agent",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:05:55.695Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "create",
+      "caption": "Mở Chat agents, bấm Create chat agent.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^create chat agent$/i\"}",
+      "label": "Create chat agent",
+      "tStart": 6045,
+      "tEnd": 10879,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/new",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "describe",
+      "caption": "Mô tả agent bằng lời: làm gì, cho ai, dùng nguồn kiến thức nào, giọng văn ra sao.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/I want a chat agent/i\"}",
+      "label": "Mô tả agent",
+      "tStart": 10879,
+      "tEnd": 28582,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/new",
+      "value": "Trợ lý tra cứu quy định ngân hàng cho nhân viên NAB. Trả lời dựa trên các văn bản luật trong Space Văn bản pháp luật ngân hàng (demo), luôn dẫn điều luật, giọng trang trọng, ngắn gọn.",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "generate",
+      "caption": "Bấm Generate: Quick soạn sẵn tên, lời hướng dẫn (persona) và gợi ý nguồn kiến thức.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^generate$/i\"}",
+      "label": "Generate",
+      "tStart": 28582,
+      "tEnd": 44191,
+      "waits": [
+        {
+          "label": "Quick đang tạo cấu hình agent",
+          "tStart": 31235,
+          "tEnd": 44190
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/cb39ef8f-59d3-4465-8afb-638aa338aea2/edit?newAgent=true",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "persona",
+      "caption": "AGENT PERSONA: kiểm tra và sửa lời hướng dẫn (Instructions) cho đúng phạm vi công việc; có thể bấm Refine để Quick viết lại.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*Agent persona\\\\s*$/i\"}",
+      "label": "Lời hướng dẫn agent",
+      "tStart": 44191,
+      "tEnd": 45781,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/cb39ef8f-59d3-4465-8afb-638aa338aea2/edit?newAgent=true",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 5,
+      "id": "reference",
+      "caption": "Reference documents: đính kèm tài liệu hướng dẫn cách trả lời (tối đa 10 tài liệu theo thông báo trên màn hình). Chỉ đính kèm tài liệu đã được phép.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*Reference documents\\\\s*$/\"}",
+      "label": "Tài liệu tham chiếu",
+      "tStart": 45781,
+      "tEnd": 46779,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/cb39ef8f-59d3-4465-8afb-638aa338aea2/edit?newAgent=true",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 6,
+      "id": "knowledge",
+      "caption": "KNOWLEDGE SOURCES: Space làm nguồn kiến thức; bấm Link spaces để gắn thêm hoặc bỏ Space. ACTIONS: kết nối hành động — chỉ dùng khi được phê duyệt.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*Knowledge sources/i\"}",
+      "label": "Space làm nguồn",
+      "tStart": 46779,
+      "tEnd": 48320,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/cb39ef8f-59d3-4465-8afb-638aa338aea2/edit?newAgent=true",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 7,
+      "id": "preview-ask",
+      "caption": "Thử agent trong khung xem trước bên phải bằng một câu hỏi mẫu.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Câu hỏi thử",
+      "tStart": 48320,
+      "tEnd": 57951,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/cb39ef8f-59d3-4465-8afb-638aa338aea2/edit?newAgent=true",
+      "value": "Ngân hàng thương mại được thực hiện những hoạt động nào theo Luật Các tổ chức tín dụng?",
+      "screenshot": "step-07.png"
+    },
+    {
+      "index": 8,
+      "id": "preview-send",
+      "caption": "Gửi câu hỏi thử và chờ trả lời.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^send$/i\"}",
+      "tStart": 57951,
+      "tEnd": 83562,
+      "waits": [
+        {
+          "label": "Agent đang trả lời (xem trước)",
+          "tStart": 59758,
+          "tEnd": 83562
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/cb39ef8f-59d3-4465-8afb-638aa338aea2/edit?newAgent=true"
+    },
+    {
+      "index": 9,
+      "id": "preview-answer",
+      "caption": "Kiểm tra câu trả lời có dẫn điều luật và trích dẫn tài liệu trong Space.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^sources$/i\"}",
+      "label": "Câu trả lời xem trước",
+      "tStart": 83562,
+      "tEnd": 85332,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/cb39ef8f-59d3-4465-8afb-638aa338aea2/edit?newAgent=true",
+      "screenshot": "step-08.png"
+    }
+  ],
+  "note": "Ảnh bước 1–9 hợp lệ; flow dừng ở bước chờ sau Launch (nút chuyển disabled chứ không ẩn) — agent đã lưu, ghi tay vào created.json."
+}

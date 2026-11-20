@@ -1,0 +1,70 @@
+{
+  "flow": "q15-2-chinh-chia-se-flow",
+  "title": "Xem, chạy thử và chia sẻ flow",
+  "status": "ok",
+  "capturedAt": "2026-11-19T13:05:46.675Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 3,
+      "id": "editor",
+      "caption": "Chế độ Editor: các bước Quick dựng theo mô tả; bấm vào một bước để sửa ở khung bên trái; Add step để thêm bước. Flow đang ở trạng thái Draft, tự lưu.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/add step/i\"}",
+      "label": "Thêm / sửa bước",
+      "tStart": 12273,
+      "tEnd": 14036,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 4,
+      "id": "publish",
+      "caption": "Kiểm tra xong, bấm Publish.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^publish$/i\"}",
+      "label": "Publish",
+      "tStart": 14036,
+      "tEnd": 17785,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 5,
+      "id": "publish-dlg",
+      "caption": "Hộp thoại Publish Changes: thay đổi có hiệu lực ngay với người được chia sẻ. Bấm Publish.",
+      "action": "shot",
+      "target": "{\"text\":\"/Changes will be available immediately/i\"}",
+      "label": "Publish Changes",
+      "tStart": 17785,
+      "tEnd": 18932,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 7,
+      "id": "runmode",
+      "caption": "Chuyển sang Run mode để chạy thử.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Run mode\\\\s*$/\"}",
+      "label": "Run mode",
+      "tStart": 23454,
+      "tEnd": 29879,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "screenshot": "step-04.png"
+    }
+  ],
+  "name": "q15-2-publish-shots",
+  "note": "Bản sao 4 ảnh đầu (Editor, Publish) của lượt chạy q15-2-chinh-chia-se-flow dừng ở bước upload; các bước đã chụp đều thành công."
+}

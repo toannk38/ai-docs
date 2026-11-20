@@ -1,0 +1,118 @@
+{
+  "flow": "q13-3-scenarios",
+  "title": "Phân tích với Scenarios",
+  "status": "ok",
+  "capturedAt": "2026-11-19T12:02:14.662Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "wait",
+      "caption": "Mở dashboard.",
+      "action": "waitFor",
+      "tStart": 6751,
+      "tEnd": 7873,
+      "waits": [
+        {
+          "label": "Mở dashboard",
+          "tStart": 7857,
+          "tEnd": 7872
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 2,
+      "id": "entry",
+      "caption": "Trên dashboard, bấm Analyze this dashboard in a Scenario (hoặc More → Scenarios → Create scenario).",
+      "action": "shot",
+      "target": "{\"text\":\"/Analyze this dashboard in a Scenario/i\"}",
+      "label": "Mở Scenario",
+      "tStart": 7873,
+      "tEnd": 9688,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "open",
+      "caption": "Mở scenario đã tạo từ dashboard.",
+      "action": "goto",
+      "tStart": 9688,
+      "tEnd": 40703,
+      "waits": [
+        {
+          "label": "Nạp dữ liệu vào scenario",
+          "tStart": 40680,
+          "tEnd": 40702
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8"
+    },
+    {
+      "index": 4,
+      "id": "canvas",
+      "caption": "Scenario: bên trái là dữ liệu (lấy từ dashboard; Find data, Upload file để thêm), giữa là ô mô tả vấn đề cần phân tích.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/describe the problem/i\"}",
+      "label": "Mô tả vấn đề",
+      "tStart": 40703,
+      "tEnd": 42948,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 5,
+      "id": "problem",
+      "caption": "Mô tả vấn đề và giả định cần phân tích (what-if).",
+      "action": "type",
+      "target": "{\"placeholder\":\"/describe the problem/i\"}",
+      "label": "Vấn đề cần phân tích",
+      "tStart": 42948,
+      "tEnd": 56964,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8",
+      "value": "Vùng nào có tỷ lệ duyệt hồ sơ vay thấp nhất? Nếu tỷ lệ duyệt của vùng đó tăng 5 điểm phần trăm thì số hồ sơ được duyệt tăng thêm bao nhiêu?",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 6,
+      "id": "start",
+      "caption": "Bấm Start analysis.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^start analysis$/i\"}",
+      "label": "Start analysis",
+      "tStart": 56964,
+      "tEnd": 78899,
+      "waits": [
+        {
+          "label": "Scenario đang phân tích",
+          "tStart": 78859,
+          "tEnd": 78899
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 7,
+      "id": "result",
+      "caption": "Kết quả: các bước phân tích, bảng/biểu đồ và nhận định. Đọc kỹ giả định và kiểm tra số liệu.",
+      "action": "shot",
+      "tStart": 78899,
+      "tEnd": 82202,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8",
+      "screenshot": "step-05.png"
+    }
+  ]
+}

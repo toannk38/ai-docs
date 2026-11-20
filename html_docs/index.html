@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cẩm nang nội bộ NAB về Microsoft 365, Amazon Quick và ứng dụng AI an toàn.">
+  <title>Cẩm nang ứng dụng AI và công nghệ trong công việc tại NAB</title>
+  <link rel="icon" href="./logo/NAB-logo.png" type="image/png">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/site.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./index.html" aria-label="Về trang chủ hướng dẫn NAB">
+        <img src="./logo/NAB-logo.png" alt="Ngân hàng Nam Á - NAB" width="297" height="58">
+        <span class="brand-text">
+          <span class="brand-kicker">Cẩm nang nội bộ</span>
+          <span class="brand-title">Ứng dụng công nghệ và AI</span>
+        </span>
+      </a>
+      <div class="header-search" role="search">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <label class="sr-only" for="portal-search">Tìm nhanh chương</label>
+        <input id="portal-search" type="search" data-portal-search placeholder="Tìm nhanh chương..." autocomplete="off">
+        <kbd>Ctrl K</kbd>
+      </div>
+      <div class="header-actions">
+        <a class="home-link" href="./index.html">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
+          <span>Trang chủ</span>
+        </a>
+        <button class="menu-button" type="button" data-menu-button aria-controls="chapter-sidebar" aria-expanded="false" aria-label="Mở danh mục chương"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Danh mục</span></button>
+      </div>
+    </div>
+  </header>
+  <button class="sidebar-expand" type="button" data-sidebar-expand aria-label="Mở danh mục chương"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h16"/></svg><span>Mục lục</span></button>
+  <div class="site-layout home-layout" data-site-layout>
+  <aside class="sidebar" id="chapter-sidebar" data-sidebar aria-label="Danh mục hướng dẫn">
+      <div class="sidebar-heading">
+        <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22Z"/><path d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22Z"/></svg>Danh mục chương</span>
+        <button type="button" data-sidebar-close aria-label="Thu gọn danh mục"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m11 18-6-6 6-6M19 18l-6-6 6-6"/></svg></button>
+      </div>
+      <div class="sidebar-inner">
+
+    <nav class="nav-group" aria-label="AI trong công việc">
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-1">
+        <span>AI trong công việc</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-1">
+
+          <li>
+            <a href="./chapters/chapter-01-tong-quan.html" data-nav-link data-search="01 Tổng quan Cẩm nang ứng dụng AI và công nghệ trong công việc tại NAB AI trong công việc">
+              <span class="nav-num">01</span>
+              <span class="nav-label"><span>Tổng quan</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-02-nguyen-tac-su-dung-ai-an-toan.html" data-nav-link data-search="02 Nguyên tắc sử dụng AI an toàn Nguyên tắc sử dụng AI an toàn AI trong công việc">
+              <span class="nav-num">02</span>
+              <span class="nav-label"><span>Nguyên tắc sử dụng AI an toàn</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-03-ky-thuat-viet-prompt.html" data-nav-link data-search="03 Kỹ thuật viết Prompt Kỹ thuật viết Prompt rõ ràng và có thể kiểm chứng AI trong công việc">
+              <span class="nav-num">03</span>
+              <span class="nav-label"><span>Kỹ thuật viết Prompt</span></span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Microsoft 365">
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-2">
+        <span>Microsoft 365</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-2">
+
+          <li>
+            <a href="./chapters/chapter-04-ms365-tong-quan.html" data-nav-link data-search="04 Microsoft 365 tổng quan Microsoft 365 tại NAB: tổng quan và lựa chọn đúng ứng dụng Microsoft 365">
+              <span class="nav-num">04</span>
+              <span class="nav-label"><span>Microsoft 365 tổng quan</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-05-ms365-copilot.html" data-nav-link data-search="05 Microsoft Copilot Microsoft Copilot Chat: hỏi đáp và đối chiếu nguồn có kiểm chứng Microsoft 365">
+              <span class="nav-num">05</span>
+              <span class="nav-label"><span>Microsoft Copilot</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-06-ms365-teams.html" data-nav-link data-search="06 Microsoft Teams Microsoft Teams và Copilot: họp, recap và action items Microsoft 365">
+              <span class="nav-num">06</span>
+              <span class="nav-label"><span>Microsoft Teams</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-07-ms365-outlook.html" data-nav-link data-search="07 Microsoft Outlook Microsoft Outlook và Copilot: tóm tắt, soạn và kiểm tra trước gửi Microsoft 365">
+              <span class="nav-num">07</span>
+              <span class="nav-label"><span>Microsoft Outlook</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-08-ms365-word.html" data-nav-link data-search="08 Microsoft Word Microsoft Word và Copilot: soạn thảo, viết lại và tóm tắt Microsoft 365">
+              <span class="nav-num">08</span>
+              <span class="nav-label"><span>Microsoft Word</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-09-ms365-excel.html" data-nav-link data-search="09 Microsoft Excel Microsoft Excel và Copilot: phân tích có thể đối soát Microsoft 365">
+              <span class="nav-num">09</span>
+              <span class="nav-label"><span>Microsoft Excel</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-10-ms365-powerpoint.html" data-nav-link data-search="10 Microsoft PowerPoint Microsoft PowerPoint và Copilot: trình bày đúng nguồn, đúng thương hiệu Microsoft 365">
+              <span class="nav-num">10</span>
+              <span class="nav-label"><span>Microsoft PowerPoint</span></span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Amazon Quick">
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-3">
+        <span>Amazon Quick</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-3">
+
+          <li>
+            <a href="./chapters/chapter-11-amazon-quick-bat-dau.html" data-nav-link data-search="11 Bắt đầu với Amazon Quick Bắt đầu với Amazon Quick Amazon Quick amazon quick quick opba-ai account name bắt đầu">
+              <span class="nav-num">11</span>
+              <span class="nav-label"><span>Bắt đầu với Amazon Quick</span></span>
+            </a><button class="subnav-toggle" type="button" data-accordion-button aria-expanded="false" aria-controls="subnav-11" aria-label="Mở/thu gọn các trang của chương 11">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ol class="subchapter-nav" id="subnav-11">
+          <li>
+            <a href="./chapters/chapter-11-1-kich-hoat-tai-khoan.html" data-nav-link data-search="11.1 Kích hoạt tài khoản Kích hoạt tài khoản Amazon Quick kích hoạt lần đầu đăng nhập lần đầu mật khẩu mới verification code mã xác minh mfa 2fa authenticator assign mfa qr google authenticator microsoft authenticator aws sso quên mật khẩu">
+              <span class="nav-num">11.1</span>
+              <span class="nav-label"><span>Kích hoạt tài khoản</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-11-2-dang-nhap-qua-portal.html" data-nav-link data-search="11.2 Đăng nhập qua AWS access portal Đăng nhập qua AWS access portal Amazon Quick đăng nhập login portal aws access portal applications mfa opba-ai bookmark">
+              <span class="nav-num">11.2</span>
+              <span class="nav-label"><span>Đăng nhập qua AWS access portal</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-11-3-dang-nhap-bang-link-quick.html" data-nav-link data-search="11.3 Đăng nhập bằng link Quick Đăng nhập bằng link Quick Amazon Quick đăng nhập login account name opba-ai invalid account name username choose your account bookmark link quick">
+              <span class="nav-num">11.3</span>
+              <span class="nav-label"><span>Đăng nhập bằng link Quick</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-11-4-dang-nhap-tren-microsoft-office.html" data-nav-link data-search="11.4 Đăng nhập trên Microsoft Office Đăng nhập trên Microsoft Office (Add-in trong Word, Excel, PowerPoint) Amazon Quick add-in addin office microsoft office word excel powerpoint quick account name opba-ai authorization requested approve and continue word assistant">
+              <span class="nav-num">11.4</span>
+              <span class="nav-label"><span>Đăng nhập trên Microsoft Office</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-11-5-lam-quen-giao-dien.html" data-nav-link data-search="11.5 Làm quen giao diện Làm quen giao diện Amazon Quick giao diện menu sidebar khung chat spaces agents lịch sử chat my stuff more tài khoản sign out đăng xuất">
+              <span class="nav-num">11.5</span>
+              <span class="nav-label"><span>Làm quen giao diện</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-11-6-chat-voi-quick.html" data-nav-link data-search="11.6 Chat với Amazon Quick Chat với Amazon Quick Amazon Quick chat hỏi đáp câu hỏi all data specific data general knowledge smart fast advanced upload tệp sources nguồn trích dẫn private mode web search hạn mức">
+              <span class="nav-num">11.6</span>
+              <span class="nav-label"><span>Chat với Amazon Quick</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-11-7-tao-tai-lieu-slide-hinh.html" data-nav-link data-search="11.7 Tạo tài liệu, slide, hình từ chat Tạo tài liệu, slide, hình từ chat Amazon Quick document word docx presentation slide powerpoint excel visual hình soạn thảo tạo tài liệu tạo file hạn mức">
+              <span class="nav-num">11.7</span>
+              <span class="nav-label"><span>Tạo tài liệu, slide, hình từ chat</span></span>
+            </a>
+          </li></ol>
+          </li>
+          <li>
+            <a href="./chapters/chapter-12-amazon-quick-spaces-chat-agents.html" data-nav-link data-search="12 Spaces, Chat agents và chia sẻ Spaces, Chat agents và chia sẻ an toàn Amazon Quick space spaces chat agent agent chia sẻ share tài liệu">
+              <span class="nav-num">12</span>
+              <span class="nav-label"><span>Spaces, Chat agents và chia sẻ</span></span>
+            </a><button class="subnav-toggle" type="button" data-accordion-button aria-expanded="false" aria-controls="subnav-12" aria-label="Mở/thu gọn các trang của chương 12">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ol class="subchapter-nav" id="subnav-12">
+          <li>
+            <a href="./chapters/chapter-12-1-hoi-dap-tai-lieu-trong-space.html" data-nav-link data-search="12.1 Hỏi đáp tài liệu trong Space Hỏi đáp tài liệu trong Space Amazon Quick space hỏi đáp tra cứu tài liệu sources trích dẫn specific data">
+              <span class="nav-num">12.1</span>
+              <span class="nav-label"><span>Hỏi đáp tài liệu trong Space</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-12-2-tao-space-tai-tai-lieu.html" data-nav-link data-search="12.2 Tạo Space và tải tài liệu Tạo Space và tải tài liệu lên Amazon Quick tạo space create space upload tải lên tài liệu ready add knowledge">
+              <span class="nav-num">12.2</span>
+              <span class="nav-label"><span>Tạo Space và tải tài liệu</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-12-3-chia-se-space.html" data-nav-link data-search="12.3 Chia sẻ Space Chia sẻ Space đúng người, đúng quyền Amazon Quick chia sẻ share space quyền can view can manage thu hồi">
+              <span class="nav-num">12.3</span>
+              <span class="nav-label"><span>Chia sẻ Space</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-12-4-dung-chat-agent.html" data-nav-link data-search="12.4 Dùng chat agent Dùng chat agent Amazon Quick agent chat agent trợ lý chọn agent">
+              <span class="nav-num">12.4</span>
+              <span class="nav-label"><span>Dùng chat agent</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-12-5-tao-chat-agent.html" data-nav-link data-search="12.5 Tạo chat agent Tạo chat agent Amazon Quick tạo agent create chat agent generate persona instructions knowledge sources launch">
+              <span class="nav-num">12.5</span>
+              <span class="nav-label"><span>Tạo chat agent</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-12-6-chia-se-chat-agent.html" data-nav-link data-search="12.6 Chia sẻ chat agent Chia sẻ chat agent Amazon Quick chia sẻ agent share agent can view can manage embed">
+              <span class="nav-num">12.6</span>
+              <span class="nav-label"><span>Chia sẻ chat agent</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-12-7-luu-y-khi-chia-se.html" data-nav-link data-search="12.7 Lưu ý khi chia sẻ Lưu ý khi chia sẻ Space, agent, flow và báo cáo Amazon Quick chia sẻ share lưu ý quyền người nhận shared with me thu hồi an toàn">
+              <span class="nav-num">12.7</span>
+              <span class="nav-label"><span>Lưu ý khi chia sẻ</span></span>
+            </a>
+          </li></ol>
+          </li>
+          <li>
+            <a href="./chapters/chapter-13-amazon-quick-du-lieu-dashboard.html" data-nav-link data-search="13 Dashboard và dữ liệu Dashboard và dữ liệu trong Amazon Quick Amazon Quick dashboard data dataset analysis scenarios stories báo cáo số liệu">
+              <span class="nav-num">13</span>
+              <span class="nav-label"><span>Dashboard và dữ liệu</span></span>
+            </a><button class="subnav-toggle" type="button" data-accordion-button aria-expanded="false" aria-controls="subnav-13" aria-label="Mở/thu gọn các trang của chương 13">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ol class="subchapter-nav" id="subnav-13">
+          <li>
+            <a href="./chapters/chapter-13-1-xem-hoi-dashboard.html" data-nav-link data-search="13.1 Xem và hỏi dữ liệu trên dashboard Xem và hỏi dữ liệu trên dashboard Amazon Quick dashboard xem dashboard hỏi dữ liệu export xuất pdf csv reader">
+              <span class="nav-num">13.1</span>
+              <span class="nav-label"><span>Xem và hỏi dữ liệu trên dashboard</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-13-2-hoi-dap-du-lieu.html" data-nav-link data-search="13.2 Hỏi đáp với dữ liệu Hỏi đáp với dữ liệu (dataset) Amazon Quick data dataset chat with datasets hỏi dữ liệu topics reader">
+              <span class="nav-num">13.2</span>
+              <span class="nav-label"><span>Hỏi đáp với dữ liệu</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-13-3-scenarios.html" data-nav-link data-search="13.3 Phân tích với Scenarios Phân tích với Scenarios Amazon Quick scenarios scenario what-if giả định phân tích thread snapshot">
+              <span class="nav-num">13.3</span>
+              <span class="nav-label"><span>Phân tích với Scenarios</span><span class="limited-star" title="Tính năng giới hạn user">*</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-13-4-tao-dataset.html" data-nav-link data-search="13.4 Tạo dataset từ tệp Tạo dataset từ tệp Amazon Quick dataset create dataset upload file csv excel spice data source nguồn dữ liệu update file làm mới refresh">
+              <span class="nav-num">13.4</span>
+              <span class="nav-label"><span>Tạo dataset từ tệp</span><span class="limited-star" title="Tính năng giới hạn user">*</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-13-5-tao-analysis-dashboard.html" data-nav-link data-search="13.5 Tạo analysis và xuất bản dashboard Tạo analysis, xuất bản và chia sẻ dashboard Amazon Quick analysis analyses dashboard publish autograph biểu đồ chia sẻ dashboard viewer">
+              <span class="nav-num">13.5</span>
+              <span class="nav-label"><span>Tạo analysis và xuất bản dashboard</span><span class="limited-star" title="Tính năng giới hạn user">*</span></span>
+            </a>
+          </li></ol>
+          </li>
+          <li>
+            <a href="./chapters/chapter-14-amazon-quick-research.html" data-nav-link data-search="14 Nghiên cứu với Quick Research Nghiên cứu có trích dẫn với Quick Research Amazon Quick research nghiên cứu trích dẫn citation báo cáo">
+              <span class="nav-num">14</span>
+              <span class="nav-label"><span>Nghiên cứu với Quick Research</span></span>
+            </a><button class="subnav-toggle" type="button" data-accordion-button aria-expanded="false" aria-controls="subnav-14" aria-label="Mở/thu gọn các trang của chương 14">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ol class="subchapter-nav" id="subnav-14">
+          <li>
+            <a href="./chapters/chapter-14-1-tao-research.html" data-nav-link data-search="14.1 Tạo một nghiên cứu Tạo một nghiên cứu Amazon Quick research new research nghiên cứu research mode fast deep web search quick assets plan">
+              <span class="nav-num">14.1</span>
+              <span class="nav-label"><span>Tạo một nghiên cứu</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-14-2-kiem-chung-chia-se-research.html" data-nav-link data-search="14.2 Đọc, kiểm chứng và chia sẻ báo cáo Đọc, kiểm chứng và chia sẻ báo cáo nghiên cứu Amazon Quick research báo cáo trích dẫn citation materials download pdf download word add to space share research">
+              <span class="nav-num">14.2</span>
+              <span class="nav-label"><span>Đọc, kiểm chứng và chia sẻ báo cáo</span></span>
+            </a>
+          </li></ol>
+          </li>
+          <li>
+            <a href="./chapters/chapter-15-amazon-quick-flows-tu-dong-hoa.html" data-nav-link data-search="15 Flows và tự động hoá Flows và tự động hoá có kiểm soát Amazon Quick flow flows tự động automation automations apps app trigger">
+              <span class="nav-num">15</span>
+              <span class="nav-label"><span>Flows và tự động hoá</span></span>
+            </a><button class="subnav-toggle" type="button" data-accordion-button aria-expanded="false" aria-controls="subnav-15" aria-label="Mở/thu gọn các trang của chương 15">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ol class="subchapter-nav" id="subnav-15">
+          <li>
+            <a href="./chapters/chapter-15-1-chay-flow-co-san.html" data-nav-link data-search="15.1 Chạy flow có sẵn Chạy flow có sẵn Amazon Quick flow flows chạy flow pre-built flow library 5-why start">
+              <span class="nav-num">15.1</span>
+              <span class="nav-label"><span>Chạy flow có sẵn</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-15-2-tao-flow.html" data-nav-link data-search="15.2 Tạo flow Tạo, chạy thử và chia sẻ flow Amazon Quick tạo flow create flow generate editor run mode publish chia sẻ flow share flow">
+              <span class="nav-num">15.2</span>
+              <span class="nav-label"><span>Tạo flow</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-15-3-tao-app.html" data-nav-link data-search="15.3 Tạo app Tạo app từ mô tả Amazon Quick apps app tạo app ứng dụng">
+              <span class="nav-num">15.3</span>
+              <span class="nav-label"><span>Tạo app</span><span class="limited-star" title="Tính năng giới hạn user">*</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-15-4-automations.html" data-nav-link data-search="15.4 Automations Automations Amazon Quick automations automation tự động hoá automate start building">
+              <span class="nav-num">15.4</span>
+              <span class="nav-label"><span>Automations</span><span class="limited-star" title="Tính năng giới hạn user">*</span></span>
+            </a>
+          </li></ol>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="AI phổ biến">
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-4">
+        <span>AI phổ biến</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-4">
+
+          <li>
+            <a href="./chapters/chapter-16-chon-ai-theo-nhu-cau.html" data-nav-link data-search="16 Chọn AI theo nhu cầu Chọn công cụ AI theo nhu cầu công việc AI phổ biến">
+              <span class="nav-num">16</span>
+              <span class="nav-label"><span>Chọn AI theo nhu cầu</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-17-ai-hoi-thoai-tro-ly-da-nang.html" data-nav-link data-search="17 AI hội thoại và trợ lý đa năng AI hội thoại và trợ lý đa năng AI phổ biến">
+              <span class="nav-num">17</span>
+              <span class="nav-label"><span>AI hội thoại và trợ lý đa năng</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-18-notebooklm-lam-viec-voi-tai-lieu.html" data-nav-link data-search="18 NotebookLM — Làm việc với tài liệu NotebookLM — Làm việc với tập tài liệu công khai AI phổ biến">
+              <span class="nav-num">18</span>
+              <span class="nav-label"><span>NotebookLM — Làm việc với tài liệu</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-19-ai-thiet-ke-trinh-bay.html" data-nav-link data-search="19 AI thiết kế và trình bày AI hỗ trợ thiết kế và trình bày AI phổ biến">
+              <span class="nav-num">19</span>
+              <span class="nav-label"><span>AI thiết kế và trình bày</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-20-ai-tao-hinh-anh-video.html" data-nav-link data-search="20 AI tạo hình ảnh và video AI tạo hình ảnh và video AI phổ biến">
+              <span class="nav-num">20</span>
+              <span class="nav-label"><span>AI tạo hình ảnh và video</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-21-ai-agent-tu-dong-hoa.html" data-nav-link data-search="21 AI Agent và tự động hóa AI Agent và tự động hóa AI phổ biến">
+              <span class="nav-num">21</span>
+              <span class="nav-label"><span>AI Agent và tự động hóa</span></span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+    <nav class="nav-group" aria-label="Phụ lục">
+      <button class="nav-group-toggle" type="button" data-accordion-button aria-expanded="true" aria-controls="nav-group-5">
+        <span>Phụ lục</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ol class="chapter-nav" id="nav-group-5">
+
+          <li>
+            <a href="./chapters/chapter-22-du-lieu-duoc-phep-khong-duoc-phep.html" data-nav-link data-search="22 Dữ liệu được phép và không được phép Dữ liệu được phép và không được phép khi sử dụng AI công cộng Phụ lục">
+              <span class="nav-num">22</span>
+              <span class="nav-label"><span>Dữ liệu được phép và không được phép</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="./chapters/chapter-23-giai-thich-thuat-ngu.html" data-nav-link data-search="23 Phụ lục: Giải thích thuật ngữ Phụ lục: Giải thích thuật ngữ Phụ lục">
+              <span class="nav-num">23</span>
+              <span class="nav-label"><span>Phụ lục: Giải thích thuật ngữ</span></span>
+            </a>
+          </li>
+      </ol>
+    </nav>
+        <p class="nav-empty" data-nav-empty>Không tìm thấy chương phù hợp.</p>
+      </div>
+    </aside>
+  <main class="home-main" id="main-content" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Sáng kiến nội bộ · Khối Công nghệ thông tin</p>
+        <h1 id="hero-title">Cẩm nang ứng dụng AI và công nghệ trong công việc tại NAB</h1>
+        <p class="lead">Cẩm nang thực hành dành cho Đơn vị kinh doanh, tập trung chuyên sâu vào Microsoft 365 và Amazon Quick — hai nền tảng đang được sử dụng tại NAB.</p>
+        <div class="hero-actions">
+          <a class="button" href="./chapters/chapter-01-tong-quan.html">Bắt đầu đọc</a>
+          <a class="button secondary" href="#cong-cu-trong-tam">Đến công cụ trọng tâm</a>
+          <a class="button secondary" href="#vai-tro-cntt">Vai trò Khối CNTT</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="principles-title">
+      <div class="section-heading">
+        <p class="eyebrow">Trước khi sử dụng</p>
+        <h2 id="principles-title">Năm nguyên tắc không được bỏ qua</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card"><span class="card-number">1</span><h3>Đúng công cụ</h3><p>Chỉ dùng tài khoản, môi trường tổ chức (tenant) và tính năng được NAB cho phép.</p></article><article class="card"><span class="card-number">2</span><h3>Đúng dữ liệu</h3><p>Phân loại, tối thiểu hóa và không đưa dữ liệu cấm vào công cụ.</p></article><article class="card"><span class="card-number">3</span><h3>Đúng quyền</h3><p>Rà quyền nguồn, người nhận, kết nối và liên kết chia sẻ.</p></article><article class="card"><span class="card-number">4</span><h3>Có kiểm chứng</h3><p>Mở nguồn, đối soát số liệu, logic, thời điểm và giả định.</p></article><article class="card"><span class="card-number">5</span><h3>Con người chịu trách nhiệm</h3><p>AI tạo bản nháp; người dùng và cấp duyệt chịu trách nhiệm cuối.</p></article>
+      </div>
+    </section>
+
+    <section class="home-section" id="cong-cu-trong-tam" aria-labelledby="priority-title">
+      <div class="section-heading">
+        <p class="eyebrow">Đang sử dụng tại NAB</p>
+        <h2 id="priority-title">Hai nhóm công cụ trọng tâm</h2>
+        <p>Khoảng 70% nội dung tập trung vào Microsoft 365 và Amazon Quick với các tình huống sử dụng thực tế tại NAB.</p>
+      </div>
+      <div class="grid grid-2">
+        <article class="priority-card">
+          <span class="priority-icon">M365</span>
+          <h3>Microsoft 365</h3>
+          <p>Copilot, Teams, Outlook, Word, Excel và PowerPoint cho cộng tác, soạn thảo, phân tích và trình bày.</p>
+          <p><a class="button" href="./chapters/chapter-04-ms365-tong-quan.html">Mở hướng dẫn Microsoft 365</a></p>
+        </article>
+        <article class="priority-card quick">
+          <span class="priority-icon">AQ</span>
+          <h3>Amazon Quick</h3>
+          <p>Đăng nhập, chat, Spaces và Chat agents, chia sẻ an toàn, Dashboard và dữ liệu, Quick Research, Flows.</p>
+          <p><a class="button" href="./chapters/chapter-11-amazon-quick-bat-dau.html">Mở hướng dẫn Amazon Quick</a> <a class="button secondary" href="./chapters/chapter-11-3-dang-nhap-bang-link-quick.html">Hướng dẫn đăng nhập (opba-ai)</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="all-title">
+      <div class="section-heading">
+        <p class="eyebrow">Danh mục đầy đủ</p>
+        <h2 id="all-title">Tra cứu 23 chương</h2>
+        <p>Tìm theo tên công cụ hoặc nhu cầu. Ô tìm kiếm chỉ lọc nội dung đã có trong trang và không gửi dữ liệu ra ngoài.</p>
+      </div>
+      <div class="filter-bar"><label><span class="sr-only">Tìm chương</span><input type="search" data-tool-filter placeholder="Ví dụ: Excel, dashboard, dữ liệu, FAQ" aria-label="Tìm trong danh mục chương"></label></div>
+      <div class="empty-state" data-empty-state role="status">Không tìm thấy chương phù hợp. Hãy thử từ khóa ngắn hơn.</div>
+
+      <h3>AI trong công việc</h3>
+      <div class="grid grid-3"><a class="card tool-card " href="./chapters/chapter-01-tong-quan.html" data-tool-card data-search="Tổng quan Cẩm nang ứng dụng AI và công nghệ trong công việc tại NAB Cẩm nang giúp người dùng chọn đúng công cụ, bảo vệ dữ liệu, kiểm chứng kết quả và phối hợp với Khối CNTT khi đưa công nghệ vào công việc. AI trong công việc">
+    <div class="meta-row"><span class="tag">Chương 01</span></div>
+    <h3>Tổng quan</h3>
+    <p>Cẩm nang giúp người dùng chọn đúng công cụ, bảo vệ dữ liệu, kiểm chứng kết quả và phối hợp với Khối CNTT khi đưa công nghệ vào công việc.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-02-nguyen-tac-su-dung-ai-an-toan.html" data-tool-card data-search="Nguyên tắc sử dụng AI an toàn Nguyên tắc sử dụng AI an toàn Bảo vệ dữ liệu, tài khoản và uy tín của NAB trước khi quan tâm đến tốc độ hoặc sự tiện lợi của AI. AI trong công việc">
+    <div class="meta-row"><span class="tag">Chương 02</span></div>
+    <h3>Nguyên tắc sử dụng AI an toàn</h3>
+    <p>Bảo vệ dữ liệu, tài khoản và uy tín của NAB trước khi quan tâm đến tốc độ hoặc sự tiện lợi của AI.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-03-ky-thuat-viet-prompt.html" data-tool-card data-search="Kỹ thuật viết Prompt Kỹ thuật viết Prompt rõ ràng và có thể kiểm chứng Mô tả đủ vai trò, nhiệm vụ, bối cảnh, ràng buộc, định dạng và cách kiểm tra để AI tạo bản nháp hữu ích hơn. AI trong công việc">
+    <div class="meta-row"><span class="tag">Chương 03</span></div>
+    <h3>Kỹ thuật viết Prompt</h3>
+    <p>Mô tả đủ vai trò, nhiệm vụ, bối cảnh, ràng buộc, định dạng và cách kiểm tra để AI tạo bản nháp hữu ích hơn.</p>
+  </a></div>
+      <h3>Microsoft 365</h3>
+      <div class="grid grid-3"><a class="card tool-card " href="./chapters/chapter-04-ms365-tong-quan.html" data-tool-card data-search="Microsoft 365 tổng quan Microsoft 365 tại NAB: tổng quan và lựa chọn đúng ứng dụng Microsoft 365 là môi trường cộng tác chính; Copilot bổ sung khả năng AI nhưng phạm vi truy cập, đối chiếu nguồn và tính năng phụ thuộc giấy phép sử dụng, quyền dữ liệu và chính sách tenant. Microsoft 365">
+    <div class="meta-row"><span class="tag">Chương 04</span></div>
+    <h3>Microsoft 365 tổng quan</h3>
+    <p>Microsoft 365 là môi trường cộng tác chính; Copilot bổ sung khả năng AI nhưng phạm vi truy cập, đối chiếu nguồn và tính năng phụ thuộc giấy phép sử dụng, quyền dữ liệu và chính sách tenant.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-05-ms365-copilot.html" data-tool-card data-search="Microsoft Copilot Microsoft Copilot Chat: hỏi đáp và đối chiếu nguồn có kiểm chứng Copilot Chat có thể dùng web, file hoặc dữ liệu công việc theo giấy phép sử dụng/chính sách; người dùng phải kiểm soát nguồn được bật và mở từng trích dẫn trước khi chấp nhận kết quả. Microsoft 365">
+    <div class="meta-row"><span class="tag">Chương 05</span></div>
+    <h3>Microsoft Copilot</h3>
+    <p>Copilot Chat có thể dùng web, file hoặc dữ liệu công việc theo giấy phép sử dụng/chính sách; người dùng phải kiểm soát nguồn được bật và mở từng trích dẫn trước khi chấp nhận kết quả.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-06-ms365-teams.html" data-tool-card data-search="Microsoft Teams Microsoft Teams và Copilot: họp, recap và action items Copilot hỗ trợ bắt kịp cuộc họp, chat và channel; recap không phải biên bản đã duyệt và chế độ transcript phải được chọn theo mục đích, chính sách và người tham dự. Microsoft 365">
+    <div class="meta-row"><span class="tag">Chương 06</span></div>
+    <h3>Microsoft Teams</h3>
+    <p>Copilot hỗ trợ bắt kịp cuộc họp, chat và channel; recap không phải biên bản đã duyệt và chế độ transcript phải được chọn theo mục đích, chính sách và người tham dự.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-07-ms365-outlook.html" data-tool-card data-search="Microsoft Outlook Microsoft Outlook và Copilot: tóm tắt, soạn và kiểm tra trước gửi Copilot có thể tóm tắt thread và tạo bản nháp, nhưng người dùng vẫn phải kiểm tra thư nguồn, người nhận, tệp, link, nhãn và ý nghĩa nghiệp vụ trước khi bấm Send. Microsoft 365">
+    <div class="meta-row"><span class="tag">Chương 07</span></div>
+    <h3>Microsoft Outlook</h3>
+    <p>Copilot có thể tóm tắt thread và tạo bản nháp, nhưng người dùng vẫn phải kiểm tra thư nguồn, người nhận, tệp, link, nhãn và ý nghĩa nghiệp vụ trước khi bấm Send.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-08-ms365-word.html" data-tool-card data-search="Microsoft Word Microsoft Word và Copilot: soạn thảo, viết lại và tóm tắt Bắt đầu từ mẫu NAB và nguồn được phép; mọi nội dung AI tạo phải được so sánh với nguồn, kiểm tra phiên bản và phê duyệt trước ban hành. Microsoft 365">
+    <div class="meta-row"><span class="tag">Chương 08</span></div>
+    <h3>Microsoft Word</h3>
+    <p>Bắt đầu từ mẫu NAB và nguồn được phép; mọi nội dung AI tạo phải được so sánh với nguồn, kiểm tra phiên bản và phê duyệt trước ban hành.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-09-ms365-excel.html" data-tool-card data-search="Microsoft Excel Microsoft Excel và Copilot: phân tích có thể đối soát Copilot có thể hỗ trợ làm sạch, công thức, kết quả phân tích và biểu đồ; mọi thay đổi phải có bản sao/phiên bản, control total, sample kiểm thử và người duyệt nghiệp vụ. Microsoft 365">
+    <div class="meta-row"><span class="tag">Chương 09</span></div>
+    <h3>Microsoft Excel</h3>
+    <p>Copilot có thể hỗ trợ làm sạch, công thức, kết quả phân tích và biểu đồ; mọi thay đổi phải có bản sao/phiên bản, control total, sample kiểm thử và người duyệt nghiệp vụ.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-10-ms365-powerpoint.html" data-tool-card data-search="Microsoft PowerPoint Microsoft PowerPoint và Copilot: trình bày đúng nguồn, đúng thương hiệu Copilot hỗ trợ outline, slide, summary và speaker notes; mẫu NAB, nguồn, hình ảnh, accessibility và phê duyệt vẫn do con người kiểm soát. Microsoft 365">
+    <div class="meta-row"><span class="tag">Chương 10</span></div>
+    <h3>Microsoft PowerPoint</h3>
+    <p>Copilot hỗ trợ outline, slide, summary và speaker notes; mẫu NAB, nguồn, hình ảnh, accessibility và phê duyệt vẫn do con người kiểm soát.</p>
+  </a></div>
+      <h3>Amazon Quick</h3>
+      <div class="grid grid-3"><article class="card tool-card quick-group-card" data-tool-card data-search="Bắt đầu với Amazon Quick Bắt đầu với Amazon Quick Amazon Quick là không gian làm việc có AI của NAB: hỏi đáp, tra cứu tài liệu trong Space, dùng chat agent, nghiên cứu có trích dẫn, xem dashboard và tự động hoá công việc lặp lại. Amazon Quick Kích hoạt tài khoản Đăng nhập qua AWS access portal Đăng nhập bằng link Quick Đăng nhập trên Microsoft Office Làm quen giao diện Chat với Amazon Quick Tạo tài liệu, slide, hình từ chat">
+    <div class="meta-row"><span class="tag">Chương 11</span></div>
+    <h3><a href="./chapters/chapter-11-amazon-quick-bat-dau.html">Bắt đầu với Amazon Quick</a></h3>
+    <p>Amazon Quick là không gian làm việc có AI của NAB: hỏi đáp, tra cứu tài liệu trong Space, dùng chat agent, nghiên cứu có trích dẫn, xem dashboard và tự động hoá công việc lặp lại.</p>
+    <ul class="home-subpages"><li><a href="./chapters/chapter-11-1-kich-hoat-tai-khoan.html">11.1. Kích hoạt tài khoản</a></li><li><a href="./chapters/chapter-11-2-dang-nhap-qua-portal.html">11.2. Đăng nhập qua AWS access portal</a></li><li><a href="./chapters/chapter-11-3-dang-nhap-bang-link-quick.html">11.3. Đăng nhập bằng link Quick</a></li><li><a href="./chapters/chapter-11-4-dang-nhap-tren-microsoft-office.html">11.4. Đăng nhập trên Microsoft Office</a></li><li><a href="./chapters/chapter-11-5-lam-quen-giao-dien.html">11.5. Làm quen giao diện</a></li><li><a href="./chapters/chapter-11-6-chat-voi-quick.html">11.6. Chat với Amazon Quick</a></li><li><a href="./chapters/chapter-11-7-tao-tai-lieu-slide-hinh.html">11.7. Tạo tài liệu, slide, hình từ chat</a></li></ul>
+  </article><article class="card tool-card quick-group-card" data-tool-card data-search="Spaces, Chat agents và chia sẻ Spaces, Chat agents và chia sẻ an toàn Space là kho tài liệu dùng chung để chat hỏi đáp có căn cứ; chat agent là trợ lý có vai trò và nguồn tham chiếu riêng. Chương này hướng dẫn tra cứu, tạo mới và chia sẻ đúng quyền. Amazon Quick Hỏi đáp tài liệu trong Space Tạo Space và tải tài liệu Chia sẻ Space Dùng chat agent Tạo chat agent Chia sẻ chat agent Lưu ý khi chia sẻ">
+    <div class="meta-row"><span class="tag">Chương 12</span></div>
+    <h3><a href="./chapters/chapter-12-amazon-quick-spaces-chat-agents.html">Spaces, Chat agents và chia sẻ</a></h3>
+    <p>Space là kho tài liệu dùng chung để chat hỏi đáp có căn cứ; chat agent là trợ lý có vai trò và nguồn tham chiếu riêng. Chương này hướng dẫn tra cứu, tạo mới và chia sẻ đúng quyền.</p>
+    <ul class="home-subpages"><li><a href="./chapters/chapter-12-1-hoi-dap-tai-lieu-trong-space.html">12.1. Hỏi đáp tài liệu trong Space</a></li><li><a href="./chapters/chapter-12-2-tao-space-tai-tai-lieu.html">12.2. Tạo Space và tải tài liệu</a></li><li><a href="./chapters/chapter-12-3-chia-se-space.html">12.3. Chia sẻ Space</a></li><li><a href="./chapters/chapter-12-4-dung-chat-agent.html">12.4. Dùng chat agent</a></li><li><a href="./chapters/chapter-12-5-tao-chat-agent.html">12.5. Tạo chat agent</a></li><li><a href="./chapters/chapter-12-6-chia-se-chat-agent.html">12.6. Chia sẻ chat agent</a></li><li><a href="./chapters/chapter-12-7-luu-y-khi-chia-se.html">12.7. Lưu ý khi chia sẻ</a></li></ul>
+  </article><article class="card tool-card quick-group-card" data-tool-card data-search="Dashboard và dữ liệu Dashboard và dữ liệu trong Amazon Quick Xem dashboard, lọc và hỏi dữ liệu bằng câu hỏi tự nhiên; với user được cấp thêm quyền: tạo dataset, analysis, dashboard và phân tích với Scenarios. Amazon Quick Xem và hỏi dữ liệu trên dashboard Hỏi đáp với dữ liệu Phân tích với Scenarios Tạo dataset từ tệp Tạo analysis và xuất bản dashboard">
+    <div class="meta-row"><span class="tag">Chương 13</span></div>
+    <h3><a href="./chapters/chapter-13-amazon-quick-du-lieu-dashboard.html">Dashboard và dữ liệu</a></h3>
+    <p>Xem dashboard, lọc và hỏi dữ liệu bằng câu hỏi tự nhiên; với user được cấp thêm quyền: tạo dataset, analysis, dashboard và phân tích với Scenarios.</p>
+    <ul class="home-subpages"><li><a href="./chapters/chapter-13-1-xem-hoi-dashboard.html">13.1. Xem và hỏi dữ liệu trên dashboard</a></li><li><a href="./chapters/chapter-13-2-hoi-dap-du-lieu.html">13.2. Hỏi đáp với dữ liệu</a></li><li><a href="./chapters/chapter-13-3-scenarios.html">13.3. Phân tích với Scenarios<span class="limited-star" title="Tính năng giới hạn user">*</span></a></li><li><a href="./chapters/chapter-13-4-tao-dataset.html">13.4. Tạo dataset từ tệp<span class="limited-star" title="Tính năng giới hạn user">*</span></a></li><li><a href="./chapters/chapter-13-5-tao-analysis-dashboard.html">13.5. Tạo analysis và xuất bản dashboard<span class="limited-star" title="Tính năng giới hạn user">*</span></a></li></ul>
+  </article><article class="card tool-card quick-group-card" data-tool-card data-search="Nghiên cứu với Quick Research Nghiên cứu có trích dẫn với Quick Research Quick Research tổng hợp báo cáo nghiên cứu từ các nguồn bạn chọn và gắn trích dẫn cho từng nhận định. Báo cáo chỉ là bản nháp cho tới khi được kiểm chứng. Amazon Quick Tạo một nghiên cứu Đọc, kiểm chứng và chia sẻ báo cáo">
+    <div class="meta-row"><span class="tag">Chương 14</span></div>
+    <h3><a href="./chapters/chapter-14-amazon-quick-research.html">Nghiên cứu với Quick Research</a></h3>
+    <p>Quick Research tổng hợp báo cáo nghiên cứu từ các nguồn bạn chọn và gắn trích dẫn cho từng nhận định. Báo cáo chỉ là bản nháp cho tới khi được kiểm chứng.</p>
+    <ul class="home-subpages"><li><a href="./chapters/chapter-14-1-tao-research.html">14.1. Tạo một nghiên cứu</a></li><li><a href="./chapters/chapter-14-2-kiem-chung-chia-se-research.html">14.2. Đọc, kiểm chứng và chia sẻ báo cáo</a></li></ul>
+  </article><article class="card tool-card quick-group-card" data-tool-card data-search="Flows và tự động hoá Flows và tự động hoá có kiểm soát Flows tự động hoá các việc lặp lại bằng mô tả tự nhiên; Apps và Automations dành cho một số user được cấp. Mọi kết quả do AI tạo là bản nháp và mọi hành động ghi cần phê duyệt. Amazon Quick Chạy flow có sẵn Tạo flow Tạo app Automations">
+    <div class="meta-row"><span class="tag">Chương 15</span></div>
+    <h3><a href="./chapters/chapter-15-amazon-quick-flows-tu-dong-hoa.html">Flows và tự động hoá</a></h3>
+    <p>Flows tự động hoá các việc lặp lại bằng mô tả tự nhiên; Apps và Automations dành cho một số user được cấp. Mọi kết quả do AI tạo là bản nháp và mọi hành động ghi cần phê duyệt.</p>
+    <ul class="home-subpages"><li><a href="./chapters/chapter-15-1-chay-flow-co-san.html">15.1. Chạy flow có sẵn</a></li><li><a href="./chapters/chapter-15-2-tao-flow.html">15.2. Tạo flow</a></li><li><a href="./chapters/chapter-15-3-tao-app.html">15.3. Tạo app<span class="limited-star" title="Tính năng giới hạn user">*</span></a></li><li><a href="./chapters/chapter-15-4-automations.html">15.4. Automations<span class="limited-star" title="Tính năng giới hạn user">*</span></a></li></ul>
+  </article></div>
+      <h3>AI phổ biến</h3>
+      <div class="callout danger public-data-warning"><strong>Lưu ý bắt buộc</strong><p>Chỉ sử dụng công cụ AI tham khảo với dữ liệu công khai. Không sử dụng dữ liệu của Nam A Bank, dữ liệu khách hàng hoặc bất kỳ dữ liệu nội bộ nào.</p></div>
+      <div class="grid grid-3"><a class="card tool-card " href="./chapters/chapter-16-chon-ai-theo-nhu-cau.html" data-tool-card data-search="Chọn AI theo nhu cầu Chọn công cụ AI theo nhu cầu công việc Bắt đầu từ đầu ra cần hoàn thành, ưu tiên nền tảng đang dùng tại NAB và chỉ tham khảo AI công cộng với dữ liệu công khai. AI phổ biến">
+    <div class="meta-row"><span class="tag">Chương 16</span></div>
+    <h3>Chọn AI theo nhu cầu</h3>
+    <p>Bắt đầu từ đầu ra cần hoàn thành, ưu tiên nền tảng đang dùng tại NAB và chỉ tham khảo AI công cộng với dữ liệu công khai.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-17-ai-hoi-thoai-tro-ly-da-nang.html" data-tool-card data-search="AI hội thoại và trợ lý đa năng AI hội thoại và trợ lý đa năng Nhóm công cụ nhận yêu cầu bằng ngôn ngữ tự nhiên để hỗ trợ viết, phân tích, tìm hiểu và xử lý nhiều loại tác vụ với dữ liệu công khai. AI phổ biến">
+    <div class="meta-row"><span class="tag">Chương 17</span></div>
+    <h3>AI hội thoại và trợ lý đa năng</h3>
+    <p>Nhóm công cụ nhận yêu cầu bằng ngôn ngữ tự nhiên để hỗ trợ viết, phân tích, tìm hiểu và xử lý nhiều loại tác vụ với dữ liệu công khai.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-18-notebooklm-lam-viec-voi-tai-lieu.html" data-tool-card data-search="NotebookLM — Làm việc với tài liệu NotebookLM — Làm việc với tập tài liệu công khai NotebookLM hỗ trợ hỏi đáp, tóm tắt, tổng hợp, tạo FAQ và ghi chú dựa trên tập nguồn người dùng cung cấp. AI phổ biến">
+    <div class="meta-row"><span class="tag">Chương 18</span></div>
+    <h3>NotebookLM — Làm việc với tài liệu</h3>
+    <p>NotebookLM hỗ trợ hỏi đáp, tóm tắt, tổng hợp, tạo FAQ và ghi chú dựa trên tập nguồn người dùng cung cấp.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-19-ai-thiet-ke-trinh-bay.html" data-tool-card data-search="AI thiết kế và trình bày AI hỗ trợ thiết kế và trình bày Các công cụ tham khảo có thể tạo bản nháp slide, infographic, sơ đồ, banner và nội dung trực quan từ thông tin công khai. AI phổ biến">
+    <div class="meta-row"><span class="tag">Chương 19</span></div>
+    <h3>AI thiết kế và trình bày</h3>
+    <p>Các công cụ tham khảo có thể tạo bản nháp slide, infographic, sơ đồ, banner và nội dung trực quan từ thông tin công khai.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-20-ai-tao-hinh-anh-video.html" data-tool-card data-search="AI tạo hình ảnh và video AI tạo hình ảnh và video Công cụ tạo sinh có thể hỗ trợ hình minh họa, poster, banner, video đào tạo, truyền thông và minh họa ý tưởng bằng dữ liệu công khai. AI phổ biến">
+    <div class="meta-row"><span class="tag">Chương 20</span></div>
+    <h3>AI tạo hình ảnh và video</h3>
+    <p>Công cụ tạo sinh có thể hỗ trợ hình minh họa, poster, banner, video đào tạo, truyền thông và minh họa ý tưởng bằng dữ liệu công khai.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-21-ai-agent-tu-dong-hoa.html" data-tool-card data-search="AI Agent và tự động hóa AI Agent và tự động hóa AI Agent có thể lập kế hoạch, dùng công cụ và thực hiện nhiều bước; vì vậy rủi ro quyền truy cập và hành động cao hơn chatbot thông thường. AI phổ biến">
+    <div class="meta-row"><span class="tag">Chương 21</span></div>
+    <h3>AI Agent và tự động hóa</h3>
+    <p>AI Agent có thể lập kế hoạch, dùng công cụ và thực hiện nhiều bước; vì vậy rủi ro quyền truy cập và hành động cao hơn chatbot thông thường.</p>
+  </a></div>
+      <h3>Phụ lục</h3>
+      <div class="grid grid-3"><a class="card tool-card " href="./chapters/chapter-22-du-lieu-duoc-phep-khong-duoc-phep.html" data-tool-card data-search="Dữ liệu được phép và không được phép Dữ liệu được phép và không được phép khi sử dụng AI công cộng Bảng tra cứu nhanh giúp nhận biết ranh giới dữ liệu trước khi nhập nội dung, tải tệp, dùng ảnh hoặc kết nối nguồn với AI. Phụ lục">
+    <div class="meta-row"><span class="tag">Chương 22</span></div>
+    <h3>Dữ liệu được phép và không được phép</h3>
+    <p>Bảng tra cứu nhanh giúp nhận biết ranh giới dữ liệu trước khi nhập nội dung, tải tệp, dùng ảnh hoặc kết nối nguồn với AI.</p>
+  </a><a class="card tool-card " href="./chapters/chapter-23-giai-thich-thuat-ngu.html" data-tool-card data-search="Phụ lục: Giải thích thuật ngữ Phụ lục: Giải thích thuật ngữ Các thuật ngữ thường gặp được giải thích bằng tiếng Việt đơn giản để người dùng không chuyên CNTT dễ tra cứu. Phụ lục">
+    <div class="meta-row"><span class="tag">Chương 23</span></div>
+    <h3>Phụ lục: Giải thích thuật ngữ</h3>
+    <p>Các thuật ngữ thường gặp được giải thích bằng tiếng Việt đơn giản để người dùng không chuyên CNTT dễ tra cứu.</p>
+  </a></div>
+    </section>
+
+    <section class="home-section" id="vai-tro-cntt" aria-labelledby="it-title">
+      <div class="grid grid-2">
+        <div class="section-heading">
+          <p class="eyebrow">Vai trò Khối CNTT</p>
+          <h2 id="it-title">Đồng hành từ nhu cầu đến vận hành</h2>
+          <p>Khối CNTT tư vấn lựa chọn công cụ, cấp quyền, đánh giá tích hợp, cấu hình kiểm soát, hỗ trợ đào tạo và xử lý sự cố. ĐVKD chịu trách nhiệm mục tiêu, dữ liệu, tính đúng nghiệp vụ và quyết định cuối.</p>
+        </div>
+        <div class="card">
+          <h3>Chuẩn bị yêu cầu hỗ trợ</h3>
+          <ul class="check-list"><li>Mục tiêu và kết quả mong muốn</li><li>Nhóm người dùng và chủ sở hữu dữ liệu</li><li>Loại dữ liệu, nguồn và đích</li><li>Hành động đọc, ghi, chia sẻ hoặc lên lịch</li><li>KPI thành công và người phê duyệt</li></ul>
+          <p><a class="button" href="./chapters/chapter-01-tong-quan.html">Xem hướng dẫn phối hợp</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  </div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Quay về đầu trang">↑</button>
+</body>
+</html>

@@ -1,0 +1,168 @@
+[
+  {
+    "kind": "space",
+    "name": "Văn bản pháp luật ngân hàng (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+    "flow": "q12-2-tao-space",
+    "createdAt": "2026-11-19T10:55:37.072Z"
+  },
+  {
+    "kind": "agent",
+    "name": "Trợ lý Quy định Ngân hàng NAB",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+    "flow": "q12-5-tao-agent",
+    "createdAt": "2026-11-19T11:06:27.111Z"
+  },
+  {
+    "kind": "share-agent",
+    "name": "Trợ lý Quy định Ngân hàng NAB -> toannk2_reader",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents",
+    "flow": "q12-6-chia-se-agent",
+    "createdAt": "2026-11-19T11:09:29.141Z"
+  },
+  {
+    "kind": "share-space",
+    "name": "Văn bản pháp luật ngân hàng (demo) -> toannk2_reader",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+    "flow": "q12-3-chia-se-space",
+    "createdAt": "2026-11-19T11:13:59.801Z"
+  },
+  {
+    "kind": "dataset",
+    "name": "aws-quick-demo-data",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+    "flow": "q13-5-tao-dataset",
+    "createdAt": "2026-11-19T11:23:31.833Z"
+  },
+  {
+    "kind": "dataset",
+    "name": "aws-quick-demo-data",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963",
+    "flow": "q13-5-tao-dataset",
+    "createdAt": "2026-11-19T11:24:31.415Z"
+  },
+  {
+    "kind": "analysis",
+    "name": "aws-quick-demo-data analysis",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963",
+    "flow": "q13-5-tao-dataset",
+    "createdAt": "2026-11-19T11:24:31.415Z"
+  },
+  {
+    "kind": "dashboard",
+    "name": "Hiệu quả kinh doanh chi nhánh (dữ liệu giả lập)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+    "flow": "q13-6-analysis-dashboard",
+    "createdAt": "2026-11-19T11:35:07.896Z"
+  },
+  {
+    "kind": "share-dashboard",
+    "name": "Hiệu quả kinh doanh chi nhánh (dữ liệu giả lập) -> toannk2_reader",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+    "flow": "q13-6-chia-se-dashboard",
+    "createdAt": "2026-11-19T11:40:09.610Z"
+  },
+  {
+    "kind": "share-dashboard",
+    "name": "Hiệu quả kinh doanh chi nhánh (dữ liệu giả lập) -> toannk2_reader",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+    "flow": "q13-6-chia-se-dashboard",
+    "createdAt": "2026-11-19T11:42:21.791Z"
+  },
+  {
+    "kind": "scenario",
+    "name": "Scenario từ dashboard Hiệu quả kinh doanh chi nhánh (probe)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8",
+    "createdAt": "2026-11-19T12:00:06.457Z"
+  },
+  {
+    "kind": "research-draft",
+    "name": "New research (probe, trống)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/ec1a0992-4ffe-4445-8135-072a78264215/prompt",
+    "createdAt": "2026-11-19T12:14:21.452Z"
+  },
+  {
+    "kind": "research",
+    "name": "So sánh loại hình TCTD (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/6605a531-e488-4854-af8e-61fb21519eef/prompt",
+    "flow": "q14-1-tao-research",
+    "createdAt": "2026-11-19T12:14:44.274Z"
+  },
+  {
+    "kind": "research",
+    "name": "So sánh loại hình TCTD (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/b8ff3c0a-47cf-46de-b535-f102cf7dc710/prompt",
+    "flow": "q14-1-tao-research",
+    "createdAt": "2026-11-19T12:21:36.701Z"
+  },
+  {
+    "kind": "research",
+    "name": "So sánh loại hình TCTD (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/00017299-f9ec-42d2-9216-c6714c0ad562/prompt",
+    "flow": "q14-1-tao-research",
+    "createdAt": "2026-11-19T12:22:59.447Z"
+  },
+  {
+    "kind": "research",
+    "name": "So sánh loại hình TCTD (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/ca6b599e-a62f-4dc6-af50-f789b642a5f2/prompt",
+    "flow": "q14-1-tao-research",
+    "createdAt": "2026-11-19T12:24:49.476Z"
+  },
+  {
+    "kind": "research",
+    "name": "So sánh loại hình TCTD (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/72405cd2-5805-4e28-8948-cd985aaddcb9/prompt",
+    "flow": "q14-1-tao-research",
+    "createdAt": "2026-11-19T12:26:46.266Z"
+  },
+  {
+    "kind": "research",
+    "name": "So sánh loại hình TCTD (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/22deb154-9779-4f85-a80b-32ead11925fb/prompt",
+    "flow": "q14-1-tao-research",
+    "createdAt": "2026-11-19T12:28:10.671Z"
+  },
+  {
+    "kind": "research",
+    "name": "So sánh loại hình TCTD (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+    "flow": "q14-1-tao-research",
+    "createdAt": "2026-11-19T12:29:36.585Z"
+  },
+  {
+    "kind": "flow",
+    "name": "Tóm tắt văn bản luật và liệt kê điểm cần lưu ý",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/new/progress",
+    "flow": "q15-2-tao-flow",
+    "createdAt": "2026-11-19T12:53:30.459Z"
+  },
+  {
+    "kind": "flow",
+    "name": "Tóm tắt văn bản luật và liệt kê điểm cần lưu ý",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit",
+    "flow": "q15-2-tao-flow",
+    "createdAt": "2026-11-19T12:54:29.095Z"
+  },
+  {
+    "kind": "share-dashboard",
+    "name": "Hiệu quả kinh doanh chi nhánh (dữ liệu giả lập) -> toannk2_reader",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+    "flow": "q13-6-chia-se-dashboard",
+    "createdAt": "2026-11-19T12:59:38.782Z"
+  },
+  {
+    "kind": "app",
+    "name": "Checklist hồ sơ vay tiêu dùng (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/apps",
+    "flow": "q15-3-tao-app",
+    "createdAt": "2026-11-19T13:07:31.255Z"
+  },
+  {
+    "kind": "app",
+    "name": "Checklist hồ sơ vay tiêu dùng (demo)",
+    "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/apps",
+    "flow": "q15-3-tao-app",
+    "createdAt": "2026-11-19T13:24:09.333Z"
+  }
+]

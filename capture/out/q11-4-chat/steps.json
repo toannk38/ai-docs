@@ -1,0 +1,195 @@
+{
+  "flow": "q11-4-chat",
+  "title": "Chat với Amazon Quick",
+  "status": "ok",
+  "capturedAt": "2026-11-19T10:47:19.944Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "new-chat",
+      "caption": "Bấm New chat để bắt đầu cuộc trò chuyện mới.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*New chat\\\\s*$/\"}",
+      "label": "New chat",
+      "tStart": 5757,
+      "tEnd": 10029,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "private",
+      "caption": "Nút Private mode (góc phải trên): bật khi thảo luận nội dung không muốn lưu vào bộ nhớ hội thoại. Private mode không thay thế chính sách dữ liệu NAB.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*Private mode\\\\s*$/\"}",
+      "label": "Private mode",
+      "tStart": 10029,
+      "tEnd": 10995,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "scope",
+      "caption": "Bấm All data để chọn phạm vi dữ liệu: General knowledge (kiến thức chung), All data (thêm dữ liệu bạn có quyền), Specific data (chỉ Space/dashboard/tệp bạn chọn).",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^all data$/i\"}",
+      "label": "Phạm vi dữ liệu",
+      "tStart": 10995,
+      "tEnd": 14476,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "close-scope",
+      "caption": "Đóng menu.",
+      "action": "press",
+      "tStart": 14476,
+      "tEnd": 14820,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "value": "Escape"
+    },
+    {
+      "index": 5,
+      "id": "mode",
+      "caption": "Bấm Smart để chọn chế độ: Fast (nhanh), Smart (cân bằng — mặc định), Advanced (suy luận kỹ cho câu hỏi phức tạp).",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^smart$/i\"}",
+      "label": "Chế độ trả lời",
+      "tStart": 14820,
+      "tEnd": 18276,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 6,
+      "id": "close-mode",
+      "caption": "Đóng menu.",
+      "action": "press",
+      "tStart": 18276,
+      "tEnd": 18620,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "value": "Escape"
+    },
+    {
+      "index": 7,
+      "id": "plus",
+      "caption": "Bấm nút + để đính kèm tệp (File upload) hoặc dùng công cụ khác.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^more actions$/i\"}",
+      "label": "Nút +",
+      "tStart": 18621,
+      "tEnd": 21796,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 8,
+      "id": "upload",
+      "caption": "Chọn File upload rồi chọn tệp từ máy tính (cửa sổ chọn tệp của Windows hiện ra). Chỉ đính kèm tệp được phép theo phân loại dữ liệu NAB.",
+      "action": "upload",
+      "target": "{\"text\":\"/^\\\\s*File upload\\\\s*$/\"}",
+      "label": "File upload",
+      "note": "Hộp thoại chọn file của hệ điều hành không hiện trong headless — tài liệu ghi bước 'chọn file từ máy'.",
+      "tStart": 21796,
+      "tEnd": 24836,
+      "waits": [
+        {
+          "label": "Tải tệp lên",
+          "tStart": 24797,
+          "tEnd": 24835
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 9,
+      "id": "attached",
+      "caption": "Tệp đã đính kèm hiện ngay trong ô chat.",
+      "action": "shot",
+      "target": "{\"text\":\"/PHÁP LỆNH NGOẠI HỐI/i\"}",
+      "label": "Tệp đính kèm",
+      "tStart": 24836,
+      "tEnd": 25802,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-07.png"
+    },
+    {
+      "index": 10,
+      "id": "ask",
+      "caption": "Nhập câu hỏi rõ ràng: nêu phạm vi, yêu cầu trả lời ngắn và dựa trên tài liệu.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Câu hỏi",
+      "tStart": 25802,
+      "tEnd": 37223,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "value": "Theo tài liệu đính kèm, Pháp lệnh ngoại hối quy định những nội dung chính nào? Trả lời ngắn gọn, có dẫn nguồn.",
+      "screenshot": "step-08.png"
+    },
+    {
+      "index": 11,
+      "id": "send",
+      "caption": "Bấm gửi và chờ Quick trả lời xong.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^send$/i\"}",
+      "label": "Gửi",
+      "tStart": 37223,
+      "tEnd": 56871,
+      "waits": [
+        {
+          "label": "Quick đang trả lời",
+          "tStart": 40007,
+          "tEnd": 56870
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/chat?conversationId=133d733c-2d77-4c72-a794-25658f8c90cc",
+      "screenshot": "step-09.png"
+    },
+    {
+      "index": 12,
+      "id": "answer",
+      "caption": "Câu trả lời có trích dẫn nguồn ngay trong nội dung và nút Sources bên dưới.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^sources$/i\"}",
+      "label": "Sources",
+      "tStart": 56871,
+      "tEnd": 58655,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/chat?conversationId=133d733c-2d77-4c72-a794-25658f8c90cc",
+      "screenshot": "step-10.png"
+    },
+    {
+      "index": 13,
+      "id": "sources",
+      "caption": "Bấm Sources để xem các nguồn Quick đã dùng; mở nguồn để kiểm chứng trước khi dùng câu trả lời.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^sources$/i\"}",
+      "label": "Nguồn trả lời",
+      "tStart": 58655,
+      "tEnd": 62092,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/chat?conversationId=133d733c-2d77-4c72-a794-25658f8c90cc",
+      "screenshot": "step-11.png"
+    }
+  ]
+}

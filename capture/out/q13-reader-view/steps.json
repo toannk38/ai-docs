@@ -1,0 +1,37 @@
+{
+  "flow": "q13-reader-view",
+  "title": "Reader với Data và Dashboard",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:55:30.287Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "data",
+      "caption": "User Reader mở Data: chỉ thấy dataset được chia sẻ, không có nút Create dataset; thanh điều hướng không có mục Analyses.",
+      "action": "shot",
+      "tStart": 6528,
+      "tEnd": 13034,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "findings",
+      "caption": "Ghi kết quả.",
+      "action": "custom",
+      "tStart": 13035,
+      "tEnd": 13052,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/agents/new",
+  "title": "Quick",
+  "headings": [
+    "Build chat agents with unique personas and capabilities",
+    "What brings you here today?"
+  ],
+  "nav": [
+    [
+      "Chat agents"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "a template",
+    "Clear",
+    "Skip",
+    "Generate",
+    "Training Guide \"Create an agent that helps new team members learn about our processes and tools. Sho",
+    "Project Coordinator \"Build an agent that helps track project status, find relevant documentation, an",
+    "Onboarding Helper \"Create an agent that guides people through setup and access requests. Should help",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "I want a chat agent that [does what] for [whom]. It should use knowledge about [topics] and be able to [specific capabilities]. The tone should be [style].",
+    "Ask a question..."
+  ],
+  "text": "Build chat agents with unique personas and capabilities\n\nTell us your goals or start with a template\n\n​\nClear\n\nCharacter count 0/50000\n\nSkip\nGenerate\n\nLooking for inspiration? Check out some of our sample chat agent creation instructions below.\n\nTraining Guide\n\n\"Create an agent that helps new team members learn about our processes and tools. Should answer common questions and guide people to relevant resources and documentation.\"\n\nProject Coordinator\n\n\"Build an agent that helps track project status, find relevant documentation, and assist with common project tasks. Should understand project management basics and help with status updates.\"\n\nOnboarding Helper\n\n\"Create an agent that guides people through setup and access requests. Should help with common system access needs, tool setup, and finding basic getting-started information.\"",
+  "screenshot": "agent-create.png",
+  "surveyedAt": "2026-11-19T07:45:02.788Z"
+}

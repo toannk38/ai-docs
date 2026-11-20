@@ -1,0 +1,138 @@
+{
+  "flow": "q13-6-dung-bieu-do",
+  "title": "Dựng biểu đồ trong analysis",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:49:19.666Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "wait",
+      "caption": "Mở analysis.",
+      "action": "waitFor",
+      "tStart": 5751,
+      "tEnd": 7757,
+      "waits": [
+        {
+          "label": "Mở analysis",
+          "tStart": 5763,
+          "tEnd": 7756
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963"
+    },
+    {
+      "index": 2,
+      "id": "new-sheet",
+      "caption": "Tạo sheet tạm (bắt buộc là sheet mới — không được sửa Sheet 1).",
+      "action": "custom",
+      "tStart": 7757,
+      "tEnd": 15090,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963/sheets/fc8f3172-7ec7-40c1-ace5-02a7db4deaa2"
+    },
+    {
+      "index": 3,
+      "id": "editor",
+      "caption": "Màn hình analysis: khung Data (trường dữ liệu), khung Visuals (loại biểu đồ), bên phải là trang vẽ.",
+      "action": "shot",
+      "tStart": 15090,
+      "tEnd": 16889,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963/sheets/fc8f3172-7ec7-40c1-ace5-02a7db4deaa2",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 4,
+      "id": "f1",
+      "caption": "Bấm trường Chi nhánh.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Chi nhánh\\\\s*$/\"}",
+      "label": "Chi nhánh",
+      "tStart": 16889,
+      "tEnd": 20003,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963/sheets/fc8f3172-7ec7-40c1-ace5-02a7db4deaa2",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 5,
+      "id": "f2",
+      "caption": "Bấm thêm Tổng giá trị (VND): Quick tự chọn biểu đồ phù hợp (AutoGraph).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Tổng giá trị \\\\(VND\\\\)\\\\s*$/\"}",
+      "label": "Tổng giá trị",
+      "tStart": 20003,
+      "tEnd": 24914,
+      "waits": [
+        {
+          "label": "Vẽ biểu đồ",
+          "tStart": 21786,
+          "tEnd": 22059
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963/sheets/fc8f3172-7ec7-40c1-ace5-02a7db4deaa2",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 6,
+      "id": "add",
+      "caption": "Bấm + Add (khung Visuals) để thêm biểu đồ khác.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^\\\\+?\\\\s*add$/i\"}",
+      "label": "Add",
+      "tStart": 24914,
+      "tEnd": 28482,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963/sheets/fc8f3172-7ec7-40c1-ace5-02a7db4deaa2",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 7,
+      "id": "f3",
+      "caption": "Bấm Ngày.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Ngày\\\\s*$/\"}",
+      "tStart": 28482,
+      "tEnd": 30264,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963/sheets/fc8f3172-7ec7-40c1-ace5-02a7db4deaa2"
+    },
+    {
+      "index": 8,
+      "id": "f4",
+      "caption": "Bấm Tổng giá trị (VND): biểu đồ đường theo thời gian.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Tổng giá trị \\\\(VND\\\\)\\\\s*$/\"}",
+      "label": "Tổng giá trị",
+      "tStart": 30264,
+      "tEnd": 35347,
+      "waits": [
+        {
+          "label": "Vẽ biểu đồ",
+          "tStart": 32112,
+          "tEnd": 32443
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963/sheets/fc8f3172-7ec7-40c1-ace5-02a7db4deaa2",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 9,
+      "id": "cleanup",
+      "caption": "Xoá sheet tạm.",
+      "action": "custom",
+      "tStart": 35347,
+      "tEnd": 40718,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963/sheets/fcadecd1-3846-4512-925b-a5153b3f003f"
+    }
+  ]
+}

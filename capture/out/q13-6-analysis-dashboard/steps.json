@@ -1,0 +1,226 @@
+{
+  "flow": "q13-6-analysis-dashboard",
+  "title": "Tạo analysis và xuất bản dashboard",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:35:14.307Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "wait",
+      "caption": "Mở analysis.",
+      "action": "waitFor",
+      "tStart": 6170,
+      "tEnd": 8308,
+      "waits": [
+        {
+          "label": "Mở analysis",
+          "tStart": 6273,
+          "tEnd": 8308
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963"
+    },
+    {
+      "index": 2,
+      "id": "editor",
+      "caption": "Màn hình analysis: bên trái là danh sách trường dữ liệu (Data), tiếp theo là các loại biểu đồ (Visuals), bên phải là trang vẽ.",
+      "action": "shot",
+      "tStart": 8308,
+      "tEnd": 10161,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "f1",
+      "caption": "Bấm trường Chi nhánh.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Chi nhánh\\\\s*$/\"}",
+      "label": "Chi nhánh",
+      "tStart": 10161,
+      "tEnd": 10181,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 4,
+      "id": "f2",
+      "caption": "Bấm thêm trường Tổng giá trị (VND): Quick tự chọn biểu đồ phù hợp (AutoGraph).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Tổng giá trị \\\\(VND\\\\)\\\\s*$/\"}",
+      "label": "Tổng giá trị",
+      "tStart": 10181,
+      "tEnd": 10195,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 5,
+      "id": "add",
+      "caption": "Bấm + Add (khung Visuals) để thêm biểu đồ thứ hai.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^\\\\+?\\\\s*add$/i\"}",
+      "label": "Add",
+      "tStart": 10195,
+      "tEnd": 10210,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 6,
+      "id": "f3",
+      "caption": "Bấm trường Ngày.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Ngày\\\\s*$/\"}",
+      "tStart": 10210,
+      "tEnd": 10224,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 7,
+      "id": "f4",
+      "caption": "Bấm Tổng giá trị (VND): biểu đồ đường theo thời gian.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Tổng giá trị \\\\(VND\\\\)\\\\s*$/\"}",
+      "label": "Tổng giá trị",
+      "tStart": 10224,
+      "tEnd": 10240,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 8,
+      "id": "wait-spice",
+      "caption": "Chờ dữ liệu nạp xong vào SPICE (khi đang nạp, Publish báo Some datasets are being refreshed).",
+      "action": "custom",
+      "tStart": 10240,
+      "tEnd": 17461,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963"
+    },
+    {
+      "index": 9,
+      "id": "publish",
+      "caption": "Bấm Publish ở góc phải.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^publish$/i\"}",
+      "label": "Publish",
+      "tStart": 17461,
+      "tEnd": 20994,
+      "waits": [
+        {
+          "label": "Mở hộp thoại Publish",
+          "tStart": 20458,
+          "tEnd": 20994
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 10,
+      "id": "pdialog",
+      "caption": "Hộp thoại Publish dashboard: New dashboard hoặc Replace existing dashboard (cập nhật dashboard đã có).",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*New dashboard\\\\s*$/\"}",
+      "label": "New dashboard",
+      "tStart": 20994,
+      "tEnd": 22931,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 11,
+      "id": "name",
+      "caption": "Đặt tên dashboard.",
+      "action": "fill",
+      "target": "[role=\"dialog\"] input[type=\"text\"] >> nth=0",
+      "label": "Tên dashboard",
+      "tStart": 22931,
+      "tEnd": 25916,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963",
+      "value": "Hiệu quả kinh doanh chi nhánh (dữ liệu giả lập)",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 12,
+      "id": "options",
+      "caption": "Tuỳ chọn: Allow executive summary (tóm tắt bằng AI), Allow sharing stories/scenarios. Chỉ bật khi đơn vị cho phép.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*Allow executive summary\\\\s*$/\"}",
+      "label": "Tuỳ chọn",
+      "tStart": 25916,
+      "tEnd": 27435,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 13,
+      "id": "submit",
+      "caption": "Bấm Publish dashboard.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^publish dashboard$/i\"}",
+      "label": "Publish dashboard",
+      "tStart": 27435,
+      "tEnd": 30856,
+      "waits": [
+        {
+          "label": "Xuất bản",
+          "tStart": 30155,
+          "tEnd": 30856
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 14,
+      "id": "record",
+      "caption": "Ghi dashboard.",
+      "action": "custom",
+      "tStart": 30856,
+      "tEnd": 30868,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 15,
+      "id": "dashboard",
+      "caption": "Dashboard đã xuất bản.",
+      "action": "shot",
+      "tStart": 30868,
+      "tEnd": 36315,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53",
+      "screenshot": "step-07.png"
+    },
+    {
+      "index": 16,
+      "id": "probe",
+      "caption": "dò",
+      "action": "custom",
+      "tStart": 36315,
+      "tEnd": 37278,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    }
+  ]
+}

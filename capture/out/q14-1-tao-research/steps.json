@@ -1,0 +1,282 @@
+{
+  "flow": "q14-1-tao-research",
+  "title": "Tạo một nghiên cứu",
+  "status": "ok",
+  "capturedAt": "2026-11-19T12:30:49.643Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "settle",
+      "caption": "Chờ.",
+      "action": "hold",
+      "tStart": 6100,
+      "tEnd": 11100,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/research"
+    },
+    {
+      "index": 2,
+      "id": "new",
+      "caption": "Mở Research trên thanh điều hướng, bấm New research.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^new research$/i\"}",
+      "label": "New research",
+      "tStart": 11100,
+      "tEnd": 17006,
+      "waits": [
+        {
+          "label": "Mở form",
+          "tStart": 14069,
+          "tEnd": 17005
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "record",
+      "caption": "Ghi research.",
+      "action": "custom",
+      "tStart": 17006,
+      "tEnd": 17009,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt"
+    },
+    {
+      "index": 4,
+      "id": "coach",
+      "caption": "Đóng hướng dẫn nổi (Dismiss all).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Dismiss all\\\\s*$/\"}",
+      "tStart": 17009,
+      "tEnd": 18701,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt"
+    },
+    {
+      "index": 5,
+      "id": "form",
+      "caption": "Form New research: Research objective (mục tiêu), Research mode, Research materials (nguồn).",
+      "action": "shot",
+      "target": "{\"text\":\"/Research objective/i\"}",
+      "label": "Mục tiêu nghiên cứu",
+      "tStart": 18701,
+      "tEnd": 20221,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 6,
+      "id": "objective",
+      "caption": "Viết mục tiêu cụ thể: câu hỏi, phạm vi, nguồn được dùng, cách trình bày kết quả.",
+      "action": "fill",
+      "target": "textarea >> nth=0",
+      "label": "Mục tiêu",
+      "tStart": 20221,
+      "tEnd": 23382,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "value": "So sánh quy định về các loại hình tổ chức tín dụng trong Luật Các tổ chức tín dụng và luật sửa đổi, bổ sung: loại hình nào được thêm, bỏ hoặc đổi tên; điều kiện thành lập và phạm vi hoạt động thay đổi thế nào. Chỉ dùng các văn bản trong Space được chọn, trích dẫn số điều, khoản cụ thể. Trình bày bằng tiếng Việt, có bảng so sánh.",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 7,
+      "id": "mode",
+      "caption": "Bấm Research mode để chọn chế độ (Fast nhanh hơn; chế độ sâu hơn mất nhiều thời gian hơn).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Research mode:/\"}",
+      "label": "Research mode",
+      "tStart": 23383,
+      "tEnd": 26763,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 8,
+      "id": "mode-close",
+      "caption": "Giữ chế độ đang chọn.",
+      "action": "press",
+      "tStart": 26763,
+      "tEnd": 27072,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "value": "Escape"
+    },
+    {
+      "index": 9,
+      "id": "web-off",
+      "caption": "Tắt Web search khi chỉ được dùng tài liệu nội bộ đã chọn.",
+      "action": "click",
+      "target": "[role=\"switch\"]:visible >> nth=0",
+      "label": "Web search",
+      "tStart": 27072,
+      "tEnd": 30207,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 10,
+      "id": "assets-on",
+      "caption": "Bật Quick assets để dùng tài liệu đã có trong Quick (Space, dashboard…).",
+      "action": "click",
+      "target": "[role=\"switch\"]:visible >> nth=1",
+      "label": "Quick assets",
+      "tStart": 30207,
+      "tEnd": 33363,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 11,
+      "id": "select",
+      "caption": "Chọn Select data and apps (chỉ dùng nguồn bạn chọn), rồi bấm Browse.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Select data and apps\\\\s*$/\"}",
+      "label": "Select data and apps",
+      "tStart": 33363,
+      "tEnd": 35110,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt"
+    },
+    {
+      "index": 12,
+      "id": "browse",
+      "caption": "Bấm Browse.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Browse\\\\s*$/\"}",
+      "label": "Browse",
+      "tStart": 35110,
+      "tEnd": 40286,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-07.png"
+    },
+    {
+      "index": 13,
+      "id": "tab-spaces",
+      "caption": "Hộp thoại Add Quick assets: chọn tab Spaces.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Spaces\\\\s*$/\"}",
+      "label": "Spaces",
+      "tStart": 40286,
+      "tEnd": 42025,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt"
+    },
+    {
+      "index": 14,
+      "id": "pick",
+      "caption": "Tích chọn Space chứa tài liệu cần nghiên cứu.",
+      "action": "custom",
+      "tStart": 42026,
+      "tEnd": 43234,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt"
+    },
+    {
+      "index": 15,
+      "id": "picked",
+      "caption": "Tích chọn Space chứa tài liệu cần nghiên cứu, rồi bấm Add.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^add$/i\"}",
+      "label": "Add",
+      "tStart": 43234,
+      "tEnd": 44368,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-08.png"
+    },
+    {
+      "index": 16,
+      "id": "add",
+      "caption": "Bấm Add.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^add$/i\"}",
+      "label": "Add",
+      "tStart": 44368,
+      "tEnd": 46057,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt"
+    },
+    {
+      "index": 17,
+      "id": "added",
+      "caption": "Space đã được thêm vào Quick assets (Spaces (1)); Review plan và Start researching sáng lên.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*Spaces \\\\(1\\\\)\\\\s*$/\"}",
+      "label": "Nguồn đã chọn",
+      "tStart": 46057,
+      "tEnd": 47584,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-09.png"
+    },
+    {
+      "index": 18,
+      "id": "plan",
+      "caption": "Bấm Review plan để xem kế hoạch nghiên cứu Quick đề xuất.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^review plan$/i\"}",
+      "label": "Review plan",
+      "tStart": 47584,
+      "tEnd": 52758,
+      "waits": [
+        {
+          "label": "Quick lập kế hoạch",
+          "tStart": 52739,
+          "tEnd": 52758
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/prompt",
+      "screenshot": "step-10.png"
+    },
+    {
+      "index": 19,
+      "id": "plan-view",
+      "caption": "Kế hoạch nghiên cứu: kiểm tra các mục, sửa nếu cần trước khi chạy.",
+      "action": "shot",
+      "tStart": 52758,
+      "tEnd": 54586,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/plan",
+      "screenshot": "step-11.png"
+    },
+    {
+      "index": 20,
+      "id": "start",
+      "caption": "Bấm Start researching.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/start research/i\"}",
+      "label": "Start researching",
+      "tStart": 54587,
+      "tEnd": 88732,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/plan",
+      "screenshot": "step-12.png"
+    },
+    {
+      "index": 21,
+      "id": "running",
+      "caption": "Research đang chạy: theo dõi tiến độ; có thể rời trang, quay lại sau ở mục Research.",
+      "action": "shot",
+      "tStart": 88732,
+      "tEnd": 90067,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/8c76f53a-715a-451d-b70c-515912f17e1d/report/latest",
+      "screenshot": "step-13.png"
+    }
+  ]
+}

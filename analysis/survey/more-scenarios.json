@@ -1,0 +1,72 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/scenarios",
+  "title": "Quick - Scenarios",
+  "headings": [
+    "Scenarios",
+    "Analyze data in-depth with generative AI",
+    "Welcome back, Demo! How can I help?"
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Close chat",
+    "Search conversations",
+    "Conversation options",
+    "Learn More",
+    "Dismiss",
+    "Create scenario",
+    "Name",
+    "Owner",
+    "Last Modified",
+    "Previous page",
+    "Next page",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Search scenarios...",
+    "input",
+    "Ask a question..."
+  ],
+  "text": "Scenarios\nAnalyze data in-depth with generative AI\n\nElevate your data exploration in the AI-driven workbook canvas enhanced with generative analysis capabilities. Let AI suggest relevant data to enrich your insight discovery.\n\nLearn More\nDismiss\n​\nCreate scenario\nName\nOwner\nLast Modified\n\nNew Scenario\n\nMe\n\n2 months ago\n\nRows per page:\n\n100\n\n1-1 of 1",
+  "screenshot": "more-scenarios.png",
+  "surveyedAt": "2026-11-19T07:41:56.621Z"
+}

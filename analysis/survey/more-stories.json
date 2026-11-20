@@ -1,0 +1,64 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/stories",
+  "title": "Quick - Stories",
+  "headings": [
+    "Stories",
+    "Turn data insights into engaging narratives",
+    "Hey Demo! What are we working on today?"
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Close chat",
+    "Search conversations",
+    "Conversation options",
+    "Create story",
+    "Dismiss",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Ask a question..."
+  ],
+  "text": "Stories\nTurn data insights into engaging narratives\n\nUse stories to turn your complex data analyses into visually rich documents and presentations, with AI helping you highlight key details. Learn more\n\nCreate story\nDismiss\n\nCreate your first story and find it here.\n\nCreate story",
+  "screenshot": "more-stories.png",
+  "surveyedAt": "2026-11-19T07:42:12.494Z"
+}

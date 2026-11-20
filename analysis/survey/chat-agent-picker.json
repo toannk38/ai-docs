@@ -1,0 +1,68 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+  "title": "Quick - Home",
+  "headings": [
+    "Here when you need me, Demo."
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Search conversations",
+    "Conversation options",
+    "Private mode",
+    "Default",
+    "Add to favorites",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Presentation",
+    "Visual",
+    "Show more tools"
+  ],
+  "tabs": [
+    "Recent",
+    "Favorites",
+    "My chat agents",
+    "Shared with me"
+  ],
+  "inputs": [
+    "Search chat agents in your library",
+    "Ask a question..."
+  ],
+  "text": "opba-ai\nNew chat\nSearch\nMy stuff\nSpaces\nResearch\nChat agents\nApps\nFlows\nAnalyses\nDashboards\nData\nMy folders\nShared folders\nMore\nRecents\n\nInitial Greeting\n\nLời chào hỏi ban đầu\n\nMẫu Hợp Đồng Mua Bán Phần Mềm\n\nMẫu hợp đồng mua bán\n\nAI Assistant Capabilities Overview\n\nQuick Interface Documentation Request\n\nPrivate mode\nHere when you need me, Demo.\nRecent\nFavorites\nMy chat agents\nShared with me\n\nQuickDefault generated system agent\n\nDefault\n\nMy Assistant AgentA general-purpose assistant agent designed to help with various tasks and provide support.\n\nBrowse all recent chat agents (2)\n\nQuick\n\nAll data\nSmart\nResearch\nDocument\nPresentation\nVisual\nUsage is subject to\nAWS Responsible AI Policy",
+  "screenshot": "chat-agent-picker.png",
+  "surveyedAt": "2026-11-19T07:42:33.627Z"
+}

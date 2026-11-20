@@ -1,0 +1,271 @@
+{
+  "flow": "q11-2-link-quick",
+  "title": "Đăng nhập bằng link Amazon Quick và account name opba-ai",
+  "status": "ok",
+  "capturedAt": "2026-11-19T15:07:51.533Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": "raw.webm",
+  "steps": [
+    {
+      "index": 1,
+      "id": "bookmark-link",
+      "caption": "Mở link https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start (đã chứa account name opba-ai): bạn được chuyển thẳng tới trang đăng nhập, không phải nhập account name.",
+      "action": "shot",
+      "target": "{\"label\":\"/^username$/i\"}",
+      "label": "Đi thẳng tới trang đăng nhập",
+      "banner": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start",
+      "tStart": 2276,
+      "tEnd": 14931,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/d-xxxxxxxxxx/login?workflowStateHandle=49c1aad3-52d6-4c73-98fa-da79d727ea3c",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "open-generic",
+      "caption": "Mở trang đăng nhập Amazon Quick chung.",
+      "action": "goto",
+      "tStart": 14931,
+      "tEnd": 18811,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue"
+    },
+    {
+      "index": 3,
+      "id": "clear-prefill",
+      "caption": "Trình duyệt có thể tự điền account name đã dùng lần trước — xoá để bắt đầu từ ô trống.",
+      "action": "custom",
+      "tStart": 18811,
+      "tEnd": 19162,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue"
+    },
+    {
+      "index": 4,
+      "id": "generic-page",
+      "caption": "Trang đăng nhập Amazon Quick chung hỏi Quick account name.",
+      "action": "shot",
+      "target": "#account-name-input",
+      "label": "Ô Quick account name",
+      "tStart": 19162,
+      "tEnd": 20141,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 5,
+      "id": "type-wrong",
+      "caption": "SAI: nhập email/username vào ô Quick account name.",
+      "action": "type",
+      "target": "#account-name-input",
+      "label": "✗ Sai: đây là email",
+      "banner": "✗ SAI — không nhập email/username vào ô này",
+      "tStart": 20141,
+      "tEnd": 25847,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue",
+      "value": "ten.dang.nhap@example.com",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 6,
+      "id": "click-next-wrong",
+      "caption": "Bấm Next.",
+      "action": "click",
+      "target": "#account-name-submit-button",
+      "tStart": 25847,
+      "tEnd": 27635,
+      "waits": [
+        {
+          "label": "Hiện lỗi",
+          "tStart": 27623,
+          "tEnd": 27635
+        }
+      ],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue"
+    },
+    {
+      "index": 7,
+      "id": "error",
+      "caption": "Thông báo Invalid account name: bạn đã nhập sai account name.",
+      "action": "shot",
+      "target": "{\"text\":\"/invalid account name/i\"}",
+      "label": "Invalid account name",
+      "banner": "Thấy lỗi này? Xoá và nhập opba-ai",
+      "tStart": 27635,
+      "tEnd": 29913,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 8,
+      "id": "clear",
+      "caption": "Xoá nội dung trong ô.",
+      "action": "custom",
+      "tStart": 29913,
+      "tEnd": 30241,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue"
+    },
+    {
+      "index": 9,
+      "id": "type-account",
+      "caption": "ĐÚNG: nhập opba-ai.",
+      "action": "type",
+      "target": "#account-name-input",
+      "label": "✓ Nhập: opba-ai",
+      "banner": "Ô này nhập opba-ai — KHÔNG nhập username hay email",
+      "tStart": 30241,
+      "tEnd": 36226,
+      "waits": [],
+      "url": "https://quicksight.aws.amazon.com/sn/auth/signin?redirect_uri=https%3A%2F%2Fquicksight.aws.amazon.com%2Fsn%2Fstart%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue",
+      "value": "opba-ai",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 10,
+      "id": "account-next",
+      "caption": "Bấm Next: bạn được chuyển sang trang đăng nhập.",
+      "action": "click",
+      "target": "#account-name-submit-button",
+      "label": "Next",
+      "tStart": 36226,
+      "tEnd": 44491,
+      "waits": [
+        {
+          "label": "Chuyển sang trang đăng nhập",
+          "tStart": 38933,
+          "tEnd": 44491
+        }
+      ],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=05587397-2ccd-44af-a593-c55bf59b902e",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 11,
+      "id": "idc-username",
+      "caption": "Nhập username (tên đăng nhập cá nhân) của bạn.",
+      "action": "type",
+      "target": "{\"label\":\"/^username$/i\"}",
+      "label": "Username của bạn",
+      "tStart": 44491,
+      "tEnd": 47989,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=05587397-2ccd-44af-a593-c55bf59b902e",
+      "value": "nhanvien.demo",
+      "screenshot": "step-07.png"
+    },
+    {
+      "index": 12,
+      "id": "idc-username-next",
+      "caption": "Bấm Next.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^next$/i\"}",
+      "tStart": 47989,
+      "tEnd": 51373,
+      "waits": [
+        {
+          "label": "Chuyển sang trang nhập mật khẩu",
+          "tStart": 50588,
+          "tEnd": 51372
+        }
+      ],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=05587397-2ccd-44af-a593-c55bf59b902e",
+      "screenshot": "step-08.png"
+    },
+    {
+      "index": 13,
+      "id": "idc-password",
+      "caption": "Nhập mật khẩu.",
+      "action": "type",
+      "target": "input[type=password]",
+      "label": "Mật khẩu",
+      "tStart": 51373,
+      "tEnd": 54663,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=05587397-2ccd-44af-a593-c55bf59b902e",
+      "screenshot": "step-09.png"
+    },
+    {
+      "index": 14,
+      "id": "idc-password-signin",
+      "caption": "Bấm Sign in.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^\\\\s*sign in\\\\s*$/i\"}",
+      "tStart": 54664,
+      "tEnd": 58266,
+      "waits": [
+        {
+          "label": "Xác thực mật khẩu",
+          "tStart": 57481,
+          "tEnd": 58266
+        }
+      ],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=05587397-2ccd-44af-a593-c55bf59b902e",
+      "screenshot": "step-10.png"
+    },
+    {
+      "index": 15,
+      "id": "idc-mfa",
+      "caption": "Mở ứng dụng xác thực (Authenticator) trên điện thoại và nhập mã 6 số vào ô MFA code.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/enter code/i\"}",
+      "label": "Mã 6 số từ ứng dụng Authenticator",
+      "tStart": 58266,
+      "tEnd": 58268,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 16,
+      "id": "idc-mfa-signin",
+      "caption": "Bấm Sign in để hoàn tất đăng nhập.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^\\\\s*sign in\\\\s*$/i\"}",
+      "tStart": 58268,
+      "tEnd": 58269,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 17,
+      "id": "quick-home",
+      "caption": "Đăng nhập thành công — màn hình trang chủ Amazon Quick.",
+      "action": "waitFor",
+      "tStart": 58269,
+      "tEnd": 69099,
+      "waits": [
+        {
+          "label": "Đang tải Amazon Quick",
+          "tStart": 60943,
+          "tEnd": 66187
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home?state=QUFBQURtdGxlUzB4TlRZNE9UVTFNekEzQ1ZrSGdfQkh1TG1PRl85ZU5lQW5rdHl3SG9sU1NVN0xYWVVRZmVKUXpYNmlMUmJyeHNBQUJwMWh6MGNmTEdGS2RGRk91dmp4bzBTRnNRaFBlNjV5bmFlRWQwUE9JaGR3ZnRDa3hOTno3V0ZWU2gtaUk3Nms1RElOOUZ1MUZnSWx1Mk11bk4zMzNJbno5TWlXSmpJc0N6NGZsZVJVcG9FZ01fWkJMMTVLVjR3aXdNQ1pXbHRIM1ZKaFdsY21mTG1GTXJyQlFfRTdsTWliUWtrYWROQ2J6T3RJZGt2QlFIamd6dk9v",
+      "screenshot": "step-11.png"
+    },
+    {
+      "index": 18,
+      "id": "account-menu",
+      "caption": "Bấm nút tài khoản ở góc phải trên: menu hiện Account name (opba-ai) và Username (tên đăng nhập của bạn).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*opba-ai\\\\s*$/\"}",
+      "label": "Account name và Username",
+      "tStart": 69099,
+      "tEnd": 72664,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home?state=QUFBQURtdGxlUzB4TlRZNE9UVTFNekEzQ1ZrSGdfQkh1TG1PRl85ZU5lQW5rdHl3SG9sU1NVN0xYWVVRZmVKUXpYNmlMUmJyeHNBQUJwMWh6MGNmTEdGS2RGRk91dmp4bzBTRnNRaFBlNjV5bmFlRWQwUE9JaGR3ZnRDa3hOTno3V0ZWU2gtaUk3Nms1RElOOUZ1MUZnSWx1Mk11bk4zMzNJbno5TWlXSmpJc0N6NGZsZVJVcG9FZ01fWkJMMTVLVjR3aXdNQ1pXbHRIM1ZKaFdsY21mTG1GTXJyQlFfRTdsTWliUWtrYWROQ2J6T3RJZGt2QlFIamd6dk9v",
+      "screenshot": "step-12.png"
+    }
+  ]
+}

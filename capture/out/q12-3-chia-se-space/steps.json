@@ -1,0 +1,157 @@
+{
+  "flow": "q12-3-chia-se-space",
+  "title": "Chia sẻ Space",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:14:05.127Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "share",
+      "caption": "Mở Space cần chia sẻ, bấm Share ở góc phải.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^share$/i\"}",
+      "label": "Share",
+      "tStart": 5278,
+      "tEnd": 9857,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "dialog",
+      "caption": "Hộp thoại Share space: ô tìm người nhận, mức quyền, danh sách đã chia sẻ, Copy link.",
+      "action": "shot",
+      "target": "[role=\"dialog\"]",
+      "label": "Share space",
+      "tStart": 9857,
+      "tEnd": 11303,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "search",
+      "caption": "Gõ username, email hoặc tên nhóm của người nhận (ví dụ toannk2_reader).",
+      "action": "type",
+      "target": "[role=\"dialog\"] input",
+      "label": "Người nhận",
+      "tStart": 11303,
+      "tEnd": 15268,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "value": "toannk2_reader",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "pick",
+      "caption": "Chọn đúng người nhận trong danh sách gợi ý (kiểm tra cả email).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*toannk2_reader\\\\s*$/\"}",
+      "label": "Chọn người nhận",
+      "tStart": 15268,
+      "tEnd": 17964,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 5,
+      "id": "level",
+      "caption": "Chọn mức quyền: Can view (xem và hỏi đáp) hoặc Can manage (thêm/xoá tài liệu, chia sẻ tiếp) — chỉ cấp Can manage cho người cùng quản lý Space.",
+      "action": "click",
+      "target": "[role=\"dialog\"] button:has-text(\"Can view\") >> nth=0",
+      "label": "Mức quyền",
+      "tStart": 17964,
+      "tEnd": 21404,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 6,
+      "id": "close-level",
+      "caption": "Giữ Can view.",
+      "action": "press",
+      "tStart": 21404,
+      "tEnd": 21728,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "value": "Escape"
+    },
+    {
+      "index": 7,
+      "id": "submit",
+      "caption": "Bấm Share để chia sẻ.",
+      "action": "click",
+      "target": "[role=\"dialog\"] button:text-is(\"Share\")",
+      "label": "Share",
+      "tStart": 21728,
+      "tEnd": 26183,
+      "waits": [
+        {
+          "label": "Chia sẻ",
+          "tStart": 24341,
+          "tEnd": 26183
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 8,
+      "id": "record",
+      "caption": "Ghi việc chia sẻ.",
+      "action": "custom",
+      "tStart": 26183,
+      "tEnd": 26187,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge"
+    },
+    {
+      "index": 9,
+      "id": "reopen",
+      "caption": "Mở lại Share để kiểm tra.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^share$/i\"}",
+      "tStart": 26187,
+      "tEnd": 27902,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge"
+    },
+    {
+      "index": 10,
+      "id": "shared-with",
+      "caption": "Người nhận đã có trong Shared with với đúng mức quyền. Thu hồi: đổi mức quyền hoặc xoá người nhận ngay tại đây.",
+      "action": "shot",
+      "target": "{\"text\":\"/^\\\\s*toannk2_reader\\\\s*$/\"}",
+      "label": "Đã chia sẻ",
+      "tStart": 27902,
+      "tEnd": 29805,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-07.png"
+    },
+    {
+      "index": 11,
+      "id": "cancel",
+      "caption": "Đóng hộp thoại.",
+      "action": "click",
+      "target": "[role=\"dialog\"] button:text-is(\"Cancel\")",
+      "tStart": 29805,
+      "tEnd": 31513,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge"
+    }
+  ]
+}

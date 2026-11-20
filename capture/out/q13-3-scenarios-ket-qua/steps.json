@@ -1,0 +1,123 @@
+{
+  "flow": "q13-3-scenarios-ket-qua",
+  "title": "Kết quả Scenario",
+  "status": "ok",
+  "capturedAt": "2026-11-19T12:46:48.866Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "load",
+      "caption": "Chờ scenario tải.",
+      "action": "hold",
+      "tStart": 6322,
+      "tEnd": 21355,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8"
+    },
+    {
+      "index": 2,
+      "id": "start",
+      "caption": "Bấm Start analysis bên dưới mô tả vấn đề.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^start analysis$/i\"}",
+      "label": "Start analysis",
+      "tStart": 21355,
+      "tEnd": 21366,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 3,
+      "id": "thread",
+      "caption": "Start a thread: chọn một gợi ý phân tích hoặc tự mô tả (Describe what you want to analyze next) rồi Submit.",
+      "action": "shot",
+      "target": "{\"text\":\"/Choose one of these suggestions/i\"}",
+      "label": "Gợi ý phân tích",
+      "tStart": 21366,
+      "tEnd": 23194,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 4,
+      "id": "mark",
+      "caption": "Ghi độ dài trang.",
+      "action": "custom",
+      "tStart": 23194,
+      "tEnd": 23204,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8"
+    },
+    {
+      "index": 5,
+      "id": "pick",
+      "caption": "Chọn gợi ý what-if: nếu chi nhánh thấp nhất tăng 5% thì tổng giá trị tăng bao nhiêu.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Nếu chi nhánh có tổng giá trị thấp nhất/\"}",
+      "label": "What-if",
+      "tStart": 23204,
+      "tEnd": 28500,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 6,
+      "id": "submit",
+      "caption": "Bấm Submit (nếu gợi ý chưa tự gửi).",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^submit$/i\"}",
+      "tStart": 28500,
+      "tEnd": 30211,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8"
+    },
+    {
+      "index": 7,
+      "id": "wait",
+      "caption": "Chờ phân tích xong.",
+      "action": "waitFor",
+      "tStart": 30211,
+      "tEnd": 65312,
+      "waits": [
+        {
+          "label": "Scenario đang phân tích",
+          "tStart": 35223,
+          "tEnd": 65312
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8"
+    },
+    {
+      "index": 8,
+      "id": "result",
+      "caption": "Kết quả: Quick tính toán, trình bày bảng/biểu đồ và nhận định. Kiểm tra giả định và số liệu (Review responses for accuracy).",
+      "action": "shot",
+      "tStart": 65312,
+      "tEnd": 67586,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 9,
+      "id": "dump",
+      "caption": "In nội dung.",
+      "action": "custom",
+      "tStart": 67586,
+      "tEnd": 67607,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/scenarios/a8ec2584-443d-4833-aee0-f03cc6bcada8"
+    }
+  ]
+}

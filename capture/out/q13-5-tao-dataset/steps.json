@@ -1,0 +1,168 @@
+{
+  "flow": "q13-5-tao-dataset",
+  "title": "Tạo dataset từ tệp",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:24:35.948Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "guard",
+      "caption": "Kiểm tra chưa có dataset demo.",
+      "action": "custom",
+      "tStart": 5514,
+      "tEnd": 8594,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset"
+    },
+    {
+      "index": 2,
+      "id": "data",
+      "caption": "Mở Data, tab Datasets, bấm Create dataset.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^create dataset$/i\"}",
+      "label": "Create dataset",
+      "tStart": 8594,
+      "tEnd": 12691,
+      "waits": [
+        {
+          "label": "Mở nguồn dữ liệu",
+          "tStart": 12681,
+          "tEnd": 12690
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "sources",
+      "caption": "Hộp thoại Create dataset: chọn nguồn dữ liệu có sẵn hoặc bấm Upload file để tải tệp từ máy tính.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^upload file$/i\"}",
+      "label": "Upload file",
+      "tStart": 12691,
+      "tEnd": 13677,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 4,
+      "id": "upload",
+      "caption": "Chọn tệp CSV/Excel từ máy tính (cửa sổ chọn tệp của Windows hiện ra). Chỉ dùng dữ liệu được phép.",
+      "action": "upload",
+      "target": "{\"role\":\"button\",\"name\":\"/^upload file$/i\"}",
+      "label": "Upload",
+      "note": "Hộp thoại chọn file của hệ điều hành không hiện trong headless — tài liệu ghi bước 'chọn file từ máy'.",
+      "tStart": 13677,
+      "tEnd": 35366,
+      "waits": [
+        {
+          "label": "Tải và đọc tệp",
+          "tStart": 15692,
+          "tEnd": 35365
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset"
+    },
+    {
+      "index": 5,
+      "id": "preview",
+      "caption": "Hộp thoại Confirm file upload settings: kiểm tra tên cột tiếng Việt hiển thị đúng, rồi bấm Next.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^next$/i\"}",
+      "label": "Next",
+      "tStart": 35366,
+      "tEnd": 37177,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 6,
+      "id": "next",
+      "caption": "Bấm Next.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^next$/i\"}",
+      "tStart": 37178,
+      "tEnd": 38984,
+      "waits": [
+        {
+          "label": "Tạo dataset",
+          "tStart": 38939,
+          "tEnd": 38983
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset"
+    },
+    {
+      "index": 7,
+      "id": "details",
+      "caption": "Hộp thoại Data source details: dữ liệu được nạp vào SPICE. Bấm Visualize để tạo phân tích, hoặc Edit/Preview data để chỉnh cột trước.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^visualize$/i\"}",
+      "label": "Visualize",
+      "tStart": 38984,
+      "tEnd": 40520,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/data?tab=dataset",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 8,
+      "id": "visualize",
+      "caption": "Bấm Visualize.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^visualize$/i\"}",
+      "tStart": 40520,
+      "tEnd": 45067,
+      "waits": [
+        {
+          "label": "Tạo phân tích",
+          "tStart": 42216,
+          "tEnd": 45066
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963"
+    },
+    {
+      "index": 9,
+      "id": "record",
+      "caption": "Ghi dataset + analysis.",
+      "action": "custom",
+      "tStart": 45067,
+      "tEnd": 45075,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963"
+    },
+    {
+      "index": 10,
+      "id": "new-sheet",
+      "caption": "Phân tích mới.",
+      "action": "shot",
+      "tStart": 45075,
+      "tEnd": 49562,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 11,
+      "id": "probe",
+      "caption": "dò",
+      "action": "custom",
+      "tStart": 49562,
+      "tEnd": 49606,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/analyses/1d017765-6d92-40d7-89ea-cdc5e5151963"
+    }
+  ]
+}

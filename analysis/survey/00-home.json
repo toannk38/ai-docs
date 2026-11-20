@@ -1,0 +1,62 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+  "title": "Quick - Home",
+  "headings": [
+    "Welcome back, Demo! How can I help?",
+    "Your Reader users just got a lot more powerful."
+  ],
+  "nav": [
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Search conversations",
+    "Conversation options",
+    "Private mode",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Presentation",
+    "Visual",
+    "Show more tools",
+    "Close"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Ask a question..."
+  ],
+  "text": "opba-ai\nNew chat\nSearch\nMy stuff\nSpaces\nResearch\nChat agents\nApps\nFlows\nAnalyses\nDashboards\nData\nMy folders\nShared folders\nMore\nRecents\n\nInitial Greeting\n\nLời chào hỏi ban đầu\n\nMẫu Hợp Đồng Mua Bán Phần Mềm\n\nMẫu hợp đồng mua bán\n\nAI Assistant Capabilities Overview\n\nQuick Interface Documentation Request\n\nPrivate mode\nWelcome back, Demo! How can I help?\n\nQuick\n\nAll data\nSmart\nResearch\nDocument\nPresentation\nVisual\nUsage is subject to\nAWS Responsible AI Policy\nYour Reader users just got a lot more powerful.\nReaders now have access to the full Professional Tier feature set at no additional per-user cost. No steps are needed on your end to get this upgrade. If you'd like to manage access, use Custom permissions and Limit profiles. To learn more, visit our blog\nAvailability varies by AWS Region and Quick account configuration.\nOK",
+  "screenshot": "00-home.png",
+  "surveyedAt": "2026-11-19T07:36:15.833Z"
+}

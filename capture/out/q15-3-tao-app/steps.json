@@ -1,0 +1,124 @@
+{
+  "flow": "q15-3-tao-app",
+  "title": "Tạo app",
+  "status": "ok",
+  "capturedAt": "2026-11-19T13:25:48.345Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "settle",
+      "caption": "Chờ.",
+      "action": "hold",
+      "tStart": 6435,
+      "tEnd": 13411,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/apps"
+    },
+    {
+      "index": 2,
+      "id": "page",
+      "caption": "Mở Apps: mô tả ý tưởng app hoặc chọn ví dụ; các tab Recent, Library, My apps.",
+      "action": "shot",
+      "target": "textarea >> nth=0",
+      "label": "Mô tả app",
+      "tStart": 13411,
+      "tEnd": 14734,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/apps",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "describe",
+      "caption": "Mô tả app: mục đích, dữ liệu nhập, kết quả hiển thị. Chỉ dùng dữ liệu minh hoạ.",
+      "action": "fill",
+      "target": "textarea >> nth=0",
+      "label": "Mô tả",
+      "tStart": 14734,
+      "tEnd": 17988,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/apps",
+      "value": "Ứng dụng checklist hồ sơ vay tiêu dùng (dữ liệu minh hoạ): nhập mã hồ sơ, đánh dấu các giấy tờ đã nhận (CCCD, hợp đồng lao động, sao kê lương, giấy xác nhận cư trú), hiển thị phần trăm hoàn thành và danh sách giấy tờ còn thiếu. Giao diện tiếng Việt.",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 4,
+      "id": "generate",
+      "caption": "Bấm Generate.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^generate$/i\"}",
+      "label": "Generate",
+      "tStart": 17988,
+      "tEnd": 39922,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/apps",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 5,
+      "id": "record",
+      "caption": "Ghi app.",
+      "action": "custom",
+      "tStart": 39922,
+      "tEnd": 39926,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/apps"
+    },
+    {
+      "index": 6,
+      "id": "progress",
+      "caption": "Quick đang dựng app: các bước hiện ở khung chat bên trái.",
+      "action": "shot",
+      "tStart": 39926,
+      "tEnd": 40985,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/apps/95f3e176-2bf6-4e73-b510-5fa7ab7fd4f0/edit",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 7,
+      "id": "wait",
+      "caption": "Chờ app dựng xong (trong cùng phiên).",
+      "action": "waitFor",
+      "tStart": 40985,
+      "tEnd": 135167,
+      "waits": [
+        {
+          "label": "Quick đang dựng app",
+          "tStart": 48992,
+          "tEnd": 135167
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/apps/95f3e176-2bf6-4e73-b510-5fa7ab7fd4f0/edit"
+    },
+    {
+      "index": 8,
+      "id": "preview",
+      "caption": "App vừa tạo: xem trước và yêu cầu chỉnh sửa bằng chat.",
+      "action": "shot",
+      "tStart": 135167,
+      "tEnd": 138930,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/apps/95f3e176-2bf6-4e73-b510-5fa7ab7fd4f0/edit",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 9,
+      "id": "probe",
+      "caption": "dò",
+      "action": "custom",
+      "tStart": 138930,
+      "tEnd": 138938,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/apps/95f3e176-2bf6-4e73-b510-5fa7ab7fd4f0/edit"
+    }
+  ]
+}

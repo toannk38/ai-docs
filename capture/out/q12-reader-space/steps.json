@@ -1,0 +1,144 @@
+{
+  "flow": "q12-reader-space",
+  "title": "Người nhận được chia sẻ cả Space",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:16:16.788Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "shared",
+      "caption": "Người nhận mở Spaces, chọn Shared with me.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Shared with me\\\\s*$/\"}",
+      "label": "Shared with me",
+      "tStart": 6253,
+      "tEnd": 10787,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/spaces",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "open",
+      "caption": "Người nhận mở Space được chia sẻ.",
+      "action": "click",
+      "target": "{\"text\":\"Văn bản pháp luật ngân hàng (demo)\"}",
+      "label": "Space được chia sẻ",
+      "tStart": 10787,
+      "tEnd": 14584,
+      "waits": [
+        {
+          "label": "Mở Space",
+          "tStart": 13742,
+          "tEnd": 14583
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "space-view",
+      "caption": "Người nhận (Can view) thấy danh sách tài liệu; không có quyền thêm/xoá tài liệu hay chia sẻ tiếp.",
+      "action": "shot",
+      "tStart": 14584,
+      "tEnd": 16031,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "agents",
+      "caption": "Người nhận quay lại Chat agents.",
+      "action": "goto",
+      "tStart": 16031,
+      "tEnd": 20027,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents"
+    },
+    {
+      "index": 5,
+      "id": "filter",
+      "caption": "Bộ lọc Show.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Show:/\"}",
+      "tStart": 20027,
+      "tEnd": 21729,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents"
+    },
+    {
+      "index": 6,
+      "id": "shared-filter",
+      "caption": "Shared with me.",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Shared with me\\\\s*$/\"}",
+      "tStart": 21729,
+      "tEnd": 23539,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents?filter=shared-with-me"
+    },
+    {
+      "index": 7,
+      "id": "chat",
+      "caption": "Chat với agent.",
+      "action": "click",
+      "target": "tr:has-text(\"Trợ lý Quy định Ngân hàng\") >> text=Chat",
+      "tStart": 23539,
+      "tEnd": 25198,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents?filter=shared-with-me"
+    },
+    {
+      "index": 8,
+      "id": "ask",
+      "caption": "Hỏi lại cùng câu hỏi.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Câu hỏi",
+      "tStart": 25198,
+      "tEnd": 33516,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents?filter=shared-with-me",
+      "value": "Theo Luật Các tổ chức tín dụng, tổ chức tín dụng gồm những loại hình nào?",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 9,
+      "id": "send",
+      "caption": "Gửi.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^send$/i\"}",
+      "tStart": 33516,
+      "tEnd": 51334,
+      "waits": [
+        {
+          "label": "Agent đang trả lời",
+          "tStart": 35254,
+          "tEnd": 51334
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents?filter=shared-with-me"
+    },
+    {
+      "index": 10,
+      "id": "answer",
+      "caption": "Khi người nhận đã được chia sẻ Space, agent trả lời từ tài liệu trong Space và có trích dẫn.",
+      "action": "shot",
+      "tStart": 51334,
+      "tEnd": 53105,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/agents?filter=shared-with-me",
+      "screenshot": "step-05.png"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "flow": "q13-5-share-page",
+  "title": "Chia sẻ dashboard",
+  "status": "ok",
+  "capturedAt": "2026-11-19T15:03:38.475Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": "raw.webm",
+  "steps": [
+    {
+      "index": 1,
+      "id": "wait",
+      "caption": "Mở dashboard.",
+      "action": "waitFor",
+      "tStart": 6086,
+      "tEnd": 7685,
+      "waits": [
+        {
+          "label": "Mở dashboard",
+          "tStart": 7663,
+          "tEnd": 7684
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 2,
+      "id": "share",
+      "caption": "Bấm biểu tượng Share ở thanh công cụ.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^share$/i\"}",
+      "tStart": 7685,
+      "tEnd": 9819,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53"
+    },
+    {
+      "index": 3,
+      "id": "share-menu",
+      "caption": "Chọn Share dashboard (Share this view chỉ chia sẻ góc nhìn đang lọc).",
+      "action": "click",
+      "target": "{\"text\":\"/^\\\\s*Share dashboard\\\\s*$/\"}",
+      "label": "Share dashboard",
+      "tStart": 9819,
+      "tEnd": 11848,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences"
+    },
+    {
+      "index": 4,
+      "id": "loaded",
+      "caption": "Chờ Manage permissions tải xong.",
+      "action": "waitFor",
+      "tStart": 11848,
+      "tEnd": 13406,
+      "waits": [
+        {
+          "label": "Tải danh sách quyền",
+          "tStart": 13365,
+          "tEnd": 13405
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences"
+    },
+    {
+      "index": 5,
+      "id": "share-page",
+      "caption": "Trang Share dashboard: bên trái mời người dùng/nhóm, bên phải Manage permissions (danh sách đang có quyền), Copy link, Copy embed code.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/search by user email or group name/i\"}",
+      "label": "Mời người dùng",
+      "tStart": 13406,
+      "tEnd": 15767,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/dashboards/799e5fd2-8172-4719-8d0c-929fc8917a53/preferences",
+      "screenshot": "step-01.png"
+    }
+  ]
+}

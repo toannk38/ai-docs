@@ -1,0 +1,176 @@
+{
+  "flow": "q11-1-portal",
+  "title": "Đăng nhập Amazon Quick qua AWS access portal",
+  "status": "ok",
+  "capturedAt": "2026-11-19T15:06:31.967Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": "raw.webm",
+  "steps": [
+    {
+      "index": 1,
+      "id": "open-portal",
+      "caption": "Mở link AWS access portal của NAB (https://nab-opba-ai.awsapps.com/start); trang đăng nhập hiện ra.",
+      "action": "shot",
+      "target": "{\"label\":\"/^username$/i\"}",
+      "label": "Trang đăng nhập",
+      "banner": "https://nab-opba-ai.awsapps.com/start",
+      "tStart": 801,
+      "tEnd": 9070,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=b231bb5d-6de0-411f-b2b8-75a6c5873783",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "idc-username",
+      "caption": "Nhập username (tên đăng nhập cá nhân) của bạn.",
+      "action": "type",
+      "target": "{\"label\":\"/^username$/i\"}",
+      "label": "Username của bạn",
+      "tStart": 9070,
+      "tEnd": 12951,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=b231bb5d-6de0-411f-b2b8-75a6c5873783",
+      "value": "nhanvien.demo",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "idc-username-next",
+      "caption": "Bấm Next.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^next$/i\"}",
+      "tStart": 12951,
+      "tEnd": 16483,
+      "waits": [
+        {
+          "label": "Chuyển sang trang nhập mật khẩu",
+          "tStart": 15695,
+          "tEnd": 16482
+        }
+      ],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=b231bb5d-6de0-411f-b2b8-75a6c5873783",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "idc-password",
+      "caption": "Nhập mật khẩu.",
+      "action": "type",
+      "target": "input[type=password]",
+      "label": "Mật khẩu",
+      "tStart": 16483,
+      "tEnd": 19723,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=b231bb5d-6de0-411f-b2b8-75a6c5873783",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 5,
+      "id": "idc-password-signin",
+      "caption": "Bấm Sign in.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^\\\\s*sign in\\\\s*$/i\"}",
+      "tStart": 19723,
+      "tEnd": 23159,
+      "waits": [
+        {
+          "label": "Xác thực mật khẩu",
+          "tStart": 22370,
+          "tEnd": 23159
+        }
+      ],
+      "url": "https://us-east-1.signin.aws/platform/nab-opba-ai/login?workflowStateHandle=b231bb5d-6de0-411f-b2b8-75a6c5873783",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 6,
+      "id": "idc-mfa",
+      "caption": "Mở ứng dụng xác thực (Authenticator) trên điện thoại và nhập mã 6 số vào ô MFA code.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/enter code/i\"}",
+      "label": "Mã 6 số từ ứng dụng Authenticator",
+      "tStart": 23159,
+      "tEnd": 23162,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 7,
+      "id": "idc-mfa-signin",
+      "caption": "Bấm Sign in để hoàn tất đăng nhập.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^\\\\s*sign in\\\\s*$/i\"}",
+      "tStart": 23162,
+      "tEnd": 23164,
+      "waits": [],
+      "url": "",
+      "skipped": true
+    },
+    {
+      "index": 8,
+      "id": "portal-loaded",
+      "caption": "Đăng nhập xong, trang AWS access portal hiện ra.",
+      "action": "waitFor",
+      "tStart": 23164,
+      "tEnd": 25491,
+      "waits": [
+        {
+          "label": "Đang tải AWS access portal",
+          "tStart": 23167,
+          "tEnd": 25491
+        }
+      ],
+      "url": "https://nab-opba-ai.awsapps.com/start/#/"
+    },
+    {
+      "index": 9,
+      "id": "accounts-loaded",
+      "caption": "Chờ danh sách Accounts tải xong (tối đa 20 giây, không bắt buộc).",
+      "action": "custom",
+      "tStart": 25491,
+      "tEnd": 27130,
+      "waits": [],
+      "url": "https://nab-opba-ai.awsapps.com/start/#/"
+    },
+    {
+      "index": 10,
+      "id": "applications-tab",
+      "caption": "Chọn tab Applications.",
+      "action": "click",
+      "target": "{\"role\":\"tab\",\"name\":\"/applications/i\"}",
+      "label": "Tab Applications",
+      "tStart": 27130,
+      "tEnd": 30016,
+      "waits": [
+        {
+          "label": "Tải danh sách ứng dụng",
+          "tStart": 29826,
+          "tEnd": 30016
+        }
+      ],
+      "url": "https://nab-opba-ai.awsapps.com/start/#/?tab=applications",
+      "screenshot": "step-06.png"
+    },
+    {
+      "index": 11,
+      "id": "quick-app-tile",
+      "caption": "Bấm vào ô ứng dụng opba-ai (biểu tượng Amazon Quick). Không chọn ứng dụng khác trong danh sách.",
+      "action": "shot",
+      "target": ":is(a, button, [role=\"button\"], [role=\"link\"]):has-text(\"opba-ai\")",
+      "label": "Ứng dụng Amazon Quick: opba-ai",
+      "tStart": 30017,
+      "tEnd": 31781,
+      "waits": [],
+      "url": "https://nab-opba-ai.awsapps.com/start/#/?tab=applications",
+      "screenshot": "step-07.png"
+    }
+  ]
+}

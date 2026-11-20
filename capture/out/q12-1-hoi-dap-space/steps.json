@@ -1,0 +1,123 @@
+{
+  "flow": "q12-1-hoi-dap-space",
+  "title": "Hỏi đáp tài liệu trong Space",
+  "status": "ok",
+  "capturedAt": "2026-11-19T11:17:19.296Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "space",
+      "caption": "Mở Spaces và chọn Space cần tra cứu. Bên trái là danh sách tài liệu, bên phải là khung chat của Space.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Khung chat của Space",
+      "tStart": 5459,
+      "tEnd": 8135,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "ask",
+      "caption": "Nhập câu hỏi về nội dung tài liệu trong Space.",
+      "action": "type",
+      "target": "{\"placeholder\":\"/ask a question/i\"}",
+      "label": "Câu hỏi",
+      "tStart": 8135,
+      "tEnd": 19112,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "value": "Theo Luật Các tổ chức tín dụng, tổ chức tín dụng gồm những loại hình nào? Trả lời ngắn gọn, nêu điều luật.",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "send",
+      "caption": "Bấm gửi và chờ Quick trả lời.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^send$/i\"}",
+      "label": "Gửi",
+      "tStart": 19112,
+      "tEnd": 33738,
+      "waits": [
+        {
+          "label": "Quick đang trả lời",
+          "tStart": 21836,
+          "tEnd": 33738
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "answer",
+      "caption": "Câu trả lời dựa trên tài liệu trong Space, có trích dẫn tới đúng văn bản.",
+      "action": "shot",
+      "target": "{\"role\":\"button\",\"name\":\"/^sources$/i\"}",
+      "label": "Trích dẫn tài liệu",
+      "tStart": 33738,
+      "tEnd": 35504,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 5,
+      "id": "sources",
+      "caption": "Bấm Sources.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^sources$/i\"}",
+      "label": "Sources",
+      "tStart": 35504,
+      "tEnd": 37181,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge"
+    },
+    {
+      "index": 6,
+      "id": "sources-panel",
+      "caption": "Panel Sources liệt kê tài liệu nguồn; mở và đối chiếu điều luật trước khi dùng.",
+      "action": "shot",
+      "target": "{\"text\":\"/Sources powering the conversation/i\"}",
+      "label": "Tài liệu nguồn",
+      "tStart": 37181,
+      "tEnd": 39035,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/spaces/fad58d4a-ea6d-4e85-aedb-31975e94c885?tab=knowledge",
+      "screenshot": "step-05.png"
+    },
+    {
+      "index": 7,
+      "id": "home",
+      "caption": "Cách khác: từ ô chat ở trang chủ, chọn phạm vi dữ liệu.",
+      "action": "goto",
+      "tStart": 39035,
+      "tEnd": 44147,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home"
+    },
+    {
+      "index": 8,
+      "id": "scope",
+      "caption": "Ở ô chat trang chủ, bấm All data → Specific data rồi chọn Space (hoặc chọn Space trong mục Recently viewed) để chỉ hỏi trên tài liệu của Space đó.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^all data$/i\"}",
+      "label": "Chọn Specific data / Space",
+      "tStart": 44147,
+      "tEnd": 48559,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/home",
+      "screenshot": "step-06.png"
+    }
+  ]
+}

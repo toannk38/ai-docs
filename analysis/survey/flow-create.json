@@ -1,0 +1,41 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/new",
+  "title": "Quick - Flows",
+  "headings": [
+    "Create workflows for everyday tasks",
+    "Hi Demo! What's on your mind?"
+  ],
+  "nav": [
+    [
+      "Flows"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Create a blank flow",
+    "Generate",
+    "Find and prioritize customer support tickets",
+    "Generate images",
+    "Automate RFP responses",
+    "Search the web for industry news",
+    "More samples",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Describe what you’re trying to do. It may help to describe the information that you need to collect, any content you need to generate, and the services you need to connect to. Including additional context like the end goal, persona, or limitations can provide better results.",
+    "Ask a question..."
+  ],
+  "text": "Create workflows for everyday tasks\n\nTell us about your task or get started with a sample prompt.\n\n​\nCharacter count: 0 / 10000\nCreate a blank flow\nGenerate\n\nWHAT WOULD YOU LIKE TO DO TODAY?\n\nFind and prioritize customer support tickets\nGenerate images\nAutomate RFP responses\nSearch the web for industry news\nMore samples",
+  "screenshot": "flow-create.png",
+  "surveyedAt": "2026-11-19T07:45:18.385Z"
+}

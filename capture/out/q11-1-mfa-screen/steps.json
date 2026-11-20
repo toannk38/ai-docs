@@ -1,0 +1,92 @@
+{
+  "flow": "q11-1-mfa-screen",
+  "title": "Màn hình xác thực MFA",
+  "status": "ok",
+  "capturedAt": "2026-11-19T15:08:17.844Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": "raw.webm",
+  "steps": [
+    {
+      "index": 1,
+      "id": "idc-username",
+      "caption": "Nhập username (tên đăng nhập cá nhân) của bạn.",
+      "action": "type",
+      "target": "{\"label\":\"/^username$/i\"}",
+      "label": "Username của bạn",
+      "tStart": 2334,
+      "tEnd": 13980,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/d-xxxxxxxxxx/login?workflowStateHandle=8c2ee9f6-30fa-4677-a850-5c0ff053073b",
+      "value": "nhanvien.demo",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 2,
+      "id": "idc-username-next",
+      "caption": "Bấm Next.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^next$/i\"}",
+      "tStart": 13980,
+      "tEnd": 17441,
+      "waits": [
+        {
+          "label": "Chuyển sang trang nhập mật khẩu",
+          "tStart": 16653,
+          "tEnd": 17441
+        }
+      ],
+      "url": "https://us-east-1.signin.aws/platform/d-xxxxxxxxxx/login?workflowStateHandle=8c2ee9f6-30fa-4677-a850-5c0ff053073b",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 3,
+      "id": "idc-password",
+      "caption": "Nhập mật khẩu.",
+      "action": "type",
+      "target": "input[type=password]",
+      "label": "Mật khẩu",
+      "tStart": 17442,
+      "tEnd": 20781,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/d-xxxxxxxxxx/login?workflowStateHandle=8c2ee9f6-30fa-4677-a850-5c0ff053073b",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 4,
+      "id": "idc-password-signin",
+      "caption": "Bấm Sign in.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^\\\\s*sign in\\\\s*$/i\"}",
+      "tStart": 20782,
+      "tEnd": 23829,
+      "waits": [
+        {
+          "label": "Xác thực mật khẩu",
+          "tStart": 23530,
+          "tEnd": 23828
+        }
+      ],
+      "url": "https://us-east-1.signin.aws/platform/d-xxxxxxxxxx/login?workflowStateHandle=8c2ee9f6-30fa-4677-a850-5c0ff053073b",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 5,
+      "id": "idc-mfa-screen",
+      "caption": "Màn hình Additional verification required: mở ứng dụng Authenticator trên điện thoại, nhập mã 6 số vào ô MFA code rồi bấm Sign in.",
+      "action": "shot",
+      "target": "{\"placeholder\":\"/enter code/i\"}",
+      "label": "Mã 6 số từ ứng dụng Authenticator",
+      "tStart": 23829,
+      "tEnd": 25078,
+      "waits": [],
+      "url": "https://us-east-1.signin.aws/platform/d-xxxxxxxxxx/login?workflowStateHandle=8c2ee9f6-30fa-4677-a850-5c0ff053073b",
+      "screenshot": "step-05.png"
+    }
+  ]
+}

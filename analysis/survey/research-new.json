@@ -1,0 +1,32 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/research/view/ce9a6478-3766-404f-8b68-30ba6eb64f1a/prompt",
+  "title": "Quick - Research",
+  "headings": [
+    "All set. Let's go."
+  ],
+  "nav": [
+    [
+      "Research"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [],
+  "inputs": [
+    "Ask a question..."
+  ],
+  "text": "Research\nopba-ai\n\nLoading\n\nExpand\nAll set. Let's go.\n\nQuick\n\nAll\nSmart\nResearch\nDocument\nUsage is subject to\nAWS Responsible AI Policy",
+  "screenshot": "research-new.png",
+  "surveyedAt": "2026-11-19T07:44:47.190Z"
+}

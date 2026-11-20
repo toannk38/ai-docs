@@ -1,0 +1,80 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/automations",
+  "title": "Quick - Automations",
+  "headings": [
+    "Automations",
+    "Transform business processes with AI-powered automations"
+  ],
+  "nav": [
+    [],
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ],
+    [
+      "100",
+      "Go to first page",
+      "Go to first page",
+      "Go to previous page",
+      "Go to previous page",
+      "Go to next page",
+      "Go to next page"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Search conversations",
+    "Conversation options",
+    "Documentation",
+    "Start building",
+    "Dismiss",
+    "Projects",
+    "Groups",
+    "More options",
+    "Filters",
+    "Not sorted",
+    "Column actions",
+    "100",
+    "Go to first page",
+    "Go to previous page",
+    "Go to next page"
+  ],
+  "tabs": [
+    "Projects",
+    "Groups"
+  ],
+  "inputs": [
+    "Search automations",
+    "input"
+  ],
+  "text": "Automations\nDocumentation\nTransform business processes with AI-powered automations\nAutomate end-to-end processes with the assistance of AI. Build, deploy, and manage your automations all in one place.\nStart building\nDismiss\nKey features\nDismiss\nBuild automations with generative AI\nDescribe or upload your process, and let AI turn it into a ready-to-test automation in minutes. Then, refine it using chat or our low-code studio.\nUse AI agents for adaptable automation\nOur AI agent understands and navigates applications based on simple instructions. It adapts to interface changes, and handles the unexpected.\nAll your automation needs in one place\nBuild automations using our AI agent, human-in-the-loop capabilities, and various API integrations. Seamlessly deploy to track their performance.\nProjects\nGroups\nStart building\nFilters\n\nName\n\n\t\n\nCreated by\n\n\t\n\nLast modified\n\n\t\n\nStatus\n\n\t\n\n\nCreate your first automation project\n\nStart building\nItems per page\n100\nTriggers\nAnalytics\nMy tasks",
+  "screenshot": "more-automations.png",
+  "surveyedAt": "2026-11-19T07:40:54.632Z"
+}

@@ -1,0 +1,106 @@
+{
+  "flow": "q15-2-share-search",
+  "title": "Chạy thử và chia sẻ flow",
+  "status": "ok",
+  "capturedAt": "2026-11-19T15:04:14.254Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": "raw.webm",
+  "steps": [
+    {
+      "index": 1,
+      "id": "wait",
+      "caption": "Mở flow.",
+      "action": "waitFor",
+      "tStart": 6571,
+      "tEnd": 10321,
+      "waits": [
+        {
+          "label": "Tải flow",
+          "tStart": 10292,
+          "tEnd": 10320
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df"
+    },
+    {
+      "index": 2,
+      "id": "coach",
+      "caption": "Đóng hướng dẫn nổi.",
+      "action": "custom",
+      "tStart": 10321,
+      "tEnd": 13014,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df"
+    },
+    {
+      "index": 3,
+      "id": "share",
+      "caption": "Bấm Share để chia sẻ flow.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^share$/i\"}",
+      "label": "Share",
+      "tStart": 13014,
+      "tEnd": 15153,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df"
+    },
+    {
+      "index": 4,
+      "id": "search",
+      "caption": "Gõ username hoặc email người nhận (ví dụ toannk2_reader); mức quyền Viewer = chỉ chạy flow.",
+      "action": "type",
+      "target": "[role=\"dialog\"] input >> nth=0",
+      "tStart": 15153,
+      "tEnd": 18312,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "value": "toannk2_reader"
+    },
+    {
+      "index": 5,
+      "id": "settled",
+      "caption": "Chờ gợi ý tải xong.",
+      "action": "waitFor",
+      "tStart": 18312,
+      "tEnd": 19833,
+      "waits": [
+        {
+          "label": "Gợi ý người nhận",
+          "tStart": 19819,
+          "tEnd": 19832
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df"
+    },
+    {
+      "index": 6,
+      "id": "result",
+      "caption": "Gõ username hoặc email người nhận (ví dụ toannk2_reader); mức quyền Viewer = chỉ chạy flow.",
+      "action": "shot",
+      "target": "[role=\"dialog\"] input >> nth=0",
+      "label": "Người nhận",
+      "tStart": 19833,
+      "tEnd": 20924,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 7,
+      "id": "close",
+      "caption": "Đóng, không chia sẻ.",
+      "action": "press",
+      "tStart": 20924,
+      "tEnd": 21231,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df",
+      "value": "Escape"
+    }
+  ]
+}

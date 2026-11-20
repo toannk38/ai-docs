@@ -1,0 +1,119 @@
+{
+  "flow": "q15-2-tao-flow",
+  "title": "Tạo flow",
+  "status": "ok",
+  "capturedAt": "2026-11-19T12:54:30.871Z",
+  "environment": "POC — hiển thị như LIVE (account name opba-ai) nhờ capture/lib/env-mask.ts",
+  "browser": "chromium (playwright) 156.0.8078.4",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "uiVersionNote": "Amazon Quick không hiển thị số phiên bản; dùng ngày chụp làm mốc phiên bản giao diện.",
+  "video": null,
+  "steps": [
+    {
+      "index": 1,
+      "id": "guard",
+      "caption": "Kiểm tra chưa có flow cùng tên.",
+      "action": "custom",
+      "tStart": 5997,
+      "tEnd": 12044,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/flows"
+    },
+    {
+      "index": 2,
+      "id": "create",
+      "caption": "Mở Flows, bấm Create flow.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^create flow$/i\"}",
+      "label": "Create flow",
+      "tStart": 12045,
+      "tEnd": 15139,
+      "waits": [
+        {
+          "label": "Mở trang tạo flow",
+          "tStart": 15126,
+          "tEnd": 15138
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/new",
+      "screenshot": "step-01.png"
+    },
+    {
+      "index": 3,
+      "id": "describe",
+      "caption": "Mô tả flow bằng lời: tên, đầu vào, các bước xử lý, đầu ra. Có thể chọn mẫu gợi ý hoặc Create a blank flow để tự dựng.",
+      "action": "fill",
+      "target": "textarea >> nth=0",
+      "label": "Mô tả flow",
+      "tStart": 15139,
+      "tEnd": 18064,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/new",
+      "value": "Tạo flow tên \"Tóm tắt văn bản luật và liệt kê điểm cần lưu ý\". Bước 1: người dùng tải lên một văn bản pháp luật (Word hoặc PDF). Bước 2: tóm tắt văn bản trong tối đa 10 gạch đầu dòng, nêu phạm vi điều chỉnh và đối tượng áp dụng. Bước 3: liệt kê các điểm ngân hàng cần lưu ý, kèm số điều, khoản. Trả lời bằng tiếng Việt.",
+      "screenshot": "step-02.png"
+    },
+    {
+      "index": 4,
+      "id": "generate",
+      "caption": "Bấm Generate: Quick dựng các bước của flow.",
+      "action": "click",
+      "target": "{\"role\":\"button\",\"name\":\"/^generate$/i\"}",
+      "label": "Generate",
+      "tStart": 18064,
+      "tEnd": 41076,
+      "waits": [
+        {
+          "label": "Quick đang dựng flow",
+          "tStart": 28101,
+          "tEnd": 41075
+        }
+      ],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit",
+      "screenshot": "step-03.png"
+    },
+    {
+      "index": 5,
+      "id": "record",
+      "caption": "Ghi flow.",
+      "action": "custom",
+      "tStart": 41076,
+      "tEnd": 41108,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit"
+    },
+    {
+      "index": 6,
+      "id": "coach",
+      "caption": "Đóng hướng dẫn nổi.",
+      "action": "custom",
+      "tStart": 41108,
+      "tEnd": 41927,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit"
+    },
+    {
+      "index": 7,
+      "id": "editor",
+      "caption": "Flow vừa tạo.",
+      "action": "shot",
+      "tStart": 41927,
+      "tEnd": 42845,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit",
+      "screenshot": "step-04.png"
+    },
+    {
+      "index": 8,
+      "id": "probe",
+      "caption": "dò",
+      "action": "custom",
+      "tStart": 42845,
+      "tEnd": 42883,
+      "waits": [],
+      "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/flows/view/1f08d61d-861e-417c-85ef-3f1b7f04a2df/edit"
+    }
+  ]
+}

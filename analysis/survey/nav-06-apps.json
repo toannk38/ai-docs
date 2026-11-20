@@ -1,0 +1,80 @@
+{
+  "url": "https://us-east-1.quicksight.aws.amazon.com/sn/account/opba-ai/start/apps",
+  "title": "Quick - Apps",
+  "headings": [
+    "Apps",
+    "Create apps for yourself and your team",
+    "Here when you need me, Demo."
+  ],
+  "nav": [
+    [],
+    [
+      "New chat",
+      "Search",
+      "My stuff",
+      "Spaces",
+      "Research",
+      "Chat agents",
+      "Apps",
+      "Flows",
+      "Analyses",
+      "Dashboards",
+      "Data",
+      "My folders",
+      "Shared folders",
+      "More",
+      "Search conversations",
+      "Initial Greeting",
+      "Conversation options",
+      "Lời chào hỏi ban đầu",
+      "Conversation options",
+      "Mẫu Hợp Đồng Mua Bán Phần Mềm",
+      "Conversation options",
+      "Mẫu hợp đồng mua bán",
+      "Conversation options",
+      "AI Assistant Capabilities Overview",
+      "Conversation options",
+      "Quick Interface Documentation Request",
+      "Conversation options"
+    ]
+  ],
+  "buttons": [
+    "Toggle navigation",
+    "opba-ai",
+    "Help",
+    "Open chat",
+    "Search conversations",
+    "Conversation options",
+    "Attach files",
+    "Generate",
+    "Incident response tracker",
+    "Organize my dashboards",
+    "Customer feedback tracker",
+    "Refresh examples",
+    "Recent",
+    "Library",
+    "My apps",
+    "Grid view",
+    "List view",
+    "Toggle private mode",
+    "Conversation history",
+    "More actions",
+    "Send",
+    "Research",
+    "Document",
+    "Show more tools"
+  ],
+  "tabs": [
+    "Recent",
+    "Library",
+    "My apps"
+  ],
+  "inputs": [
+    "textarea",
+    "Search for name and owner",
+    "Ask a question..."
+  ],
+  "text": "Apps\nCreate apps for yourself and your team\n\nTell us about your idea and goals, or choose from one of the examples\n\nMy small team tracks work informally and things sl|\nIncident response tracker\nOrganize my dashboards\nCustomer feedback tracker\nRecent\nLibrary\nMy apps\nYou haven't viewed any apps recently",
+  "screenshot": "nav-06-apps.png",
+  "surveyedAt": "2026-11-19T07:37:51.554Z"
+}
